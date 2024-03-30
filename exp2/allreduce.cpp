@@ -16,29 +16,30 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
     MPI_Request req;
     int src = (my_rank - 1 + comm_sz) % comm_sz;
     int dst = (my_rank + 1) % comm_sz;
-    for (int slice = 0; slice < n; slice += comm_sz) {
-        int offset = slice + my_rank;
-        // Stage 1
-        for (int i = 0; i < comm_sz; i++) {
-            float recv;
-            ((float*)recvbuf)[offset] = ((float*)sendbuf)[offset];
-            if (i != 0) {
-                MPI_Recv(&recv, 1, MPI_FLOAT, src, i - 1, comm, nullptr);
-                ((float*)recvbuf)[offset] += recv;
-            }
-            if (i != comm_sz - 1) {
-                MPI_Isend((float*)recvbuf + offset, 1, MPI_FLOAT, dst, i, comm, &req);
-                offset--;
-                if (offset < slice) offset = slice + comm_sz - 1;
-            }
+    int slice = n / comm_sz;
+    int offset = my_rank * slice;
+    // Stage 1
+    for (int i = 0; i < comm_sz; i++) {
+        float* buffer = new float[slice];
+        if (i != 0) {
+            MPI_Recv((float*)recvbuf + offset, slice, MPI_FLOAT, src, i - 1, comm, nullptr);
         }
-        // Stage 2
-        for (int i = 0; i < comm_sz; i++) {
-            if (i != 0) MPI_Recv((float*)recvbuf + offset, 1, MPI_FLOAT, src, i - 1, comm, nullptr);
-            if (i != comm_sz - 1) MPI_Isend((float*)recvbuf + offset, 1, MPI_FLOAT, dst, i, comm, &req);
-            offset--;
-            if (offset < slice) offset = slice + comm_sz - 1;
+        for (int j = 0; j < slice; j++) {
+            if (i != 0) ((float*)recvbuf)[offset] += ((float*)sendbuf)[offset];
+            else ((float*)recvbuf)[offset] = ((float*)sendbuf)[offset];
         }
+        if (i != comm_sz - 1) {
+            MPI_Isend((float*)recvbuf + offset, slice, MPI_FLOAT, dst, i, comm, &req);
+            offset -= slice;
+            if (offset < 0) offset = (comm_sz - 1) * slice;
+        }
+    }
+    // Stage 2
+    for (int i = 0; i < comm_sz; i++) {
+        if (i != 0) MPI_Recv((float*)recvbuf + offset, slice, MPI_FLOAT, src, i - 1, comm, nullptr);
+        if (i != comm_sz - 1) MPI_Isend((float*)recvbuf + offset, slice, MPI_FLOAT, dst, i, comm, &req);
+        offset -= slice;
+        if (offset < 0) offset = (comm_sz - 1) * slice;
     }
     return;
 }
