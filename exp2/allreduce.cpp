@@ -31,6 +31,10 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
             if (offset < 0) offset = n - 1;
         }
     }
+    if (my_rank == 0) {
+        for (int i = 0; i < 10; i++)
+            std::cout << i << ":" << mpi_recvbuf[i] << std::endl;
+    }
     // Stage 2
     for (int i = 0; i < n; i++) {
         if (i != 0) MPI_Recv((float*)recvbuf + offset, 1, MPI_FLOAT, src, i - 1, comm, nullptr);
