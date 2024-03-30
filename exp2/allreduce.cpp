@@ -79,9 +79,10 @@ int main(int argc, char *argv[])
         if (abs(mpi_recvbuf[i] - ring_recvbuf[i]) > EPS)
         {
             correct = false;
+            std::cout << "Index:" << i << std::endl;
             break;
         }
-    std::cout << "Index:" << i << std::endl;
+
     if (correct)
     {
         auto beg = ch::high_resolution_clock::now();
