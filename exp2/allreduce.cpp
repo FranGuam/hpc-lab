@@ -83,12 +83,7 @@ int main(int argc, char *argv[])
         if (abs(mpi_recvbuf[i] - ring_recvbuf[i]) > EPS)
         {
             correct = false;
-            std::cout << "My Rank:" << my_rank << std::endl;
-            std::cout << "Index:" << i << std::endl;
-            std::cout << "MPI result:" << mpi_recvbuf[i] << std::endl;
-            std::cout << "Ring result:" << ring_recvbuf[i] << std::endl << std::endl;
-            if (i > 10)
-                break;
+            break;
         }
 
     if (correct)
