@@ -33,7 +33,7 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
     }
     if (my_rank == 0) {
         for (int i = 0; i < 10; i++)
-            std::cout << i << ":" << mpi_recvbuf[i] << std::endl;
+            std::cout << i << ":" << recvbuf[i] << std::endl;
     }
     // Stage 2
     for (int i = 0; i < n; i++) {
