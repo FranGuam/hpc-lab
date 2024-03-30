@@ -80,13 +80,11 @@ int main(int argc, char *argv[])
         {
             correct = false;
             if (my_rank == 0) {
-                std::cout << "MPI result[0]:" << mpi_recvbuf[0] << std::endl;
-                std::cout << "Ring result[0]:" << ring_recvbuf[0] << std::endl;
                 std::cout << "Index:" << i << std::endl;
                 std::cout << "MPI result:" << mpi_recvbuf[i] << std::endl;
                 std::cout << "Ring result:" << ring_recvbuf[i] << std::endl;
             }
-            break;
+            //break;
         }
 
     if (correct)
