@@ -10,7 +10,7 @@ set -x
 
 for node in 1 2 4; do
     for process in 4 8 16 32 64; do
-        for scale in 64 1024 16384 262144 4194304 67108864 1073741824; do
+        for scale in 256 2048 16384 131072 1048576 8388608 67108864 536870912; do
             srun -N $node -n $process ./allreduce 10 $scale
         done
     done
