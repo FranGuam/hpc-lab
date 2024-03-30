@@ -13,6 +13,30 @@ namespace ch = std::chrono;
 void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm_sz, int my_rank)
 {
     //TODO
+    // Stage 1
+    MPI_Request req;
+    int src = (my_rank - 1 + comm_sz) % comm_sz;
+    int dst = (my_rank + 1) % comm_sz;
+    for (int i = 0; i < comm_sz - 1; i++) {
+        int offset = (my_rank - i + comm_sz) % comm_sz;
+        float recv;
+        if (i != 0) MPI_Recv(&recv, 1, MPI_FLOAT, src, i - 1, comm, nullptr);
+        ((float*)sendbuf)[offset] += recv;
+        MPI_Isend((float*)sendbuf + offset, 1, MPI_FLOAT, dst, i, comm, &req);
+    }
+    float recv;
+    MPI_Recv(&recv, 1, MPI_FLOAT, src, comm_sz - 2, comm, nullptr);
+    int sum_pos = (my_rank + 1) % comm_sz;
+    ((float*)recvbuf)[sum_pos] = ((float*)sendbuf)[sum_pos] + recv;
+    // Stage 2
+    for (int i = 0; i < comm_sz - 1; i++) {
+        int offset = (my_rank + 1 - i + comm_sz) % comm_sz;
+        if (i != 0) MPI_Recv((float*)recvbuf + offset, 1, MPI_FLOAT, src, i - 1, comm, nullptr);
+        MPI_Isend((float*)recvbuf + offset, 1, MPI_FLOAT, dst, i, comm, &req);
+    }
+    int offset = (my_rank + 2) % comm_sz;
+    MPI_Recv((float*)recvbuf + offset, 1, MPI_FLOAT, src, comm_sz - 2, comm, nullptr);
+    return;
 }
 
 
