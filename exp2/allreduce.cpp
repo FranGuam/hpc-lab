@@ -13,31 +13,32 @@ namespace ch = std::chrono;
 void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm_sz, int my_rank)
 {
     //TODO
-    // Stage 1
     MPI_Request req;
-    int offset = my_rank;
     int src = (my_rank - 1 + comm_sz) % comm_sz;
     int dst = (my_rank + 1) % comm_sz;
-    for (int i = 0; i < n; i++) {
-        float recv;
-        ((float*)recvbuf)[offset] = ((float*)sendbuf)[offset];
-        if (i != 0) {
-            MPI_Recv(&recv, 1, MPI_FLOAT, src, i - 1, comm, nullptr);
-            ((float*)recvbuf)[offset] += recv;
-            if (my_rank == 0 && i < 10) std::cout << i << ":" << recv << std::endl;
+    for (int slice = 0; slice < n; slice += comm_sz) {
+        int offset = slice + my_rank;
+        // Stage 1
+        for (int i = 0; i < comm_sz; i++) {
+            float recv;
+            ((float*)recvbuf)[offset] = ((float*)sendbuf)[offset];
+            if (i != 0) {
+                MPI_Recv(&recv, 1, MPI_FLOAT, src, i - 1, comm, nullptr);
+                ((float*)recvbuf)[offset] += recv;
+            }
+            if (i != comm_sz - 1) {
+                MPI_Isend((float*)recvbuf + offset, 1, MPI_FLOAT, dst, i, comm, &req);
+                offset--;
+                if (offset < slice) offset = slice + comm_sz - 1;
+            }
         }
-        if (i != n - 1) {
-            MPI_Isend((float*)recvbuf + offset, 1, MPI_FLOAT, dst, i, comm, &req);
+        // Stage 2
+        for (int i = 0; i < comm_sz; i++) {
+            if (i != 0) MPI_Recv((float*)recvbuf + offset, 1, MPI_FLOAT, src, i - 1, comm, nullptr);
+            if (i != comm_sz - 1) MPI_Isend((float*)recvbuf + offset, 1, MPI_FLOAT, dst, i, comm, &req);
             offset--;
-            if (offset < 0) offset = n - 1;
+            if (offset < slice) offset = slice + comm_sz - 1;
         }
-    }
-    // Stage 2
-    for (int i = 0; i < n; i++) {
-        if (i != 0) MPI_Recv((float*)recvbuf + offset, 1, MPI_FLOAT, src, i - 1, comm, nullptr);
-        if (i != n - 1) MPI_Isend((float*)recvbuf + offset, 1, MPI_FLOAT, dst, i, comm, &req);
-        offset--;
-        if (offset < 0) offset = n - 1;
     }
     return;
 }
