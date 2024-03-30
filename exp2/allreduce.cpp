@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
             correct = false;
             break;
         }
-
+    std::cout << "Index:" << i << std::endl;
     if (correct)
     {
         auto beg = ch::high_resolution_clock::now();
