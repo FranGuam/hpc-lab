@@ -21,6 +21,7 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
     // Stage 1
     for (int i = 0; i < comm_sz; i++) {
         if (i != 0) {
+            MPI_Wait(&req, nullptr);
             MPI_Recv((float*)recvbuf + offset, slice, MPI_FLOAT, src, i - 1, comm, nullptr);
         }
         for (int j = 0; j < slice; j++) {
@@ -35,10 +36,15 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
     }
     // Stage 2
     for (int i = 0; i < comm_sz; i++) {
-        if (i != 0) MPI_Recv((float*)recvbuf + offset, slice, MPI_FLOAT, src, i - 1, comm, nullptr);
-        if (i != comm_sz - 1) MPI_Isend((float*)recvbuf + offset, slice, MPI_FLOAT, dst, i, comm, &req);
-        offset -= slice;
-        if (offset < 0) offset = (comm_sz - 1) * slice;
+        if (i != 0) {
+            MPI_Wait(&req, nullptr);
+            MPI_Recv((float*)recvbuf + offset, slice, MPI_FLOAT, src, i - 1, comm, nullptr);
+        }
+        if (i != comm_sz - 1) {
+            MPI_Isend((float*)recvbuf + offset, slice, MPI_FLOAT, dst, i, comm, &req);
+            offset -= slice;
+            if (offset < 0) offset = (comm_sz - 1) * slice;
+        }
     }
     return;
 }
