@@ -84,7 +84,8 @@ int main(int argc, char *argv[])
                 std::cout << "MPI result:" << mpi_recvbuf[i] << std::endl;
                 std::cout << "Ring result:" << ring_recvbuf[i] << std::endl;
             }
-            //break;
+            if (i > 50)
+                break;
         }
 
     if (correct)
