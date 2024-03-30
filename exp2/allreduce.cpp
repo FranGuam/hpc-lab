@@ -15,22 +15,28 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
     //TODO
     // Stage 1
     MPI_Request req;
-    int offset;
+    int offset = my_rank;
     int src = (my_rank - 1 + comm_sz) % comm_sz;
     int dst = (my_rank + 1) % comm_sz;
     for (int i = 0; i < n; i++) {
-        offset = (my_rank + n - i) % n;
         float recv;
-        if (i != 0) MPI_Recv(&recv, 1, MPI_FLOAT, src, i - 1, comm, nullptr);
         ((float*)recvbuf)[offset] = ((float*)sendbuf)[offset];
-        if (i != 0) ((float*)recvbuf)[offset] += recv;
-        if (i != n - 1) MPI_Isend((float*)recvbuf + offset, 1, MPI_FLOAT, dst, i, comm, &req);
+        if (i != 0) {
+            MPI_Recv(&recv, 1, MPI_FLOAT, src, i - 1, comm, nullptr);
+            ((float*)recvbuf)[offset] += recv;
+        }
+        if (i != n - 1) {
+            MPI_Isend((float*)recvbuf + offset, 1, MPI_FLOAT, dst, i, comm, &req);
+            offset--;
+            if (offset < 0) offset = n - 1;
+        }
     }
     // Stage 2
     for (int i = 0; i < n; i++) {
-        if (i != 0) offset = (my_rank + 1 + n - i) % n;
         if (i != 0) MPI_Recv((float*)recvbuf + offset, 1, MPI_FLOAT, src, i - 1, comm, nullptr);
         if (i != n - 1) MPI_Isend((float*)recvbuf + offset, 1, MPI_FLOAT, dst, i, comm, &req);
+        offset--;
+        if (offset < 0) offset = n - 1;
     }
     return;
 }
@@ -78,7 +84,7 @@ int main(int argc, char *argv[])
             std::cout << "My Rank:" << my_rank << std::endl;
             std::cout << "Index:" << i << std::endl;
             std::cout << "MPI result:" << mpi_recvbuf[i] << std::endl;
-            std::cout << "Ring result:" << ring_recvbuf[i] << std::endl;
+            std::cout << "Ring result:" << ring_recvbuf[i] << std::endl << std::endl;
             if (i > 10)
                 break;
         }
