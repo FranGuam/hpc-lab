@@ -20,7 +20,6 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
     int offset = my_rank * slice;
     // Stage 1
     for (int i = 0; i < comm_sz; i++) {
-        float* buffer = new float[slice];
         if (i != 0) {
             MPI_Recv((float*)recvbuf + offset, slice, MPI_FLOAT, src, i - 1, comm, nullptr);
         }
