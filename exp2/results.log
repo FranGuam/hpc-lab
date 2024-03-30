@@ -1,0 +1,616 @@
++ for node in 1 2 4
++ for process in 7 14 28 56 112
++ '[' 7 -gt 28 ']'
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 7 ./allreduce 10 112
+Correct.
+MPI_Allreduce:   2.46741 ms.
+Naive_Allreduce: 0.178244 ms.
+Ring_Allreduce:  4.44011 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 7 ./allreduce 10 1120
+Correct.
+MPI_Allreduce:   0.299506 ms.
+Naive_Allreduce: 0.387071 ms.
+Ring_Allreduce:  0.185127 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 7 ./allreduce 10 11200
+Correct.
+MPI_Allreduce:   0.868554 ms.
+Naive_Allreduce: 1.51786 ms.
+Ring_Allreduce:  0.583634 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 7 ./allreduce 10 112000
+Correct.
+MPI_Allreduce:   5.94549 ms.
+Naive_Allreduce: 8.20528 ms.
+Ring_Allreduce:  4.31321 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 7 ./allreduce 10 1120000
+Correct.
+MPI_Allreduce:   46.6222 ms.
+Naive_Allreduce: 63.5522 ms.
+Ring_Allreduce:  35.2972 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 7 ./allreduce 10 11200000
+Correct.
+MPI_Allreduce:   559.57 ms.
+Naive_Allreduce: 779.83 ms.
+Ring_Allreduce:  366.111 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 7 ./allreduce 10 112000000
+Correct.
+MPI_Allreduce:   3968.33 ms.
+Naive_Allreduce: 7154.86 ms.
+Ring_Allreduce:  3350.31 ms.
++ for process in 7 14 28 56 112
++ '[' 14 -gt 28 ']'
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 14 ./allreduce 10 112
+Correct.
+MPI_Allreduce:   0.223945 ms.
+Naive_Allreduce: 0.209246 ms.
+Ring_Allreduce:  5.58238 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 14 ./allreduce 10 1120
+Correct.
+MPI_Allreduce:   0.397722 ms.
+Naive_Allreduce: 0.518816 ms.
+Ring_Allreduce:  0.406275 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 14 ./allreduce 10 11200
+Correct.
+MPI_Allreduce:   0.898751 ms.
+Naive_Allreduce: 1.85883 ms.
+Ring_Allreduce:  0.749476 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 14 ./allreduce 10 112000
+Correct.
+MPI_Allreduce:   6.35639 ms.
+Naive_Allreduce: 7.73521 ms.
+Ring_Allreduce:  4.94207 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 14 ./allreduce 10 1120000
+Correct.
+MPI_Allreduce:   58.6619 ms.
+Naive_Allreduce: 74.7388 ms.
+Ring_Allreduce:  42.5728 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 14 ./allreduce 10 11200000
+Correct.
+MPI_Allreduce:   623.311 ms.
+Naive_Allreduce: 846.445 ms.
+Ring_Allreduce:  529.627 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 14 ./allreduce 10 112000000
+Correct.
+MPI_Allreduce:   6975.41 ms.
+Naive_Allreduce: 8160.28 ms.
+Ring_Allreduce:  4722.04 ms.
++ for process in 7 14 28 56 112
++ '[' 28 -gt 28 ']'
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 28 ./allreduce 10 112
+Correct.
+MPI_Allreduce:   3.72213 ms.
+Naive_Allreduce: 0.254662 ms.
+Ring_Allreduce:  0.207466 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 28 ./allreduce 10 1120
+Correct.
+MPI_Allreduce:   0.429241 ms.
+Naive_Allreduce: 0.50983 ms.
+Ring_Allreduce:  0.503635 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 28 ./allreduce 10 11200
+Correct.
+MPI_Allreduce:   1.0449 ms.
+Naive_Allreduce: 2.34796 ms.
+Ring_Allreduce:  1.00245 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 28 ./allreduce 10 112000
+Correct.
+MPI_Allreduce:   6.08282 ms.
+Naive_Allreduce: 10.0029 ms.
+Ring_Allreduce:  6.51261 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 28 ./allreduce 10 1120000
+Correct.
+MPI_Allreduce:   118.097 ms.
+Naive_Allreduce: 109.258 ms.
+Ring_Allreduce:  71.9161 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 28 ./allreduce 10 11200000
+Correct.
+MPI_Allreduce:   1143.39 ms.
+Naive_Allreduce: 1142.16 ms.
+Ring_Allreduce:  813.474 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 1 -n 28 ./allreduce 10 112000000
+Correct.
+MPI_Allreduce:   9830.62 ms.
+Naive_Allreduce: 9746.14 ms.
+Ring_Allreduce:  8652.98 ms.
++ for process in 7 14 28 56 112
++ '[' 56 -gt 28 ']'
++ echo 'Skip 1 nodes with 56 processes'
+Skip 1 nodes with 56 processes
++ continue
++ for process in 7 14 28 56 112
++ '[' 112 -gt 28 ']'
++ echo 'Skip 1 nodes with 112 processes'
+Skip 1 nodes with 112 processes
++ continue
++ for node in 1 2 4
++ for process in 7 14 28 56 112
++ '[' 3 -gt 28 ']'
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 7 ./allreduce 10 112
+Correct.
+MPI_Allreduce:   0.146932 ms.
+Naive_Allreduce: 0.139967 ms.
+Ring_Allreduce:  6.06884 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 7 ./allreduce 10 1120
+Correct.
+MPI_Allreduce:   0.308903 ms.
+Naive_Allreduce: 0.367882 ms.
+Ring_Allreduce:  0.207416 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 7 ./allreduce 10 11200
+Correct.
+MPI_Allreduce:   0.64608 ms.
+Naive_Allreduce: 1.15718 ms.
+Ring_Allreduce:  0.630838 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 7 ./allreduce 10 112000
+Correct.
+MPI_Allreduce:   4.57172 ms.
+Naive_Allreduce: 5.64159 ms.
+Ring_Allreduce:  3.27245 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 7 ./allreduce 10 1120000
+Correct.
+MPI_Allreduce:   38.4615 ms.
+Naive_Allreduce: 62.0298 ms.
+Ring_Allreduce:  28.0038 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 7 ./allreduce 10 11200000
+Correct.
+MPI_Allreduce:   495.458 ms.
+Naive_Allreduce: 828.914 ms.
+Ring_Allreduce:  430.073 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 7 ./allreduce 10 112000000
+Correct.
+MPI_Allreduce:   4809.68 ms.
+Naive_Allreduce: 8395.39 ms.
+Ring_Allreduce:  3274.35 ms.
++ for process in 7 14 28 56 112
++ '[' 7 -gt 28 ']'
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 14 ./allreduce 10 112
+Correct.
+MPI_Allreduce:   2.221 ms.
+Naive_Allreduce: 0.224128 ms.
+Ring_Allreduce:  2.22522 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 14 ./allreduce 10 1120
+Correct.
+MPI_Allreduce:   0.493583 ms.
+Naive_Allreduce: 0.467974 ms.
+Ring_Allreduce:  0.368712 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 14 ./allreduce 10 11200
+Correct.
+MPI_Allreduce:   0.869472 ms.
+Naive_Allreduce: 1.57558 ms.
+Ring_Allreduce:  1.04095 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 14 ./allreduce 10 112000
+Correct.
+MPI_Allreduce:   6.81904 ms.
+Naive_Allreduce: 9.53933 ms.
+Ring_Allreduce:  5.47708 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 14 ./allreduce 10 1120000
+Correct.
+MPI_Allreduce:   69.1457 ms.
+Naive_Allreduce: 77.8454 ms.
+Ring_Allreduce:  37.781 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 14 ./allreduce 10 11200000
+Correct.
+MPI_Allreduce:   697.635 ms.
+Naive_Allreduce: 835.374 ms.
+Ring_Allreduce:  519.196 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 14 ./allreduce 10 112000000
+Correct.
+MPI_Allreduce:   4825.46 ms.
+Naive_Allreduce: 7957.36 ms.
+Ring_Allreduce:  4423.48 ms.
++ for process in 7 14 28 56 112
++ '[' 14 -gt 28 ']'
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 28 ./allreduce 10 112
+Correct.
+MPI_Allreduce:   0.244162 ms.
+Naive_Allreduce: 0.263547 ms.
+Ring_Allreduce:  0.258354 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 28 ./allreduce 10 1120
+Correct.
+MPI_Allreduce:   0.450043 ms.
+Naive_Allreduce: 0.542202 ms.
+Ring_Allreduce:  0.605317 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 28 ./allreduce 10 11200
+Correct.
+MPI_Allreduce:   0.997613 ms.
+Naive_Allreduce: 2.32233 ms.
+Ring_Allreduce:  1.02836 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 28 ./allreduce 10 112000
+Correct.
+MPI_Allreduce:   6.8784 ms.
+Naive_Allreduce: 10.3949 ms.
+Ring_Allreduce:  6.87255 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 28 ./allreduce 10 1120000
+Correct.
+MPI_Allreduce:   113.668 ms.
+Naive_Allreduce: 103.653 ms.
+Ring_Allreduce:  72.6214 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 28 ./allreduce 10 11200000
+Correct.
+MPI_Allreduce:   1060.36 ms.
+Naive_Allreduce: 1178.71 ms.
+Ring_Allreduce:  822.798 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 28 ./allreduce 10 112000000
+Correct.
+MPI_Allreduce:   12031.2 ms.
+Naive_Allreduce: 11025 ms.
+Ring_Allreduce:  9375.28 ms.
++ for process in 7 14 28 56 112
++ '[' 28 -gt 28 ']'
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 56 ./allreduce 10 112
+Correct.
+MPI_Allreduce:   0.306007 ms.
+Naive_Allreduce: 0.352938 ms.
+Ring_Allreduce:  0.443726 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 56 ./allreduce 10 1120
+Correct.
+MPI_Allreduce:   0.630176 ms.
+Naive_Allreduce: 0.706282 ms.
+Ring_Allreduce:  0.677655 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 56 ./allreduce 10 11200
+Correct.
+MPI_Allreduce:   1.56684 ms.
+Naive_Allreduce: 2.77955 ms.
+Ring_Allreduce:  1.56143 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 56 ./allreduce 10 112000
+Correct.
+MPI_Allreduce:   6.45154 ms.
+Naive_Allreduce: 11.5369 ms.
+Ring_Allreduce:  6.0836 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 56 ./allreduce 10 1120000
+Correct.
+MPI_Allreduce:   128.422 ms.
+Naive_Allreduce: 114.349 ms.
+Ring_Allreduce:  70.3305 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 56 ./allreduce 10 11200000
+Correct.
+MPI_Allreduce:   1265.25 ms.
+Naive_Allreduce: 1273.52 ms.
+Ring_Allreduce:  752.503 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 2 -n 56 ./allreduce 10 112000000
+Correct.
+MPI_Allreduce:   13055.6 ms.
+Naive_Allreduce: 11143.6 ms.
+Ring_Allreduce:  8862.76 ms.
++ for process in 7 14 28 56 112
++ '[' 56 -gt 28 ']'
++ echo 'Skip 2 nodes with 112 processes'
+Skip 2 nodes with 112 processes
++ continue
++ for node in 1 2 4
++ for process in 7 14 28 56 112
++ '[' 1 -gt 28 ']'
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 7 ./allreduce 10 112
+srun: job 534261 queued and waiting for resources
+srun: job 534261 has been allocated resources
+Correct.
+MPI_Allreduce:   0.138284 ms.
+Naive_Allreduce: 0.133207 ms.
+Ring_Allreduce:  0.118346 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 7 ./allreduce 10 1120
+srun: job 534262 queued and waiting for resources
+srun: job 534262 has been allocated resources
+Correct.
+MPI_Allreduce:   0.291328 ms.
+Naive_Allreduce: 0.319729 ms.
+Ring_Allreduce:  0.238448 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 7 ./allreduce 10 11200
+srun: job 534263 queued and waiting for resources
+srun: job 534263 has been allocated resources
+Correct.
+MPI_Allreduce:   0.828435 ms.
+Naive_Allreduce: 1.18277 ms.
+Ring_Allreduce:  0.790574 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 7 ./allreduce 10 112000
+srun: job 534264 queued and waiting for resources
+srun: job 534264 has been allocated resources
+Correct.
+MPI_Allreduce:   4.33869 ms.
+Naive_Allreduce: 5.96874 ms.
+Ring_Allreduce:  3.34126 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 7 ./allreduce 10 1120000
+srun: job 534265 queued and waiting for resources
+srun: job 534265 has been allocated resources
+Correct.
+MPI_Allreduce:   54.9056 ms.
+Naive_Allreduce: 53.8928 ms.
+Ring_Allreduce:  30.0314 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 7 ./allreduce 10 11200000
+srun: job 534266 queued and waiting for resources
+srun: job 534266 has been allocated resources
+Correct.
+MPI_Allreduce:   503.504 ms.
+Naive_Allreduce: 810.814 ms.
+Ring_Allreduce:  298.301 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 7 ./allreduce 10 112000000
+srun: job 534267 queued and waiting for resources
+srun: job 534267 has been allocated resources
+Correct.
+MPI_Allreduce:   3907.51 ms.
+Naive_Allreduce: 7117.46 ms.
+Ring_Allreduce:  3193.88 ms.
++ for process in 7 14 28 56 112
++ '[' 3 -gt 28 ']'
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 14 ./allreduce 10 112
+srun: job 534268 queued and waiting for resources
+srun: job 534268 has been allocated resources
+Correct.
+MPI_Allreduce:   2.01239 ms.
+Naive_Allreduce: 0.220483 ms.
+Ring_Allreduce:  2.30532 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 14 ./allreduce 10 1120
+srun: job 534269 queued and waiting for resources
+srun: job 534269 has been allocated resources
+Correct.
+MPI_Allreduce:   0.390026 ms.
+Naive_Allreduce: 0.451053 ms.
+Ring_Allreduce:  0.390678 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 14 ./allreduce 10 11200
+srun: job 534270 queued and waiting for resources
+srun: job 534270 has been allocated resources
+Correct.
+MPI_Allreduce:   0.966716 ms.
+Naive_Allreduce: 1.72569 ms.
+Ring_Allreduce:  1.30402 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 14 ./allreduce 10 112000
+srun: job 534271 queued and waiting for resources
+srun: job 534271 has been allocated resources
+Correct.
+MPI_Allreduce:   6.36579 ms.
+Naive_Allreduce: 10.7617 ms.
+Ring_Allreduce:  11.9664 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 14 ./allreduce 10 1120000
+srun: job 534272 queued and waiting for resources
+srun: job 534272 has been allocated resources
+Correct.
+MPI_Allreduce:   56.4715 ms.
+Naive_Allreduce: 79.6712 ms.
+Ring_Allreduce:  46.6049 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 14 ./allreduce 10 11200000
+srun: job 534273 queued and waiting for resources
+srun: job 534273 has been allocated resources
+Correct.
+MPI_Allreduce:   604.881 ms.
+Naive_Allreduce: 857.364 ms.
+Ring_Allreduce:  415.336 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 14 ./allreduce 10 112000000
+srun: job 534274 queued and waiting for resources
+srun: job 534274 has been allocated resources
+Correct.
+MPI_Allreduce:   4990.15 ms.
+Naive_Allreduce: 8326.05 ms.
+Ring_Allreduce:  4245.3 ms.
++ for process in 7 14 28 56 112
++ '[' 7 -gt 28 ']'
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 28 ./allreduce 10 112
+srun: job 534275 queued and waiting for resources
+srun: job 534275 has been allocated resources
+Correct.
+MPI_Allreduce:   5.07324 ms.
+Naive_Allreduce: 0.265223 ms.
+Ring_Allreduce:  0.287277 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 28 ./allreduce 10 1120
+srun: job 534276 queued and waiting for resources
+srun: job 534276 has been allocated resources
+Correct.
+MPI_Allreduce:   0.448523 ms.
+Naive_Allreduce: 0.556245 ms.
+Ring_Allreduce:  0.592369 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 28 ./allreduce 10 11200
+srun: job 534277 queued and waiting for resources
+srun: job 534277 has been allocated resources
+Correct.
+MPI_Allreduce:   1.07797 ms.
+Naive_Allreduce: 2.4943 ms.
+Ring_Allreduce:  1.02648 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 28 ./allreduce 10 112000
+srun: job 534278 queued and waiting for resources
+srun: job 534278 has been allocated resources
+Correct.
+MPI_Allreduce:   6.04354 ms.
+Naive_Allreduce: 10.8313 ms.
+Ring_Allreduce:  8.20228 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 28 ./allreduce 10 1120000
+srun: job 534279 queued and waiting for resources
+srun: job 534279 has been allocated resources
+Correct.
+MPI_Allreduce:   100.507 ms.
+Naive_Allreduce: 98.8512 ms.
+Ring_Allreduce:  74.5216 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 28 ./allreduce 10 11200000
+srun: job 534280 queued and waiting for resources
+srun: job 534280 has been allocated resources
+Correct.
+MPI_Allreduce:   943.98 ms.
+Naive_Allreduce: 1046.99 ms.
+Ring_Allreduce:  671.871 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 28 ./allreduce 10 112000000
+srun: job 534281 queued and waiting for resources
+srun: job 534281 has been allocated resources
+Correct.
+MPI_Allreduce:   11019.4 ms.
+Naive_Allreduce: 9530.2 ms.
+Ring_Allreduce:  7822.73 ms.
++ for process in 7 14 28 56 112
++ '[' 14 -gt 28 ']'
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 56 ./allreduce 10 112
+srun: job 534283 queued and waiting for resources
+srun: job 534283 has been allocated resources
+Correct.
+MPI_Allreduce:   0.306725 ms.
+Naive_Allreduce: 0.338234 ms.
+Ring_Allreduce:  0.526663 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 56 ./allreduce 10 1120
+srun: job 534284 queued and waiting for resources
+srun: job 534284 has been allocated resources
+Correct.
+MPI_Allreduce:   0.612244 ms.
+Naive_Allreduce: 0.640909 ms.
+Ring_Allreduce:  0.760629 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 56 ./allreduce 10 11200
+srun: job 534285 queued and waiting for resources
+srun: job 534285 has been allocated resources
+Correct.
+MPI_Allreduce:   1.57275 ms.
+Naive_Allreduce: 2.84208 ms.
+Ring_Allreduce:  1.66636 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 56 ./allreduce 10 112000
+srun: job 534286 queued and waiting for resources
+srun: job 534286 has been allocated resources
+Correct.
+MPI_Allreduce:   7.92387 ms.
+Naive_Allreduce: 19.5337 ms.
+Ring_Allreduce:  7.74658 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 56 ./allreduce 10 1120000
+srun: job 534287 queued and waiting for resources
+srun: job 534287 has been allocated resources
+Correct.
+MPI_Allreduce:   112.676 ms.
+Naive_Allreduce: 117.75 ms.
+Ring_Allreduce:  76.3228 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 56 ./allreduce 10 11200000
+srun: job 534288 queued and waiting for resources
+srun: job 534288 has been allocated resources
+Correct.
+MPI_Allreduce:   987.501 ms.
+Naive_Allreduce: 1135.15 ms.
+Ring_Allreduce:  671.407 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 56 ./allreduce 10 112000000
+srun: job 534289 queued and waiting for resources
+srun: job 534289 has been allocated resources
+Correct.
+MPI_Allreduce:   10687.5 ms.
+Naive_Allreduce: 9515.83 ms.
+Ring_Allreduce:  8409.26 ms.
++ for process in 7 14 28 56 112
++ '[' 28 -gt 28 ']'
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 112 ./allreduce 10 112
+srun: job 534290 queued and waiting for resources
+srun: job 534290 has been allocated resources
+Correct.
+MPI_Allreduce:   0.386333 ms.
+Naive_Allreduce: 0.421243 ms.
+Ring_Allreduce:  3.01854 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 112 ./allreduce 10 1120
+srun: job 534291 queued and waiting for resources
+srun: job 534291 has been allocated resources
+Correct.
+MPI_Allreduce:   2.58003 ms.
+Naive_Allreduce: 0.979357 ms.
+Ring_Allreduce:  4.01851 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 112 ./allreduce 10 11200
+srun: job 534292 queued and waiting for resources
+srun: job 534292 has been allocated resources
+Correct.
+MPI_Allreduce:   3.03967 ms.
+Naive_Allreduce: 4.48559 ms.
+Ring_Allreduce:  2.92204 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 112 ./allreduce 10 112000
+srun: job 534293 queued and waiting for resources
+srun: job 534293 has been allocated resources
+Correct.
+MPI_Allreduce:   10.0239 ms.
+Naive_Allreduce: 17.6646 ms.
+Ring_Allreduce:  8.09887 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 112 ./allreduce 10 1120000
+srun: job 534294 queued and waiting for resources
+srun: job 534294 has been allocated resources
+Correct.
+MPI_Allreduce:   131.82 ms.
+Naive_Allreduce: 155.034 ms.
+Ring_Allreduce:  93.6058 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 112 ./allreduce 10 11200000
+srun: job 534295 queued and waiting for resources
+srun: job 534295 has been allocated resources
+Correct.
+MPI_Allreduce:   1061.93 ms.
+Naive_Allreduce: 1895.68 ms.
+Ring_Allreduce:  747.734 ms.
++ for scale in 112 1120 11200 112000 1120000 11200000 112000000
++ srun -N 4 -n 112 ./allreduce 10 112000000
+srun: job 534296 queued and waiting for resources
+srun: job 534296 has been allocated resources
+Correct.
+MPI_Allreduce:   13475 ms.
+Naive_Allreduce: 12104.1 ms.
+Ring_Allreduce:  9495.55 ms.
