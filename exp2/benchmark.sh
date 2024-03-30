@@ -9,8 +9,12 @@ spack load openmpi
 set -x
 
 for node in 1 2 4; do
-    for process in 4 8 16 32 64; do
-        for scale in 256 2048 16384 131072 1048576 8388608 67108864 536870912; do
+    for process in 7 14 28 56 112; do
+        if [ $(( $process / $node )) -gt 28 ]; then
+            echo "Skip $node nodes with $process processes"
+            continue
+        fi
+        for scale in 112 1120 11200 112000 1120000 11200000 112000000; do
             srun -N $node -n $process ./allreduce 10 $scale
         done
     done
