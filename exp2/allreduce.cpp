@@ -15,27 +15,23 @@ void Ring_Allreduce(void* sendbuf, void* recvbuf, int n, MPI_Comm comm, int comm
     //TODO
     // Stage 1
     MPI_Request req;
+    int offset;
     int src = (my_rank - 1 + comm_sz) % comm_sz;
     int dst = (my_rank + 1) % comm_sz;
-    for (int i = 0; i < comm_sz - 1; i++) {
-        int offset = (my_rank - i + comm_sz) % comm_sz;
+    for (int i = 0; i < n; i++) {
+        offset = (my_rank + n - i) % n;
         float recv;
         if (i != 0) MPI_Recv(&recv, 1, MPI_FLOAT, src, i - 1, comm, nullptr);
-        ((float*)sendbuf)[offset] += recv;
-        MPI_Isend((float*)sendbuf + offset, 1, MPI_FLOAT, dst, i, comm, &req);
+        ((float*)recvbuf)[offset] = ((float*)sendbuf)[offset];
+        if (i != 0) ((float*)recvbuf)[offset] += recv;
+        if (i != n - 1) MPI_Isend((float*)recvbuf + offset, 1, MPI_FLOAT, dst, i, comm, &req);
     }
-    float recv;
-    MPI_Recv(&recv, 1, MPI_FLOAT, src, comm_sz - 2, comm, nullptr);
-    int sum_pos = (my_rank + 1) % comm_sz;
-    ((float*)recvbuf)[sum_pos] = ((float*)sendbuf)[sum_pos] + recv;
     // Stage 2
-    for (int i = 0; i < comm_sz - 1; i++) {
-        int offset = (my_rank + 1 - i + comm_sz) % comm_sz;
+    for (int i = 0; i < n; i++) {
+        if (i != 0) offset = (my_rank + 1 + n - i) % n;
         if (i != 0) MPI_Recv((float*)recvbuf + offset, 1, MPI_FLOAT, src, i - 1, comm, nullptr);
-        MPI_Isend((float*)recvbuf + offset, 1, MPI_FLOAT, dst, i, comm, &req);
+        if (i != n - 1) MPI_Isend((float*)recvbuf + offset, 1, MPI_FLOAT, dst, i, comm, &req);
     }
-    int offset = (my_rank + 2) % comm_sz;
-    MPI_Recv((float*)recvbuf + offset, 1, MPI_FLOAT, src, comm_sz - 2, comm, nullptr);
     return;
 }
 
