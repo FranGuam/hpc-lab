@@ -51,10 +51,10 @@ void Worker::sort() {
   int slice_num = block_len / current_sort_size;
   int send_len = 0;
   int recv_len = 0;
-  float* send_buf;
-  float* comp_buf;
-  float* data_buf;
-  float* recv_buf;
+  float* send_buf = nullptr;
+  float* comp_buf = nullptr;
+  float* data_buf = nullptr;
+  float* recv_buf = nullptr;
   MPI_Request req;
 
   #pragma omp parallel for schedule(guided)
