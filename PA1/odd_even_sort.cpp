@@ -157,12 +157,11 @@ void Worker::sort() {
       }
       delete[] recv_buf;
     }
-    if (!out_of_range && downward_count < slice_num / 2 && upward_count < slice_num / 2) {
+    if (!finished && downward_count < slice_num / 2 && upward_count < slice_num / 2) {
       data_buf = new float[block_len];
       #pragma omp parallel for schedule(guided)
       for (int i = 0; i < slice_num; i += 2) {
         if (i == slice_num - 1) {
-          if (i == 0) break;
           std::merge(
             data + (i - 2) * current_sort_size, data + i * current_sort_size,
             data + i * current_sort_size, data + block_len,
