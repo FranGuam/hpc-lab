@@ -130,7 +130,7 @@ void Worker::sort() {
           data[i * current_sort_size] = send_buf[i + send_len];
           // 冒泡
           if (i == slice_num - 1) {
-            for (int j = i * current_sort_size; j < block_len; j++) {
+            for (int j = i * current_sort_size; j < (int)block_len; j++) {
               if (data[j] < data[j + 1]) break;
               std::swap(data[j], data[j + 1]);
             }
