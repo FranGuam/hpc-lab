@@ -167,7 +167,6 @@ void Worker::sort() {
       }
       delete[] recv_buf;
     }
-    finished = upward_count == 0 && downward_count == 0 && slice_num == 1;
     if (!finished && downward_count < slice_num / 2 && upward_count < slice_num / 2) {
       data_buf = new float[block_len];
       #pragma omp parallel for schedule(guided)
@@ -201,6 +200,7 @@ void Worker::sort() {
       slice_num = block_len / current_sort_size;
       delete[] data_buf;
     }
+    finished = upward_count == 0 && downward_count == 0 && slice_num == 1;
     // TODO: Ring Reduce
     MPI_Allreduce(&finished, &all_finished, 1, MPI_C_BOOL, MPI_LAND, MPI_COMM_WORLD);
     if (rank) {
