@@ -20,7 +20,7 @@ int merge(float* recv_buf, int recv_len, float* comp_buf, int slice_num, float* 
     if (comp_buf == comp_end) {
       *result++ = *recv_buf++;
     }
-    else if (*recv_buf < *comp_buf) {
+    else if (*recv_buf <= *comp_buf) {
       *result++ = *recv_buf++;
     } else {
       *result++ = *comp_buf++;
@@ -157,7 +157,7 @@ void Worker::sort() {
       }
       delete[] recv_buf;
     }
-    if (!finished && downward_count < slice_num / 2 && upward_count < slice_num / 2) {
+    if (!finished && downward_count <= slice_num / 2 && upward_count <= slice_num / 2) {
       data_buf = new float[block_len];
       #pragma omp parallel for schedule(guided)
       for (int i = 0; i < slice_num; i += 2) {
@@ -196,6 +196,12 @@ void Worker::sort() {
     if (rank) {
       MPI_Wait(&req, nullptr);
     }
-    std::cout << "Rank " << rank << ": " << slice_num << std::endl;
+    std::cout << "Rank " << rank << ": Size " << current_sort_size << " , Slice " << slice_num << " , Upward " << upward_count << " , Downward " << downward_count << std::endl;
+    if (rank == 0) {
+      for (int i = 0; i < block_len; i++) {
+        std::cout << data[i] << " ";
+      }
+      std::cout << std::endl;
+    }
   }
 }
