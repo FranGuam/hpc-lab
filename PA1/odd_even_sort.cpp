@@ -196,5 +196,6 @@ void Worker::sort() {
     if (rank) {
       MPI_Wait(&req, nullptr);
     }
+    std::cout << "Rank " << rank << ": " << slice_num << std::endl;
   }
 }
