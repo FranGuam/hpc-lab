@@ -157,7 +157,8 @@ void Worker::sort() {
       }
       delete[] recv_buf;
     }
-    if (!finished && downward_count <= slice_num / 2 && upward_count <= slice_num / 2) {
+    finished = upward_count == 0 && downward_count == 0 && slice_num == 1;
+    if (!finished && downward_count < slice_num / 2 && upward_count < slice_num / 2) {
       data_buf = new float[block_len];
       #pragma omp parallel for schedule(guided)
       for (int i = 0; i < slice_num; i += 2) {
@@ -188,7 +189,6 @@ void Worker::sort() {
       }
       current_sort_size *= 2;
       slice_num = block_len / current_sort_size;
-      if (slice_num == 1) finished = true;
       delete[] data_buf;
     }
     // TODO: Ring Reduce
