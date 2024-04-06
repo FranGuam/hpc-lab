@@ -186,17 +186,13 @@ void Worker::sort() {
           std::copy(data_buf + i * current_sort_size, data_buf + (i + 2) * current_sort_size, data + i * current_sort_size);
         }
       }
-      if (slice_num != 1) {
-        current_sort_size *= 2;
-        slice_num = block_len / current_sort_size;
-      }
+      current_sort_size *= 2;
+      slice_num = block_len / current_sort_size;
+      if (slice_num == 1) finished = true;
       delete[] data_buf;
     }
-    if (slice_num == 1) {
-      finished = true;
-      // TODO: Ring Reduce
-      MPI_Allreduce(&finished, &all_finished, 1, MPI_C_BOOL, MPI_LAND, MPI_COMM_WORLD);
-    }
+    // TODO: Ring Reduce
+    MPI_Allreduce(&finished, &all_finished, 1, MPI_C_BOOL, MPI_LAND, MPI_COMM_WORLD);
     if (rank) {
       MPI_Wait(&req, nullptr);
     }
