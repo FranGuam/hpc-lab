@@ -201,11 +201,12 @@ void Worker::sort() {
       delete[] data_buf;
     }
     finished = upward_count == 0 && downward_count == 0 && slice_num == 1;
-    // TODO: Ring Reduce
-    MPI_Allreduce(&finished, &all_finished, 1, MPI_C_BOOL, MPI_LAND, MPI_COMM_WORLD);
     if (rank) {
       MPI_Wait(&req, nullptr);
     }
+    // TODO: Ring Reduce
+    MPI_Iallreduce(&finished, &all_finished, 1, MPI_C_BOOL, MPI_LAND, MPI_COMM_WORLD, &req);
     std::cout << "Rank " << rank << ": Size " << current_sort_size << " , Slice " << slice_num << " , Upward " << upward_count << " , Downward " << downward_count << " , Finished " << finished << std::endl;
+    MPI_Wait(&req, nullptr);
   }
 }
