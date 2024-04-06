@@ -162,17 +162,8 @@ void Worker::sort() {
       if (rank == 2) std::cout << "Entered" << std::endl;
       data_buf = new float[block_len];
       #pragma omp parallel for schedule(guided)
-      for (int i = 0; i < slice_num; i += 2) {
-        if (i == slice_num - 1) {
-          if (rank == 2) std::cout << "Entered 1" << std::endl;
-          std::merge(
-            data + (i - 2) * current_sort_size, data + i * current_sort_size,
-            data + i * current_sort_size, data + block_len,
-            data_buf + (i - 2) * current_sort_size
-          );
-          std::copy(data_buf + (i - 2) * current_sort_size, data_buf + block_len, data + (i - 2) * current_sort_size);
-        }
-        else if (i == slice_num - 2) {
+      for (int i = 0; i < slice_num - 1; i += 2) {
+        if (i == slice_num - 2) {
           if (rank == 2) std::cout << "Entered 2" << std::endl;
           std::merge(
             data + i * current_sort_size, data + (i + 1) * current_sort_size,
@@ -190,6 +181,15 @@ void Worker::sort() {
           );
           std::copy(data_buf + i * current_sort_size, data_buf + (i + 2) * current_sort_size, data + i * current_sort_size);
         }
+      }
+      if (i == slice_num - 1) {
+        if (rank == 2) std::cout << "Entered 1" << std::endl;
+        std::merge(
+          data + (i - 2) * current_sort_size, data + i * current_sort_size,
+          data + i * current_sort_size, data + block_len,
+          data_buf + (i - 2) * current_sort_size
+        );
+        std::copy(data_buf + (i - 2) * current_sort_size, data_buf + block_len, data + (i - 2) * current_sort_size);
       }
       current_sort_size *= 2;
       slice_num = block_len / current_sort_size;
