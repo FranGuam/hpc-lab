@@ -161,8 +161,9 @@ void Worker::sort() {
     if (!finished && downward_count < slice_num / 2 && upward_count < slice_num / 2) {
       if (rank == 2) std::cout << "Entered" << std::endl;
       data_buf = new float[block_len];
+      int i = 0;
       #pragma omp parallel for schedule(guided)
-      for (int i = 0; i < slice_num - 1; i += 2) {
+      for (; i < slice_num - 1; i += 2) {
         if (i == slice_num - 2) {
           if (rank == 2) std::cout << "Entered 2" << std::endl;
           std::merge(
