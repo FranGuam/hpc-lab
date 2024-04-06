@@ -7,7 +7,7 @@
 
 #include "worker.h"
 
-#define MIN_SORT_SIZE 6
+#define MIN_SORT_SIZE 4
 #define SCALAR_TAG 99
 #define DATA_TAG 100
 
