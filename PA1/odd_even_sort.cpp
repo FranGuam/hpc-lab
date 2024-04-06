@@ -198,7 +198,7 @@ void Worker::sort() {
     }
     std::cout << "Rank " << rank << ": Size " << current_sort_size << " , Slice " << slice_num << " , Upward " << upward_count << " , Downward " << downward_count << std::endl;
     if (rank == 0) {
-      for (int i = 0; i < block_len; i++) {
+      for (int i = 0; i < (int)block_len; i++) {
         std::cout << data[i] << " ";
       }
       std::cout << std::endl;
