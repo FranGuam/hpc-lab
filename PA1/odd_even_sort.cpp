@@ -62,6 +62,10 @@ void Worker::sort() {
     if (i == slice_num - 1)
     // TODO: 可以先冒泡最大值、再冒泡最小值，剩余再排序
       std::sort(data + i * current_sort_size, data + block_len);
+      for (int j = i * current_sort_size; j < block_len; j++) {
+        std::cout << data[j] << " ";
+      }
+      std::cout << std::endl;
     else
       std::sort(data + i * current_sort_size, data + (i + 1) * current_sort_size);
   }
@@ -123,9 +127,17 @@ void Worker::sort() {
         for (int i = 0; i < slice_num; i++) {
           data[i * current_sort_size] = send_buf[i + send_len];
           // 冒泡
-          for (int j = i * current_sort_size; j < (i + 1) * current_sort_size - 1; j++) {
-            if (data[j] < data[j + 1]) break;
-            std::swap(data[j], data[j + 1]);
+          if (i == slice_num - 1) {
+            for (int j = i * current_sort_size; j < block_len; j++) {
+              if (data[j] < data[j + 1]) break;
+              std::swap(data[j], data[j + 1]);
+            }
+          }
+          else {
+            for (int j = i * current_sort_size; j < (i + 1) * current_sort_size - 1; j++) {
+              if (data[j] < data[j + 1]) break;
+              std::swap(data[j], data[j + 1]);
+            }
           }
         }
       }
