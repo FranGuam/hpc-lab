@@ -164,7 +164,6 @@ void Worker::sort() {
       #pragma omp parallel for schedule(guided)
       for (int i = 0; i < slice_num - 1; i += 2) {
         if (i == slice_num - 2) {
-          if (rank == 2) std::cout << "Entered 2" << std::endl;
           std::merge(
             data + i * current_sort_size, data + (i + 1) * current_sort_size,
             data + (i + 1) * current_sort_size, data + block_len,
@@ -173,7 +172,6 @@ void Worker::sort() {
           std::copy(data_buf + i * current_sort_size, data_buf + block_len, data + i * current_sort_size);
         }
         else {
-          if (rank == 2) std::cout << "Entered 3" << std::endl;
           std::merge(
             data + i * current_sort_size, data + (i + 1) * current_sort_size,
             data + (i + 1) * current_sort_size, data + (i + 2) * current_sort_size,
@@ -183,7 +181,6 @@ void Worker::sort() {
         }
       }
       if (slice_num % 2 == 1) {
-        if (rank == 2) std::cout << "Entered 1" << std::endl;
         std::merge(
           data + (slice_num - 3) * current_sort_size, data + (slice_num - 1) * current_sort_size,
           data + (slice_num - 1) * current_sort_size, data + block_len,
@@ -201,7 +198,7 @@ void Worker::sort() {
       MPI_Wait(&req, nullptr);
     }
     std::cout << "Rank " << rank << ": Size " << current_sort_size << " , Slice " << slice_num << " , Upward " << upward_count << " , Downward " << downward_count << std::endl;
-    if (rank == 2) {
+    if (rank == 3) {
       for (int i = 0; i < (int)block_len; i++) {
         std::cout << data[i] << " ";
       }
