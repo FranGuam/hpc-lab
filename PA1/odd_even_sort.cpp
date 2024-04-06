@@ -46,6 +46,8 @@ void Worker::sort() {
   bool finished = out_of_range;
   bool all_finished = false;
   int current_sort_size = MIN_SORT_SIZE;
+  int upward_exchange_num = 1;
+  int downward_exchange_num = 1;
   int upward_count = 0;
   int downward_count = 0;
   int slice_num = block_len / current_sort_size;
@@ -167,38 +169,54 @@ void Worker::sort() {
       }
       delete[] recv_buf;
     }
-    if (!finished && downward_count < slice_num / 3 && upward_count < slice_num / 3) {
-      data_buf = new float[block_len];
-      #pragma omp parallel for schedule(guided)
-      for (int i = 0; i < slice_num - 1; i += 2) {
-        if (i == slice_num - 2) {
-          std::merge(
-            data + i * current_sort_size, data + (i + 1) * current_sort_size,
-            data + (i + 1) * current_sort_size, data + block_len,
-            data_buf + i * current_sort_size
-          );
-          std::copy(data_buf + i * current_sort_size, data_buf + block_len, data + i * current_sort_size);
-        }
-        else {
-          std::merge(
-            data + i * current_sort_size, data + (i + 1) * current_sort_size,
-            data + (i + 1) * current_sort_size, data + (i + 2) * current_sort_size,
-            data_buf + i * current_sort_size
-          );
-          std::copy(data_buf + i * current_sort_size, data_buf + (i + 2) * current_sort_size, data + i * current_sort_size);
-        }
+    if (!finished) {
+      bool upward_merge = upward_count < slice_num / 2 && upward_exchange_num == 1;
+      bool downward_merge = downward_count < slice_num / 2 && downward_exchange_num == 1;
+      if (upward_count < slice_num / 2 && upward_exchange_num != 1) {
+        upward_exchange_num /= 2;
       }
-      if (slice_num % 2 == 1) {
-        std::merge(
-          data + (slice_num - 3) * current_sort_size, data + (slice_num - 1) * current_sort_size,
-          data + (slice_num - 1) * current_sort_size, data + block_len,
-          data_buf + (slice_num - 3) * current_sort_size
-        );
-        std::copy(data_buf + (slice_num - 3) * current_sort_size, data_buf + block_len, data + (slice_num - 3) * current_sort_size);
+      else if (upward_count > slice_num * 0.75) {
+        upward_exchange_num *= 2;
       }
-      current_sort_size *= 2;
-      slice_num = block_len / current_sort_size;
-      delete[] data_buf;
+      if (downward_count < slice_num / 2 && downward_exchange_num != 1) {
+        downward_exchange_num /= 2;
+      }
+      else if (downward_count > slice_num * 0.75) {
+        downward_exchange_num *= 2;
+      }
+      if (upward_merge && downward_merge) {
+        data_buf = new float[block_len];
+        #pragma omp parallel for schedule(guided)
+        for (int i = 0; i < slice_num - 1; i += 2) {
+          if (i == slice_num - 2) {
+            std::merge(
+              data + i * current_sort_size, data + (i + 1) * current_sort_size,
+              data + (i + 1) * current_sort_size, data + block_len,
+              data_buf + i * current_sort_size
+            );
+            std::copy(data_buf + i * current_sort_size, data_buf + block_len, data + i * current_sort_size);
+          }
+          else {
+            std::merge(
+              data + i * current_sort_size, data + (i + 1) * current_sort_size,
+              data + (i + 1) * current_sort_size, data + (i + 2) * current_sort_size,
+              data_buf + i * current_sort_size
+            );
+            std::copy(data_buf + i * current_sort_size, data_buf + (i + 2) * current_sort_size, data + i * current_sort_size);
+          }
+        }
+        if (slice_num % 2 == 1) {
+          std::merge(
+            data + (slice_num - 3) * current_sort_size, data + (slice_num - 1) * current_sort_size,
+            data + (slice_num - 1) * current_sort_size, data + block_len,
+            data_buf + (slice_num - 3) * current_sort_size
+          );
+          std::copy(data_buf + (slice_num - 3) * current_sort_size, data_buf + block_len, data + (slice_num - 3) * current_sort_size);
+        }
+        current_sort_size *= 2;
+        slice_num = block_len / current_sort_size;
+        delete[] data_buf;
+      }
     }
     finished = upward_count == 0 && downward_count == 0 && slice_num == 1;
     if (rank) {
@@ -206,7 +224,12 @@ void Worker::sort() {
     }
     // TODO: Ring Reduce
     MPI_Iallreduce(&finished, &all_finished, 1, MPI_C_BOOL, MPI_LAND, MPI_COMM_WORLD, &req);
-    std::cout << "Rank " << rank << ": Size " << current_sort_size << " , Slice " << slice_num << " , Upward " << upward_count << " , Downward " << downward_count << " , Finished " << finished << std::endl;
+    std::cout << "Rank " << rank 
+    << ": Size " << current_sort_size
+    << ", Slice " << slice_num
+    << ", Upward " << upward_count
+    << ", Downward " << downward_count
+    << ", Finished " << finished << std::endl;
     MPI_Wait(&req, nullptr);
   }
 }
