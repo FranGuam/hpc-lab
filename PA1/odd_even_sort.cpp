@@ -59,15 +59,17 @@ void Worker::sort() {
 
   #pragma omp parallel for schedule(guided)
   for (int i = 0; i < slice_num; i++) {
-    if (i == slice_num - 1)
     // TODO: 可以先冒泡最大值、再冒泡最小值，剩余再排序
+    if (i == slice_num - 1) {
       std::sort(data + i * current_sort_size, data + block_len);
       for (int j = i * current_sort_size; j < block_len; j++) {
         std::cout << data[j] << " ";
       }
       std::cout << std::endl;
-    else
+    }
+    else {
       std::sort(data + i * current_sort_size, data + (i + 1) * current_sort_size);
+    }
   }
 
   while (!all_finished) {
