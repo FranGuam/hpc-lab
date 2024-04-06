@@ -62,7 +62,7 @@ void Worker::sort() {
     // TODO: 可以先冒泡最大值、再冒泡最小值，剩余再排序
     if (i == slice_num - 1) {
       std::sort(data + i * current_sort_size, data + block_len);
-      for (int j = i * current_sort_size; j < block_len; j++) {
+      for (int j = i * current_sort_size; j < (int)block_len; j++) {
         std::cout << data[j] << " ";
       }
       std::cout << std::endl;
