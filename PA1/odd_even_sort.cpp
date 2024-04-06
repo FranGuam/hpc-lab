@@ -167,7 +167,7 @@ void Worker::sort() {
       }
       delete[] recv_buf;
     }
-    if (!finished && downward_count < slice_num / 2 && upward_count < slice_num / 2) {
+    if (!finished && downward_count < slice_num / 3 && upward_count < slice_num / 3) {
       data_buf = new float[block_len];
       #pragma omp parallel for schedule(guided)
       for (int i = 0; i < slice_num - 1; i += 2) {
