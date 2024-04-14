@@ -129,7 +129,7 @@ void Worker::sort() {
     if (!last_rank) {
       MPI_Recv(data + first_half, second_half, MPI_FLOAT, rank + 1, rank + 1, MPI_COMM_WORLD, nullptr);
     }
-    std::inplace_merge(data, data + first_half, data + block_len);
+    if (!out_of_range) std::inplace_merge(data, data + first_half, data + block_len);
   }
 
   MPI_Wait(&request, nullptr);

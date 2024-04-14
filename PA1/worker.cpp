@@ -8,9 +8,6 @@
 #include "worker.h"
 
 void Worker::input(const char *input_name) {
-    if (rank == nprocs - 1) {
-        std::cout << "Rank " << rank << ": Step 1" << std::endl;
-    }
 #ifndef NDEBUG
     if (!out_of_range) {
         printf("Process %d handles [%lu, %lu)\n", rank, IO_offset, IO_offset + block_len);
@@ -18,19 +15,10 @@ void Worker::input(const char *input_name) {
         printf("Process %d is out of range, skipping...\n", rank);
     }
 #endif
-    if (rank == nprocs - 1) {
-        std::cout << "Rank " << rank << ": Step 2" << std::endl;
-    }
     // read 0 bytes is fine
     CHKERR(MPI_File_open(MPI_COMM_WORLD, input_name, MPI_MODE_RDONLY, MPI_INFO_NULL, &in_file));
-    if (rank == nprocs - 1) {
-        std::cout << "Rank " << rank << ": Step 3" << std::endl;
-    }
     CHKERR(MPI_File_read_at_all(in_file, IO_offset * sizeof(float), (void *)data, block_len, MPI_FLOAT,
                                 MPI_STATUS_IGNORE));
-    if (rank == nprocs - 1) {
-        std::cout << "Rank " << rank << ": Step 4" << std::endl;
-    }
     CHKERR(MPI_File_close(&in_file));
 }
 
