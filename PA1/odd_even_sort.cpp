@@ -106,7 +106,7 @@ void Worker::sort() {
 
   std::cout << "Rank: " << rank << ", First: " << first_half << ", Second: " << second_half << std::endl;
 
-  for (int i = 0; i < nprocs; i++) {
+  for (int i = 0; i < nprocs * 2; i++) {
     if (i) MPI_Wait(&request, nullptr);
     if (!last_rank) {
       MPI_Isend(data + first_half, second_half, MPI_FLOAT, rank + 1, rank, MPI_COMM_WORLD, &request);
