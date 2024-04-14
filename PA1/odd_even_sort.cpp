@@ -102,9 +102,9 @@ void Worker::sort() {
   float* send_buf = new float[(block_size + block_len + 1) / 2];
   MPI_Request request;
 
-  for (int i = 0; i < nprocs * 2; i++) {
+  for (int i = 0; i < nprocs; i++) {
+    if (i) MPI_Wait(&request, nullptr);
     if (!last_rank) {
-      if (i) MPI_Wait(&request, nullptr);
       MPI_Isend(data, block_len / 2, MPI_FLOAT, rank + 1, rank, MPI_COMM_WORLD, &request);
     }
     if (rank) {
