@@ -32,7 +32,8 @@ int main(int argc, char **argv) {
 #ifdef CHECK
   {
 #endif
-    data[i] = 20000000.0 / (rand() % 10000000);
+    // data[i] = 20000000.0 / (rand() % 10000000);
+    data[i] = n - i;
 #ifdef CHECK
     cout << data[i] << " ";
   }
