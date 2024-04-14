@@ -101,7 +101,7 @@ void Worker::sort() {
   const int block_size = ceiling(n, nprocs);
   const int first_half = (block_len + 1) / 2;
   const int second_half = block_size / 2;
-  float* recv_buf = new float[first_half];
+  float* recv_buf = new float[second_half];
   float* send_buf = new float[first_half + second_half];
   MPI_Request request;
 
