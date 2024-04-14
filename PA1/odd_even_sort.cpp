@@ -16,14 +16,14 @@ void radixSort(float* data, int n) {
   // 0-7
   memset(count, 0, sizeof(int) * 256);
   for (int j = 0; j < n; j++) {
-    count[data_int[j]]++;
+    count[data_int[j] & 0xff]++;
   }
   offset[0] = 0;
   for (int j = 1; j < 256; j++) {
     offset[j] = offset[j - 1] + count[j - 1];
   }
   for (int j = 0; j < n; j++) {
-    temp[offset[data_int[j]]++] = data_int[j];
+    temp[offset[data_int[j] & 0xff]++] = data_int[j];
   }
 
   // 8-15
