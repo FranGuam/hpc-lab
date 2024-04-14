@@ -98,6 +98,7 @@ void Worker::sort() {
   if (nprocs == 1) return;
 
   int block_size = ceiling(n, nprocs);
+  std::cout << "Rank: " << rank << ", Block size: " << block_size << std::endl;
   float* recv_buf = new float[block_size / 2];
   float* send_buf = new float[block_size / 2 + (block_len + 1) / 2];
   MPI_Request request;
