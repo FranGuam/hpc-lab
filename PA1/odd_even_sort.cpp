@@ -7,28 +7,31 @@
 #include "worker.h"
 
 void radixSort(float* data, int n) {
-  float* tmp = new float[n];
-  int* cnt = new int[256];
-  int* sum = new int[256];
-  unsigned char* byte = (unsigned char*)data;
-  unsigned char* byte_tmp = (unsigned char*)tmp;
+  int* count = new int[256];
+  int* offset = new int[256];
+  int* temp = new int[n];
+  int* data_int = (int*)data;
   for (int i = 0; i < 4; i++) {
-    memset(cnt, 0, sizeof(int) * 256);
-    for (int j = 0; j < n; j++) {
-      cnt[byte[j * 4 + i]]++;
+    for (int j = 0; j < 256; j++) {
+      count[j] = 0;
     }
-    sum[0] = 0;
+    for (int j = 0; j < n; j++) {
+      count[(data_int[j] >> (i * 8)) & 0xff]++;
+    }
+    offset[0] = 0;
     for (int j = 1; j < 256; j++) {
-      sum[j] = sum[j - 1] + cnt[j - 1];
+      offset[j] = offset[j - 1] + count[j - 1];
     }
     for (int j = 0; j < n; j++) {
-      tmp[sum[byte[j * 4 + i]]++] = data[j];
+      temp[offset[(data_int[j] >> (i * 8)) & 0xff]++] = data_int[j];
     }
-    memcpy(data, tmp, sizeof(float) * n);
+    for (int j = 0; j < n; j++) {
+      data_int[j] = temp[j];
+    }
   }
-  delete[] tmp;
-  delete[] cnt;
-  delete[] sum;
+  delete[] count;
+  delete[] offset;
+  delete[] temp;
 }
 
 void Worker::sort() {
