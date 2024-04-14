@@ -98,8 +98,8 @@ void Worker::sort() {
   if (nprocs == 1) return;
 
   int block_size = ceiling(n, nprocs);
-  int first_half = block_len / 2;
-  int second_half = (block_size + 1) / 2;
+  int first_half = (block_len + 1) / 2;
+  int second_half = block_size / 2;
   float* recv_buf = new float[first_half];
   float* send_buf = new float[first_half + second_half];
   MPI_Request request;
