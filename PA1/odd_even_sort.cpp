@@ -100,17 +100,19 @@ void Worker::sort() {
   int block_size = ceiling(n, nprocs);
   std::cout << "Rank: " << rank << ", Block size: " << block_size << std::endl;
   float* recv_buf = new float[block_size / 2];
-  float* send_buf = new float[block_size / 2 + (block_len + 1) / 2];
+  float* send_buf = new float[(block_size + block_len + 1) / 2];
   MPI_Request request;
   std::cout << "Rank: " << rank << ", Block len: " << block_len << std::endl;
 
   for (int i = 0; i < nprocs * 2; i++) {
+    std::cout << "Rank: " << rank << ", Step: 1" << std::endl;
     if (!last_rank) {
       MPI_Wait(&request, nullptr);
       MPI_Isend(data, block_len / 2, MPI_FLOAT, rank + 1, rank, MPI_COMM_WORLD, &request);
     }
+    std::cout << "Rank: " << rank << ", Step: 2" << std::endl;
     if (rank) {
-      memset(send_buf, 0, sizeof(float) * (block_size / 2 + (block_len + 1) / 2));
+      memset(send_buf, 0, sizeof(float) * (block_size + block_len + 1) / 2);
       MPI_Recv(recv_buf, block_size / 2, MPI_FLOAT, rank - 1, rank - 1, MPI_COMM_WORLD, nullptr);
       int count = merge(data, data + (block_len + 1) / 2, recv_buf, recv_buf + block_size / 2, send_buf);
       memcpy(data, send_buf + block_size / 2, sizeof(float) * ((block_len + 1) / 2));
@@ -118,9 +120,11 @@ void Worker::sort() {
       MPI_Isend(send_buf, block_size / 2, MPI_FLOAT, rank - 1, rank, MPI_COMM_WORLD, &request);
       std::cout << "Iter: " << i << ", Rank: " << rank << ", Count: " << count << std::endl;
     }
+    std::cout << "Rank: " << rank << ", Step: 3" << std::endl;
     if (!last_rank) {
       MPI_Recv(data + (block_len + 1) / 2, block_len / 2, MPI_FLOAT, rank + 1, rank + 1, MPI_COMM_WORLD, nullptr);
     }
+    std::cout << "Rank: " << rank << ", Step: 4" << std::endl;
     std::inplace_merge(data, data + (block_len + 1) / 2, data + block_len);
   }
   delete[] recv_buf;
