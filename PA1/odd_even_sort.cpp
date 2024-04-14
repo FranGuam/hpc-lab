@@ -109,7 +109,7 @@ void Worker::sort() {
   for (int i = 0; i < nprocs * 2; i++) {
     if (!last_rank) {
       if (i) MPI_Wait(&request, nullptr);
-      MPI_Isend(data, second_half, MPI_FLOAT, rank + 1, rank, MPI_COMM_WORLD, &request);
+      MPI_Isend(data + first_half, second_half, MPI_FLOAT, rank + 1, rank, MPI_COMM_WORLD, &request);
     }
     if (rank) {
       memset(send_buf, 0, sizeof(float) * (first_half + second_half));
@@ -131,9 +131,9 @@ void Worker::sort() {
       std::cout << "Iter: " << i << ", Rank: " << rank << ", Count: " << count << std::endl;
     }
     if (!last_rank) {
-      MPI_Recv(data + (block_len + 1) / 2, block_len / 2, MPI_FLOAT, rank + 1, rank + 1, MPI_COMM_WORLD, nullptr);
+      MPI_Recv(data + first_half, second_half, MPI_FLOAT, rank + 1, rank + 1, MPI_COMM_WORLD, nullptr);
     }
-    std::inplace_merge(data, data + (block_len + 1) / 2, data + block_len);
+    std::inplace_merge(data, data + first_half, data + block_len);
   }
 
   delete[] recv_buf;
