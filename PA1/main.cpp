@@ -28,12 +28,12 @@ int main(int argc, char **argv) {
   }
 
   Worker *worker = new Worker(n, nprocs, rank);
-  if (worker->out_of_range) {
+  if (rank == nprocs - 1) {
     std::cout << "Rank " << rank << ": Step 1" << std::endl;
   }
   /** Read input data from the input file */
   worker->input(input_name);
-  if (worker->out_of_range) {
+  if (rank == nprocs - 1) {
     std::cout << "Rank " << rank << ": Step 2" << std::endl;
   }
 
@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
   unsigned long time;
   MPI_Barrier(MPI_COMM_WORLD);
   gettimeofday(&start, NULL);
-  if (worker->out_of_range) {
+  if (rank == nprocs - 1) {
     std::cout << "Rank " << rank << ": Step 2" << std::endl;
   }
 
