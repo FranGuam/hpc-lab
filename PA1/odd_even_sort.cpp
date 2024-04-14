@@ -102,7 +102,7 @@ void Worker::sort() {
   float* send_buf = new float[(block_size + block_len + 1) / 2];
   MPI_Request request;
 
-  for (int i = 0; i < nprocs; i++) {
+  for (int i = 0; i < nprocs + 1; i++) {
     if (i) MPI_Wait(&request, nullptr);
     if (!last_rank) {
       MPI_Isend(data, block_len / 2, MPI_FLOAT, rank + 1, rank, MPI_COMM_WORLD, &request);
@@ -121,7 +121,8 @@ void Worker::sort() {
     }
     std::inplace_merge(data, data + (block_len + 1) / 2, data + block_len);
   }
-  MPI_Wait(&request, nullptr);
+
   delete[] recv_buf;
   delete[] send_buf;
+  MPI_Wait(&request, nullptr);
 }
