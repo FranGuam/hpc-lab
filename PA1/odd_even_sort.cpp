@@ -70,8 +70,54 @@ void radixSort(float* data, int n) {
   delete[] temp;
 }
 
+int merge(float* first1, float* last1, float* first2, float* last2, float* result) {
+  int count = 0;
+  while (true) {
+    if (first1 == last1) {
+      memcpy(result, first2, sizeof(float) * (last2 - first2));
+      break;
+    }
+    if (first2 == last2) {
+      memcpy(result, first1, sizeof(float) * (last1 - first1));
+      break;
+    }
+    if (*first2 < *first1) {
+      *result++ = *first2++;
+      count++;
+    } else {
+      *result++ = *first1++;
+    }
+  }
+  return count;
+}
+
 void Worker::sort() {
   /** Your code ... */
   // you can use variables in class Worker: n, nprocs, rank, block_len, data
+  int block_size = ceiling(n, nprocs);
+  float* recv_buf = new float[block_size / 2];
+  float* send_buf = new float[block_size / 2 + (block_len + 1) / 2];
+  MPI_Request request;
+
   radixSort(data, block_len);
+  for (int i = 0; i < nprocs * 2; i++) {
+    if (!last_rank) {
+      MPI_Wait(&request, nullptr);
+      MPI_Isend(data, block_len / 2, MPI_FLOAT, rank + 1, rank, MPI_COMM_WORLD, &request);
+    }
+    if (rank) {
+      memset(send_buf, 0, sizeof(float) * (block_size / 2 + (block_len + 1) / 2));
+      MPI_Recv(recv_buf, block_size / 2, MPI_FLOAT, rank - 1, rank - 1, MPI_COMM_WORLD, nullptr);
+      merge(data, data + (block_len + 1) / 2, recv_buf, recv_buf + block_size / 2, send_buf);
+      memcpy(data, send_buf + block_size / 2, sizeof(float) * ((block_len + 1) / 2));
+      if (!last_rank) MPI_Wait(&request, nullptr);
+      MPI_Isend(send_buf, block_size / 2, MPI_FLOAT, rank - 1, rank, MPI_COMM_WORLD, &request);
+    }
+    if (!last_rank) {
+      MPI_Recv(data + (block_len + 1) / 2, block_len / 2, MPI_FLOAT, rank + 1, rank + 1, MPI_COMM_WORLD, nullptr);
+    }
+    std::inplace_merge(data, data + (block_len + 1) / 2, data + block_len);
+  }
+  delete[] recv_buf;
+  delete[] send_buf;
 }
