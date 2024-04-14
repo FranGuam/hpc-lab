@@ -70,26 +70,26 @@ void radixSort(float* data, int n) {
   delete[] temp;
 }
 
-int merge(float* first1, float* last1, float* first2, float* last2, float* result) {
-  int count = 0;
-  while (true) {
-    if (first1 == last1) {
-      memcpy(result, first2, sizeof(float) * (last2 - first2));
-      break;
-    }
-    if (first2 == last2) {
-      memcpy(result, first1, sizeof(float) * (last1 - first1));
-      break;
-    }
-    if (*first2 < *first1) {
-      *result++ = *first2++;
-      count++;
-    } else {
-      *result++ = *first1++;
-    }
-  }
-  return count;
-}
+// int merge(float* first1, float* last1, float* first2, float* last2, float* result) {
+//   int count = 0;
+//   while (true) {
+//     if (first1 == last1) {
+//       memcpy(result, first2, sizeof(float) * (last2 - first2));
+//       break;
+//     }
+//     if (first2 == last2) {
+//       memcpy(result, first1, sizeof(float) * (last1 - first1));
+//       break;
+//     }
+//     if (*first2 < *first1) {
+//       *result++ = *first2++;
+//       count++;
+//     } else {
+//       *result++ = *first1++;
+//     }
+//   }
+//   return count;
+// }
 
 void Worker::sort() {
   /** Your code ... */
@@ -97,9 +97,9 @@ void Worker::sort() {
   radixSort(data, block_len);
   if (nprocs == 1) return;
 
-  int block_size = ceiling(n, nprocs);
-  int first_half = (block_len + 1) / 2;
-  int second_half = block_size / 2;
+  const int block_size = ceiling(n, nprocs);
+  const int first_half = (block_len + 1) / 2;
+  const int second_half = block_size / 2;
   float* recv_buf = new float[first_half];
   float* send_buf = new float[first_half + second_half];
   MPI_Request request;
@@ -114,11 +114,11 @@ void Worker::sort() {
     if (rank) {
       memset(send_buf, 0, sizeof(float) * (first_half + second_half));
       MPI_Recv(recv_buf, second_half, MPI_FLOAT, rank - 1, rank - 1, MPI_COMM_WORLD, nullptr);
-      int count = merge(recv_buf, recv_buf + second_half, data, data + first_half, send_buf);
+      std::merge(recv_buf, recv_buf + second_half, data, data + first_half, send_buf);
       memcpy(data, send_buf + second_half, sizeof(float) * first_half);
       if (!last_rank) MPI_Wait(&request, nullptr);
       MPI_Isend(send_buf, second_half, MPI_FLOAT, rank - 1, rank, MPI_COMM_WORLD, &request);
-      std::cout << "Iter: " << i << ", Rank: " << rank << ", Count: " << count << std::endl;
+      // std::cout << "Iter: " << i << ", Rank: " << rank << ", Count: " << count << std::endl;
     }
     if (!last_rank) {
       MPI_Recv(data + first_half, second_half, MPI_FLOAT, rank + 1, rank + 1, MPI_COMM_WORLD, nullptr);
