@@ -98,32 +98,36 @@ void Worker::sort() {
   if (nprocs == 1) return;
 
   int block_size = ceiling(n, nprocs);
-  float* recv_buf = new float[block_size / 2];
-  float* send_buf = new float[(block_size + block_len + 1) / 2];
+  int first_half = (block_len + 1) / 2;
+  int second_half = block_size / 2;
+  float* recv_buf = new float[first_half];
+  float* send_buf = new float[first_half + second_half];
   MPI_Request request;
+
+  std::cout << "Rank: " << rank << ", First: " << first_half << ", Second: " << second_half << std::endl;
 
   for (int i = 0; i < nprocs * 2; i++) {
     if (!last_rank) {
       if (i) MPI_Wait(&request, nullptr);
-      MPI_Isend(data, block_len / 2, MPI_FLOAT, rank + 1, rank, MPI_COMM_WORLD, &request);
+      MPI_Isend(data, second_half, MPI_FLOAT, rank + 1, rank, MPI_COMM_WORLD, &request);
     }
     if (rank) {
-      memset(send_buf, 0, sizeof(float) * (block_size + block_len + 1) / 2);
-      MPI_Recv(recv_buf, block_size / 2, MPI_FLOAT, rank - 1, rank - 1, MPI_COMM_WORLD, nullptr);
+      memset(send_buf, 0, sizeof(float) * (first_half + second_half));
+      MPI_Recv(recv_buf, second_half, MPI_FLOAT, rank - 1, rank - 1, MPI_COMM_WORLD, nullptr);
       if (last_rank) {
-        for (int j = 0; j < block_len; j++) {
+        for (int j = 0; j < (int)block_len; j++) {
           std::cout << data[j] << " ";
         }
         std::cout << std::endl;
-        for (int j = 0; j < block_size / 2; j++) {
+        for (int j = 0; j < second_half; j++) {
           std::cout << recv_buf[j] << " ";
         }
         std::cout << std::endl;
       }
-      int count = merge(recv_buf, recv_buf + block_size / 2, data, data + (block_len + 1) / 2, send_buf);
-      memcpy(data, send_buf + block_size / 2, sizeof(float) * ((block_len + 1) / 2));
+      int count = merge(recv_buf, recv_buf + second_half, data, data + first_half, send_buf);
+      memcpy(data, send_buf + second_half, sizeof(float) * first_half);
       if (!last_rank) MPI_Wait(&request, nullptr);
-      MPI_Isend(send_buf, block_size / 2, MPI_FLOAT, rank - 1, rank, MPI_COMM_WORLD, &request);
+      MPI_Isend(send_buf, second_half, MPI_FLOAT, rank - 1, rank, MPI_COMM_WORLD, &request);
       std::cout << "Iter: " << i << ", Rank: " << rank << ", Count: " << count << std::endl;
     }
     if (!last_rank) {
