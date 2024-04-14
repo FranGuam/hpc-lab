@@ -28,14 +28,23 @@ int main(int argc, char **argv) {
   }
 
   Worker *worker = new Worker(n, nprocs, rank);
+  if (worker->out_of_range) {
+    std::cout << "Rank " << rank << ": Step 1" << std::endl;
+  }
   /** Read input data from the input file */
   worker->input(input_name);
+  if (worker->out_of_range) {
+    std::cout << "Rank " << rank << ": Step 2" << std::endl;
+  }
 
   /** Sort the list (input data) */
   timeval start, end;
   unsigned long time;
   MPI_Barrier(MPI_COMM_WORLD);
   gettimeofday(&start, NULL);
+  if (worker->out_of_range) {
+    std::cout << "Rank " << rank << ": Step 2" << std::endl;
+  }
 
   // run your code
   worker->sort();
