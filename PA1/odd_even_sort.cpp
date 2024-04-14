@@ -121,7 +121,7 @@ void Worker::sort() {
     }
     std::inplace_merge(data, data + (block_len + 1) / 2, data + block_len);
   }
+  MPI_Wait(&request, nullptr);
   delete[] recv_buf;
   delete[] send_buf;
-  MPI_Wait(&request, nullptr);
 }
