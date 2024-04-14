@@ -107,7 +107,7 @@ void Worker::sort() {
   for (int i = 0; i < nprocs * 2; i++) {
     std::cout << "Rank: " << rank << ", Step: 1" << std::endl;
     if (!last_rank) {
-      MPI_Wait(&request, nullptr);
+      if (i) MPI_Wait(&request, nullptr);
       MPI_Isend(data, block_len / 2, MPI_FLOAT, rank + 1, rank, MPI_COMM_WORLD, &request);
     }
     std::cout << "Rank: " << rank << ", Step: 2" << std::endl;
