@@ -65,6 +65,10 @@ class Worker {
         } else {
             block_len = 0;
             data = nullptr;
+            std::cout << "Rank: " << rank << "Entered" << std::endl;
+        }
+        if (rank == nprocs - 1) {
+            std::cout << "Rank: " << rank << ", Block size: " << block_size << ", Block len: " << block_len << std::endl;
         }
     }
 
