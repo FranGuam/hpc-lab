@@ -22,7 +22,6 @@ int main(int argc, char **argv) {
   const char *input_name = argv[2];
 
   if (n < nprocs)
-  // if (nprocs == 1 || n < nprocs)
   {
     MPI_Finalize();
     return 0;
@@ -48,7 +47,7 @@ int main(int argc, char **argv) {
   /** Check the sorted list */
   int ret = worker->check();
   if (ret > 0) {
-    printf("Rank %d: pass\n", rank);
+    // printf("Rank %d: pass\n", rank);
   } else {
     printf("Rank %d: failed\n", rank);
   }

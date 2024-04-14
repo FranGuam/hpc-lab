@@ -103,9 +103,9 @@ void Worker::sort() {
   float* recv_buf = new float[second_half];
   float* send_buf = new float[first_half + second_half];
   MPI_Request request;
-
+#ifndef NDEBUG
   std::cout << "Rank: " << rank << ", First: " << first_half << ", Second: " << second_half << std::endl;
-
+#endif
   for (int i = 0; i < nprocs + block_size % 2; i++) {
     if (i) MPI_Wait(&request, nullptr);
     if (!last_rank) {
@@ -118,7 +118,9 @@ void Worker::sort() {
       memcpy(data, send_buf + second_half, sizeof(float) * first_half);
       if (!last_rank) MPI_Wait(&request, nullptr);
       MPI_Isend(send_buf, second_half, MPI_FLOAT, rank - 1, rank, MPI_COMM_WORLD, &request);
+#ifndef NDEBUG
       std::cout << "Iter: " << i << ", Rank: " << rank << ", Count: " << count << std::endl;
+#endif
     }
     if (!last_rank) {
       MPI_Recv(data + first_half, second_half, MPI_FLOAT, rank + 1, rank + 1, MPI_COMM_WORLD, nullptr);
