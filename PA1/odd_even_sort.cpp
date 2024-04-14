@@ -94,6 +94,7 @@ int merge(float* first1, float* last1, float* first2, float* last2, float* resul
 void Worker::sort() {
   /** Your code ... */
   // you can use variables in class Worker: n, nprocs, rank, block_len, data
+  if (out_of_range) return;
   radixSort(data, block_len);
   if (nprocs == 1) return;
 
@@ -114,22 +115,18 @@ void Worker::sort() {
     if (rank) {
       memset(send_buf, 0, sizeof(float) * (first_half + second_half));
       MPI_Recv(recv_buf, second_half, MPI_FLOAT, rank - 1, rank - 1, MPI_COMM_WORLD, nullptr);
-      if (out_of_range) {
-        memcpy(send_buf, recv_buf, sizeof(float) * second_half);
-      } else {
-        int count = merge(recv_buf, recv_buf + second_half, data, data + first_half, send_buf);
-        memcpy(data, send_buf + second_half, sizeof(float) * first_half);
+      int count = merge(recv_buf, recv_buf + second_half, data, data + first_half, send_buf);
+      memcpy(data, send_buf + second_half, sizeof(float) * first_half);
 #ifndef NDEBUG
-        std::cout << "Iter: " << i << ", Rank: " << rank << ", Count: " << count << std::endl;
+      std::cout << "Iter: " << i << ", Rank: " << rank << ", Count: " << count << std::endl;
 #endif
-      }
       if (!last_rank) MPI_Wait(&request, nullptr);
       MPI_Isend(send_buf, second_half, MPI_FLOAT, rank - 1, rank, MPI_COMM_WORLD, &request);
     }
     if (!last_rank) {
       MPI_Recv(data + first_half, second_half, MPI_FLOAT, rank + 1, rank + 1, MPI_COMM_WORLD, nullptr);
     }
-    if (!out_of_range) std::inplace_merge(data, data + first_half, data + block_len);
+    std::inplace_merge(data, data + first_half, data + block_len);
   }
 
   MPI_Wait(&request, nullptr);
