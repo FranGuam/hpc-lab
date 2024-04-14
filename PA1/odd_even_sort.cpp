@@ -102,6 +102,7 @@ void Worker::sort() {
   float* recv_buf = new float[block_size / 2];
   float* send_buf = new float[block_size / 2 + (block_len + 1) / 2];
   MPI_Request request;
+  std::cout << "Rank: " << rank << ", Block len: " << block_len << std::endl;
 
   for (int i = 0; i < nprocs * 2; i++) {
     if (!last_rank) {
