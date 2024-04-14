@@ -114,24 +114,28 @@ void Worker::sort() {
     if (rank) {
       memset(send_buf, 0, sizeof(float) * (first_half + second_half));
       MPI_Recv(recv_buf, second_half, MPI_FLOAT, rank - 1, rank - 1, MPI_COMM_WORLD, nullptr);
-      if (last_rank) {
-        for (int j = 0; j < (int)block_len; j++) {
-          std::cout << data[j] << " ";
-        }
-        std::cout << std::endl;
-        for (int j = 0; j < second_half; j++) {
-          std::cout << recv_buf[j] << " ";
-        }
-        std::cout << std::endl;
-      }
       int count = merge(recv_buf, recv_buf + second_half, data, data + first_half, send_buf);
       memcpy(data, send_buf + second_half, sizeof(float) * first_half);
       if (!last_rank) MPI_Wait(&request, nullptr);
       MPI_Isend(send_buf, second_half, MPI_FLOAT, rank - 1, rank, MPI_COMM_WORLD, &request);
       std::cout << "Iter: " << i << ", Rank: " << rank << ", Count: " << count << std::endl;
     }
+    if (rank == 0) {
+      std::cout << "Rank: " << rank << ", Before: ";
+      for (int j = 0; j < int(block_len); j++) {
+        std::cout << data[j] << " ";
+      }
+      std::cout << std::endl;
+    }
     if (!last_rank) {
       MPI_Recv(data + first_half, second_half, MPI_FLOAT, rank + 1, rank + 1, MPI_COMM_WORLD, nullptr);
+    }
+    if (rank == 0) {
+      std::cout << "Rank: " << rank << ", After: ";
+      for (int j = 0; j < int(block_len); j++) {
+        std::cout << data[j] << " ";
+      }
+      std::cout << std::endl;
     }
     std::inplace_merge(data, data + first_half, data + block_len);
   }
