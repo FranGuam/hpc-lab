@@ -94,12 +94,14 @@ int merge(float* first1, float* last1, float* first2, float* last2, float* resul
 void Worker::sort() {
   /** Your code ... */
   // you can use variables in class Worker: n, nprocs, rank, block_len, data
+  radixSort(data, block_len);
+  if (nprocs == 1) return;
+
   int block_size = ceiling(n, nprocs);
   float* recv_buf = new float[block_size / 2];
   float* send_buf = new float[block_size / 2 + (block_len + 1) / 2];
   MPI_Request request;
 
-  radixSort(data, block_len);
   for (int i = 0; i < nprocs * 2; i++) {
     if (!last_rank) {
       MPI_Wait(&request, nullptr);
