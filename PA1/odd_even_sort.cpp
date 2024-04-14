@@ -114,13 +114,17 @@ void Worker::sort() {
     if (rank) {
       memset(send_buf, 0, sizeof(float) * (first_half + second_half));
       MPI_Recv(recv_buf, second_half, MPI_FLOAT, rank - 1, rank - 1, MPI_COMM_WORLD, nullptr);
-      int count = merge(recv_buf, recv_buf + second_half, data, data + first_half, send_buf);
-      memcpy(data, send_buf + second_half, sizeof(float) * first_half);
+      if (out_of_range) {
+        memcpy(send_buf, recv_buf, sizeof(float) * second_half);
+      } else {
+        int count = merge(recv_buf, recv_buf + second_half, data, data + first_half, send_buf);
+        memcpy(data, send_buf + second_half, sizeof(float) * first_half);
+#ifndef NDEBUG
+        std::cout << "Iter: " << i << ", Rank: " << rank << ", Count: " << count << std::endl;
+#endif
+      }
       if (!last_rank) MPI_Wait(&request, nullptr);
       MPI_Isend(send_buf, second_half, MPI_FLOAT, rank - 1, rank, MPI_COMM_WORLD, &request);
-#ifndef NDEBUG
-      std::cout << "Iter: " << i << ", Rank: " << rank << ", Count: " << count << std::endl;
-#endif
     }
     if (!last_rank) {
       MPI_Recv(data + first_half, second_half, MPI_FLOAT, rank + 1, rank + 1, MPI_COMM_WORLD, nullptr);
