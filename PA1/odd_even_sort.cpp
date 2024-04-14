@@ -94,7 +94,8 @@ int merge(float* first1, float* last1, float* first2, float* last2, float* resul
 void Worker::sort() {
   /** Your code ... */
   // you can use variables in class Worker: n, nprocs, rank, block_len, data
-  radixSort(data, block_len);
+  // radixSort(data, block_len);
+  std::sort(data, data + block_len);
   if (nprocs == 1) return;
 
   const int block_size = ceiling(n, nprocs);
