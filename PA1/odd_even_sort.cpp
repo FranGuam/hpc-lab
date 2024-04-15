@@ -101,8 +101,11 @@ void Worker::sort() {
   const int block_size = ceiling(n, nprocs);
   const int first_half = (block_len + 1) / 2;
   const int second_half = block_size / 2;
-  float* recv_buf = new float[second_half];
-  float* send_buf = new float[first_half + second_half];
+  float* recv_buf, * send_buf;
+  if (rank) {
+    recv_buf = new float[second_half];
+    send_buf = new float[first_half + second_half];
+  }
   MPI_Request request;
 #ifndef NDEBUG
   std::cout << "Rank: " << rank << ", First: " << first_half << ", Second: " << second_half << std::endl;
@@ -130,6 +133,8 @@ void Worker::sort() {
   }
 
   MPI_Wait(&request, nullptr);
-  delete[] recv_buf;
-  delete[] send_buf;
+  if (rank) {
+    delete[] recv_buf;
+    delete[] send_buf;
+  }
 }
