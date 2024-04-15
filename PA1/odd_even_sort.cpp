@@ -110,7 +110,7 @@ void Worker::sort() {
 #ifndef NDEBUG
   std::cout << "Rank: " << rank << ", First: " << first_half << ", Second: " << second_half << std::endl;
 #endif
-  for (int i = 0; i < nprocs + block_size % 2; i++) {
+  for (int i = 0; i < nprocs + 1; i++) {
     if (i) MPI_Wait(&request, nullptr);
     if (!last_rank) {
       MPI_Isend(data + first_half, second_half, MPI_FLOAT, rank + 1, rank, MPI_COMM_WORLD, &request);
