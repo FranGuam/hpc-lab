@@ -7,11 +7,14 @@
 
 #include "worker.h"
 
-void radixSort(float* data, int n) {
+void radix_sort(float* data, int n) {
   int* count = new int[256];
   int* offset = new int[256];
   int* temp = new int[n];
   int* data_int = (int*)data;
+
+  for (int i = 0; i < n; i++)
+    data_int[i] = (data_int[i] >> 31 & 0x1) ? ~data_int[i] : data_int[i] | 0x80000000;
 
   // 0-7
   memset(count, 0, sizeof(int) * 256);
@@ -65,6 +68,9 @@ void radixSort(float* data, int n) {
     data_int[offset[(temp[j] >> 24) & 0xff]++] = temp[j];
   }
 
+  for (int i = 0; i < n; i++)
+    data_int[i] = (data_int[i]>>31 & 0x1) ? data_int[i] & 0x7fffffff : ~data_int[i];
+
   delete[] count;
   delete[] offset;
   delete[] temp;
@@ -95,16 +101,15 @@ void Worker::sort() {
   /** Your code ... */
   // you can use variables in class Worker: n, nprocs, rank, block_len, data
   if (out_of_range) return;
-  radixSort(data, block_len);
+  radix_sort(data, block_len);
   if (nprocs == 1) return;
 
   const int block_size = ceiling(n, nprocs);
   const int first_half = (block_len + 1) / 2;
   const int second_half = block_size / 2;
-  float* recv_buf, * send_buf;
   if (rank) {
-    recv_buf = new float[second_half];
-    send_buf = new float[first_half + second_half];
+    float* recv_buf = new float[second_half];
+    float* send_buf = new float[first_half + second_half];
   }
   MPI_Request request;
 #ifndef NDEBUG
@@ -118,7 +123,11 @@ void Worker::sort() {
     if (rank) {
       memset(send_buf, 0, sizeof(float) * (first_half + second_half));
       MPI_Recv(recv_buf, second_half, MPI_FLOAT, rank - 1, rank - 1, MPI_COMM_WORLD, nullptr);
+#ifndef NDEBUG
       int count = merge(recv_buf, recv_buf + second_half, data, data + first_half, send_buf);
+#else
+      std::merge(recv_buf, recv_buf + second_half, data, data + first_half, send_buf);
+#endif
       memcpy(data, send_buf + second_half, sizeof(float) * first_half);
 #ifndef NDEBUG
       std::cout << "Iter: " << i << ", Rank: " << rank << ", Count: " << count << std::endl;
