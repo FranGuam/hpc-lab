@@ -108,7 +108,7 @@ void Worker::sort() {
   const int block_size = ceiling(n, nprocs);
   const int first_half = (block_len + 1) / 2;
   const int second_half = block_size / 2;
-  const int iter = block_size % 2 ? nprocs + 1 : nprocs;
+  const int iter = block_size % 2 ? nprocs * 2 : nprocs;
   float* recv_buf = nullptr;
   float* send_buf = nullptr;
   if (rank) {
