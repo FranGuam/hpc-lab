@@ -9,8 +9,8 @@ using namespace std;
 //#define CHECK
 
 int main(int argc, char **argv) {
-  if (argc != 3) {
-    cout << "Usage: ./generate <number_count> <input_file> (0 <= n <= "
+  if (argc != 4) {
+    cout << "Usage: ./generate <number_count> <input_file> <mode> (0 <= n <= "
             "2147483647) "
          << endl;
     return 1;
@@ -18,6 +18,7 @@ int main(int argc, char **argv) {
 
   const int n = atoi(argv[1]);
   const char *input_file = argv[2];
+  const char *mode = argv[3];
 
   fstream input_data(input_file, ios::out | ios::binary);
 
@@ -32,8 +33,20 @@ int main(int argc, char **argv) {
 #ifdef CHECK
   {
 #endif
-    // data[i] = 20000000.0 / (rand() % 10000000);
-    data[i] = n - i;
+    if (strcmp(mode, "random") == 0) {
+      data[i] = 20000000.0 / (rand() % 10000000);
+    }
+    else if (strcmp(mode, "descending") == 0) {
+      data[i] = n / 2 - i;
+    }
+    else if (strcmp(mode, "identical") == 0) {
+      data[i] = 0;
+    }
+    else {
+      cout << "mode should be random, descending, or identical" << endl;
+      delete[] data;
+      return -1;
+    }
 #ifdef CHECK
     cout << data[i] << " ";
   }
