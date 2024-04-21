@@ -105,17 +105,16 @@ void Worker::sort() {
   radix_sort(data, block_len);
   if (nprocs == 1) return;
 
+  float* data_pointer = nullptr;
+  int block_size = ceiling(n, nprocs);
   if (n == nprocs) {
     float* data_copy = new float[block_len * 2];
     memcpy(data_copy, data, sizeof(float) * block_len);
     memcpy(data_copy + block_len, data, sizeof(float) * block_len);
-    float* data_pointer = data;
+    data_pointer = data;
     data = data_copy;
     block_len *= 2;
-    const int block_size = ceiling(n * 2, nprocs);
-  }
-  else {
-    const int block_size = ceiling(n, nprocs);
+    block_size *= 2;
   }
   const int first_half = (block_len + 1) / 2;
   const int second_half = block_size / 2;
@@ -171,6 +170,7 @@ void Worker::sort() {
     delete[] send_buf;
   }
   if (n == nprocs) {
+    float* data_copy = data;
     data = data_pointer;
     block_len /= 2;
     memcpy(data, data_copy, sizeof(float) * block_len);
