@@ -3,6 +3,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <mpi.h>
+#include <iostream>
 #include <string.h>
 
 #include "worker.h"
@@ -107,6 +108,7 @@ void Worker::sort() {
   const int block_size = ceiling(n, nprocs);
   const int first_half = (block_len + 1) / 2;
   const int second_half = block_size / 2;
+  const int iter = block_size % 2 ? nprocs + 1 : nprocs;
   float* recv_buf = nullptr;
   float* send_buf = nullptr;
   if (rank) {
@@ -117,7 +119,7 @@ void Worker::sort() {
 #ifndef NDEBUG
   std::cout << "Rank: " << rank << ", First: " << first_half << ", Second: " << second_half << std::endl;
 #endif
-  for (int i = 0; i < nprocs + 1; i++) {
+  for (int i = 0; i < iter; i++) {
     if (i) MPI_Wait(&request, nullptr);
     if (!last_rank) {
       MPI_Isend(data + first_half, second_half, MPI_FLOAT, rank + 1, rank, MPI_COMM_WORLD, &request);
