@@ -1,11 +1,13 @@
 #!/bin/bash
 
 # run on 1 machine * 28 process, feel free to change it!
-if [ $# -neq 3 ]; then
+if [ $# != 3 ]; then
     echo "Usage: ./run.sh <executable> <data_size> <data_file>"
     exit 1
 fi
 
+declare -i process
+declare -i data_size
 executable=$1
 data_size=$2
 data_file=$3
