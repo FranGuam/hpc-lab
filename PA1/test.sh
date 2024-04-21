@@ -1,6 +1,5 @@
 #!/bin/bash
-set -e
-set -u
+set +e
 
 source /home/spack/spack/share/spack/setup-env.sh
 
