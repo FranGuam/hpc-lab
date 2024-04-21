@@ -47,7 +47,9 @@ int main(int argc, char **argv) {
   /** Check the sorted list */
   int ret = worker->check();
   if (ret > 0) {
-    // printf("Rank %d: pass\n", rank);
+#ifndef NDEBUG
+    printf("Rank %d: pass\n", rank);
+#endif
   } else {
     printf("Rank %d: failed\n", rank);
   }
