@@ -143,6 +143,15 @@ void Worker::sort() {
       MPI_Recv(data + first_half, second_half, MPI_FLOAT, rank + 1, rank + 1, MPI_COMM_WORLD, nullptr);
     }
     std::inplace_merge(data, data + first_half, data + block_len);
+#ifndef NDEBUG
+    if (block_size < 10) {
+      std::cout << "Iter: " << i << ", Rank: " << rank << ", Merge Done:";
+      for (int j = 0; j < block_len; j++) {
+        std::cout << " " << data[j];
+      }
+      std::cout << std::endl;
+    }
+#endif
   }
 
   MPI_Wait(&request, nullptr);
