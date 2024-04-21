@@ -107,7 +107,7 @@ void Worker::sort() {
 
   float* data_pointer = nullptr;
   int block_size = ceiling(n, nprocs);
-  if (n == nprocs) {
+  if ((int)n == nprocs) {
     float* data_copy = new float[block_len * 2];
     memcpy(data_copy, data, sizeof(float) * block_len);
     memcpy(data_copy + block_len, data, sizeof(float) * block_len);
@@ -169,7 +169,7 @@ void Worker::sort() {
     delete[] recv_buf;
     delete[] send_buf;
   }
-  if (n == nprocs) {
+  if ((int)n == nprocs) {
     float* data_copy = data;
     data = data_pointer;
     block_len /= 2;
