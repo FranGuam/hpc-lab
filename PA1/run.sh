@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # run on 1 machine * 28 process, feel free to change it!
-if [ $# != 3 ]; then
+if [ $# -ne 3 ]; then
     echo "Usage: ./run.sh <executable> <data_size> <data_file>"
     exit 1
 fi
@@ -34,7 +34,7 @@ else
     while [ $process -gt 6 ]; do
         block_size=$(((data_size + process - 1) / process))
         last_block_len=$((data_size % block_size))
-        if [ (($block_size % 2) -eq 0) -a (($last_block_len * 2) -ge $block_size) ]; then
+        if [ $(($block_size % 2)) -eq 0 -a $(($last_block_len * 2)) -ge $block_size ]; then
             break
         fi
         process=$((process - 1))
@@ -43,7 +43,7 @@ else
         process=56
         while [ $process -gt 6 ]; do
             block_size=$(((data_size + process - 1) / process))
-            if [ ($block_size % 2) -eq 0 ]; then
+            if [ $(($block_size % 2)) -eq 0 ]; then
                 break
             fi
             process=$((process - 1))
