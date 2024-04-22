@@ -7,7 +7,7 @@ spack load openmpi
 
 make -j4
 
-data_size=$(seq 2 0.1 9.3 | awk '{printf "%d ", 10^$1}')
+data_size=$(seq 2 0.1 8 | awk '{printf "%d ", 10^$1}')
 for i in $data_size; do
     ./generate $i ./$i.dat random
     ./run.sh ./odd_even_sort $i ./$i.dat
