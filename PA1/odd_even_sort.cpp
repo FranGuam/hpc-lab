@@ -119,12 +119,8 @@ void Worker::sort() {
   const int first_half = (block_len + 1) / 2;
   const int second_half = block_size / 2;
   const int iter = block_size % 2 ? nprocs + nprocs / 2 : nprocs;
-  float* recv_buf = nullptr;
-  float* send_buf = nullptr;
-  if (rank) {
-    recv_buf = new float[second_half];
-    send_buf = new float[first_half + second_half];
-  }
+  float* recv_buf = new float[second_half];
+  float* send_buf = new float[first_half + second_half];
   MPI_Request request;
 #ifndef NDEBUG
   std::cout << "Rank: " << rank << ", First: " << first_half << ", Second: " << second_half << std::endl;
@@ -135,24 +131,24 @@ void Worker::sort() {
       MPI_Isend(data + first_half, second_half, MPI_FLOAT, rank + 1, rank, MPI_COMM_WORLD, &request);
     }
     if (rank) {
-      memset(send_buf, 0, sizeof(float) * (first_half + second_half));
       MPI_Recv(recv_buf, second_half, MPI_FLOAT, rank - 1, rank - 1, MPI_COMM_WORLD, nullptr);
 #ifndef NDEBUG
       int count = merge(recv_buf, recv_buf + second_half, data, data + first_half, send_buf);
+      std::cout << "Iter: " << i << ", Rank: " << rank << ", Count: " << count << std::endl;
 #else
       std::merge(recv_buf, recv_buf + second_half, data, data + first_half, send_buf);
 #endif
-      memcpy(data, send_buf + second_half, sizeof(float) * first_half);
-#ifndef NDEBUG
-      std::cout << "Iter: " << i << ", Rank: " << rank << ", Count: " << count << std::endl;
-#endif
       if (!last_rank) MPI_Wait(&request, nullptr);
       MPI_Isend(send_buf, second_half, MPI_FLOAT, rank - 1, rank, MPI_COMM_WORLD, &request);
+    } else {
+      memcpy(send_buf + second_half, data, sizeof(float) * first_half);
     }
     if (!last_rank) {
-      MPI_Recv(data + first_half, second_half, MPI_FLOAT, rank + 1, rank + 1, MPI_COMM_WORLD, nullptr);
+      MPI_Recv(recv_buf, second_half, MPI_FLOAT, rank + 1, rank + 1, MPI_COMM_WORLD, nullptr);
+    } else {
+      memcpy(recv_buf, data + first_half, sizeof(float) * (block_len - first_half));
     }
-    std::inplace_merge(data, data + first_half, data + block_len);
+    std::merge(send_buf + second_half, send_buf + second_half + first_half, recv_buf, recv_buf + block_len - first_half, data);
 #ifndef NDEBUG
     if (block_size < 10) {
       std::cout << "Iter: " << i << ", Rank: " << rank << ", Merge Done:";
@@ -165,10 +161,8 @@ void Worker::sort() {
   }
 
   MPI_Wait(&request, nullptr);
-  if (rank) {
-    delete[] recv_buf;
-    delete[] send_buf;
-  }
+  delete[] recv_buf;
+  delete[] send_buf;
   if ((int)n == nprocs) {
     float* data_copy = data;
     data = data_pointer;
