@@ -70,7 +70,7 @@ void radix_sort(float* data, int n) {
   }
 
   for (int i = 0; i < n; i++)
-    data_int[i] = (data_int[i]>>31 & 0x1) ? data_int[i] & 0x7fffffff : ~data_int[i];
+    data_int[i] = (data_int[i] >> 31 & 0x1) ? data_int[i] & 0x7fffffff : ~data_int[i];
 
   delete[] count;
   delete[] offset;
@@ -107,7 +107,7 @@ void Worker::sort() {
 
   float* data_pointer = nullptr;
   int block_size = ceiling(n, nprocs);
-  if ((int)n == nprocs) {
+  if (n - nprocs == 0) {
     float* data_copy = new float[block_len * 2];
     memcpy(data_copy, data, sizeof(float) * block_len);
     memcpy(data_copy + block_len, data, sizeof(float) * block_len);
@@ -152,7 +152,7 @@ void Worker::sort() {
 #ifndef NDEBUG
     if (block_size < 10) {
       std::cout << "Iter: " << i << ", Rank: " << rank << ", Merge Done:";
-      for (int j = 0; j < block_len; j++) {
+      for (int j = 0; j < (int)block_len; j++) {
         std::cout << " " << data[j];
       }
       std::cout << std::endl;
@@ -163,7 +163,7 @@ void Worker::sort() {
   MPI_Wait(&request, nullptr);
   delete[] recv_buf;
   delete[] send_buf;
-  if ((int)n == nprocs) {
+  if (n - nprocs == 0) {
     float* data_copy = data;
     data = data_pointer;
     block_len /= 2;
