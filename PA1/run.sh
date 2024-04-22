@@ -30,28 +30,29 @@ fi
 if [ $data_size -lt 10000 ]; then
     process=1
 else
-    process=56
-    while [ $process -gt 6 ]; do
-        block_size=$(((data_size + process - 1) / process))
-        last_block_len=$((data_size % block_size))
-        if [ $(($block_size % 2)) -eq 0 -a $(($last_block_len * 2)) -ge $block_size ]; then
-            break
-        fi
-        process=$((process - 1))
-    done
-    if [ $process -eq 6 ]; then
-        process=56
-        while [ $process -gt 6 ]; do
-            block_size=$(((data_size + process - 1) / process))
-            if [ $(($block_size % 2)) -eq 0 ]; then
-                break
-            fi
-            process=$((process - 1))
-        done
-    fi
-    if [ $process -eq 6 ]; then
-        process=28
-    fi
+    process=1
+    # process=56
+    # while [ $process -gt 6 ]; do
+    #     block_size=$(((data_size + process - 1) / process))
+    #     last_block_len=$((data_size % block_size))
+    #     if [ $(($block_size % 2)) -eq 0 -a $(($last_block_len * 2)) -ge $block_size ]; then
+    #         break
+    #     fi
+    #     process=$((process - 1))
+    # done
+    # if [ $process -eq 6 ]; then
+    #     process=56
+    #     while [ $process -gt 6 ]; do
+    #         block_size=$(((data_size + process - 1) / process))
+    #         if [ $(($block_size % 2)) -eq 0 ]; then
+    #             break
+    #         fi
+    #         process=$((process - 1))
+    #     done
+    # fi
+    # if [ $process -eq 6 ]; then
+    #     process=28
+    # fi
 fi
 node=1
 if [ $process -gt 28 ]; then
