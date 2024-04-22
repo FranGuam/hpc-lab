@@ -100,8 +100,14 @@ int merge_count(float* first1, float* last1, float* first2, float* last2, float*
 
 void merge(float* first1, float* last1, float* first2, float* last2, float* result) {
   while (true) {
-    if (first1 == last1) return memcpy(result, first2, sizeof(float) * (last2 - first2));
-    if (first2==last2) return memcpy(result, first1, sizeof(float) * (last1 - first1));
+    if (first1 == last1) {
+      memcpy(result, first2, sizeof(float) * (last2 - first2));
+      return;
+    }
+    if (first2 == last2) {
+      memcpy(result, first1, sizeof(float) * (last1 - first1));
+      return;
+    }
     *result++ = (*first2 < *first1) ? *first2++ : *first1++;
   }
 }
