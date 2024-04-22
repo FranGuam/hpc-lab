@@ -7,3 +7,309 @@ Single thread & Radix Sort
 10000000: 296.829000 ms.
 100000000: 3022.845000 ms.
 
+make: Nothing to be done for 'all'.
+100 elements is generated in ./100.dat
+Running 100 data with 1 process
+Execution time of function sort is 0.003000 ms.
+Minimum execution time of function sort is 0.003000 ms.
+ 
+125 elements is generated in ./125.dat
+Running 125 data with 1 process
+Execution time of function sort is 0.004000 ms.
+Minimum execution time of function sort is 0.003000 ms.
+ 
+158 elements is generated in ./158.dat
+Running 158 data with 1 process
+Execution time of function sort is 0.005000 ms.
+Minimum execution time of function sort is 0.004000 ms.
+ 
+199 elements is generated in ./199.dat
+Running 199 data with 1 process
+Execution time of function sort is 0.005000 ms.
+Minimum execution time of function sort is 0.004000 ms.
+ 
+251 elements is generated in ./251.dat
+Running 251 data with 1 process
+Execution time of function sort is 0.007000 ms.
+Minimum execution time of function sort is 0.006000 ms.
+ 
+316 elements is generated in ./316.dat
+Running 316 data with 1 process
+Execution time of function sort is 0.007000 ms.
+Minimum execution time of function sort is 0.006000 ms.
+ 
+398 elements is generated in ./398.dat
+Running 398 data with 1 process
+Execution time of function sort is 0.008000 ms.
+Minimum execution time of function sort is 0.007000 ms.
+ 
+501 elements is generated in ./501.dat
+Running 501 data with 1 process
+Execution time of function sort is 0.011000 ms.
+Minimum execution time of function sort is 0.010000 ms.
+ 
+630 elements is generated in ./630.dat
+Running 630 data with 1 process
+Execution time of function sort is 0.010000 ms.
+Minimum execution time of function sort is 0.010000 ms.
+ 
+794 elements is generated in ./794.dat
+Running 794 data with 1 process
+Execution time of function sort is 0.013000 ms.
+Minimum execution time of function sort is 0.012000 ms.
+ 
+1000 elements is generated in ./1000.dat
+Running 1000 data with 1 process
+Execution time of function sort is 0.015000 ms.
+Minimum execution time of function sort is 0.014000 ms.
+ 
+1258 elements is generated in ./1258.dat
+Running 1258 data with 1 process
+Execution time of function sort is 0.020000 ms.
+Minimum execution time of function sort is 0.018000 ms.
+ 
+1584 elements is generated in ./1584.dat
+Running 1584 data with 1 process
+Execution time of function sort is 0.023000 ms.
+Minimum execution time of function sort is 0.022000 ms.
+ 
+1995 elements is generated in ./1995.dat
+Running 1995 data with 1 process
+Execution time of function sort is 0.028000 ms.
+Minimum execution time of function sort is 0.027000 ms.
+ 
+2511 elements is generated in ./2511.dat
+Running 2511 data with 1 process
+Execution time of function sort is 0.035000 ms.
+Minimum execution time of function sort is 0.034000 ms.
+ 
+3162 elements is generated in ./3162.dat
+Running 3162 data with 1 process
+Execution time of function sort is 0.044000 ms.
+Minimum execution time of function sort is 0.043000 ms.
+ 
+3981 elements is generated in ./3981.dat
+Running 3981 data with 1 process
+Execution time of function sort is 0.053000 ms.
+Minimum execution time of function sort is 0.053000 ms.
+ 
+5011 elements is generated in ./5011.dat
+Running 5011 data with 1 process
+Execution time of function sort is 0.073000 ms.
+Minimum execution time of function sort is 0.072000 ms.
+ 
+6309 elements is generated in ./6309.dat
+Running 6309 data with 1 process
+Execution time of function sort is 0.093000 ms.
+Minimum execution time of function sort is 0.090000 ms.
+ 
+7943 elements is generated in ./7943.dat
+Running 7943 data with 1 process
+Execution time of function sort is 0.230000 ms.
+Minimum execution time of function sort is 0.227000 ms.
+ 
+10000 elements is generated in ./10000.dat
+Running 10000 data with 1 process
+Execution time of function sort is 0.143000 ms.
+Minimum execution time of function sort is 0.142000 ms.
+ 
+12589 elements is generated in ./12589.dat
+Running 12589 data with 1 process
+Execution time of function sort is 0.195000 ms.
+Minimum execution time of function sort is 0.192000 ms.
+ 
+15848 elements is generated in ./15848.dat
+Running 15848 data with 1 process
+Execution time of function sort is 0.280000 ms.
+Minimum execution time of function sort is 0.275000 ms.
+ 
+19952 elements is generated in ./19952.dat
+Running 19952 data with 1 process
+Execution time of function sort is 0.344000 ms.
+Minimum execution time of function sort is 0.340000 ms.
+ 
+25118 elements is generated in ./25118.dat
+Running 25118 data with 1 process
+Execution time of function sort is 0.361000 ms.
+Minimum execution time of function sort is 0.358000 ms.
+ 
+31622 elements is generated in ./31622.dat
+Running 31622 data with 1 process
+Execution time of function sort is 0.455000 ms.
+Minimum execution time of function sort is 0.454000 ms.
+ 
+39810 elements is generated in ./39810.dat
+Running 39810 data with 1 process
+Execution time of function sort is 0.588000 ms.
+Minimum execution time of function sort is 0.581000 ms.
+ 
+50118 elements is generated in ./50118.dat
+Running 50118 data with 1 process
+Execution time of function sort is 1.048000 ms.
+Minimum execution time of function sort is 1.008000 ms.
+ 
+63095 elements is generated in ./63095.dat
+Running 63095 data with 1 process
+Execution time of function sort is 1.234000 ms.
+Minimum execution time of function sort is 1.218000 ms.
+ 
+79432 elements is generated in ./79432.dat
+Running 79432 data with 1 process
+Execution time of function sort is 1.295000 ms.
+Minimum execution time of function sort is 1.283000 ms.
+ 
+100000 elements is generated in ./100000.dat
+Running 100000 data with 1 process
+Execution time of function sort is 1.632000 ms.
+Minimum execution time of function sort is 1.621000 ms.
+ 
+125892 elements is generated in ./125892.dat
+Running 125892 data with 1 process
+Execution time of function sort is 2.057000 ms.
+Minimum execution time of function sort is 2.046000 ms.
+ 
+158489 elements is generated in ./158489.dat
+Running 158489 data with 1 process
+Execution time of function sort is 4.609000 ms.
+Minimum execution time of function sort is 3.204000 ms.
+ 
+199526 elements is generated in ./199526.dat
+Running 199526 data with 1 process
+Execution time of function sort is 4.412000 ms.
+Minimum execution time of function sort is 4.397000 ms.
+ 
+251188 elements is generated in ./251188.dat
+Running 251188 data with 1 process
+Execution time of function sort is 5.099000 ms.
+Minimum execution time of function sort is 5.005000 ms.
+ 
+316227 elements is generated in ./316227.dat
+Running 316227 data with 1 process
+Execution time of function sort is 5.368000 ms.
+Minimum execution time of function sort is 5.248000 ms.
+ 
+398107 elements is generated in ./398107.dat
+Running 398107 data with 1 process
+Execution time of function sort is 6.717000 ms.
+Minimum execution time of function sort is 6.569000 ms.
+ 
+501187 elements is generated in ./501187.dat
+Running 501187 data with 1 process
+Execution time of function sort is 8.135000 ms.
+Minimum execution time of function sort is 8.126000 ms.
+ 
+630957 elements is generated in ./630957.dat
+Running 630957 data with 1 process
+Execution time of function sort is 11.292000 ms.
+Minimum execution time of function sort is 10.878000 ms.
+ 
+794328 elements is generated in ./794328.dat
+Running 794328 data with 1 process
+Execution time of function sort is 14.057000 ms.
+Minimum execution time of function sort is 13.328000 ms.
+ 
+1000000 elements is generated in ./1000000.dat
+Running 1000000 data with 1 process
+Execution time of function sort is 16.635000 ms.
+Minimum execution time of function sort is 16.617000 ms.
+ 
+1258925 elements is generated in ./1258925.dat
+Running 1258925 data with 1 process
+Execution time of function sort is 20.826000 ms.
+Minimum execution time of function sort is 20.801000 ms.
+ 
+1584893 elements is generated in ./1584893.dat
+Running 1584893 data with 1 process
+Execution time of function sort is 26.309000 ms.
+Minimum execution time of function sort is 26.284000 ms.
+ 
+1995262 elements is generated in ./1995262.dat
+Running 1995262 data with 1 process
+Execution time of function sort is 33.293000 ms.
+Minimum execution time of function sort is 32.398000 ms.
+ 
+2511886 elements is generated in ./2511886.dat
+Running 2511886 data with 1 process
+Execution time of function sort is 42.207000 ms.
+Minimum execution time of function sort is 40.977000 ms.
+ 
+3162277 elements is generated in ./3162277.dat
+Running 3162277 data with 1 process
+Execution time of function sort is 55.614000 ms.
+Minimum execution time of function sort is 54.176000 ms.
+ 
+3981071 elements is generated in ./3981071.dat
+Running 3981071 data with 1 process
+Execution time of function sort is 78.125000 ms.
+Minimum execution time of function sort is 77.782000 ms.
+ 
+5011872 elements is generated in ./5011872.dat
+Running 5011872 data with 1 process
+Execution time of function sort is 126.038000 ms.
+Minimum execution time of function sort is 123.481000 ms.
+ 
+6309573 elements is generated in ./6309573.dat
+Running 6309573 data with 1 process
+Execution time of function sort is 184.067000 ms.
+Minimum execution time of function sort is 183.570000 ms.
+ 
+7943282 elements is generated in ./7943282.dat
+Running 7943282 data with 1 process
+Execution time of function sort is 242.078000 ms.
+Minimum execution time of function sort is 241.547000 ms.
+ 
+10000000 elements is generated in ./10000000.dat
+Running 10000000 data with 1 process
+Execution time of function sort is 307.268000 ms.
+Minimum execution time of function sort is 306.379000 ms.
+ 
+12589254 elements is generated in ./12589254.dat
+Running 12589254 data with 1 process
+Execution time of function sort is 391.488000 ms.
+Minimum execution time of function sort is 390.990000 ms.
+ 
+15848931 elements is generated in ./15848931.dat
+Running 15848931 data with 1 process
+Execution time of function sort is 498.408000 ms.
+Minimum execution time of function sort is 497.694000 ms.
+ 
+19952623 elements is generated in ./19952623.dat
+Running 19952623 data with 1 process
+Execution time of function sort is 639.035000 ms.
+Minimum execution time of function sort is 638.251000 ms.
+ 
+25118864 elements is generated in ./25118864.dat
+Running 25118864 data with 1 process
+Execution time of function sort is 810.409000 ms.
+Minimum execution time of function sort is 806.986000 ms.
+ 
+31622776 elements is generated in ./31622776.dat
+Running 31622776 data with 1 process
+Execution time of function sort is 1022.044000 ms.
+Minimum execution time of function sort is 1019.652000 ms.
+ 
+39810717 elements is generated in ./39810717.dat
+Running 39810717 data with 1 process
+Execution time of function sort is 1289.625000 ms.
+Minimum execution time of function sort is 1288.624000 ms.
+ 
+50118723 elements is generated in ./50118723.dat
+Running 50118723 data with 1 process
+Execution time of function sort is 1621.122000 ms.
+Minimum execution time of function sort is 1619.564000 ms.
+ 
+63095734 elements is generated in ./63095734.dat
+Running 63095734 data with 1 process
+Execution time of function sort is 2045.377000 ms.
+Minimum execution time of function sort is 2043.804000 ms.
+ 
+79432823 elements is generated in ./79432823.dat
+Running 79432823 data with 1 process
+Execution time of function sort is 2573.816000 ms.
+Minimum execution time of function sort is 2571.554000 ms.
+ 
+100000000 elements is generated in ./100000000.dat
+Running 100000000 data with 1 process
+Execution time of function sort is 3247.053000 ms.
+Minimum execution time of function sort is 3242.618000 ms.
+ 
