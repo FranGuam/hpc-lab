@@ -4,1284 +4,2911 @@ Testing 100 data with 1 node and 1 process
 Execution time of function sort is 0.011000 ms.
  
 Testing 100 data with 1 node and 2 process
-Execution time of function sort is 0.053000 ms.
+Execution time of function sort is 0.046000 ms.
  
 Testing 100 data with 1 node and 3 process
-Execution time of function sort is 0.032000 ms.
+Execution time of function sort is 0.028000 ms.
  
 Testing 100 data with 1 node and 4 process
-Execution time of function sort is 0.067000 ms.
- 
-Testing 100 data with 1 node and 5 process
-Execution time of function sort is 0.040000 ms.
- 
-Testing 100 data with 1 node and 6 process
-Execution time of function sort is 0.069000 ms.
- 
-Testing 100 data with 1 node and 7 process
-Execution time of function sort is 0.102000 ms.
- 
-Testing 100 data with 1 node and 8 process
-Execution time of function sort is 0.084000 ms.
- 
-Testing 100 data with 1 node and 9 process
-Execution time of function sort is 0.042000 ms.
- 
-Testing 100 data with 1 node and 10 process
-Execution time of function sort is 0.081000 ms.
- 
-Testing 100 data with 1 node and 11 process
-Execution time of function sort is 0.074000 ms.
- 
-Testing 100 data with 1 node and 12 process
-Execution time of function sort is 0.088000 ms.
- 
-Testing 100 data with 1 node and 13 process
-Execution time of function sort is 0.078000 ms.
- 
-Testing 100 data with 1 node and 14 process
 Execution time of function sort is 0.076000 ms.
  
+Testing 100 data with 1 node and 5 process
+Execution time of function sort is 0.048000 ms.
+ 
+Testing 100 data with 1 node and 6 process
+Execution time of function sort is 0.077000 ms.
+ 
+Testing 100 data with 1 node and 7 process
+Execution time of function sort is 0.066000 ms.
+ 
+Testing 100 data with 1 node and 8 process
+Execution time of function sort is 0.094000 ms.
+ 
+Testing 100 data with 1 node and 9 process
+Execution time of function sort is 0.045000 ms.
+ 
+Testing 100 data with 1 node and 10 process
+Execution time of function sort is 0.075000 ms.
+ 
+Testing 100 data with 1 node and 11 process
+Execution time of function sort is 0.075000 ms.
+ 
+Testing 100 data with 1 node and 12 process
+Execution time of function sort is 0.084000 ms.
+ 
+Testing 100 data with 1 node and 13 process
+Execution time of function sort is 0.094000 ms.
+ 
+Testing 100 data with 1 node and 14 process
+Execution time of function sort is 0.088000 ms.
+ 
 Testing 100 data with 1 node and 15 process
-Execution time of function sort is 0.085000 ms.
+Execution time of function sort is 0.086000 ms.
  
 Testing 100 data with 1 node and 16 process
-Execution time of function sort is 0.093000 ms.
+Execution time of function sort is 0.087000 ms.
  
 Testing 100 data with 1 node and 17 process
-Execution time of function sort is 0.057000 ms.
+Execution time of function sort is 0.055000 ms.
  
 Testing 100 data with 1 node and 18 process
-Execution time of function sort is 0.082000 ms.
+Execution time of function sort is 0.085000 ms.
  
 Testing 100 data with 1 node and 19 process
-Execution time of function sort is 0.081000 ms.
+Execution time of function sort is 0.079000 ms.
  
 Testing 100 data with 1 node and 20 process
-Execution time of function sort is 0.101000 ms.
- 
-Testing 100 data with 1 node and 21 process
-Execution time of function sort is 0.118000 ms.
- 
-Testing 100 data with 1 node and 22 process
-Execution time of function sort is 0.096000 ms.
- 
-Testing 100 data with 1 node and 23 process
-Execution time of function sort is 0.114000 ms.
- 
-Testing 100 data with 1 node and 24 process
 Execution time of function sort is 0.100000 ms.
  
+Testing 100 data with 1 node and 21 process
+Execution time of function sort is 0.099000 ms.
+ 
+Testing 100 data with 1 node and 22 process
+Execution time of function sort is 0.103000 ms.
+ 
+Testing 100 data with 1 node and 23 process
+Execution time of function sort is 0.125000 ms.
+ 
+Testing 100 data with 1 node and 24 process
+Execution time of function sort is 0.112000 ms.
+ 
 Testing 100 data with 1 node and 25 process
-Execution time of function sort is 0.108000 ms.
+Execution time of function sort is 0.116000 ms.
  
 Testing 100 data with 1 node and 26 process
-Execution time of function sort is 0.092000 ms.
+Execution time of function sort is 0.108000 ms.
  
 Testing 100 data with 1 node and 27 process
-Execution time of function sort is 0.128000 ms.
+Execution time of function sort is 0.107000 ms.
  
 Testing 100 data with 1 node and 28 process
-Execution time of function sort is 0.097000 ms.
+Execution time of function sort is 0.106000 ms.
  
 Testing 100 data with 2 node and 29 process
-Execution time of function sort is 0.109000 ms.
+Execution time of function sort is 0.108000 ms.
  
 Testing 100 data with 2 node and 30 process
 Execution time of function sort is 0.117000 ms.
  
 Testing 100 data with 2 node and 31 process
-Execution time of function sort is 0.112000 ms.
+Execution time of function sort is 0.117000 ms.
  
 Testing 100 data with 2 node and 32 process
 Execution time of function sort is 0.113000 ms.
  
 Testing 100 data with 2 node and 33 process
-Execution time of function sort is 0.080000 ms.
+Execution time of function sort is 0.102000 ms.
  
 Testing 100 data with 2 node and 34 process
-Execution time of function sort is 0.314000 ms.
+Execution time of function sort is 0.212000 ms.
  
 Testing 100 data with 2 node and 35 process
-Execution time of function sort is 0.192000 ms.
+Execution time of function sort is 0.150000 ms.
  
 Testing 100 data with 2 node and 36 process
-Execution time of function sort is 0.207000 ms.
+Execution time of function sort is 0.176000 ms.
  
 Testing 100 data with 2 node and 37 process
-Execution time of function sort is 0.167000 ms.
+Execution time of function sort is 0.187000 ms.
  
 Testing 100 data with 2 node and 38 process
-Execution time of function sort is 0.261000 ms.
+Execution time of function sort is 0.346000 ms.
  
 Testing 100 data with 2 node and 39 process
-Execution time of function sort is 0.191000 ms.
+Execution time of function sort is 0.192000 ms.
  
 Testing 100 data with 2 node and 40 process
-Execution time of function sort is 0.253000 ms.
+Execution time of function sort is 0.376000 ms.
  
 Testing 100 data with 2 node and 41 process
-Execution time of function sort is 0.227000 ms.
+Execution time of function sort is 0.185000 ms.
  
 Testing 100 data with 2 node and 42 process
-Execution time of function sort is 0.325000 ms.
+Execution time of function sort is 0.339000 ms.
  
 Testing 100 data with 2 node and 43 process
-Execution time of function sort is 0.225000 ms.
+Execution time of function sort is 0.234000 ms.
  
 Testing 100 data with 2 node and 44 process
-Execution time of function sort is 0.241000 ms.
+Execution time of function sort is 0.248000 ms.
  
 Testing 100 data with 2 node and 45 process
-Execution time of function sort is 0.245000 ms.
+Execution time of function sort is 0.222000 ms.
  
 Testing 100 data with 2 node and 46 process
-Execution time of function sort is 0.348000 ms.
+Execution time of function sort is 0.295000 ms.
  
 Testing 100 data with 2 node and 47 process
-Execution time of function sort is 0.310000 ms.
+Execution time of function sort is 0.257000 ms.
  
 Testing 100 data with 2 node and 48 process
 Execution time of function sort is 0.257000 ms.
  
 Testing 100 data with 2 node and 49 process
-Execution time of function sort is 0.271000 ms.
+Execution time of function sort is 0.277000 ms.
  
 Testing 100 data with 2 node and 50 process
-Execution time of function sort is 0.229000 ms.
+Execution time of function sort is 0.245000 ms.
  
 Testing 100 data with 2 node and 51 process
-Execution time of function sort is 28.101000 ms.
+Execution time of function sort is 0.203000 ms.
  
 Testing 100 data with 2 node and 52 process
 Execution time of function sort is 0.198000 ms.
  
 Testing 100 data with 2 node and 53 process
-Execution time of function sort is 0.216000 ms.
+Execution time of function sort is 0.187000 ms.
  
 Testing 100 data with 2 node and 54 process
-Execution time of function sort is 0.215000 ms.
- 
-Testing 100 data with 2 node and 55 process
-Execution time of function sort is 0.259000 ms.
- 
-Testing 100 data with 2 node and 56 process
-Execution time of function sort is 0.276000 ms.
- 
-Testing 1000 data with 1 node and 1 process
-Execution time of function sort is 0.025000 ms.
- 
-Testing 1000 data with 1 node and 2 process
-Execution time of function sort is 0.053000 ms.
- 
-Testing 1000 data with 1 node and 3 process
-Execution time of function sort is 0.057000 ms.
- 
-Testing 1000 data with 1 node and 4 process
-Execution time of function sort is 0.106000 ms.
- 
-Testing 1000 data with 1 node and 5 process
-Execution time of function sort is 0.085000 ms.
- 
-Testing 1000 data with 1 node and 6 process
-Execution time of function sort is 0.160000 ms.
- 
-Testing 1000 data with 1 node and 7 process
-Execution time of function sort is 0.144000 ms.
- 
-Testing 1000 data with 1 node and 8 process
-Execution time of function sort is 0.153000 ms.
- 
-Testing 1000 data with 1 node and 9 process
-Execution time of function sort is 0.119000 ms.
- 
-Testing 1000 data with 1 node and 10 process
-Execution time of function sort is 0.126000 ms.
- 
-Testing 1000 data with 1 node and 11 process
-Execution time of function sort is 0.183000 ms.
- 
-Testing 1000 data with 1 node and 12 process
-Execution time of function sort is 0.185000 ms.
- 
-Testing 1000 data with 1 node and 13 process
-Execution time of function sort is 0.227000 ms.
- 
-Testing 1000 data with 1 node and 14 process
-Execution time of function sort is 0.190000 ms.
- 
-Testing 1000 data with 1 node and 15 process
-Execution time of function sort is 0.205000 ms.
- 
-Testing 1000 data with 1 node and 16 process
-Execution time of function sort is 0.217000 ms.
- 
-Testing 1000 data with 1 node and 17 process
-Execution time of function sort is 0.200000 ms.
- 
-Testing 1000 data with 1 node and 18 process
-Execution time of function sort is 0.185000 ms.
- 
-Testing 1000 data with 1 node and 19 process
-Execution time of function sort is 0.242000 ms.
- 
-Testing 1000 data with 1 node and 20 process
-Execution time of function sort is 0.207000 ms.
- 
-Testing 1000 data with 1 node and 21 process
-Execution time of function sort is 0.240000 ms.
- 
-Testing 1000 data with 1 node and 22 process
-Execution time of function sort is 0.106000 ms.
- 
-Testing 1000 data with 1 node and 23 process
-Execution time of function sort is 0.107000 ms.
- 
-Testing 1000 data with 1 node and 24 process
-Execution time of function sort is 0.124000 ms.
- 
-Testing 1000 data with 1 node and 25 process
-Execution time of function sort is 0.114000 ms.
- 
-Testing 1000 data with 1 node and 26 process
-Execution time of function sort is 0.126000 ms.
- 
-Testing 1000 data with 1 node and 27 process
-Execution time of function sort is 0.130000 ms.
- 
-Testing 1000 data with 1 node and 28 process
-Execution time of function sort is 0.132000 ms.
- 
-Testing 1000 data with 2 node and 29 process
-Execution time of function sort is 0.202000 ms.
- 
-Testing 1000 data with 2 node and 30 process
-Execution time of function sort is 0.230000 ms.
- 
-Testing 1000 data with 2 node and 31 process
-Execution time of function sort is 0.248000 ms.
- 
-Testing 1000 data with 2 node and 32 process
-Execution time of function sort is 5.979000 ms.
- 
-Testing 1000 data with 2 node and 33 process
-Execution time of function sort is 0.199000 ms.
- 
-Testing 1000 data with 2 node and 34 process
-Execution time of function sort is 0.238000 ms.
- 
-Testing 1000 data with 2 node and 35 process
-Execution time of function sort is 0.171000 ms.
- 
-Testing 1000 data with 2 node and 36 process
-Execution time of function sort is 0.179000 ms.
- 
-Testing 1000 data with 2 node and 37 process
-Execution time of function sort is 0.178000 ms.
- 
-Testing 1000 data with 2 node and 38 process
-Execution time of function sort is 0.343000 ms.
- 
-Testing 1000 data with 2 node and 39 process
-Execution time of function sort is 0.159000 ms.
- 
-Testing 1000 data with 2 node and 40 process
-Execution time of function sort is 0.355000 ms.
- 
-Testing 1000 data with 2 node and 41 process
-Execution time of function sort is 0.227000 ms.
- 
-Testing 1000 data with 2 node and 42 process
-Execution time of function sort is 0.331000 ms.
- 
-Testing 1000 data with 2 node and 43 process
-Execution time of function sort is 0.171000 ms.
- 
-Testing 1000 data with 2 node and 44 process
-Execution time of function sort is 11.069000 ms.
- 
-Testing 1000 data with 2 node and 45 process
-Execution time of function sort is 0.234000 ms.
- 
-Testing 1000 data with 2 node and 46 process
-Execution time of function sort is 0.315000 ms.
- 
-Testing 1000 data with 2 node and 47 process
-Execution time of function sort is 0.231000 ms.
- 
-Testing 1000 data with 2 node and 48 process
-Execution time of function sort is 0.298000 ms.
- 
-Testing 1000 data with 2 node and 49 process
-Execution time of function sort is 0.287000 ms.
- 
-Testing 1000 data with 2 node and 50 process
-Execution time of function sort is 0.309000 ms.
- 
-Testing 1000 data with 2 node and 51 process
-Execution time of function sort is 0.219000 ms.
- 
-Testing 1000 data with 2 node and 52 process
 Execution time of function sort is 0.203000 ms.
  
+Testing 100 data with 2 node and 55 process
+Execution time of function sort is 0.292000 ms.
+ 
+Testing 100 data with 2 node and 56 process
+Execution time of function sort is 0.288000 ms.
+ 
+Testing 1000 data with 1 node and 1 process
+Execution time of function sort is 0.047000 ms.
+ 
+Testing 1000 data with 1 node and 2 process
+Execution time of function sort is 0.077000 ms.
+ 
+Testing 1000 data with 1 node and 3 process
+Execution time of function sort is 0.086000 ms.
+ 
+Testing 1000 data with 1 node and 4 process
+Execution time of function sort is 0.077000 ms.
+ 
+Testing 1000 data with 1 node and 5 process
+Execution time of function sort is 0.068000 ms.
+ 
+Testing 1000 data with 1 node and 6 process
+Execution time of function sort is 0.140000 ms.
+ 
+Testing 1000 data with 1 node and 7 process
+Execution time of function sort is 0.138000 ms.
+ 
+Testing 1000 data with 1 node and 8 process
+Execution time of function sort is 0.227000 ms.
+ 
+Testing 1000 data with 1 node and 9 process
+Execution time of function sort is 0.102000 ms.
+ 
+Testing 1000 data with 1 node and 10 process
+Execution time of function sort is 0.175000 ms.
+ 
+Testing 1000 data with 1 node and 11 process
+Execution time of function sort is 0.180000 ms.
+ 
+Testing 1000 data with 1 node and 12 process
+Execution time of function sort is 0.161000 ms.
+ 
+Testing 1000 data with 1 node and 13 process
+Execution time of function sort is 0.187000 ms.
+ 
+Testing 1000 data with 1 node and 14 process
+Execution time of function sort is 0.165000 ms.
+ 
+Testing 1000 data with 1 node and 15 process
+Execution time of function sort is 0.231000 ms.
+ 
+Testing 1000 data with 1 node and 16 process
+Execution time of function sort is 0.220000 ms.
+ 
+Testing 1000 data with 1 node and 17 process
+Execution time of function sort is 0.202000 ms.
+ 
+Testing 1000 data with 1 node and 18 process
+Execution time of function sort is 0.184000 ms.
+ 
+Testing 1000 data with 1 node and 19 process
+Execution time of function sort is 0.236000 ms.
+ 
+Testing 1000 data with 1 node and 20 process
+Execution time of function sort is 0.202000 ms.
+ 
+Testing 1000 data with 1 node and 21 process
+Execution time of function sort is 0.202000 ms.
+ 
+Testing 1000 data with 1 node and 22 process
+Execution time of function sort is 0.115000 ms.
+ 
+Testing 1000 data with 1 node and 23 process
+Execution time of function sort is 0.108000 ms.
+ 
+Testing 1000 data with 1 node and 24 process
+Execution time of function sort is 0.151000 ms.
+ 
+Testing 1000 data with 1 node and 25 process
+Execution time of function sort is 0.118000 ms.
+ 
+Testing 1000 data with 1 node and 26 process
+Execution time of function sort is 0.138000 ms.
+ 
+Testing 1000 data with 1 node and 27 process
+Execution time of function sort is 0.145000 ms.
+ 
+Testing 1000 data with 1 node and 28 process
+Execution time of function sort is 0.140000 ms.
+ 
+Testing 1000 data with 2 node and 29 process
+Execution time of function sort is 0.172000 ms.
+ 
+Testing 1000 data with 2 node and 30 process
+Execution time of function sort is 0.250000 ms.
+ 
+Testing 1000 data with 2 node and 31 process
+Execution time of function sort is 0.306000 ms.
+ 
+Testing 1000 data with 2 node and 32 process
+Execution time of function sort is 6.364000 ms.
+ 
+Testing 1000 data with 2 node and 33 process
+Execution time of function sort is 0.191000 ms.
+ 
+Testing 1000 data with 2 node and 34 process
+Execution time of function sort is 0.256000 ms.
+ 
+Testing 1000 data with 2 node and 35 process
+Execution time of function sort is 0.206000 ms.
+ 
+Testing 1000 data with 2 node and 36 process
+Execution time of function sort is 0.216000 ms.
+ 
+Testing 1000 data with 2 node and 37 process
+Execution time of function sort is 0.153000 ms.
+ 
+Testing 1000 data with 2 node and 38 process
+Execution time of function sort is 0.375000 ms.
+ 
+Testing 1000 data with 2 node and 39 process
+Execution time of function sort is 0.186000 ms.
+ 
+Testing 1000 data with 2 node and 40 process
+Execution time of function sort is 0.263000 ms.
+ 
+Testing 1000 data with 2 node and 41 process
+Execution time of function sort is 0.262000 ms.
+ 
+Testing 1000 data with 2 node and 42 process
+Execution time of function sort is 0.330000 ms.
+ 
+Testing 1000 data with 2 node and 43 process
+Execution time of function sort is 3.957000 ms.
+ 
+Testing 1000 data with 2 node and 44 process
+Execution time of function sort is 0.290000 ms.
+ 
+Testing 1000 data with 2 node and 45 process
+Execution time of function sort is 0.236000 ms.
+ 
+Testing 1000 data with 2 node and 46 process
+Execution time of function sort is 0.205000 ms.
+ 
+Testing 1000 data with 2 node and 47 process
+Execution time of function sort is 0.256000 ms.
+ 
+Testing 1000 data with 2 node and 48 process
+Execution time of function sort is 0.347000 ms.
+ 
+Testing 1000 data with 2 node and 49 process
+Execution time of function sort is 0.333000 ms.
+ 
+Testing 1000 data with 2 node and 50 process
+Execution time of function sort is 0.230000 ms.
+ 
+Testing 1000 data with 2 node and 51 process
+Execution time of function sort is 0.208000 ms.
+ 
+Testing 1000 data with 2 node and 52 process
+Execution time of function sort is 0.190000 ms.
+ 
 Testing 1000 data with 2 node and 53 process
-Execution time of function sort is 16.196000 ms.
+Execution time of function sort is 0.269000 ms.
  
 Testing 1000 data with 2 node and 54 process
-Execution time of function sort is 0.268000 ms.
+Execution time of function sort is 0.382000 ms.
  
 Testing 1000 data with 2 node and 55 process
-Execution time of function sort is 0.370000 ms.
+Execution time of function sort is 0.349000 ms.
  
 Testing 1000 data with 2 node and 56 process
-Execution time of function sort is 0.310000 ms.
+Execution time of function sort is 0.282000 ms.
  
 Testing 10000 data with 1 node and 1 process
-Execution time of function sort is 0.235000 ms.
+Execution time of function sort is 0.208000 ms.
  
 Testing 10000 data with 1 node and 2 process
-Execution time of function sort is 0.620000 ms.
+Execution time of function sort is 0.544000 ms.
  
 Testing 10000 data with 1 node and 3 process
 Execution time of function sort is 0.229000 ms.
  
 Testing 10000 data with 1 node and 4 process
-Execution time of function sort is 0.273000 ms.
+Execution time of function sort is 0.248000 ms.
  
 Testing 10000 data with 1 node and 5 process
-Execution time of function sort is 0.191000 ms.
+Execution time of function sort is 0.202000 ms.
  
 Testing 10000 data with 1 node and 6 process
-Execution time of function sort is 0.268000 ms.
- 
-Testing 10000 data with 1 node and 7 process
-Execution time of function sort is 0.344000 ms.
- 
-Testing 10000 data with 1 node and 8 process
-Execution time of function sort is 0.209000 ms.
- 
-Testing 10000 data with 1 node and 9 process
-Execution time of function sort is 0.187000 ms.
- 
-Testing 10000 data with 1 node and 10 process
-Execution time of function sort is 0.229000 ms.
- 
-Testing 10000 data with 1 node and 11 process
-Execution time of function sort is 0.245000 ms.
- 
-Testing 10000 data with 1 node and 12 process
-Execution time of function sort is 0.233000 ms.
- 
-Testing 10000 data with 1 node and 13 process
-Execution time of function sort is 0.239000 ms.
- 
-Testing 10000 data with 1 node and 14 process
-Execution time of function sort is 0.320000 ms.
- 
-Testing 10000 data with 1 node and 15 process
-Execution time of function sort is 0.305000 ms.
- 
-Testing 10000 data with 1 node and 16 process
-Execution time of function sort is 0.343000 ms.
- 
-Testing 10000 data with 1 node and 17 process
-Execution time of function sort is 0.302000 ms.
- 
-Testing 10000 data with 1 node and 18 process
 Execution time of function sort is 0.270000 ms.
  
+Testing 10000 data with 1 node and 7 process
+Execution time of function sort is 0.247000 ms.
+ 
+Testing 10000 data with 1 node and 8 process
+Execution time of function sort is 0.413000 ms.
+ 
+Testing 10000 data with 1 node and 9 process
+Execution time of function sort is 0.192000 ms.
+ 
+Testing 10000 data with 1 node and 10 process
+Execution time of function sort is 0.250000 ms.
+ 
+Testing 10000 data with 1 node and 11 process
+Execution time of function sort is 0.227000 ms.
+ 
+Testing 10000 data with 1 node and 12 process
+Execution time of function sort is 0.228000 ms.
+ 
+Testing 10000 data with 1 node and 13 process
+Execution time of function sort is 0.264000 ms.
+ 
+Testing 10000 data with 1 node and 14 process
+Execution time of function sort is 0.307000 ms.
+ 
+Testing 10000 data with 1 node and 15 process
+Execution time of function sort is 0.328000 ms.
+ 
+Testing 10000 data with 1 node and 16 process
+Execution time of function sort is 0.320000 ms.
+ 
+Testing 10000 data with 1 node and 17 process
+Execution time of function sort is 0.294000 ms.
+ 
+Testing 10000 data with 1 node and 18 process
+Execution time of function sort is 0.266000 ms.
+ 
 Testing 10000 data with 1 node and 19 process
-Execution time of function sort is 0.357000 ms.
+Execution time of function sort is 0.336000 ms.
  
 Testing 10000 data with 1 node and 20 process
-Execution time of function sort is 0.272000 ms.
+Execution time of function sort is 0.256000 ms.
  
 Testing 10000 data with 1 node and 21 process
-Execution time of function sort is 0.347000 ms.
+Execution time of function sort is 0.332000 ms.
  
 Testing 10000 data with 1 node and 22 process
-Execution time of function sort is 0.363000 ms.
+Execution time of function sort is 0.373000 ms.
  
 Testing 10000 data with 1 node and 23 process
-Execution time of function sort is 0.370000 ms.
+Execution time of function sort is 0.359000 ms.
  
 Testing 10000 data with 1 node and 24 process
-Execution time of function sort is 0.377000 ms.
+Execution time of function sort is 0.381000 ms.
  
 Testing 10000 data with 1 node and 25 process
-Execution time of function sort is 0.296000 ms.
+Execution time of function sort is 0.311000 ms.
  
 Testing 10000 data with 1 node and 26 process
-Execution time of function sort is 0.377000 ms.
+Execution time of function sort is 0.381000 ms.
  
 Testing 10000 data with 1 node and 27 process
-Execution time of function sort is 0.415000 ms.
- 
-Testing 10000 data with 1 node and 28 process
-Execution time of function sort is 0.314000 ms.
- 
-Testing 10000 data with 2 node and 29 process
-Execution time of function sort is 3.505000 ms.
- 
-Testing 10000 data with 2 node and 30 process
-Execution time of function sort is 0.408000 ms.
- 
-Testing 10000 data with 2 node and 31 process
-Execution time of function sort is 0.716000 ms.
- 
-Testing 10000 data with 2 node and 32 process
-Execution time of function sort is 9.269000 ms.
- 
-Testing 10000 data with 2 node and 33 process
-Execution time of function sort is 0.452000 ms.
- 
-Testing 10000 data with 2 node and 34 process
-Execution time of function sort is 0.726000 ms.
- 
-Testing 10000 data with 2 node and 35 process
-Execution time of function sort is 0.404000 ms.
- 
-Testing 10000 data with 2 node and 36 process
-Execution time of function sort is 0.521000 ms.
- 
-Testing 10000 data with 2 node and 37 process
-Execution time of function sort is 0.524000 ms.
- 
-Testing 10000 data with 2 node and 38 process
-Execution time of function sort is 0.626000 ms.
- 
-Testing 10000 data with 2 node and 39 process
-Execution time of function sort is 0.625000 ms.
- 
-Testing 10000 data with 2 node and 40 process
-Execution time of function sort is 0.540000 ms.
- 
-Testing 10000 data with 2 node and 41 process
 Execution time of function sort is 0.383000 ms.
  
+Testing 10000 data with 1 node and 28 process
+Execution time of function sort is 0.318000 ms.
+ 
+Testing 10000 data with 2 node and 29 process
+Execution time of function sort is 3.514000 ms.
+ 
+Testing 10000 data with 2 node and 30 process
+Execution time of function sort is 0.445000 ms.
+ 
+Testing 10000 data with 2 node and 31 process
+Execution time of function sort is 0.571000 ms.
+ 
+Testing 10000 data with 2 node and 32 process
+Execution time of function sort is 7.100000 ms.
+ 
+Testing 10000 data with 2 node and 33 process
+Execution time of function sort is 0.426000 ms.
+ 
+Testing 10000 data with 2 node and 34 process
+Execution time of function sort is 0.603000 ms.
+ 
+Testing 10000 data with 2 node and 35 process
+Execution time of function sort is 0.471000 ms.
+ 
+Testing 10000 data with 2 node and 36 process
+Execution time of function sort is 2.155000 ms.
+ 
+Testing 10000 data with 2 node and 37 process
+Execution time of function sort is 0.552000 ms.
+ 
+Testing 10000 data with 2 node and 38 process
+Execution time of function sort is 0.609000 ms.
+ 
+Testing 10000 data with 2 node and 39 process
+Execution time of function sort is 0.688000 ms.
+ 
+Testing 10000 data with 2 node and 40 process
+Execution time of function sort is 0.560000 ms.
+ 
+Testing 10000 data with 2 node and 41 process
+Execution time of function sort is 0.466000 ms.
+ 
 Testing 10000 data with 2 node and 42 process
-Execution time of function sort is 0.590000 ms.
+Execution time of function sort is 0.737000 ms.
  
 Testing 10000 data with 2 node and 43 process
-Execution time of function sort is 0.605000 ms.
+Execution time of function sort is 0.601000 ms.
  
 Testing 10000 data with 2 node and 44 process
-Execution time of function sort is 0.431000 ms.
+Execution time of function sort is 0.598000 ms.
  
 Testing 10000 data with 2 node and 45 process
-Execution time of function sort is 0.496000 ms.
+Execution time of function sort is 2.329000 ms.
  
 Testing 10000 data with 2 node and 46 process
-Execution time of function sort is 0.472000 ms.
+Execution time of function sort is 0.549000 ms.
  
 Testing 10000 data with 2 node and 47 process
-Execution time of function sort is 0.571000 ms.
+Execution time of function sort is 0.555000 ms.
  
 Testing 10000 data with 2 node and 48 process
-Execution time of function sort is 0.600000 ms.
+Execution time of function sort is 0.588000 ms.
  
 Testing 10000 data with 2 node and 49 process
-Execution time of function sort is 0.571000 ms.
+Execution time of function sort is 0.701000 ms.
  
 Testing 10000 data with 2 node and 50 process
-Execution time of function sort is 0.432000 ms.
+Execution time of function sort is 0.582000 ms.
  
 Testing 10000 data with 2 node and 51 process
-Execution time of function sort is 0.529000 ms.
+Execution time of function sort is 0.566000 ms.
  
 Testing 10000 data with 2 node and 52 process
-Execution time of function sort is 0.573000 ms.
+Execution time of function sort is 0.564000 ms.
  
 Testing 10000 data with 2 node and 53 process
-Execution time of function sort is 0.532000 ms.
+Execution time of function sort is 0.568000 ms.
  
 Testing 10000 data with 2 node and 54 process
-Execution time of function sort is 0.464000 ms.
+Execution time of function sort is 0.445000 ms.
  
 Testing 10000 data with 2 node and 55 process
-Execution time of function sort is 0.484000 ms.
+Execution time of function sort is 0.487000 ms.
  
 Testing 10000 data with 2 node and 56 process
-Execution time of function sort is 0.636000 ms.
+Execution time of function sort is 0.634000 ms.
  
 Testing 100000 data with 1 node and 1 process
-Execution time of function sort is 2.147000 ms.
+Execution time of function sort is 2.130000 ms.
  
 Testing 100000 data with 1 node and 2 process
-Execution time of function sort is 2.383000 ms.
+Execution time of function sort is 2.137000 ms.
  
 Testing 100000 data with 1 node and 3 process
-Execution time of function sort is 1.473000 ms.
+Execution time of function sort is 1.917000 ms.
  
 Testing 100000 data with 1 node and 4 process
-Execution time of function sort is 1.668000 ms.
- 
-Testing 100000 data with 1 node and 5 process
-Execution time of function sort is 1.414000 ms.
- 
-Testing 100000 data with 1 node and 6 process
-Execution time of function sort is 1.526000 ms.
- 
-Testing 100000 data with 1 node and 7 process
-Execution time of function sort is 1.098000 ms.
- 
-Testing 100000 data with 1 node and 8 process
-Execution time of function sort is 1.517000 ms.
- 
-Testing 100000 data with 1 node and 9 process
-Execution time of function sort is 1.367000 ms.
- 
-Testing 100000 data with 1 node and 10 process
-Execution time of function sort is 1.689000 ms.
- 
-Testing 100000 data with 1 node and 11 process
-Execution time of function sort is 1.589000 ms.
- 
-Testing 100000 data with 1 node and 12 process
-Execution time of function sort is 1.697000 ms.
- 
-Testing 100000 data with 1 node and 13 process
-Execution time of function sort is 1.255000 ms.
- 
-Testing 100000 data with 1 node and 14 process
-Execution time of function sort is 1.176000 ms.
- 
-Testing 100000 data with 1 node and 15 process
-Execution time of function sort is 1.214000 ms.
- 
-Testing 100000 data with 1 node and 16 process
-Execution time of function sort is 0.982000 ms.
- 
-Testing 100000 data with 1 node and 17 process
-Execution time of function sort is 1.136000 ms.
- 
-Testing 100000 data with 1 node and 18 process
-Execution time of function sort is 0.953000 ms.
- 
-Testing 100000 data with 1 node and 19 process
-Execution time of function sort is 0.974000 ms.
- 
-Testing 100000 data with 1 node and 20 process
-Execution time of function sort is 0.954000 ms.
- 
-Testing 100000 data with 1 node and 21 process
-Execution time of function sort is 0.966000 ms.
- 
-Testing 100000 data with 1 node and 22 process
-Execution time of function sort is 0.988000 ms.
- 
-Testing 100000 data with 1 node and 23 process
-Execution time of function sort is 0.957000 ms.
- 
-Testing 100000 data with 1 node and 24 process
-Execution time of function sort is 1.240000 ms.
- 
-Testing 100000 data with 1 node and 25 process
-Execution time of function sort is 0.871000 ms.
- 
-Testing 100000 data with 1 node and 26 process
-Execution time of function sort is 1.085000 ms.
- 
-Testing 100000 data with 1 node and 27 process
-Execution time of function sort is 1.034000 ms.
- 
-Testing 100000 data with 1 node and 28 process
-Execution time of function sort is 0.860000 ms.
- 
-Testing 100000 data with 2 node and 29 process
-Execution time of function sort is 1.146000 ms.
- 
-Testing 100000 data with 2 node and 30 process
-Execution time of function sort is 1.292000 ms.
- 
-Testing 100000 data with 2 node and 31 process
-Execution time of function sort is 1.100000 ms.
- 
-Testing 100000 data with 2 node and 32 process
-Execution time of function sort is 10.773000 ms.
- 
-Testing 100000 data with 2 node and 33 process
 Execution time of function sort is 1.747000 ms.
  
-Testing 100000 data with 2 node and 34 process
-Execution time of function sort is 1.601000 ms.
+Testing 100000 data with 1 node and 5 process
+Execution time of function sort is 1.372000 ms.
  
-Testing 100000 data with 2 node and 35 process
-Execution time of function sort is 1.604000 ms.
+Testing 100000 data with 1 node and 6 process
+Execution time of function sort is 1.807000 ms.
  
-Testing 100000 data with 2 node and 36 process
-Execution time of function sort is 3.212000 ms.
+Testing 100000 data with 1 node and 7 process
+Execution time of function sort is 1.367000 ms.
  
-Testing 100000 data with 2 node and 37 process
-Execution time of function sort is 1.531000 ms.
+Testing 100000 data with 1 node and 8 process
+Execution time of function sort is 1.503000 ms.
  
-Testing 100000 data with 2 node and 38 process
+Testing 100000 data with 1 node and 9 process
+Execution time of function sort is 1.286000 ms.
+ 
+Testing 100000 data with 1 node and 10 process
+Execution time of function sort is 1.298000 ms.
+ 
+Testing 100000 data with 1 node and 11 process
+Execution time of function sort is 1.260000 ms.
+ 
+Testing 100000 data with 1 node and 12 process
+Execution time of function sort is 0.959000 ms.
+ 
+Testing 100000 data with 1 node and 13 process
+Execution time of function sort is 1.719000 ms.
+ 
+Testing 100000 data with 1 node and 14 process
+Execution time of function sort is 1.209000 ms.
+ 
+Testing 100000 data with 1 node and 15 process
+Execution time of function sort is 1.697000 ms.
+ 
+Testing 100000 data with 1 node and 16 process
+Execution time of function sort is 0.939000 ms.
+ 
+Testing 100000 data with 1 node and 17 process
+Execution time of function sort is 1.133000 ms.
+ 
+Testing 100000 data with 1 node and 18 process
+Execution time of function sort is 0.945000 ms.
+ 
+Testing 100000 data with 1 node and 19 process
+Execution time of function sort is 0.926000 ms.
+ 
+Testing 100000 data with 1 node and 20 process
+Execution time of function sort is 0.960000 ms.
+ 
+Testing 100000 data with 1 node and 21 process
+Execution time of function sort is 0.940000 ms.
+ 
+Testing 100000 data with 1 node and 22 process
+Execution time of function sort is 0.985000 ms.
+ 
+Testing 100000 data with 1 node and 23 process
 Execution time of function sort is 1.045000 ms.
  
+Testing 100000 data with 1 node and 24 process
+Execution time of function sort is 1.219000 ms.
+ 
+Testing 100000 data with 1 node and 25 process
+Execution time of function sort is 0.850000 ms.
+ 
+Testing 100000 data with 1 node and 26 process
+Execution time of function sort is 1.153000 ms.
+ 
+Testing 100000 data with 1 node and 27 process
+Execution time of function sort is 0.889000 ms.
+ 
+Testing 100000 data with 1 node and 28 process
+Execution time of function sort is 0.881000 ms.
+ 
+Testing 100000 data with 2 node and 29 process
+Execution time of function sort is 1.422000 ms.
+ 
+Testing 100000 data with 2 node and 30 process
+Execution time of function sort is 1.298000 ms.
+ 
+Testing 100000 data with 2 node and 31 process
+Execution time of function sort is 1.391000 ms.
+ 
+Testing 100000 data with 2 node and 32 process
+Execution time of function sort is 7.229000 ms.
+ 
+Testing 100000 data with 2 node and 33 process
+Execution time of function sort is 1.998000 ms.
+ 
+Testing 100000 data with 2 node and 34 process
+Execution time of function sort is 1.508000 ms.
+ 
+Testing 100000 data with 2 node and 35 process
+Execution time of function sort is 1.608000 ms.
+ 
+Testing 100000 data with 2 node and 36 process
+Execution time of function sort is 1.604000 ms.
+ 
+Testing 100000 data with 2 node and 37 process
+Execution time of function sort is 1.656000 ms.
+ 
+Testing 100000 data with 2 node and 38 process
+Execution time of function sort is 1.467000 ms.
+ 
 Testing 100000 data with 2 node and 39 process
-Execution time of function sort is 1.673000 ms.
+Execution time of function sort is 1.481000 ms.
  
 Testing 100000 data with 2 node and 40 process
-Execution time of function sort is 3.099000 ms.
+Execution time of function sort is 1.508000 ms.
  
 Testing 100000 data with 2 node and 41 process
-Execution time of function sort is 1.147000 ms.
+Execution time of function sort is 1.098000 ms.
  
 Testing 100000 data with 2 node and 42 process
-Execution time of function sort is 1.653000 ms.
+Execution time of function sort is 1.845000 ms.
  
 Testing 100000 data with 2 node and 43 process
-Execution time of function sort is 1.316000 ms.
+Execution time of function sort is 1.408000 ms.
  
 Testing 100000 data with 2 node and 44 process
-Execution time of function sort is 1.400000 ms.
+Execution time of function sort is 1.652000 ms.
  
 Testing 100000 data with 2 node and 45 process
-Execution time of function sort is 1.550000 ms.
+Execution time of function sort is 1.594000 ms.
  
 Testing 100000 data with 2 node and 46 process
-Execution time of function sort is 1.035000 ms.
+Execution time of function sort is 1.132000 ms.
  
 Testing 100000 data with 2 node and 47 process
-Execution time of function sort is 1.007000 ms.
+Execution time of function sort is 1.178000 ms.
  
 Testing 100000 data with 2 node and 48 process
-Execution time of function sort is 1.024000 ms.
+Execution time of function sort is 1.304000 ms.
  
 Testing 100000 data with 2 node and 49 process
-Execution time of function sort is 1.647000 ms.
+Execution time of function sort is 1.327000 ms.
  
 Testing 100000 data with 2 node and 50 process
-Execution time of function sort is 0.956000 ms.
+Execution time of function sort is 1.134000 ms.
  
 Testing 100000 data with 2 node and 51 process
-Execution time of function sort is 1.196000 ms.
+Execution time of function sort is 1.506000 ms.
  
 Testing 100000 data with 2 node and 52 process
-Execution time of function sort is 1.026000 ms.
+Execution time of function sort is 1.048000 ms.
  
 Testing 100000 data with 2 node and 53 process
-Execution time of function sort is 5.069000 ms.
+Execution time of function sort is 1.180000 ms.
  
 Testing 100000 data with 2 node and 54 process
-Execution time of function sort is 1.034000 ms.
+Execution time of function sort is 0.939000 ms.
  
 Testing 100000 data with 2 node and 55 process
-Execution time of function sort is 1.186000 ms.
+Execution time of function sort is 1.188000 ms.
  
 Testing 100000 data with 2 node and 56 process
-Execution time of function sort is 0.966000 ms.
+Execution time of function sort is 1.018000 ms.
  
 Testing 1000000 data with 1 node and 1 process
-Execution time of function sort is 22.435000 ms.
+Execution time of function sort is 24.301000 ms.
  
 Testing 1000000 data with 1 node and 2 process
-Execution time of function sort is 21.036000 ms.
+Execution time of function sort is 22.044000 ms.
  
 Testing 1000000 data with 1 node and 3 process
-Execution time of function sort is 16.518000 ms.
+Execution time of function sort is 17.516000 ms.
  
 Testing 1000000 data with 1 node and 4 process
-Execution time of function sort is 13.684000 ms.
+Execution time of function sort is 16.434000 ms.
  
 Testing 1000000 data with 1 node and 5 process
-Execution time of function sort is 14.832000 ms.
+Execution time of function sort is 13.022000 ms.
  
 Testing 1000000 data with 1 node and 6 process
-Execution time of function sort is 15.334000 ms.
+Execution time of function sort is 12.029000 ms.
  
 Testing 1000000 data with 1 node and 7 process
-Execution time of function sort is 13.523000 ms.
+Execution time of function sort is 10.586000 ms.
  
 Testing 1000000 data with 1 node and 8 process
-Execution time of function sort is 14.087000 ms.
+Execution time of function sort is 10.422000 ms.
  
 Testing 1000000 data with 1 node and 9 process
-Execution time of function sort is 13.209000 ms.
+Execution time of function sort is 8.132000 ms.
  
 Testing 1000000 data with 1 node and 10 process
-Execution time of function sort is 9.269000 ms.
+Execution time of function sort is 9.065000 ms.
  
 Testing 1000000 data with 1 node and 11 process
-Execution time of function sort is 9.890000 ms.
+Execution time of function sort is 11.769000 ms.
  
 Testing 1000000 data with 1 node and 12 process
-Execution time of function sort is 10.138000 ms.
+Execution time of function sort is 10.878000 ms.
  
 Testing 1000000 data with 1 node and 13 process
-Execution time of function sort is 7.749000 ms.
+Execution time of function sort is 7.462000 ms.
  
 Testing 1000000 data with 1 node and 14 process
-Execution time of function sort is 8.462000 ms.
+Execution time of function sort is 10.131000 ms.
  
 Testing 1000000 data with 1 node and 15 process
-Execution time of function sort is 8.985000 ms.
+Execution time of function sort is 8.437000 ms.
  
 Testing 1000000 data with 1 node and 16 process
-Execution time of function sort is 7.362000 ms.
+Execution time of function sort is 7.023000 ms.
  
 Testing 1000000 data with 1 node and 17 process
-Execution time of function sort is 6.886000 ms.
+Execution time of function sort is 6.646000 ms.
  
 Testing 1000000 data with 1 node and 18 process
-Execution time of function sort is 6.864000 ms.
+Execution time of function sort is 6.891000 ms.
  
 Testing 1000000 data with 1 node and 19 process
-Execution time of function sort is 6.836000 ms.
+Execution time of function sort is 6.544000 ms.
  
 Testing 1000000 data with 1 node and 20 process
-Execution time of function sort is 6.330000 ms.
+Execution time of function sort is 6.726000 ms.
  
 Testing 1000000 data with 1 node and 21 process
-Execution time of function sort is 6.803000 ms.
+Execution time of function sort is 6.572000 ms.
  
 Testing 1000000 data with 1 node and 22 process
-Execution time of function sort is 7.874000 ms.
+Execution time of function sort is 7.742000 ms.
  
 Testing 1000000 data with 1 node and 23 process
-Execution time of function sort is 8.107000 ms.
+Execution time of function sort is 7.942000 ms.
  
 Testing 1000000 data with 1 node and 24 process
-Execution time of function sort is 7.881000 ms.
+Execution time of function sort is 8.257000 ms.
  
 Testing 1000000 data with 1 node and 25 process
-Execution time of function sort is 6.353000 ms.
+Execution time of function sort is 6.019000 ms.
  
 Testing 1000000 data with 1 node and 26 process
-Execution time of function sort is 6.365000 ms.
+Execution time of function sort is 6.143000 ms.
  
 Testing 1000000 data with 1 node and 27 process
-Execution time of function sort is 5.894000 ms.
+Execution time of function sort is 6.096000 ms.
  
 Testing 1000000 data with 1 node and 28 process
-Execution time of function sort is 7.674000 ms.
+Execution time of function sort is 7.602000 ms.
  
 Testing 1000000 data with 2 node and 29 process
-Execution time of function sort is 10.747000 ms.
+Execution time of function sort is 22.972000 ms.
  
 Testing 1000000 data with 2 node and 30 process
-Execution time of function sort is 8.075000 ms.
+Execution time of function sort is 7.422000 ms.
  
 Testing 1000000 data with 2 node and 31 process
-Execution time of function sort is 9.637000 ms.
+Execution time of function sort is 11.923000 ms.
  
 Testing 1000000 data with 2 node and 32 process
-Execution time of function sort is 16.421000 ms.
+Execution time of function sort is 17.318000 ms.
  
 Testing 1000000 data with 2 node and 33 process
-Execution time of function sort is 9.586000 ms.
+Execution time of function sort is 9.787000 ms.
  
 Testing 1000000 data with 2 node and 34 process
-Execution time of function sort is 10.024000 ms.
+Execution time of function sort is 9.999000 ms.
  
 Testing 1000000 data with 2 node and 35 process
-Execution time of function sort is 9.253000 ms.
+Execution time of function sort is 9.622000 ms.
  
 Testing 1000000 data with 2 node and 36 process
-Execution time of function sort is 9.734000 ms.
+Execution time of function sort is 10.237000 ms.
  
 Testing 1000000 data with 2 node and 37 process
-Execution time of function sort is 8.518000 ms.
+Execution time of function sort is 10.643000 ms.
  
 Testing 1000000 data with 2 node and 38 process
-Execution time of function sort is 10.026000 ms.
+Execution time of function sort is 9.587000 ms.
  
 Testing 1000000 data with 2 node and 39 process
-Execution time of function sort is 9.615000 ms.
+Execution time of function sort is 9.732000 ms.
  
 Testing 1000000 data with 2 node and 40 process
-Execution time of function sort is 8.925000 ms.
+Execution time of function sort is 31.663000 ms.
  
 Testing 1000000 data with 2 node and 41 process
-Execution time of function sort is 11.006000 ms.
+Execution time of function sort is 11.448000 ms.
  
 Testing 1000000 data with 2 node and 42 process
-Execution time of function sort is 8.835000 ms.
+Execution time of function sort is 6.807000 ms.
  
 Testing 1000000 data with 2 node and 43 process
-Execution time of function sort is 7.555000 ms.
+Execution time of function sort is 8.686000 ms.
  
 Testing 1000000 data with 2 node and 44 process
-Execution time of function sort is 5.508000 ms.
+Execution time of function sort is 9.749000 ms.
  
 Testing 1000000 data with 2 node and 45 process
-Execution time of function sort is 11.162000 ms.
+Execution time of function sort is 11.757000 ms.
  
 Testing 1000000 data with 2 node and 46 process
-Execution time of function sort is 9.077000 ms.
+Execution time of function sort is 9.024000 ms.
  
 Testing 1000000 data with 2 node and 47 process
-Execution time of function sort is 10.063000 ms.
+Execution time of function sort is 9.271000 ms.
  
 Testing 1000000 data with 2 node and 48 process
-Execution time of function sort is 9.295000 ms.
+Execution time of function sort is 7.991000 ms.
  
 Testing 1000000 data with 2 node and 49 process
-Execution time of function sort is 8.934000 ms.
+Execution time of function sort is 8.915000 ms.
  
 Testing 1000000 data with 2 node and 50 process
-Execution time of function sort is 7.056000 ms.
+Execution time of function sort is 5.828000 ms.
  
 Testing 1000000 data with 2 node and 51 process
-Execution time of function sort is 8.475000 ms.
+Execution time of function sort is 5.769000 ms.
  
 Testing 1000000 data with 2 node and 52 process
-Execution time of function sort is 8.769000 ms.
+Execution time of function sort is 7.577000 ms.
  
 Testing 1000000 data with 2 node and 53 process
-Execution time of function sort is 5.493000 ms.
+Execution time of function sort is 6.983000 ms.
  
 Testing 1000000 data with 2 node and 54 process
-Execution time of function sort is 7.434000 ms.
+Execution time of function sort is 7.314000 ms.
  
 Testing 1000000 data with 2 node and 55 process
-Execution time of function sort is 5.855000 ms.
+Execution time of function sort is 6.750000 ms.
  
 Testing 1000000 data with 2 node and 56 process
-Execution time of function sort is 11.642000 ms.
+Execution time of function sort is 5.436000 ms.
  
 Testing 10000000 data with 1 node and 1 process
-Execution time of function sort is 305.985000 ms.
+Execution time of function sort is 309.912000 ms.
  
 Testing 10000000 data with 1 node and 2 process
-Execution time of function sort is 237.530000 ms.
+Execution time of function sort is 224.651000 ms.
  
 Testing 10000000 data with 1 node and 3 process
-Execution time of function sort is 186.168000 ms.
+Execution time of function sort is 174.868000 ms.
  
 Testing 10000000 data with 1 node and 4 process
-Execution time of function sort is 177.680000 ms.
+Execution time of function sort is 163.506000 ms.
  
 Testing 10000000 data with 1 node and 5 process
-Execution time of function sort is 139.459000 ms.
+Execution time of function sort is 137.115000 ms.
  
 Testing 10000000 data with 1 node and 6 process
-Execution time of function sort is 150.259000 ms.
+Execution time of function sort is 149.563000 ms.
  
 Testing 10000000 data with 1 node and 7 process
-Execution time of function sort is 131.721000 ms.
+Execution time of function sort is 128.388000 ms.
  
 Testing 10000000 data with 1 node and 8 process
-Execution time of function sort is 107.494000 ms.
+Execution time of function sort is 108.903000 ms.
  
 Testing 10000000 data with 1 node and 9 process
-Execution time of function sort is 104.519000 ms.
+Execution time of function sort is 105.921000 ms.
  
 Testing 10000000 data with 1 node and 10 process
-Execution time of function sort is 104.779000 ms.
+Execution time of function sort is 104.711000 ms.
  
 Testing 10000000 data with 1 node and 11 process
-Execution time of function sort is 115.033000 ms.
+Execution time of function sort is 116.199000 ms.
  
 Testing 10000000 data with 1 node and 12 process
-Execution time of function sort is 92.370000 ms.
+Execution time of function sort is 95.782000 ms.
  
 Testing 10000000 data with 1 node and 13 process
-Execution time of function sort is 107.546000 ms.
+Execution time of function sort is 111.414000 ms.
  
 Testing 10000000 data with 1 node and 14 process
-Execution time of function sort is 86.698000 ms.
+Execution time of function sort is 82.991000 ms.
  
 Testing 10000000 data with 1 node and 15 process
-Execution time of function sort is 105.235000 ms.
+Execution time of function sort is 101.157000 ms.
  
 Testing 10000000 data with 1 node and 16 process
-Execution time of function sort is 89.223000 ms.
+Execution time of function sort is 87.897000 ms.
  
 Testing 10000000 data with 1 node and 17 process
-Execution time of function sort is 83.462000 ms.
+Execution time of function sort is 86.446000 ms.
  
 Testing 10000000 data with 1 node and 18 process
-Execution time of function sort is 79.693000 ms.
+Execution time of function sort is 81.929000 ms.
  
 Testing 10000000 data with 1 node and 19 process
-Execution time of function sort is 76.477000 ms.
+Execution time of function sort is 84.558000 ms.
  
 Testing 10000000 data with 1 node and 20 process
-Execution time of function sort is 78.488000 ms.
+Execution time of function sort is 78.779000 ms.
  
 Testing 10000000 data with 1 node and 21 process
-Execution time of function sort is 99.907000 ms.
+Execution time of function sort is 98.797000 ms.
  
 Testing 10000000 data with 1 node and 22 process
-Execution time of function sort is 83.459000 ms.
+Execution time of function sort is 78.084000 ms.
  
 Testing 10000000 data with 1 node and 23 process
-Execution time of function sort is 104.898000 ms.
+Execution time of function sort is 114.509000 ms.
  
 Testing 10000000 data with 1 node and 24 process
-Execution time of function sort is 109.807000 ms.
+Execution time of function sort is 115.143000 ms.
  
 Testing 10000000 data with 1 node and 25 process
-Execution time of function sort is 77.900000 ms.
+Execution time of function sort is 80.108000 ms.
  
 Testing 10000000 data with 1 node and 26 process
-Execution time of function sort is 82.633000 ms.
+Execution time of function sort is 85.294000 ms.
  
 Testing 10000000 data with 1 node and 27 process
-Execution time of function sort is 112.685000 ms.
+Execution time of function sort is 112.914000 ms.
  
 Testing 10000000 data with 1 node and 28 process
-Execution time of function sort is 112.872000 ms.
+Execution time of function sort is 113.658000 ms.
  
 Testing 10000000 data with 2 node and 29 process
-Execution time of function sort is 79.350000 ms.
+Execution time of function sort is 83.808000 ms.
  
 Testing 10000000 data with 2 node and 30 process
-Execution time of function sort is 86.802000 ms.
+Execution time of function sort is 79.385000 ms.
  
 Testing 10000000 data with 2 node and 31 process
-Execution time of function sort is 110.145000 ms.
+Execution time of function sort is 108.766000 ms.
  
 Testing 10000000 data with 2 node and 32 process
-Execution time of function sort is 83.483000 ms.
+Execution time of function sort is 78.378000 ms.
  
 Testing 10000000 data with 2 node and 33 process
-Execution time of function sort is 99.919000 ms.
+Execution time of function sort is 101.387000 ms.
  
 Testing 10000000 data with 2 node and 34 process
-Execution time of function sort is 73.830000 ms.
+Execution time of function sort is 83.950000 ms.
  
 Testing 10000000 data with 2 node and 35 process
-Execution time of function sort is 99.924000 ms.
+Execution time of function sort is 99.261000 ms.
  
 Testing 10000000 data with 2 node and 36 process
-Execution time of function sort is 83.356000 ms.
+Execution time of function sort is 82.566000 ms.
  
 Testing 10000000 data with 2 node and 37 process
-Execution time of function sort is 107.743000 ms.
+Execution time of function sort is 109.159000 ms.
  
 Testing 10000000 data with 2 node and 38 process
-Execution time of function sort is 79.053000 ms.
+Execution time of function sort is 73.191000 ms.
  
 Testing 10000000 data with 2 node and 39 process
-Execution time of function sort is 100.306000 ms.
+Execution time of function sort is 100.360000 ms.
  
 Testing 10000000 data with 2 node and 40 process
-Execution time of function sort is 79.157000 ms.
+Execution time of function sort is 75.124000 ms.
  
 Testing 10000000 data with 2 node and 41 process
-Execution time of function sort is 89.360000 ms.
+Execution time of function sort is 96.072000 ms.
  
 Testing 10000000 data with 2 node and 42 process
-Execution time of function sort is 67.330000 ms.
+Execution time of function sort is 75.606000 ms.
  
 Testing 10000000 data with 2 node and 43 process
-Execution time of function sort is 85.131000 ms.
+Execution time of function sort is 95.655000 ms.
  
 Testing 10000000 data with 2 node and 44 process
-Execution time of function sort is 84.201000 ms.
+Execution time of function sort is 85.796000 ms.
  
 Testing 10000000 data with 2 node and 45 process
-Execution time of function sort is 74.923000 ms.
+Execution time of function sort is 82.901000 ms.
  
 Testing 10000000 data with 2 node and 46 process
-Execution time of function sort is 59.219000 ms.
+Execution time of function sort is 63.233000 ms.
  
 Testing 10000000 data with 2 node and 47 process
-Execution time of function sort is 59.959000 ms.
+Execution time of function sort is 61.753000 ms.
  
 Testing 10000000 data with 2 node and 48 process
-Execution time of function sort is 55.053000 ms.
+Execution time of function sort is 60.210000 ms.
  
 Testing 10000000 data with 2 node and 49 process
-Execution time of function sort is 56.811000 ms.
+Execution time of function sort is 57.436000 ms.
  
 Testing 10000000 data with 2 node and 50 process
-Execution time of function sort is 56.904000 ms.
+Execution time of function sort is 57.152000 ms.
  
 Testing 10000000 data with 2 node and 51 process
-Execution time of function sort is 72.262000 ms.
+Execution time of function sort is 74.099000 ms.
  
 Testing 10000000 data with 2 node and 52 process
-Execution time of function sort is 59.845000 ms.
+Execution time of function sort is 56.209000 ms.
  
 Testing 10000000 data with 2 node and 53 process
-Execution time of function sort is 52.682000 ms.
+Execution time of function sort is 57.211000 ms.
  
 Testing 10000000 data with 2 node and 54 process
-Execution time of function sort is 53.014000 ms.
+Execution time of function sort is 55.435000 ms.
  
 Testing 10000000 data with 2 node and 55 process
-Execution time of function sort is 68.136000 ms.
+Execution time of function sort is 76.496000 ms.
  
 Testing 10000000 data with 2 node and 56 process
-Execution time of function sort is 60.198000 ms.
+Execution time of function sort is 56.555000 ms.
  
 Testing 100000000 data with 1 node and 1 process
-Execution time of function sort is 3411.982000 ms.
+Execution time of function sort is 3273.016000 ms.
  
 Testing 100000000 data with 1 node and 2 process
-Execution time of function sort is 2260.351000 ms.
+Execution time of function sort is 2243.663000 ms.
  
 Testing 100000000 data with 1 node and 3 process
-Execution time of function sort is 1810.561000 ms.
+Execution time of function sort is 1808.071000 ms.
  
 Testing 100000000 data with 1 node and 4 process
-Execution time of function sort is 1640.720000 ms.
+Execution time of function sort is 1549.947000 ms.
  
 Testing 100000000 data with 1 node and 5 process
-Execution time of function sort is 1411.775000 ms.
+Execution time of function sort is 1438.697000 ms.
  
 Testing 100000000 data with 1 node and 6 process
-Execution time of function sort is 1436.832000 ms.
+Execution time of function sort is 1520.229000 ms.
  
 Testing 100000000 data with 1 node and 7 process
-Execution time of function sort is 1334.055000 ms.
+Execution time of function sort is 1514.325000 ms.
  
 Testing 100000000 data with 1 node and 8 process
-Execution time of function sort is 1125.845000 ms.
+Execution time of function sort is 1164.075000 ms.
  
 Testing 100000000 data with 1 node and 9 process
-Execution time of function sort is 1060.484000 ms.
+Execution time of function sort is 1079.644000 ms.
  
 Testing 100000000 data with 1 node and 10 process
-Execution time of function sort is 1008.297000 ms.
+Execution time of function sort is 1049.613000 ms.
  
 Testing 100000000 data with 1 node and 11 process
-Execution time of function sort is 985.995000 ms.
+Execution time of function sort is 1000.632000 ms.
  
 Testing 100000000 data with 1 node and 12 process
-Execution time of function sort is 953.380000 ms.
+Execution time of function sort is 940.478000 ms.
  
 Testing 100000000 data with 1 node and 13 process
-Execution time of function sort is 982.253000 ms.
+Execution time of function sort is 988.509000 ms.
  
 Testing 100000000 data with 1 node and 14 process
-Execution time of function sort is 951.454000 ms.
+Execution time of function sort is 938.056000 ms.
  
 Testing 100000000 data with 1 node and 15 process
-Execution time of function sort is 1130.313000 ms.
+Execution time of function sort is 1161.978000 ms.
  
 Testing 100000000 data with 1 node and 16 process
-Execution time of function sort is 923.910000 ms.
+Execution time of function sort is 912.394000 ms.
  
 Testing 100000000 data with 1 node and 17 process
-Execution time of function sort is 1266.220000 ms.
+Execution time of function sort is 1218.109000 ms.
  
 Testing 100000000 data with 1 node and 18 process
-Execution time of function sort is 942.212000 ms.
+Execution time of function sort is 915.422000 ms.
  
 Testing 100000000 data with 1 node and 19 process
-Execution time of function sort is 962.404000 ms.
+Execution time of function sort is 1084.856000 ms.
  
 Testing 100000000 data with 1 node and 20 process
-Execution time of function sort is 1011.965000 ms.
+Execution time of function sort is 968.658000 ms.
  
 Testing 100000000 data with 1 node and 21 process
-Execution time of function sort is 1343.372000 ms.
+Execution time of function sort is 1407.239000 ms.
  
 Testing 100000000 data with 1 node and 22 process
-Execution time of function sort is 1501.525000 ms.
+Execution time of function sort is 1538.085000 ms.
  
 Testing 100000000 data with 1 node and 23 process
-Execution time of function sort is 1527.948000 ms.
+Execution time of function sort is 1555.856000 ms.
  
 Testing 100000000 data with 1 node and 24 process
-Execution time of function sort is 1718.696000 ms.
+Execution time of function sort is 1572.002000 ms.
  
 Testing 100000000 data with 1 node and 25 process
-Execution time of function sort is 1163.979000 ms.
+Execution time of function sort is 1138.304000 ms.
  
 Testing 100000000 data with 1 node and 26 process
-Execution time of function sort is 1184.554000 ms.
+Execution time of function sort is 1160.016000 ms.
  
 Testing 100000000 data with 1 node and 27 process
-Execution time of function sort is 1241.950000 ms.
+Execution time of function sort is 1198.567000 ms.
  
 Testing 100000000 data with 1 node and 28 process
-Execution time of function sort is 1666.861000 ms.
+Execution time of function sort is 1819.079000 ms.
  
 Testing 100000000 data with 2 node and 29 process
-Execution time of function sort is 1203.748000 ms.
+Execution time of function sort is 1430.458000 ms.
  
 Testing 100000000 data with 2 node and 30 process
-Execution time of function sort is 1253.347000 ms.
+Execution time of function sort is 1237.929000 ms.
  
 Testing 100000000 data with 2 node and 31 process
-Execution time of function sort is 1715.150000 ms.
+Execution time of function sort is 2001.071000 ms.
  
 Testing 100000000 data with 2 node and 32 process
-Execution time of function sort is 1233.557000 ms.
+Execution time of function sort is 1315.032000 ms.
  
 Testing 100000000 data with 2 node and 33 process
-Execution time of function sort is 1236.982000 ms.
+Execution time of function sort is 1197.699000 ms.
  
 Testing 100000000 data with 2 node and 34 process
-Execution time of function sort is 1774.264000 ms.
+Execution time of function sort is 1787.760000 ms.
  
 Testing 100000000 data with 2 node and 35 process
-Execution time of function sort is 1842.746000 ms.
+Execution time of function sort is 1921.987000 ms.
  
 Testing 100000000 data with 2 node and 36 process
-Execution time of function sort is 1247.511000 ms.
+Execution time of function sort is 1290.857000 ms.
  
 Testing 100000000 data with 2 node and 37 process
-Execution time of function sort is 1869.904000 ms.
+Execution time of function sort is 1904.242000 ms.
  
 Testing 100000000 data with 2 node and 38 process
-Execution time of function sort is 1725.297000 ms.
+Execution time of function sort is 1779.251000 ms.
  
 Testing 100000000 data with 2 node and 39 process
-Execution time of function sort is 1688.298000 ms.
+Execution time of function sort is 1828.719000 ms.
  
 Testing 100000000 data with 2 node and 40 process
-Execution time of function sort is 1194.516000 ms.
+Execution time of function sort is 1237.177000 ms.
  
 Testing 100000000 data with 2 node and 41 process
-Execution time of function sort is 1855.387000 ms.
+Execution time of function sort is 1744.852000 ms.
  
 Testing 100000000 data with 2 node and 42 process
-Execution time of function sort is 1698.920000 ms.
+Execution time of function sort is 1872.763000 ms.
  
 Testing 100000000 data with 2 node and 43 process
-Execution time of function sort is 1170.343000 ms.
+Execution time of function sort is 1233.321000 ms.
  
 Testing 100000000 data with 2 node and 44 process
-Execution time of function sort is 1292.133000 ms.
+Execution time of function sort is 1258.086000 ms.
  
 Testing 100000000 data with 2 node and 45 process
-Execution time of function sort is 1873.114000 ms.
+Execution time of function sort is 1850.514000 ms.
  
 Testing 100000000 data with 2 node and 46 process
-Execution time of function sort is 1257.908000 ms.
+Execution time of function sort is 1264.307000 ms.
  
 Testing 100000000 data with 2 node and 47 process
-Execution time of function sort is 1190.594000 ms.
  
 Testing 100000000 data with 2 node and 48 process
-Execution time of function sort is 1187.865000 ms.
+Execution time of function sort is 1282.352000 ms.
  
 Testing 100000000 data with 2 node and 49 process
-Execution time of function sort is 1852.104000 ms.
+Execution time of function sort is 1798.067000 ms.
  
 Testing 100000000 data with 2 node and 50 process
-Execution time of function sort is 1262.540000 ms.
+Execution time of function sort is 1253.598000 ms.
  
 Testing 100000000 data with 2 node and 51 process
-Execution time of function sort is 1783.192000 ms.
+Execution time of function sort is 1877.023000 ms.
  
 Testing 100000000 data with 2 node and 52 process
-Execution time of function sort is 1740.510000 ms.
+Execution time of function sort is 1892.001000 ms.
  
 Testing 100000000 data with 2 node and 53 process
-Execution time of function sort is 1759.872000 ms.
+Execution time of function sort is 1747.452000 ms.
  
 Testing 100000000 data with 2 node and 54 process
-Execution time of function sort is 1217.624000 ms.
+Execution time of function sort is 1265.644000 ms.
  
 Testing 100000000 data with 2 node and 55 process
-Execution time of function sort is 1286.222000 ms.
+Execution time of function sort is 1286.681000 ms.
  
 Testing 100000000 data with 2 node and 56 process
-Execution time of function sort is 1795.777000 ms.
+Execution time of function sort is 1777.994000 ms.
+ 
+Test on Random Data
+31 elements is generated in ./31.dat
+Testing 31 data with 1 node and 1 process
+Execution time of function sort is 0.015000 ms.
+ 
+Testing 31 data with 1 node and 2 process
+Execution time of function sort is 0.033000 ms.
+ 
+Testing 31 data with 1 node and 3 process
+Execution time of function sort is 0.037000 ms.
+ 
+Testing 31 data with 1 node and 4 process
+Execution time of function sort is 0.055000 ms.
+ 
+Testing 31 data with 1 node and 5 process
+Execution time of function sort is 0.049000 ms.
+ 
+Testing 31 data with 1 node and 6 process
+Execution time of function sort is 0.069000 ms.
+ 
+Testing 31 data with 1 node and 7 process
+Execution time of function sort is 0.066000 ms.
+ 
+Testing 31 data with 1 node and 8 process
+Execution time of function sort is 0.065000 ms.
+ 
+Testing 31 data with 1 node and 9 process
+Execution time of function sort is 0.046000 ms.
+ 
+Testing 31 data with 1 node and 10 process
+Execution time of function sort is 0.065000 ms.
+ 
+Testing 31 data with 1 node and 11 process
+Execution time of function sort is 0.102000 ms.
+ 
+Testing 31 data with 1 node and 12 process
+Execution time of function sort is 0.084000 ms.
+ 
+Testing 31 data with 1 node and 13 process
+Execution time of function sort is 0.084000 ms.
+ 
+Testing 31 data with 1 node and 14 process
+Execution time of function sort is 0.082000 ms.
+ 
+Testing 31 data with 1 node and 15 process
+Execution time of function sort is 0.095000 ms.
+ 
+Testing 31 data with 1 node and 16 process
+Execution time of function sort is 0.078000 ms.
+ 
+Testing 31 data with 1 node and 17 process
+Execution time of function sort is 0.052000 ms.
+ 
+Testing 31 data with 1 node and 18 process
+Execution time of function sort is 0.081000 ms.
+ 
+Testing 31 data with 1 node and 19 process
+Execution time of function sort is 0.087000 ms.
+ 
+Testing 31 data with 1 node and 20 process
+Execution time of function sort is 0.091000 ms.
+ 
+Testing 31 data with 1 node and 21 process
+Execution time of function sort is 0.089000 ms.
+ 
+Testing 31 data with 1 node and 22 process
+Execution time of function sort is 0.088000 ms.
+ 
+Testing 31 data with 1 node and 23 process
+Execution time of function sort is 0.094000 ms.
+ 
+Testing 31 data with 1 node and 24 process
+Execution time of function sort is 0.092000 ms.
+ 
+Testing 31 data with 1 node and 25 process
+Execution time of function sort is 0.092000 ms.
+ 
+Testing 31 data with 1 node and 26 process
+Execution time of function sort is 0.118000 ms.
+ 
+Testing 31 data with 1 node and 27 process
+Execution time of function sort is 0.102000 ms.
+ 
+Testing 31 data with 1 node and 28 process
+Execution time of function sort is 0.100000 ms.
+ 
+Testing 31 data with 2 node and 29 process
+Execution time of function sort is 0.133000 ms.
+ 
+Testing 31 data with 2 node and 30 process
+Execution time of function sort is 0.144000 ms.
+ 
+Testing 31 data with 2 node and 31 process
+Execution time of function sort is 0.190000 ms.
+ 
+Testing 31 data with 2 node and 32 process
+ 
+Testing 31 data with 2 node and 33 process
+ 
+Testing 31 data with 2 node and 34 process
+ 
+Testing 31 data with 2 node and 35 process
+ 
+Testing 31 data with 2 node and 36 process
+ 
+Testing 31 data with 2 node and 37 process
+ 
+Testing 31 data with 2 node and 38 process
+ 
+Testing 31 data with 2 node and 39 process
+ 
+Testing 31 data with 2 node and 40 process
+ 
+Testing 31 data with 2 node and 41 process
+ 
+Testing 31 data with 2 node and 42 process
+ 
+Testing 31 data with 2 node and 43 process
+ 
+Testing 31 data with 2 node and 44 process
+ 
+Testing 31 data with 2 node and 45 process
+ 
+Testing 31 data with 2 node and 46 process
+ 
+Testing 31 data with 2 node and 47 process
+ 
+Testing 31 data with 2 node and 48 process
+ 
+Testing 31 data with 2 node and 49 process
+ 
+Testing 31 data with 2 node and 50 process
+ 
+Testing 31 data with 2 node and 51 process
+ 
+Testing 31 data with 2 node and 52 process
+ 
+Testing 31 data with 2 node and 53 process
+ 
+Testing 31 data with 2 node and 54 process
+ 
+Testing 31 data with 2 node and 55 process
+ 
+Testing 31 data with 2 node and 56 process
+ 
+1000 elements is generated in ./1000.dat
+Testing 1000 data with 1 node and 1 process
+Execution time of function sort is 0.029000 ms.
+ 
+Testing 1000 data with 1 node and 2 process
+Execution time of function sort is 0.064000 ms.
+ 
+Testing 1000 data with 1 node and 3 process
+Execution time of function sort is 0.055000 ms.
+ 
+Testing 1000 data with 1 node and 4 process
+Execution time of function sort is 0.092000 ms.
+ 
+Testing 1000 data with 1 node and 5 process
+Execution time of function sort is 0.097000 ms.
+ 
+Testing 1000 data with 1 node and 6 process
+Execution time of function sort is 0.120000 ms.
+ 
+Testing 1000 data with 1 node and 7 process
+Execution time of function sort is 0.134000 ms.
+ 
+Testing 1000 data with 1 node and 8 process
+Execution time of function sort is 0.174000 ms.
+ 
+Testing 1000 data with 1 node and 9 process
+Execution time of function sort is 0.129000 ms.
+ 
+Testing 1000 data with 1 node and 10 process
+Execution time of function sort is 0.154000 ms.
+ 
+Testing 1000 data with 1 node and 11 process
+Execution time of function sort is 0.175000 ms.
+ 
+Testing 1000 data with 1 node and 12 process
+Execution time of function sort is 0.190000 ms.
+ 
+Testing 1000 data with 1 node and 13 process
+Execution time of function sort is 0.207000 ms.
+ 
+Testing 1000 data with 1 node and 14 process
+Execution time of function sort is 0.155000 ms.
+ 
+Testing 1000 data with 1 node and 15 process
+Execution time of function sort is 0.222000 ms.
+ 
+Testing 1000 data with 1 node and 16 process
+Execution time of function sort is 0.248000 ms.
+ 
+Testing 1000 data with 1 node and 17 process
+Execution time of function sort is 0.200000 ms.
+ 
+Testing 1000 data with 1 node and 18 process
+Execution time of function sort is 0.203000 ms.
+ 
+Testing 1000 data with 1 node and 19 process
+Execution time of function sort is 0.240000 ms.
+ 
+Testing 1000 data with 1 node and 20 process
+Execution time of function sort is 0.210000 ms.
+ 
+Testing 1000 data with 1 node and 21 process
+Execution time of function sort is 0.192000 ms.
+ 
+Testing 1000 data with 1 node and 22 process
+Execution time of function sort is 0.117000 ms.
+ 
+Testing 1000 data with 1 node and 23 process
+Execution time of function sort is 0.106000 ms.
+ 
+Testing 1000 data with 1 node and 24 process
+Execution time of function sort is 0.131000 ms.
+ 
+Testing 1000 data with 1 node and 25 process
+Execution time of function sort is 0.126000 ms.
+ 
+Testing 1000 data with 1 node and 26 process
+Execution time of function sort is 0.149000 ms.
+ 
+Testing 1000 data with 1 node and 27 process
+Execution time of function sort is 0.144000 ms.
+ 
+Testing 1000 data with 1 node and 28 process
+Execution time of function sort is 0.142000 ms.
+ 
+Testing 1000 data with 2 node and 29 process
+Execution time of function sort is 0.252000 ms.
+ 
+Testing 1000 data with 2 node and 30 process
+Execution time of function sort is 0.306000 ms.
+ 
+Testing 1000 data with 2 node and 31 process
+Execution time of function sort is 0.299000 ms.
+ 
+Testing 1000 data with 2 node and 32 process
+Execution time of function sort is 5.075000 ms.
+ 
+Testing 1000 data with 2 node and 33 process
+Execution time of function sort is 0.211000 ms.
+ 
+Testing 1000 data with 2 node and 34 process
+Execution time of function sort is 0.267000 ms.
+ 
+Testing 1000 data with 2 node and 35 process
+Execution time of function sort is 0.374000 ms.
+ 
+Testing 1000 data with 2 node and 36 process
+Execution time of function sort is 0.262000 ms.
+ 
+Testing 1000 data with 2 node and 37 process
+Execution time of function sort is 0.377000 ms.
+ 
+Testing 1000 data with 2 node and 38 process
+Execution time of function sort is 1.992000 ms.
+ 
+Testing 1000 data with 2 node and 39 process
+Execution time of function sort is 0.307000 ms.
+ 
+Testing 1000 data with 2 node and 40 process
+Execution time of function sort is 0.308000 ms.
+ 
+Testing 1000 data with 2 node and 41 process
+Execution time of function sort is 0.387000 ms.
+ 
+Testing 1000 data with 2 node and 42 process
+Execution time of function sort is 0.246000 ms.
+ 
+Testing 1000 data with 2 node and 43 process
+Execution time of function sort is 0.235000 ms.
+ 
+Testing 1000 data with 2 node and 44 process
+Execution time of function sort is 0.375000 ms.
+ 
+Testing 1000 data with 2 node and 45 process
+Execution time of function sort is 2.145000 ms.
+ 
+Testing 1000 data with 2 node and 46 process
+ 
+Testing 1000 data with 2 node and 47 process
+Execution time of function sort is 0.256000 ms.
+ 
+Testing 1000 data with 2 node and 48 process
+Execution time of function sort is 0.374000 ms.
+ 
+Testing 1000 data with 2 node and 49 process
+Execution time of function sort is 0.297000 ms.
+ 
+Testing 1000 data with 2 node and 50 process
+Execution time of function sort is 0.227000 ms.
+ 
+Testing 1000 data with 2 node and 51 process
+Execution time of function sort is 0.256000 ms.
+ 
+Testing 1000 data with 2 node and 52 process
+Execution time of function sort is 0.241000 ms.
+ 
+Testing 1000 data with 2 node and 53 process
+Execution time of function sort is 0.327000 ms.
+ 
+Testing 1000 data with 2 node and 54 process
+Execution time of function sort is 0.338000 ms.
+ 
+Testing 1000 data with 2 node and 55 process
+Execution time of function sort is 0.315000 ms.
+ 
+Testing 1000 data with 2 node and 56 process
+Execution time of function sort is 0.275000 ms.
+ 
+23459 elements is generated in ./23459.dat
+Testing 23459 data with 1 node and 1 process
+Execution time of function sort is 0.472000 ms.
+ 
+Testing 23459 data with 1 node and 2 process
+Execution time of function sort is 0.724000 ms.
+ 
+Testing 23459 data with 1 node and 3 process
+Execution time of function sort is 0.799000 ms.
+ 
+Testing 23459 data with 1 node and 4 process
+Execution time of function sort is 0.763000 ms.
+ 
+Testing 23459 data with 1 node and 5 process
+Execution time of function sort is 0.524000 ms.
+ 
+Testing 23459 data with 1 node and 6 process
+Execution time of function sort is 0.477000 ms.
+ 
+Testing 23459 data with 1 node and 7 process
+Execution time of function sort is 0.421000 ms.
+ 
+Testing 23459 data with 1 node and 8 process
+Execution time of function sort is 0.433000 ms.
+ 
+Testing 23459 data with 1 node and 9 process
+Execution time of function sort is 0.524000 ms.
+ 
+Testing 23459 data with 1 node and 10 process
+Execution time of function sort is 0.392000 ms.
+ 
+Testing 23459 data with 1 node and 11 process
+Execution time of function sort is 0.558000 ms.
+ 
+Testing 23459 data with 1 node and 12 process
+Execution time of function sort is 0.451000 ms.
+ 
+Testing 23459 data with 1 node and 13 process
+Execution time of function sort is 0.453000 ms.
+ 
+Testing 23459 data with 1 node and 14 process
+Execution time of function sort is 0.333000 ms.
+ 
+Testing 23459 data with 1 node and 15 process
+Execution time of function sort is 0.399000 ms.
+ 
+Testing 23459 data with 1 node and 16 process
+Execution time of function sort is 0.513000 ms.
+ 
+Testing 23459 data with 1 node and 17 process
+Execution time of function sort is 0.412000 ms.
+ 
+Testing 23459 data with 1 node and 18 process
+Execution time of function sort is 0.357000 ms.
+ 
+Testing 23459 data with 1 node and 19 process
+Execution time of function sort is 0.450000 ms.
+ 
+Testing 23459 data with 1 node and 20 process
+Execution time of function sort is 0.482000 ms.
+ 
+Testing 23459 data with 1 node and 21 process
+Execution time of function sort is 0.381000 ms.
+ 
+Testing 23459 data with 1 node and 22 process
+Execution time of function sort is 0.499000 ms.
+ 
+Testing 23459 data with 1 node and 23 process
+Execution time of function sort is 0.376000 ms.
+ 
+Testing 23459 data with 1 node and 24 process
+Execution time of function sort is 0.389000 ms.
+ 
+Testing 23459 data with 1 node and 25 process
+Execution time of function sort is 0.510000 ms.
+ 
+Testing 23459 data with 1 node and 26 process
+Execution time of function sort is 0.604000 ms.
+ 
+Testing 23459 data with 1 node and 27 process
+Execution time of function sort is 0.700000 ms.
+ 
+Testing 23459 data with 1 node and 28 process
+Execution time of function sort is 0.417000 ms.
+ 
+Testing 23459 data with 2 node and 29 process
+Execution time of function sort is 0.692000 ms.
+ 
+Testing 23459 data with 2 node and 30 process
+Execution time of function sort is 0.534000 ms.
+ 
+Testing 23459 data with 2 node and 31 process
+Execution time of function sort is 0.581000 ms.
+ 
+Testing 23459 data with 2 node and 32 process
+Execution time of function sort is 6.949000 ms.
+ 
+Testing 23459 data with 2 node and 33 process
+Execution time of function sort is 0.872000 ms.
+ 
+Testing 23459 data with 2 node and 34 process
+Execution time of function sort is 0.716000 ms.
+ 
+Testing 23459 data with 2 node and 35 process
+Execution time of function sort is 24.508000 ms.
+ 
+Testing 23459 data with 2 node and 36 process
+Execution time of function sort is 0.695000 ms.
+ 
+Testing 23459 data with 2 node and 37 process
+Execution time of function sort is 0.995000 ms.
+ 
+Testing 23459 data with 2 node and 38 process
+Execution time of function sort is 0.742000 ms.
+ 
+Testing 23459 data with 2 node and 39 process
+Execution time of function sort is 0.846000 ms.
+ 
+Testing 23459 data with 2 node and 40 process
+Execution time of function sort is 1.078000 ms.
+ 
+Testing 23459 data with 2 node and 41 process
+Execution time of function sort is 20.531000 ms.
+ 
+Testing 23459 data with 2 node and 42 process
+Execution time of function sort is 0.903000 ms.
+ 
+Testing 23459 data with 2 node and 43 process
+Execution time of function sort is 0.730000 ms.
+ 
+Testing 23459 data with 2 node and 44 process
+Execution time of function sort is 0.653000 ms.
+ 
+Testing 23459 data with 2 node and 45 process
+Execution time of function sort is 0.829000 ms.
+ 
+Testing 23459 data with 2 node and 46 process
+Execution time of function sort is 0.567000 ms.
+ 
+Testing 23459 data with 2 node and 47 process
+Execution time of function sort is 0.692000 ms.
+ 
+Testing 23459 data with 2 node and 48 process
+Execution time of function sort is 0.681000 ms.
+ 
+Testing 23459 data with 2 node and 49 process
+Execution time of function sort is 0.734000 ms.
+ 
+Testing 23459 data with 2 node and 50 process
+Execution time of function sort is 0.601000 ms.
+ 
+Testing 23459 data with 2 node and 51 process
+Execution time of function sort is 0.646000 ms.
+ 
+Testing 23459 data with 2 node and 52 process
+Execution time of function sort is 0.549000 ms.
+ 
+Testing 23459 data with 2 node and 53 process
+Execution time of function sort is 0.713000 ms.
+ 
+Testing 23459 data with 2 node and 54 process
+Execution time of function sort is 0.692000 ms.
+ 
+Testing 23459 data with 2 node and 55 process
+Execution time of function sort is 0.731000 ms.
+ 
+Testing 23459 data with 2 node and 56 process
+Execution time of function sort is 16.700000 ms.
+ 
+8972407 elements is generated in ./8972407.dat
+Testing 8972407 data with 1 node and 1 process
+Execution time of function sort is 304.371000 ms.
+ 
+Testing 8972407 data with 1 node and 2 process
+Execution time of function sort is 243.462000 ms.
+ 
+Testing 8972407 data with 1 node and 3 process
+Execution time of function sort is 188.601000 ms.
+ 
+Testing 8972407 data with 1 node and 4 process
+Execution time of function sort is 147.068000 ms.
+ 
+Testing 8972407 data with 1 node and 5 process
+Execution time of function sort is 128.442000 ms.
+ 
+Testing 8972407 data with 1 node and 6 process
+Execution time of function sort is 116.223000 ms.
+ 
+Testing 8972407 data with 1 node and 7 process
+Execution time of function sort is 129.501000 ms.
+ 
+Testing 8972407 data with 1 node and 8 process
+Execution time of function sort is 127.092000 ms.
+ 
+Testing 8972407 data with 1 node and 9 process
+Execution time of function sort is 103.259000 ms.
+ 
+Testing 8972407 data with 1 node and 10 process
+Execution time of function sort is 106.540000 ms.
+ 
+Testing 8972407 data with 1 node and 11 process
+Execution time of function sort is 86.545000 ms.
+ 
+Testing 8972407 data with 1 node and 12 process
+Execution time of function sort is 109.006000 ms.
+ 
+Testing 8972407 data with 1 node and 13 process
+Execution time of function sort is 81.456000 ms.
+ 
+Testing 8972407 data with 1 node and 14 process
+Execution time of function sort is 95.814000 ms.
+ 
+Testing 8972407 data with 1 node and 15 process
+Execution time of function sort is 94.063000 ms.
+ 
+Testing 8972407 data with 1 node and 16 process
+Execution time of function sort is 70.795000 ms.
+ 
+Testing 8972407 data with 1 node and 17 process
+Execution time of function sort is 86.058000 ms.
+ 
+Testing 8972407 data with 1 node and 18 process
+Execution time of function sort is 70.490000 ms.
+ 
+Testing 8972407 data with 1 node and 19 process
+Execution time of function sort is 68.090000 ms.
+ 
+Testing 8972407 data with 1 node and 20 process
+Execution time of function sort is 96.226000 ms.
+ 
+Testing 8972407 data with 1 node and 21 process
+Execution time of function sort is 72.652000 ms.
+ 
+Testing 8972407 data with 1 node and 22 process
+Execution time of function sort is 100.808000 ms.
+ 
+Testing 8972407 data with 1 node and 23 process
+Execution time of function sort is 93.879000 ms.
+ 
+Testing 8972407 data with 1 node and 24 process
+Execution time of function sort is 91.958000 ms.
+ 
+Testing 8972407 data with 1 node and 25 process
+Execution time of function sort is 91.528000 ms.
+ 
+Testing 8972407 data with 1 node and 26 process
+Execution time of function sort is 92.814000 ms.
+ 
+Testing 8972407 data with 1 node and 27 process
+Execution time of function sort is 69.447000 ms.
+ 
+Testing 8972407 data with 1 node and 28 process
+Execution time of function sort is 70.774000 ms.
+ 
+Testing 8972407 data with 2 node and 29 process
+Execution time of function sort is 55.041000 ms.
+ 
+Testing 8972407 data with 2 node and 30 process
+Execution time of function sort is 84.413000 ms.
+ 
+Testing 8972407 data with 2 node and 31 process
+Execution time of function sort is 83.014000 ms.
+ 
+Testing 8972407 data with 2 node and 32 process
+Execution time of function sort is 63.234000 ms.
+ 
+Testing 8972407 data with 2 node and 33 process
+Execution time of function sort is 56.966000 ms.
+ 
+Testing 8972407 data with 2 node and 34 process
+Execution time of function sort is 75.374000 ms.
+ 
+Testing 8972407 data with 2 node and 35 process
+Execution time of function sort is 92.321000 ms.
+ 
+Testing 8972407 data with 2 node and 36 process
+Execution time of function sort is 67.709000 ms.
+ 
+Testing 8972407 data with 2 node and 37 process
+Execution time of function sort is 65.868000 ms.
+ 
+Testing 8972407 data with 2 node and 38 process
+Execution time of function sort is 61.200000 ms.
+ 
+Testing 8972407 data with 2 node and 39 process
+Execution time of function sort is 58.671000 ms.
+ 
+Testing 8972407 data with 2 node and 40 process
+Execution time of function sort is 68.274000 ms.
+ 
+Testing 8972407 data with 2 node and 41 process
+Execution time of function sort is 56.234000 ms.
+ 
+Testing 8972407 data with 2 node and 42 process
+Execution time of function sort is 67.896000 ms.
+ 
+Testing 8972407 data with 2 node and 43 process
+Execution time of function sort is 64.753000 ms.
+ 
+Testing 8972407 data with 2 node and 44 process
+Execution time of function sort is 73.370000 ms.
+ 
+Testing 8972407 data with 2 node and 45 process
+Execution time of function sort is 70.415000 ms.
+ 
+Testing 8972407 data with 2 node and 46 process
+Execution time of function sort is 65.320000 ms.
+ 
+Testing 8972407 data with 2 node and 47 process
+Execution time of function sort is 64.359000 ms.
+ 
+Testing 8972407 data with 2 node and 48 process
+Execution time of function sort is 46.214000 ms.
+ 
+Testing 8972407 data with 2 node and 49 process
+Execution time of function sort is 61.328000 ms.
+ 
+Testing 8972407 data with 2 node and 50 process
+Execution time of function sort is 65.124000 ms.
+ 
+Testing 8972407 data with 2 node and 51 process
+Execution time of function sort is 43.854000 ms.
+ 
+Testing 8972407 data with 2 node and 52 process
+Execution time of function sort is 65.297000 ms.
+ 
+Testing 8972407 data with 2 node and 53 process
+Execution time of function sort is 55.496000 ms.
+ 
+Testing 8972407 data with 2 node and 54 process
+Execution time of function sort is 43.601000 ms.
+ 
+Testing 8972407 data with 2 node and 55 process
+Execution time of function sort is 56.340000 ms.
+ 
+Testing 8972407 data with 2 node and 56 process
+Execution time of function sort is 41.250000 ms.
+ 
+112000000 elements is generated in ./112000000.dat
+Testing 112000000 data with 1 node and 1 process
+Execution time of function sort is 3706.735000 ms.
+ 
+Testing 112000000 data with 1 node and 2 process
+Execution time of function sort is 2509.937000 ms.
+ 
+Testing 112000000 data with 1 node and 3 process
+Execution time of function sort is 1964.900000 ms.
+ 
+Testing 112000000 data with 1 node and 4 process
+Execution time of function sort is 1745.198000 ms.
+ 
+Testing 112000000 data with 1 node and 5 process
+Execution time of function sort is 1769.675000 ms.
+ 
+Testing 112000000 data with 1 node and 6 process
+Execution time of function sort is 1731.937000 ms.
+ 
+Testing 112000000 data with 1 node and 7 process
+Execution time of function sort is 1390.475000 ms.
+ 
+Testing 112000000 data with 1 node and 8 process
+Execution time of function sort is 1240.414000 ms.
+ 
+Testing 112000000 data with 1 node and 9 process
+Execution time of function sort is 1578.428000 ms.
+ 
+Testing 112000000 data with 1 node and 10 process
+Execution time of function sort is 1140.064000 ms.
+ 
+Testing 112000000 data with 1 node and 11 process
+Execution time of function sort is 1574.886000 ms.
+ 
+Testing 112000000 data with 1 node and 12 process
+Execution time of function sort is 1165.664000 ms.
+ 
+Testing 112000000 data with 1 node and 13 process
+Execution time of function sort is 1289.232000 ms.
+ 
+Testing 112000000 data with 1 node and 14 process
+Execution time of function sort is 1071.707000 ms.
+ 
+Testing 112000000 data with 1 node and 15 process
+Execution time of function sort is 1378.277000 ms.
+ 
+Testing 112000000 data with 1 node and 16 process
+Execution time of function sort is 1049.379000 ms.
+ 
+Testing 112000000 data with 1 node and 17 process
+Execution time of function sort is 1129.879000 ms.
+ 
+Testing 112000000 data with 1 node and 18 process
+Execution time of function sort is 1366.844000 ms.
+ 
+Testing 112000000 data with 1 node and 19 process
+Execution time of function sort is 1419.576000 ms.
+ 
+Testing 112000000 data with 1 node and 20 process
+Execution time of function sort is 1215.949000 ms.
+ 
+Testing 112000000 data with 1 node and 21 process
+Execution time of function sort is 1115.916000 ms.
+ 
+Testing 112000000 data with 1 node and 22 process
+Execution time of function sort is 1083.183000 ms.
+ 
+Testing 112000000 data with 1 node and 23 process
+Execution time of function sort is 1193.900000 ms.
+ 
+Testing 112000000 data with 1 node and 24 process
+Execution time of function sort is 1865.847000 ms.
+ 
+Testing 112000000 data with 1 node and 25 process
+Execution time of function sort is 1311.784000 ms.
+ 
+Testing 112000000 data with 1 node and 26 process
+Execution time of function sort is 1933.942000 ms.
+ 
+Testing 112000000 data with 1 node and 27 process
+Execution time of function sort is 1944.556000 ms.
+ 
+Testing 112000000 data with 1 node and 28 process
+Execution time of function sort is 1524.558000 ms.
+ 
+Testing 112000000 data with 2 node and 29 process
+Execution time of function sort is 1856.080000 ms.
+ 
+Testing 112000000 data with 2 node and 30 process
+Execution time of function sort is 1390.923000 ms.
+ 
+Testing 112000000 data with 2 node and 31 process
+Execution time of function sort is 1255.450000 ms.
+ 
+Testing 112000000 data with 2 node and 32 process
+Execution time of function sort is 1217.248000 ms.
+ 
+Testing 112000000 data with 2 node and 33 process
+Execution time of function sort is 1253.929000 ms.
+ 
+Testing 112000000 data with 2 node and 34 process
+Execution time of function sort is 1327.496000 ms.
+ 
+Testing 112000000 data with 2 node and 35 process
+Execution time of function sort is 1309.393000 ms.
+ 
+Testing 112000000 data with 2 node and 36 process
+Execution time of function sort is 1253.682000 ms.
+ 
+Testing 112000000 data with 2 node and 37 process
+Execution time of function sort is 1271.705000 ms.
+ 
+Testing 112000000 data with 2 node and 38 process
+Execution time of function sort is 1786.010000 ms.
+ 
+Testing 112000000 data with 2 node and 39 process
+Execution time of function sort is 1748.928000 ms.
+ 
+Testing 112000000 data with 2 node and 40 process
+Execution time of function sort is 1285.011000 ms.
+ 
+Testing 112000000 data with 2 node and 41 process
+Execution time of function sort is 1292.784000 ms.
+ 
+Testing 112000000 data with 2 node and 42 process
+Execution time of function sort is 1815.759000 ms.
+ 
+Testing 112000000 data with 2 node and 43 process
+Execution time of function sort is 1294.781000 ms.
+ 
+Testing 112000000 data with 2 node and 44 process
+Execution time of function sort is 1892.834000 ms.
+ 
+Testing 112000000 data with 2 node and 45 process
+Execution time of function sort is 1717.113000 ms.
+ 
+Testing 112000000 data with 2 node and 46 process
+Execution time of function sort is 1794.473000 ms.
+ 
+Testing 112000000 data with 2 node and 47 process
+Execution time of function sort is 1893.685000 ms.
+ 
+Testing 112000000 data with 2 node and 48 process
+Execution time of function sort is 1226.381000 ms.
+ 
+Testing 112000000 data with 2 node and 49 process
+Execution time of function sort is 1712.582000 ms.
+ 
+Testing 112000000 data with 2 node and 50 process
+Execution time of function sort is 1211.939000 ms.
+ 
+Testing 112000000 data with 2 node and 51 process
+Execution time of function sort is 1789.358000 ms.
+ 
+Testing 112000000 data with 2 node and 52 process
+Execution time of function sort is 1787.694000 ms.
+ 
+Testing 112000000 data with 2 node and 53 process
+Execution time of function sort is 1270.700000 ms.
+ 
+Testing 112000000 data with 2 node and 54 process
+Execution time of function sort is 1737.124000 ms.
+ 
+Testing 112000000 data with 2 node and 55 process
+Execution time of function sort is 1260.295000 ms.
+ 
+Testing 112000000 data with 2 node and 56 process
+Execution time of function sort is 1253.819000 ms.
  
 Test on Descending Data
 31 elements is generated in ./31.dat
 Testing 31 data with 1 node and 1 process
-Execution time of function sort is 0.013000 ms.
+Execution time of function sort is 0.008000 ms.
  
 Testing 31 data with 1 node and 2 process
-Execution time of function sort is 0.038000 ms.
+Execution time of function sort is 0.037000 ms.
  
 Testing 31 data with 1 node and 3 process
-Execution time of function sort is 0.045000 ms.
+Execution time of function sort is 0.038000 ms.
  
 Testing 31 data with 1 node and 4 process
-Execution time of function sort is 0.057000 ms.
+Execution time of function sort is 0.072000 ms.
  
 Testing 31 data with 1 node and 5 process
-Execution time of function sort is 0.043000 ms.
+Execution time of function sort is 0.030000 ms.
  
 Testing 31 data with 1 node and 6 process
-Execution time of function sort is 0.065000 ms.
+Execution time of function sort is 0.064000 ms.
  
 Testing 31 data with 1 node and 7 process
-Execution time of function sort is 0.160000 ms.
- 
-Testing 31 data with 1 node and 8 process
-Execution time of function sort is 0.068000 ms.
- 
-Testing 31 data with 1 node and 9 process
-Execution time of function sort is 0.040000 ms.
- 
-Testing 31 data with 1 node and 10 process
-Execution time of function sort is 0.066000 ms.
- 
-Testing 31 data with 1 node and 11 process
-Execution time of function sort is 0.077000 ms.
- 
-Testing 31 data with 1 node and 12 process
 Execution time of function sort is 0.079000 ms.
  
+Testing 31 data with 1 node and 8 process
+Execution time of function sort is 0.062000 ms.
+ 
+Testing 31 data with 1 node and 9 process
+Execution time of function sort is 0.052000 ms.
+ 
+Testing 31 data with 1 node and 10 process
+Execution time of function sort is 0.072000 ms.
+ 
+Testing 31 data with 1 node and 11 process
+Execution time of function sort is 0.074000 ms.
+ 
+Testing 31 data with 1 node and 12 process
+Execution time of function sort is 0.087000 ms.
+ 
 Testing 31 data with 1 node and 13 process
-Execution time of function sort is 0.094000 ms.
+Execution time of function sort is 0.096000 ms.
  
 Testing 31 data with 1 node and 14 process
-Execution time of function sort is 0.107000 ms.
+Execution time of function sort is 0.083000 ms.
  
 Testing 31 data with 1 node and 15 process
-Execution time of function sort is 0.086000 ms.
+Execution time of function sort is 0.084000 ms.
  
 Testing 31 data with 1 node and 16 process
-Execution time of function sort is 0.080000 ms.
+Execution time of function sort is 0.084000 ms.
  
 Testing 31 data with 1 node and 17 process
-Execution time of function sort is 0.054000 ms.
+Execution time of function sort is 0.046000 ms.
  
 Testing 31 data with 1 node and 18 process
-Execution time of function sort is 0.086000 ms.
+Execution time of function sort is 0.076000 ms.
  
 Testing 31 data with 1 node and 19 process
-Execution time of function sort is 0.090000 ms.
+Execution time of function sort is 0.081000 ms.
  
 Testing 31 data with 1 node and 20 process
-Execution time of function sort is 0.097000 ms.
+Execution time of function sort is 0.087000 ms.
  
 Testing 31 data with 1 node and 21 process
-Execution time of function sort is 0.094000 ms.
+Execution time of function sort is 0.091000 ms.
  
 Testing 31 data with 1 node and 22 process
-Execution time of function sort is 0.093000 ms.
+Execution time of function sort is 0.083000 ms.
  
 Testing 31 data with 1 node and 23 process
 Execution time of function sort is 0.095000 ms.
  
 Testing 31 data with 1 node and 24 process
-Execution time of function sort is 0.088000 ms.
+Execution time of function sort is 0.091000 ms.
  
 Testing 31 data with 1 node and 25 process
-Execution time of function sort is 0.095000 ms.
+Execution time of function sort is 0.097000 ms.
  
 Testing 31 data with 1 node and 26 process
-Execution time of function sort is 0.095000 ms.
- 
-Testing 31 data with 1 node and 27 process
-Execution time of function sort is 0.100000 ms.
- 
-Testing 31 data with 1 node and 28 process
 Execution time of function sort is 0.094000 ms.
  
-Testing 31 data with 2 node and 29 process
-Execution time of function sort is 0.124000 ms.
+Testing 31 data with 1 node and 27 process
+Execution time of function sort is 0.098000 ms.
  
-Testing 31 data with 2 node and 30 process
+Testing 31 data with 1 node and 28 process
+Execution time of function sort is 0.097000 ms.
+ 
+Testing 31 data with 2 node and 29 process
 Execution time of function sort is 0.117000 ms.
  
+Testing 31 data with 2 node and 30 process
+Execution time of function sort is 0.118000 ms.
+ 
 Testing 31 data with 2 node and 31 process
-Rank 4: failed
-Rank 17: failed
-Rank 10: failed
-Rank 23: failed
-Rank 7: failed
-Rank 22: failed
-Rank 1: failed
-Rank 20: failed
-Rank 19: failed
-Rank 27: failed
-Execution time of function sort is 0.249000 ms.
-Rank 16: failed
-Rank 11: failed
+Execution time of function sort is 0.158000 ms.
+ 
+Testing 31 data with 2 node and 32 process
+ 
+Testing 31 data with 2 node and 33 process
+ 
+Testing 31 data with 2 node and 34 process
+ 
+Testing 31 data with 2 node and 35 process
+ 
+Testing 31 data with 2 node and 36 process
+ 
+Testing 31 data with 2 node and 37 process
+ 
+Testing 31 data with 2 node and 38 process
+ 
+Testing 31 data with 2 node and 39 process
+ 
+Testing 31 data with 2 node and 40 process
+ 
+Testing 31 data with 2 node and 41 process
+ 
+Testing 31 data with 2 node and 42 process
+ 
+Testing 31 data with 2 node and 43 process
+ 
+Testing 31 data with 2 node and 44 process
+ 
+Testing 31 data with 2 node and 45 process
+ 
+Testing 31 data with 2 node and 46 process
+ 
+Testing 31 data with 2 node and 47 process
+ 
+Testing 31 data with 2 node and 48 process
+ 
+Testing 31 data with 2 node and 49 process
+ 
+Testing 31 data with 2 node and 50 process
+ 
+Testing 31 data with 2 node and 51 process
+ 
+Testing 31 data with 2 node and 52 process
+ 
+Testing 31 data with 2 node and 53 process
+ 
+Testing 31 data with 2 node and 54 process
+ 
+Testing 31 data with 2 node and 55 process
+ 
+Testing 31 data with 2 node and 56 process
+ 
+1000 elements is generated in ./1000.dat
+Testing 1000 data with 1 node and 1 process
+Execution time of function sort is 0.051000 ms.
+ 
+Testing 1000 data with 1 node and 2 process
+Execution time of function sort is 0.063000 ms.
+ 
+Testing 1000 data with 1 node and 3 process
+Execution time of function sort is 0.060000 ms.
+ 
+Testing 1000 data with 1 node and 4 process
+Execution time of function sort is 0.081000 ms.
+ 
+Testing 1000 data with 1 node and 5 process
+Execution time of function sort is 0.105000 ms.
+ 
+Testing 1000 data with 1 node and 6 process
+Execution time of function sort is 0.121000 ms.
+ 
+Testing 1000 data with 1 node and 7 process
+Execution time of function sort is 0.176000 ms.
+ 
+Testing 1000 data with 1 node and 8 process
+Execution time of function sort is 0.180000 ms.
+ 
+Testing 1000 data with 1 node and 9 process
+Execution time of function sort is 0.109000 ms.
+ 
+Testing 1000 data with 1 node and 10 process
+Execution time of function sort is 0.169000 ms.
+ 
+Testing 1000 data with 1 node and 11 process
+Execution time of function sort is 0.184000 ms.
+ 
+Testing 1000 data with 1 node and 12 process
+Execution time of function sort is 0.150000 ms.
+ 
+Testing 1000 data with 1 node and 13 process
+Execution time of function sort is 0.201000 ms.
+ 
+Testing 1000 data with 1 node and 14 process
+Execution time of function sort is 0.164000 ms.
+ 
+Testing 1000 data with 1 node and 15 process
+Execution time of function sort is 0.210000 ms.
+ 
+Testing 1000 data with 1 node and 16 process
+Execution time of function sort is 0.221000 ms.
+ 
+Testing 1000 data with 1 node and 17 process
+Execution time of function sort is 0.198000 ms.
+ 
+Testing 1000 data with 1 node and 18 process
+Execution time of function sort is 0.178000 ms.
+ 
+Testing 1000 data with 1 node and 19 process
+Execution time of function sort is 0.237000 ms.
+ 
+Testing 1000 data with 1 node and 20 process
+Execution time of function sort is 0.219000 ms.
+ 
+Testing 1000 data with 1 node and 21 process
+Execution time of function sort is 0.187000 ms.
+ 
+Testing 1000 data with 1 node and 22 process
+Execution time of function sort is 0.113000 ms.
+ 
+Testing 1000 data with 1 node and 23 process
+Execution time of function sort is 0.105000 ms.
+ 
+Testing 1000 data with 1 node and 24 process
+Execution time of function sort is 0.111000 ms.
+ 
+Testing 1000 data with 1 node and 25 process
+Execution time of function sort is 0.127000 ms.
+ 
+Testing 1000 data with 1 node and 26 process
+Execution time of function sort is 0.149000 ms.
+ 
+Testing 1000 data with 1 node and 27 process
+Execution time of function sort is 0.130000 ms.
+ 
+Testing 1000 data with 1 node and 28 process
+Execution time of function sort is 0.143000 ms.
+ 
+Testing 1000 data with 2 node and 29 process
+Execution time of function sort is 1.230000 ms.
+ 
+Testing 1000 data with 2 node and 30 process
+Execution time of function sort is 0.181000 ms.
+ 
+Testing 1000 data with 2 node and 31 process
+Execution time of function sort is 0.232000 ms.
+ 
+Testing 1000 data with 2 node and 32 process
+Execution time of function sort is 8.837000 ms.
+ 
+Testing 1000 data with 2 node and 33 process
+Execution time of function sort is 0.182000 ms.
+ 
+Testing 1000 data with 2 node and 34 process
+Execution time of function sort is 0.180000 ms.
+ 
+Testing 1000 data with 2 node and 35 process
+ 
+Testing 1000 data with 2 node and 36 process
+Execution time of function sort is 0.337000 ms.
+ 
+Testing 1000 data with 2 node and 37 process
+Execution time of function sort is 0.304000 ms.
+ 
+Testing 1000 data with 2 node and 38 process
+Execution time of function sort is 1.939000 ms.
+ 
+Testing 1000 data with 2 node and 39 process
+Execution time of function sort is 0.375000 ms.
+ 
+Testing 1000 data with 2 node and 40 process
+Execution time of function sort is 0.407000 ms.
+ 
+Testing 1000 data with 2 node and 41 process
+Execution time of function sort is 0.414000 ms.
+ 
+Testing 1000 data with 2 node and 42 process
+Execution time of function sort is 0.335000 ms.
+ 
+Testing 1000 data with 2 node and 43 process
+Execution time of function sort is 0.346000 ms.
+ 
+Testing 1000 data with 2 node and 44 process
+Execution time of function sort is 0.350000 ms.
+ 
+Testing 1000 data with 2 node and 45 process
+Execution time of function sort is 0.396000 ms.
+ 
+Testing 1000 data with 2 node and 46 process
+Execution time of function sort is 0.245000 ms.
+ 
+Testing 1000 data with 2 node and 47 process
+Execution time of function sort is 0.262000 ms.
+ 
+Testing 1000 data with 2 node and 48 process
+Execution time of function sort is 0.300000 ms.
+ 
+Testing 1000 data with 2 node and 49 process
+Execution time of function sort is 0.349000 ms.
+ 
+Testing 1000 data with 2 node and 50 process
+Execution time of function sort is 0.244000 ms.
+ 
+Testing 1000 data with 2 node and 51 process
+Execution time of function sort is 0.298000 ms.
+ 
+Testing 1000 data with 2 node and 52 process
+Execution time of function sort is 0.260000 ms.
+ 
+Testing 1000 data with 2 node and 53 process
+Execution time of function sort is 0.336000 ms.
+ 
+Testing 1000 data with 2 node and 54 process
+Execution time of function sort is 0.336000 ms.
+ 
+Testing 1000 data with 2 node and 55 process
+Execution time of function sort is 0.318000 ms.
+ 
+Testing 1000 data with 2 node and 56 process
+Execution time of function sort is 0.240000 ms.
+ 
+23459 elements is generated in ./23459.dat
+Testing 23459 data with 1 node and 1 process
+Execution time of function sort is 0.663000 ms.
+ 
+Testing 23459 data with 1 node and 2 process
+Execution time of function sort is 0.694000 ms.
+ 
+Testing 23459 data with 1 node and 3 process
+Execution time of function sort is 0.653000 ms.
+ 
+Testing 23459 data with 1 node and 4 process
+Execution time of function sort is 0.664000 ms.
+ 
+Testing 23459 data with 1 node and 5 process
+Execution time of function sort is 0.498000 ms.
+ 
+Testing 23459 data with 1 node and 6 process
+Execution time of function sort is 0.322000 ms.
+ 
+Testing 23459 data with 1 node and 7 process
+Execution time of function sort is 0.316000 ms.
+ 
+Testing 23459 data with 1 node and 8 process
+Execution time of function sort is 0.378000 ms.
+ 
+Testing 23459 data with 1 node and 9 process
+Execution time of function sort is 0.322000 ms.
+ 
+Testing 23459 data with 1 node and 10 process
+Execution time of function sort is 0.305000 ms.
+ 
+Testing 23459 data with 1 node and 11 process
+Execution time of function sort is 0.540000 ms.
+ 
+Testing 23459 data with 1 node and 12 process
+Execution time of function sort is 0.615000 ms.
+ 
+Testing 23459 data with 1 node and 13 process
+Execution time of function sort is 0.538000 ms.
+ 
+Testing 23459 data with 1 node and 14 process
+Execution time of function sort is 0.328000 ms.
+ 
+Testing 23459 data with 1 node and 15 process
+Execution time of function sort is 0.427000 ms.
+ 
+Testing 23459 data with 1 node and 16 process
+Execution time of function sort is 0.428000 ms.
+ 
+Testing 23459 data with 1 node and 17 process
+Execution time of function sort is 0.299000 ms.
+ 
+Testing 23459 data with 1 node and 18 process
+Execution time of function sort is 0.321000 ms.
+ 
+Testing 23459 data with 1 node and 19 process
+Execution time of function sort is 0.446000 ms.
+ 
+Testing 23459 data with 1 node and 20 process
+Execution time of function sort is 0.526000 ms.
+ 
+Testing 23459 data with 1 node and 21 process
+Execution time of function sort is 0.359000 ms.
+ 
+Testing 23459 data with 1 node and 22 process
+Execution time of function sort is 0.473000 ms.
+ 
+Testing 23459 data with 1 node and 23 process
+Execution time of function sort is 0.382000 ms.
+ 
+Testing 23459 data with 1 node and 24 process
+Execution time of function sort is 0.365000 ms.
+ 
+Testing 23459 data with 1 node and 25 process
+Execution time of function sort is 0.503000 ms.
+ 
+Testing 23459 data with 1 node and 26 process
+Execution time of function sort is 0.492000 ms.
+ 
+Testing 23459 data with 1 node and 27 process
+Execution time of function sort is 0.498000 ms.
+ 
+Testing 23459 data with 1 node and 28 process
+Execution time of function sort is 0.408000 ms.
+ 
+Testing 23459 data with 2 node and 29 process
+Execution time of function sort is 0.682000 ms.
+ 
+Testing 23459 data with 2 node and 30 process
+Execution time of function sort is 0.691000 ms.
+ 
+Testing 23459 data with 2 node and 31 process
+Execution time of function sort is 0.735000 ms.
+ 
+Testing 23459 data with 2 node and 32 process
+Execution time of function sort is 5.463000 ms.
+ 
+Testing 23459 data with 2 node and 33 process
+Execution time of function sort is 0.616000 ms.
+ 
+Testing 23459 data with 2 node and 34 process
+Execution time of function sort is 0.767000 ms.
+ 
+Testing 23459 data with 2 node and 35 process
+Execution time of function sort is 0.857000 ms.
+ 
+Testing 23459 data with 2 node and 36 process
+Execution time of function sort is 0.822000 ms.
+ 
+Testing 23459 data with 2 node and 37 process
+Execution time of function sort is 0.897000 ms.
+ 
+Testing 23459 data with 2 node and 38 process
+Execution time of function sort is 0.636000 ms.
+ 
+Testing 23459 data with 2 node and 39 process
+Execution time of function sort is 0.817000 ms.
+ 
+Testing 23459 data with 2 node and 40 process
+Execution time of function sort is 0.831000 ms.
+ 
+Testing 23459 data with 2 node and 41 process
+Execution time of function sort is 0.929000 ms.
+ 
+Testing 23459 data with 2 node and 42 process
+Execution time of function sort is 0.890000 ms.
+ 
+Testing 23459 data with 2 node and 43 process
+Execution time of function sort is 0.866000 ms.
+ 
+Testing 23459 data with 2 node and 44 process
+Execution time of function sort is 0.720000 ms.
+ 
+Testing 23459 data with 2 node and 45 process
+Execution time of function sort is 0.652000 ms.
+ 
+Testing 23459 data with 2 node and 46 process
+Execution time of function sort is 2.731000 ms.
+ 
+Testing 23459 data with 2 node and 47 process
+Execution time of function sort is 0.568000 ms.
+ 
+Testing 23459 data with 2 node and 48 process
+Execution time of function sort is 0.702000 ms.
+ 
+Testing 23459 data with 2 node and 49 process
+Execution time of function sort is 0.846000 ms.
+ 
+Testing 23459 data with 2 node and 50 process
+Execution time of function sort is 0.556000 ms.
+ 
+Testing 23459 data with 2 node and 51 process
+Execution time of function sort is 0.584000 ms.
+ 
+Testing 23459 data with 2 node and 52 process
+Execution time of function sort is 0.566000 ms.
+ 
+Testing 23459 data with 2 node and 53 process
+Execution time of function sort is 0.675000 ms.
+ 
+Testing 23459 data with 2 node and 54 process
+Execution time of function sort is 0.684000 ms.
+ 
+Testing 23459 data with 2 node and 55 process
+Execution time of function sort is 0.651000 ms.
+ 
+Testing 23459 data with 2 node and 56 process
+Execution time of function sort is 24.587000 ms.
+ 
+8972407 elements is generated in ./8972407.dat
+Testing 8972407 data with 1 node and 1 process
+Execution time of function sort is 614.709000 ms.
+ 
+Testing 8972407 data with 1 node and 2 process
+Execution time of function sort is 338.659000 ms.
+ 
+Testing 8972407 data with 1 node and 3 process
+Execution time of function sort is 216.550000 ms.
+ 
+Testing 8972407 data with 1 node and 4 process
+Execution time of function sort is 192.578000 ms.
+ 
+Testing 8972407 data with 1 node and 5 process
+Execution time of function sort is 138.483000 ms.
+ 
+Testing 8972407 data with 1 node and 6 process
+Execution time of function sort is 109.702000 ms.
+ 
+Testing 8972407 data with 1 node and 7 process
+Execution time of function sort is 130.055000 ms.
+ 
+Testing 8972407 data with 1 node and 8 process
+Execution time of function sort is 110.849000 ms.
+ 
+Testing 8972407 data with 1 node and 9 process
+Execution time of function sort is 121.933000 ms.
+ 
+Testing 8972407 data with 1 node and 10 process
+Execution time of function sort is 101.706000 ms.
+ 
+Testing 8972407 data with 1 node and 11 process
+Execution time of function sort is 94.693000 ms.
+ 
+Testing 8972407 data with 1 node and 12 process
+Execution time of function sort is 94.533000 ms.
+ 
+Testing 8972407 data with 1 node and 13 process
+Execution time of function sort is 82.955000 ms.
+ 
+Testing 8972407 data with 1 node and 14 process
+Execution time of function sort is 90.779000 ms.
+ 
+Testing 8972407 data with 1 node and 15 process
+Execution time of function sort is 89.627000 ms.
+ 
+Testing 8972407 data with 1 node and 16 process
+Execution time of function sort is 78.431000 ms.
+ 
+Testing 8972407 data with 1 node and 17 process
+Execution time of function sort is 95.406000 ms.
+ 
+Testing 8972407 data with 1 node and 18 process
+Execution time of function sort is 80.420000 ms.
+ 
+Testing 8972407 data with 1 node and 19 process
+Execution time of function sort is 87.286000 ms.
+ 
+Testing 8972407 data with 1 node and 20 process
+Execution time of function sort is 86.924000 ms.
+ 
+Testing 8972407 data with 1 node and 21 process
+Execution time of function sort is 75.902000 ms.
+ 
+Testing 8972407 data with 1 node and 22 process
+Execution time of function sort is 94.456000 ms.
+ 
+Testing 8972407 data with 1 node and 23 process
+Execution time of function sort is 93.756000 ms.
+ 
+Testing 8972407 data with 1 node and 24 process
+Execution time of function sort is 103.902000 ms.
+ 
+Testing 8972407 data with 1 node and 25 process
+Execution time of function sort is 112.449000 ms.
+ 
+Testing 8972407 data with 1 node and 26 process
+Execution time of function sort is 104.282000 ms.
+ 
+Testing 8972407 data with 1 node and 27 process
+Execution time of function sort is 75.289000 ms.
+ 
+Testing 8972407 data with 1 node and 28 process
+Execution time of function sort is 78.344000 ms.
+ 
+Testing 8972407 data with 2 node and 29 process
+Execution time of function sort is 67.285000 ms.
+ 
+Testing 8972407 data with 2 node and 30 process
+Execution time of function sort is 82.677000 ms.
+ 
+Testing 8972407 data with 2 node and 31 process
+Execution time of function sort is 81.960000 ms.
+ 
+Testing 8972407 data with 2 node and 32 process
+Execution time of function sort is 64.395000 ms.
+ 
+Testing 8972407 data with 2 node and 33 process
+Execution time of function sort is 55.483000 ms.
+ 
+Testing 8972407 data with 2 node and 34 process
+Execution time of function sort is 86.283000 ms.
+ 
+Testing 8972407 data with 2 node and 35 process
+Execution time of function sort is 90.925000 ms.
+ 
+Testing 8972407 data with 2 node and 36 process
+Execution time of function sort is 65.954000 ms.
+ 
+Testing 8972407 data with 2 node and 37 process
+Execution time of function sort is 65.050000 ms.
+ 
+Testing 8972407 data with 2 node and 38 process
+Execution time of function sort is 56.861000 ms.
+ 
+Testing 8972407 data with 2 node and 39 process
+Execution time of function sort is 57.563000 ms.
+ 
+Testing 8972407 data with 2 node and 40 process
+Execution time of function sort is 73.828000 ms.
+ 
+Testing 8972407 data with 2 node and 41 process
+Execution time of function sort is 53.821000 ms.
+ 
+Testing 8972407 data with 2 node and 42 process
+Execution time of function sort is 68.069000 ms.
+ 
+Testing 8972407 data with 2 node and 43 process
+Execution time of function sort is 62.103000 ms.
+ 
+Testing 8972407 data with 2 node and 44 process
+Execution time of function sort is 69.716000 ms.
+ 
+Testing 8972407 data with 2 node and 45 process
+Execution time of function sort is 62.044000 ms.
+ 
+Testing 8972407 data with 2 node and 46 process
+Execution time of function sort is 60.793000 ms.
+ 
+Testing 8972407 data with 2 node and 47 process
+Execution time of function sort is 67.953000 ms.
+ 
+Testing 8972407 data with 2 node and 48 process
+Execution time of function sort is 49.255000 ms.
+ 
+Testing 8972407 data with 2 node and 49 process
+Execution time of function sort is 63.401000 ms.
+ 
+Testing 8972407 data with 2 node and 50 process
+Execution time of function sort is 63.421000 ms.
+ 
+Testing 8972407 data with 2 node and 51 process
+Execution time of function sort is 41.662000 ms.
+ 
+Testing 8972407 data with 2 node and 52 process
+Execution time of function sort is 65.445000 ms.
+ 
+Testing 8972407 data with 2 node and 53 process
+Execution time of function sort is 54.190000 ms.
+ 
+Testing 8972407 data with 2 node and 54 process
+Execution time of function sort is 41.071000 ms.
+ 
+Testing 8972407 data with 2 node and 55 process
+Execution time of function sort is 53.308000 ms.
+ 
+Testing 8972407 data with 2 node and 56 process
+Execution time of function sort is 40.776000 ms.
+ 
+112000000 elements is generated in ./112000000.dat
+Testing 112000000 data with 1 node and 1 process
+Execution time of function sort is 5775.269000 ms.
+ 
+Testing 112000000 data with 1 node and 2 process
+Execution time of function sort is 3422.655000 ms.
+ 
+Testing 112000000 data with 1 node and 3 process
+Execution time of function sort is 2861.920000 ms.
+ 
+Testing 112000000 data with 1 node and 4 process
+Execution time of function sort is 2098.412000 ms.
+ 
+Testing 112000000 data with 1 node and 5 process
+Execution time of function sort is 2031.968000 ms.
+ 
+Testing 112000000 data with 1 node and 6 process
+Execution time of function sort is 1826.102000 ms.
+ 
+Testing 112000000 data with 1 node and 7 process
+Execution time of function sort is 1575.004000 ms.
+ 
+Testing 112000000 data with 1 node and 8 process
+Execution time of function sort is 1391.526000 ms.
+ 
+Testing 112000000 data with 1 node and 9 process
+Execution time of function sort is 1603.879000 ms.
+ 
+Testing 112000000 data with 1 node and 10 process
+Execution time of function sort is 1220.014000 ms.
+ 
+Testing 112000000 data with 1 node and 11 process
+Execution time of function sort is 1426.299000 ms.
+ 
+Testing 112000000 data with 1 node and 12 process
+Execution time of function sort is 1183.965000 ms.
+ 
+Testing 112000000 data with 1 node and 13 process
+Execution time of function sort is 1516.470000 ms.
+ 
+Testing 112000000 data with 1 node and 14 process
+Execution time of function sort is 1254.977000 ms.
+ 
+Testing 112000000 data with 1 node and 15 process
+Execution time of function sort is 1470.289000 ms.
+ 
+Testing 112000000 data with 1 node and 16 process
+Execution time of function sort is 1106.037000 ms.
+ 
+Testing 112000000 data with 1 node and 17 process
+Execution time of function sort is 1209.684000 ms.
+ 
+Testing 112000000 data with 1 node and 18 process
+Execution time of function sort is 1580.043000 ms.
+ 
+Testing 112000000 data with 1 node and 19 process
+Execution time of function sort is 1532.727000 ms.
+ 
+Testing 112000000 data with 1 node and 20 process
+Execution time of function sort is 1254.784000 ms.
+ 
+Testing 112000000 data with 1 node and 21 process
+Execution time of function sort is 1190.766000 ms.
+ 
+Testing 112000000 data with 1 node and 22 process
+Execution time of function sort is 1251.002000 ms.
+ 
+Testing 112000000 data with 1 node and 23 process
+Execution time of function sort is 1292.497000 ms.
+ 
+Testing 112000000 data with 1 node and 24 process
+Execution time of function sort is 1783.189000 ms.
+ 
+Testing 112000000 data with 1 node and 25 process
+Execution time of function sort is 1479.502000 ms.
+ 
+Testing 112000000 data with 1 node and 26 process
+Execution time of function sort is 2052.787000 ms.
+ 
+Testing 112000000 data with 1 node and 27 process
+Execution time of function sort is 2317.115000 ms.
+ 
+Testing 112000000 data with 1 node and 28 process
+Execution time of function sort is 1459.426000 ms.
+ 
+Testing 112000000 data with 2 node and 29 process
+Execution time of function sort is 1772.786000 ms.
+ 
+Testing 112000000 data with 2 node and 30 process
+Execution time of function sort is 1279.714000 ms.
+ 
+Testing 112000000 data with 2 node and 31 process
+Execution time of function sort is 1377.699000 ms.
+ 
+Testing 112000000 data with 2 node and 32 process
+Execution time of function sort is 1208.647000 ms.
+ 
+Testing 112000000 data with 2 node and 33 process
+Execution time of function sort is 1299.174000 ms.
+ 
+Testing 112000000 data with 2 node and 34 process
+Execution time of function sort is 1215.300000 ms.
+ 
+Testing 112000000 data with 2 node and 35 process
+Execution time of function sort is 1266.483000 ms.
+ 
+Testing 112000000 data with 2 node and 36 process
+Execution time of function sort is 1289.697000 ms.
+ 
+Testing 112000000 data with 2 node and 37 process
+Execution time of function sort is 1197.460000 ms.
+ 
+Testing 112000000 data with 2 node and 38 process
+Execution time of function sort is 1893.355000 ms.
+ 
+Testing 112000000 data with 2 node and 39 process
+Execution time of function sort is 1858.688000 ms.
+ 
+Testing 112000000 data with 2 node and 40 process
+Execution time of function sort is 1248.862000 ms.
+ 
+Testing 112000000 data with 2 node and 41 process
+Execution time of function sort is 1266.133000 ms.
+ 
+Testing 112000000 data with 2 node and 42 process
+Execution time of function sort is 1828.110000 ms.
+ 
+Testing 112000000 data with 2 node and 43 process
+Execution time of function sort is 1211.184000 ms.
+ 
+Testing 112000000 data with 2 node and 44 process
+Execution time of function sort is 1812.908000 ms.
+ 
+Testing 112000000 data with 2 node and 45 process
+Execution time of function sort is 1838.285000 ms.
+ 
+Testing 112000000 data with 2 node and 46 process
+Execution time of function sort is 1915.542000 ms.
+ 
+Testing 112000000 data with 2 node and 47 process
+Execution time of function sort is 1792.310000 ms.
+ 
+Testing 112000000 data with 2 node and 48 process
+Execution time of function sort is 1200.521000 ms.
+ 
+Testing 112000000 data with 2 node and 49 process
+Execution time of function sort is 1780.528000 ms.
+ 
+Testing 112000000 data with 2 node and 50 process
+Execution time of function sort is 1235.811000 ms.
+ 
+Testing 112000000 data with 2 node and 51 process
+Execution time of function sort is 1773.627000 ms.
+ 
+Testing 112000000 data with 2 node and 52 process
+Execution time of function sort is 1792.009000 ms.
+ 
+Testing 112000000 data with 2 node and 53 process
+Execution time of function sort is 1279.045000 ms.
+ 
+Testing 112000000 data with 2 node and 54 process
+Execution time of function sort is 2005.008000 ms.
+ 
+Testing 112000000 data with 2 node and 55 process
+Execution time of function sort is 1245.400000 ms.
+ 
+Testing 112000000 data with 2 node and 56 process
+Execution time of function sort is 1227.729000 ms.
+ 
+Test on Identical Data
+31 elements is generated in ./31.dat
+Testing 31 data with 1 node and 1 process
+Execution time of function sort is 0.009000 ms.
+ 
+Testing 31 data with 1 node and 2 process
+Execution time of function sort is 0.026000 ms.
+ 
+Testing 31 data with 1 node and 3 process
+Execution time of function sort is 0.033000 ms.
+ 
+Testing 31 data with 1 node and 4 process
+Execution time of function sort is 0.059000 ms.
+ 
+Testing 31 data with 1 node and 5 process
+Execution time of function sort is 0.045000 ms.
+ 
+Testing 31 data with 1 node and 6 process
+Execution time of function sort is 0.060000 ms.
+ 
+Testing 31 data with 1 node and 7 process
+Execution time of function sort is 0.063000 ms.
+ 
+Testing 31 data with 1 node and 8 process
+Execution time of function sort is 0.074000 ms.
+ 
+Testing 31 data with 1 node and 9 process
+Execution time of function sort is 0.047000 ms.
+ 
+Testing 31 data with 1 node and 10 process
+Execution time of function sort is 0.080000 ms.
+ 
+Testing 31 data with 1 node and 11 process
+Execution time of function sort is 0.084000 ms.
+ 
+Testing 31 data with 1 node and 12 process
+Execution time of function sort is 0.092000 ms.
+ 
+Testing 31 data with 1 node and 13 process
+Execution time of function sort is 0.084000 ms.
+ 
+Testing 31 data with 1 node and 14 process
+Execution time of function sort is 0.089000 ms.
+ 
+Testing 31 data with 1 node and 15 process
+Execution time of function sort is 0.093000 ms.
+ 
+Testing 31 data with 1 node and 16 process
+Execution time of function sort is 0.078000 ms.
+ 
+Testing 31 data with 1 node and 17 process
+Execution time of function sort is 0.051000 ms.
+ 
+Testing 31 data with 1 node and 18 process
+Execution time of function sort is 0.074000 ms.
+ 
+Testing 31 data with 1 node and 19 process
+Execution time of function sort is 0.087000 ms.
+ 
+Testing 31 data with 1 node and 20 process
+Execution time of function sort is 0.089000 ms.
+ 
+Testing 31 data with 1 node and 21 process
+Execution time of function sort is 0.088000 ms.
+ 
+Testing 31 data with 1 node and 22 process
+Execution time of function sort is 0.091000 ms.
+ 
+Testing 31 data with 1 node and 23 process
+Execution time of function sort is 0.095000 ms.
+ 
+Testing 31 data with 1 node and 24 process
+Execution time of function sort is 0.089000 ms.
+ 
+Testing 31 data with 1 node and 25 process
+Execution time of function sort is 0.087000 ms.
+ 
+Testing 31 data with 1 node and 26 process
+Execution time of function sort is 0.116000 ms.
+ 
+Testing 31 data with 1 node and 27 process
+Execution time of function sort is 0.097000 ms.
+ 
+Testing 31 data with 1 node and 28 process
+Execution time of function sort is 0.098000 ms.
+ 
+Testing 31 data with 2 node and 29 process
+Execution time of function sort is 0.122000 ms.
+ 
+Testing 31 data with 2 node and 30 process
+Execution time of function sort is 0.128000 ms.
+ 
+Testing 31 data with 2 node and 31 process
+Execution time of function sort is 0.198000 ms.
  
 Testing 31 data with 2 node and 32 process
  
@@ -1338,674 +2965,674 @@ Testing 1000 data with 1 node and 1 process
 Execution time of function sort is 0.037000 ms.
  
 Testing 1000 data with 1 node and 2 process
-Execution time of function sort is 0.060000 ms.
+Execution time of function sort is 0.056000 ms.
  
 Testing 1000 data with 1 node and 3 process
-Execution time of function sort is 0.067000 ms.
+Execution time of function sort is 0.053000 ms.
  
 Testing 1000 data with 1 node and 4 process
-Execution time of function sort is 0.090000 ms.
+Execution time of function sort is 0.085000 ms.
  
 Testing 1000 data with 1 node and 5 process
-Execution time of function sort is 0.079000 ms.
+Execution time of function sort is 0.088000 ms.
  
 Testing 1000 data with 1 node and 6 process
-Execution time of function sort is 0.142000 ms.
+Execution time of function sort is 0.135000 ms.
  
 Testing 1000 data with 1 node and 7 process
-Execution time of function sort is 0.141000 ms.
+Execution time of function sort is 0.101000 ms.
  
 Testing 1000 data with 1 node and 8 process
-Execution time of function sort is 0.155000 ms.
+Execution time of function sort is 0.151000 ms.
  
 Testing 1000 data with 1 node and 9 process
-Execution time of function sort is 0.107000 ms.
+Execution time of function sort is 0.112000 ms.
  
 Testing 1000 data with 1 node and 10 process
-Execution time of function sort is 0.125000 ms.
+Execution time of function sort is 0.153000 ms.
  
 Testing 1000 data with 1 node and 11 process
-Execution time of function sort is 0.173000 ms.
- 
-Testing 1000 data with 1 node and 12 process
-Execution time of function sort is 0.189000 ms.
- 
-Testing 1000 data with 1 node and 13 process
-Execution time of function sort is 0.191000 ms.
- 
-Testing 1000 data with 1 node and 14 process
 Execution time of function sort is 0.193000 ms.
  
-Testing 1000 data with 1 node and 15 process
-Execution time of function sort is 0.213000 ms.
- 
-Testing 1000 data with 1 node and 16 process
-Execution time of function sort is 0.213000 ms.
- 
-Testing 1000 data with 1 node and 17 process
-Execution time of function sort is 0.189000 ms.
- 
-Testing 1000 data with 1 node and 18 process
-Execution time of function sort is 0.222000 ms.
- 
-Testing 1000 data with 1 node and 19 process
-Execution time of function sort is 0.230000 ms.
- 
-Testing 1000 data with 1 node and 20 process
-Execution time of function sort is 0.190000 ms.
- 
-Testing 1000 data with 1 node and 21 process
-Execution time of function sort is 0.194000 ms.
- 
-Testing 1000 data with 1 node and 22 process
-Execution time of function sort is 0.120000 ms.
- 
-Testing 1000 data with 1 node and 23 process
-Execution time of function sort is 0.105000 ms.
- 
-Testing 1000 data with 1 node and 24 process
-Execution time of function sort is 0.109000 ms.
- 
-Testing 1000 data with 1 node and 25 process
-Execution time of function sort is 0.116000 ms.
- 
-Testing 1000 data with 1 node and 26 process
-Execution time of function sort is 0.150000 ms.
- 
-Testing 1000 data with 1 node and 27 process
+Testing 1000 data with 1 node and 12 process
 Execution time of function sort is 0.140000 ms.
  
-Testing 1000 data with 1 node and 28 process
-Execution time of function sort is 0.124000 ms.
+Testing 1000 data with 1 node and 13 process
+Execution time of function sort is 0.207000 ms.
  
-Testing 1000 data with 2 node and 29 process
-Execution time of function sort is 0.328000 ms.
+Testing 1000 data with 1 node and 14 process
+Execution time of function sort is 0.150000 ms.
  
-Testing 1000 data with 2 node and 30 process
-Execution time of function sort is 0.301000 ms.
+Testing 1000 data with 1 node and 15 process
+Execution time of function sort is 0.193000 ms.
  
-Testing 1000 data with 2 node and 31 process
-Execution time of function sort is 0.352000 ms.
+Testing 1000 data with 1 node and 16 process
+Execution time of function sort is 0.206000 ms.
  
-Testing 1000 data with 2 node and 32 process
-Execution time of function sort is 10.441000 ms.
+Testing 1000 data with 1 node and 17 process
+Execution time of function sort is 0.193000 ms.
  
-Testing 1000 data with 2 node and 33 process
-Execution time of function sort is 0.186000 ms.
+Testing 1000 data with 1 node and 18 process
+Execution time of function sort is 0.202000 ms.
  
-Testing 1000 data with 2 node and 34 process
-Execution time of function sort is 0.241000 ms.
+Testing 1000 data with 1 node and 19 process
+Execution time of function sort is 0.233000 ms.
  
-Testing 1000 data with 2 node and 35 process
-Execution time of function sort is 0.342000 ms.
- 
-Testing 1000 data with 2 node and 36 process
-Execution time of function sort is 0.300000 ms.
- 
-Testing 1000 data with 2 node and 37 process
-Execution time of function sort is 0.184000 ms.
- 
-Testing 1000 data with 2 node and 38 process
-Execution time of function sort is 0.380000 ms.
- 
-Testing 1000 data with 2 node and 39 process
+Testing 1000 data with 1 node and 20 process
 Execution time of function sort is 0.257000 ms.
  
-Testing 1000 data with 2 node and 40 process
-Execution time of function sort is 0.387000 ms.
+Testing 1000 data with 1 node and 21 process
+Execution time of function sort is 0.191000 ms.
  
-Testing 1000 data with 2 node and 41 process
-Execution time of function sort is 2.152000 ms.
+Testing 1000 data with 1 node and 22 process
+Execution time of function sort is 0.128000 ms.
  
-Testing 1000 data with 2 node and 42 process
-Execution time of function sort is 0.347000 ms.
+Testing 1000 data with 1 node and 23 process
+Execution time of function sort is 0.116000 ms.
  
-Testing 1000 data with 2 node and 43 process
-Execution time of function sort is 0.247000 ms.
+Testing 1000 data with 1 node and 24 process
+Execution time of function sort is 0.114000 ms.
  
-Testing 1000 data with 2 node and 44 process
+Testing 1000 data with 1 node and 25 process
+Execution time of function sort is 0.135000 ms.
+ 
+Testing 1000 data with 1 node and 26 process
+Execution time of function sort is 0.139000 ms.
+ 
+Testing 1000 data with 1 node and 27 process
+Execution time of function sort is 0.117000 ms.
+ 
+Testing 1000 data with 1 node and 28 process
+Execution time of function sort is 0.118000 ms.
+ 
+Testing 1000 data with 2 node and 29 process
+Execution time of function sort is 0.379000 ms.
+ 
+Testing 1000 data with 2 node and 30 process
+Execution time of function sort is 0.293000 ms.
+ 
+Testing 1000 data with 2 node and 31 process
 Execution time of function sort is 0.362000 ms.
  
+Testing 1000 data with 2 node and 32 process
+Execution time of function sort is 24.158000 ms.
+ 
+Testing 1000 data with 2 node and 33 process
+Execution time of function sort is 0.195000 ms.
+ 
+Testing 1000 data with 2 node and 34 process
+Execution time of function sort is 0.213000 ms.
+ 
+Testing 1000 data with 2 node and 35 process
+Execution time of function sort is 0.361000 ms.
+ 
+Testing 1000 data with 2 node and 36 process
+Execution time of function sort is 0.337000 ms.
+ 
+Testing 1000 data with 2 node and 37 process
+Execution time of function sort is 0.330000 ms.
+ 
+Testing 1000 data with 2 node and 38 process
+Execution time of function sort is 0.350000 ms.
+ 
+Testing 1000 data with 2 node and 39 process
+Execution time of function sort is 0.346000 ms.
+ 
+Testing 1000 data with 2 node and 40 process
+Execution time of function sort is 0.353000 ms.
+ 
+Testing 1000 data with 2 node and 41 process
+Execution time of function sort is 0.397000 ms.
+ 
+Testing 1000 data with 2 node and 42 process
+Execution time of function sort is 0.251000 ms.
+ 
+Testing 1000 data with 2 node and 43 process
+Execution time of function sort is 0.341000 ms.
+ 
+Testing 1000 data with 2 node and 44 process
+Execution time of function sort is 0.392000 ms.
+ 
 Testing 1000 data with 2 node and 45 process
-Execution time of function sort is 0.306000 ms.
+Execution time of function sort is 0.300000 ms.
  
 Testing 1000 data with 2 node and 46 process
-Execution time of function sort is 0.285000 ms.
+Execution time of function sort is 0.235000 ms.
  
 Testing 1000 data with 2 node and 47 process
-Execution time of function sort is 0.319000 ms.
+Execution time of function sort is 0.251000 ms.
  
 Testing 1000 data with 2 node and 48 process
-Execution time of function sort is 0.323000 ms.
+Execution time of function sort is 4.247000 ms.
  
 Testing 1000 data with 2 node and 49 process
-Execution time of function sort is 0.334000 ms.
+Execution time of function sort is 0.272000 ms.
  
 Testing 1000 data with 2 node and 50 process
-Execution time of function sort is 0.284000 ms.
+Execution time of function sort is 0.232000 ms.
  
 Testing 1000 data with 2 node and 51 process
-Execution time of function sort is 0.264000 ms.
+Execution time of function sort is 0.280000 ms.
  
 Testing 1000 data with 2 node and 52 process
-Execution time of function sort is 0.286000 ms.
+Execution time of function sort is 0.274000 ms.
  
 Testing 1000 data with 2 node and 53 process
-Execution time of function sort is 0.350000 ms.
+Execution time of function sort is 0.351000 ms.
  
 Testing 1000 data with 2 node and 54 process
-Execution time of function sort is 0.367000 ms.
+Execution time of function sort is 0.340000 ms.
  
 Testing 1000 data with 2 node and 55 process
-Execution time of function sort is 0.350000 ms.
+Execution time of function sort is 0.358000 ms.
  
 Testing 1000 data with 2 node and 56 process
-Execution time of function sort is 0.271000 ms.
+Execution time of function sort is 0.291000 ms.
  
 23459 elements is generated in ./23459.dat
 Testing 23459 data with 1 node and 1 process
-Execution time of function sort is 0.759000 ms.
+Execution time of function sort is 0.681000 ms.
  
 Testing 23459 data with 1 node and 2 process
-Execution time of function sort is 0.628000 ms.
+Execution time of function sort is 0.716000 ms.
  
 Testing 23459 data with 1 node and 3 process
-Execution time of function sort is 0.618000 ms.
+Execution time of function sort is 0.679000 ms.
  
 Testing 23459 data with 1 node and 4 process
-Execution time of function sort is 0.562000 ms.
+Execution time of function sort is 0.615000 ms.
  
 Testing 23459 data with 1 node and 5 process
-Execution time of function sort is 0.481000 ms.
+Execution time of function sort is 0.458000 ms.
  
 Testing 23459 data with 1 node and 6 process
-Execution time of function sort is 0.405000 ms.
+Execution time of function sort is 0.295000 ms.
  
 Testing 23459 data with 1 node and 7 process
-Execution time of function sort is 0.394000 ms.
+Execution time of function sort is 0.347000 ms.
  
 Testing 23459 data with 1 node and 8 process
-Execution time of function sort is 0.404000 ms.
+Execution time of function sort is 0.427000 ms.
  
 Testing 23459 data with 1 node and 9 process
-Execution time of function sort is 0.556000 ms.
- 
-Testing 23459 data with 1 node and 10 process
-Execution time of function sort is 0.335000 ms.
- 
-Testing 23459 data with 1 node and 11 process
-Execution time of function sort is 0.411000 ms.
- 
-Testing 23459 data with 1 node and 12 process
-Execution time of function sort is 0.512000 ms.
- 
-Testing 23459 data with 1 node and 13 process
-Execution time of function sort is 0.439000 ms.
- 
-Testing 23459 data with 1 node and 14 process
-Execution time of function sort is 0.346000 ms.
- 
-Testing 23459 data with 1 node and 15 process
-Execution time of function sort is 0.474000 ms.
- 
-Testing 23459 data with 1 node and 16 process
 Execution time of function sort is 0.443000 ms.
  
+Testing 23459 data with 1 node and 10 process
+Execution time of function sort is 0.370000 ms.
+ 
+Testing 23459 data with 1 node and 11 process
+Execution time of function sort is 0.601000 ms.
+ 
+Testing 23459 data with 1 node and 12 process
+Execution time of function sort is 0.615000 ms.
+ 
+Testing 23459 data with 1 node and 13 process
+Execution time of function sort is 0.422000 ms.
+ 
+Testing 23459 data with 1 node and 14 process
+Execution time of function sort is 0.371000 ms.
+ 
+Testing 23459 data with 1 node and 15 process
+Execution time of function sort is 0.348000 ms.
+ 
+Testing 23459 data with 1 node and 16 process
+Execution time of function sort is 0.505000 ms.
+ 
 Testing 23459 data with 1 node and 17 process
-Execution time of function sort is 0.308000 ms.
+Execution time of function sort is 0.309000 ms.
  
 Testing 23459 data with 1 node and 18 process
-Execution time of function sort is 0.341000 ms.
+Execution time of function sort is 0.339000 ms.
  
 Testing 23459 data with 1 node and 19 process
-Execution time of function sort is 0.446000 ms.
+Execution time of function sort is 0.444000 ms.
  
 Testing 23459 data with 1 node and 20 process
-Execution time of function sort is 0.480000 ms.
+Execution time of function sort is 0.450000 ms.
  
 Testing 23459 data with 1 node and 21 process
-Execution time of function sort is 0.368000 ms.
+Execution time of function sort is 0.360000 ms.
  
 Testing 23459 data with 1 node and 22 process
-Execution time of function sort is 0.526000 ms.
+Execution time of function sort is 0.476000 ms.
  
 Testing 23459 data with 1 node and 23 process
-Execution time of function sort is 0.421000 ms.
+Execution time of function sort is 0.502000 ms.
  
 Testing 23459 data with 1 node and 24 process
-Execution time of function sort is 0.390000 ms.
+Execution time of function sort is 0.388000 ms.
  
 Testing 23459 data with 1 node and 25 process
-Execution time of function sort is 0.492000 ms.
+Execution time of function sort is 0.480000 ms.
  
 Testing 23459 data with 1 node and 26 process
-Execution time of function sort is 0.525000 ms.
+Execution time of function sort is 0.517000 ms.
  
 Testing 23459 data with 1 node and 27 process
-Execution time of function sort is 0.498000 ms.
+Execution time of function sort is 0.484000 ms.
  
 Testing 23459 data with 1 node and 28 process
-Execution time of function sort is 0.402000 ms.
+Execution time of function sort is 0.398000 ms.
  
 Testing 23459 data with 2 node and 29 process
-Execution time of function sort is 0.648000 ms.
+Execution time of function sort is 0.666000 ms.
  
 Testing 23459 data with 2 node and 30 process
-Execution time of function sort is 0.558000 ms.
+Execution time of function sort is 0.815000 ms.
  
 Testing 23459 data with 2 node and 31 process
-Execution time of function sort is 0.801000 ms.
+Execution time of function sort is 0.636000 ms.
  
 Testing 23459 data with 2 node and 32 process
-Execution time of function sort is 9.491000 ms.
+Execution time of function sort is 5.967000 ms.
  
 Testing 23459 data with 2 node and 33 process
-Execution time of function sort is 0.799000 ms.
+Execution time of function sort is 0.729000 ms.
  
 Testing 23459 data with 2 node and 34 process
-Execution time of function sort is 0.680000 ms.
+Execution time of function sort is 0.808000 ms.
  
 Testing 23459 data with 2 node and 35 process
-Execution time of function sort is 0.829000 ms.
+Execution time of function sort is 0.822000 ms.
  
 Testing 23459 data with 2 node and 36 process
-Execution time of function sort is 0.794000 ms.
+Execution time of function sort is 0.747000 ms.
  
 Testing 23459 data with 2 node and 37 process
-Execution time of function sort is 1.007000 ms.
+Execution time of function sort is 0.839000 ms.
  
 Testing 23459 data with 2 node and 38 process
-Execution time of function sort is 0.742000 ms.
+Execution time of function sort is 0.730000 ms.
  
 Testing 23459 data with 2 node and 39 process
-Execution time of function sort is 0.799000 ms.
+Execution time of function sort is 0.724000 ms.
  
 Testing 23459 data with 2 node and 40 process
-Execution time of function sort is 1.014000 ms.
+Execution time of function sort is 0.826000 ms.
  
 Testing 23459 data with 2 node and 41 process
-Execution time of function sort is 0.857000 ms.
+Execution time of function sort is 0.918000 ms.
  
 Testing 23459 data with 2 node and 42 process
-Execution time of function sort is 0.821000 ms.
+Execution time of function sort is 0.803000 ms.
  
 Testing 23459 data with 2 node and 43 process
-Execution time of function sort is 0.857000 ms.
+Execution time of function sort is 8.651000 ms.
  
 Testing 23459 data with 2 node and 44 process
-Execution time of function sort is 0.802000 ms.
+Execution time of function sort is 0.750000 ms.
  
 Testing 23459 data with 2 node and 45 process
-Execution time of function sort is 0.628000 ms.
+Execution time of function sort is 0.705000 ms.
  
 Testing 23459 data with 2 node and 46 process
-Execution time of function sort is 0.660000 ms.
+Execution time of function sort is 0.595000 ms.
  
 Testing 23459 data with 2 node and 47 process
-Execution time of function sort is 2.276000 ms.
+Execution time of function sort is 0.558000 ms.
  
 Testing 23459 data with 2 node and 48 process
-Execution time of function sort is 8.763000 ms.
+Execution time of function sort is 0.704000 ms.
  
 Testing 23459 data with 2 node and 49 process
-Execution time of function sort is 0.795000 ms.
+Execution time of function sort is 0.671000 ms.
  
 Testing 23459 data with 2 node and 50 process
-Execution time of function sort is 0.570000 ms.
+Execution time of function sort is 0.524000 ms.
  
 Testing 23459 data with 2 node and 51 process
-Execution time of function sort is 0.564000 ms.
+Execution time of function sort is 0.553000 ms.
  
 Testing 23459 data with 2 node and 52 process
-Execution time of function sort is 0.603000 ms.
+Execution time of function sort is 0.561000 ms.
  
 Testing 23459 data with 2 node and 53 process
-Execution time of function sort is 0.691000 ms.
+Execution time of function sort is 0.666000 ms.
  
 Testing 23459 data with 2 node and 54 process
-Execution time of function sort is 0.670000 ms.
+Execution time of function sort is 0.675000 ms.
  
 Testing 23459 data with 2 node and 55 process
-Execution time of function sort is 1.866000 ms.
+Execution time of function sort is 0.655000 ms.
  
 Testing 23459 data with 2 node and 56 process
-Execution time of function sort is 0.728000 ms.
+Execution time of function sort is 0.695000 ms.
  
 8972407 elements is generated in ./8972407.dat
 Testing 8972407 data with 1 node and 1 process
-Execution time of function sort is 537.096000 ms.
+Execution time of function sort is 253.750000 ms.
  
 Testing 8972407 data with 1 node and 2 process
-Execution time of function sort is 342.043000 ms.
+Execution time of function sort is 187.682000 ms.
  
 Testing 8972407 data with 1 node and 3 process
-Execution time of function sort is 237.124000 ms.
+Execution time of function sort is 126.844000 ms.
  
 Testing 8972407 data with 1 node and 4 process
-Execution time of function sort is 185.430000 ms.
+Execution time of function sort is 93.030000 ms.
  
 Testing 8972407 data with 1 node and 5 process
-Execution time of function sort is 160.163000 ms.
+Execution time of function sort is 85.245000 ms.
  
 Testing 8972407 data with 1 node and 6 process
-Execution time of function sort is 138.158000 ms.
+Execution time of function sort is 80.550000 ms.
  
 Testing 8972407 data with 1 node and 7 process
-Execution time of function sort is 127.931000 ms.
+Execution time of function sort is 82.442000 ms.
  
 Testing 8972407 data with 1 node and 8 process
-Execution time of function sort is 137.057000 ms.
+Execution time of function sort is 81.968000 ms.
  
 Testing 8972407 data with 1 node and 9 process
-Execution time of function sort is 110.376000 ms.
+Execution time of function sort is 84.156000 ms.
  
 Testing 8972407 data with 1 node and 10 process
-Execution time of function sort is 110.957000 ms.
+Execution time of function sort is 81.632000 ms.
  
 Testing 8972407 data with 1 node and 11 process
-Execution time of function sort is 99.249000 ms.
+Execution time of function sort is 67.681000 ms.
  
 Testing 8972407 data with 1 node and 12 process
-Execution time of function sort is 109.496000 ms.
+Execution time of function sort is 78.372000 ms.
  
 Testing 8972407 data with 1 node and 13 process
-Execution time of function sort is 79.919000 ms.
+Execution time of function sort is 70.170000 ms.
  
 Testing 8972407 data with 1 node and 14 process
-Execution time of function sort is 100.568000 ms.
+Execution time of function sort is 73.808000 ms.
  
 Testing 8972407 data with 1 node and 15 process
-Execution time of function sort is 88.444000 ms.
+Execution time of function sort is 78.331000 ms.
  
 Testing 8972407 data with 1 node and 16 process
-Execution time of function sort is 82.428000 ms.
+Execution time of function sort is 65.863000 ms.
  
 Testing 8972407 data with 1 node and 17 process
-Execution time of function sort is 101.225000 ms.
+Execution time of function sort is 74.024000 ms.
  
 Testing 8972407 data with 1 node and 18 process
-Execution time of function sort is 68.803000 ms.
+Execution time of function sort is 67.522000 ms.
  
 Testing 8972407 data with 1 node and 19 process
-Execution time of function sort is 86.684000 ms.
+Execution time of function sort is 85.278000 ms.
  
 Testing 8972407 data with 1 node and 20 process
-Execution time of function sort is 101.177000 ms.
+Execution time of function sort is 82.864000 ms.
  
 Testing 8972407 data with 1 node and 21 process
-Execution time of function sort is 77.088000 ms.
+Execution time of function sort is 59.182000 ms.
  
 Testing 8972407 data with 1 node and 22 process
-Execution time of function sort is 96.782000 ms.
+Execution time of function sort is 82.113000 ms.
  
 Testing 8972407 data with 1 node and 23 process
-Execution time of function sort is 94.780000 ms.
+Execution time of function sort is 100.386000 ms.
  
 Testing 8972407 data with 1 node and 24 process
-Execution time of function sort is 109.944000 ms.
+Execution time of function sort is 83.903000 ms.
  
 Testing 8972407 data with 1 node and 25 process
-Execution time of function sort is 100.973000 ms.
+Execution time of function sort is 82.382000 ms.
  
 Testing 8972407 data with 1 node and 26 process
-Execution time of function sort is 111.929000 ms.
+Execution time of function sort is 82.776000 ms.
  
 Testing 8972407 data with 1 node and 27 process
-Execution time of function sort is 80.854000 ms.
+Execution time of function sort is 67.892000 ms.
  
 Testing 8972407 data with 1 node and 28 process
-Execution time of function sort is 77.618000 ms.
+Execution time of function sort is 71.574000 ms.
  
 Testing 8972407 data with 2 node and 29 process
-Execution time of function sort is 64.976000 ms.
+Execution time of function sort is 64.866000 ms.
  
 Testing 8972407 data with 2 node and 30 process
-Execution time of function sort is 87.083000 ms.
+Execution time of function sort is 93.070000 ms.
  
 Testing 8972407 data with 2 node and 31 process
-Execution time of function sort is 80.999000 ms.
+Execution time of function sort is 88.057000 ms.
  
 Testing 8972407 data with 2 node and 32 process
-Execution time of function sort is 64.658000 ms.
+Execution time of function sort is 61.044000 ms.
  
 Testing 8972407 data with 2 node and 33 process
-Execution time of function sort is 56.030000 ms.
+Execution time of function sort is 68.225000 ms.
  
 Testing 8972407 data with 2 node and 34 process
-Execution time of function sort is 91.500000 ms.
+Execution time of function sort is 95.980000 ms.
  
 Testing 8972407 data with 2 node and 35 process
-Execution time of function sort is 88.149000 ms.
+Execution time of function sort is 89.333000 ms.
  
 Testing 8972407 data with 2 node and 36 process
-Execution time of function sort is 66.606000 ms.
+Execution time of function sort is 69.035000 ms.
  
 Testing 8972407 data with 2 node and 37 process
-Execution time of function sort is 65.335000 ms.
+Execution time of function sort is 61.367000 ms.
  
 Testing 8972407 data with 2 node and 38 process
-Execution time of function sort is 63.398000 ms.
+Execution time of function sort is 53.242000 ms.
  
 Testing 8972407 data with 2 node and 39 process
-Execution time of function sort is 63.883000 ms.
+Execution time of function sort is 53.263000 ms.
  
 Testing 8972407 data with 2 node and 40 process
-Execution time of function sort is 73.884000 ms.
+Execution time of function sort is 67.094000 ms.
  
 Testing 8972407 data with 2 node and 41 process
-Execution time of function sort is 56.044000 ms.
+Execution time of function sort is 49.973000 ms.
  
 Testing 8972407 data with 2 node and 42 process
-Execution time of function sort is 73.426000 ms.
+Execution time of function sort is 60.914000 ms.
  
 Testing 8972407 data with 2 node and 43 process
-Execution time of function sort is 66.794000 ms.
+Execution time of function sort is 61.872000 ms.
  
 Testing 8972407 data with 2 node and 44 process
-Execution time of function sort is 64.533000 ms.
+Execution time of function sort is 68.521000 ms.
  
 Testing 8972407 data with 2 node and 45 process
-Execution time of function sort is 63.771000 ms.
+Execution time of function sort is 61.876000 ms.
  
 Testing 8972407 data with 2 node and 46 process
-Execution time of function sort is 59.291000 ms.
+Execution time of function sort is 64.517000 ms.
  
 Testing 8972407 data with 2 node and 47 process
-Execution time of function sort is 59.747000 ms.
+Execution time of function sort is 60.301000 ms.
  
 Testing 8972407 data with 2 node and 48 process
-Execution time of function sort is 44.661000 ms.
+Execution time of function sort is 43.360000 ms.
  
 Testing 8972407 data with 2 node and 49 process
-Execution time of function sort is 54.787000 ms.
+Execution time of function sort is 53.479000 ms.
  
 Testing 8972407 data with 2 node and 50 process
-Execution time of function sort is 59.610000 ms.
+Execution time of function sort is 61.890000 ms.
  
 Testing 8972407 data with 2 node and 51 process
-Execution time of function sort is 48.358000 ms.
+Execution time of function sort is 42.532000 ms.
  
 Testing 8972407 data with 2 node and 52 process
-Execution time of function sort is 57.765000 ms.
+Execution time of function sort is 55.140000 ms.
  
 Testing 8972407 data with 2 node and 53 process
-Execution time of function sort is 59.277000 ms.
+Execution time of function sort is 55.028000 ms.
  
 Testing 8972407 data with 2 node and 54 process
-Execution time of function sort is 42.375000 ms.
+Execution time of function sort is 41.442000 ms.
  
 Testing 8972407 data with 2 node and 55 process
-Execution time of function sort is 56.150000 ms.
+Execution time of function sort is 54.031000 ms.
  
 Testing 8972407 data with 2 node and 56 process
-Execution time of function sort is 41.231000 ms.
+Execution time of function sort is 36.791000 ms.
  
 112000000 elements is generated in ./112000000.dat
 Testing 112000000 data with 1 node and 1 process
-Execution time of function sort is 5110.343000 ms.
+Execution time of function sort is 2746.083000 ms.
  
 Testing 112000000 data with 1 node and 2 process
-Execution time of function sort is 3468.070000 ms.
+Execution time of function sort is 1899.421000 ms.
  
 Testing 112000000 data with 1 node and 3 process
-Execution time of function sort is 2524.712000 ms.
+Execution time of function sort is 1430.096000 ms.
  
 Testing 112000000 data with 1 node and 4 process
-Execution time of function sort is 2140.457000 ms.
+Execution time of function sort is 1230.317000 ms.
  
 Testing 112000000 data with 1 node and 5 process
-Execution time of function sort is 1860.650000 ms.
+Execution time of function sort is 1038.122000 ms.
  
 Testing 112000000 data with 1 node and 6 process
-Execution time of function sort is 1861.116000 ms.
+Execution time of function sort is 1202.515000 ms.
  
 Testing 112000000 data with 1 node and 7 process
-Execution time of function sort is 1515.992000 ms.
+Execution time of function sort is 850.519000 ms.
  
 Testing 112000000 data with 1 node and 8 process
-Execution time of function sort is 1378.082000 ms.
+Execution time of function sort is 890.071000 ms.
  
 Testing 112000000 data with 1 node and 9 process
-Execution time of function sort is 1493.884000 ms.
+Execution time of function sort is 968.304000 ms.
  
 Testing 112000000 data with 1 node and 10 process
-Execution time of function sort is 1180.560000 ms.
+Execution time of function sort is 781.349000 ms.
  
 Testing 112000000 data with 1 node and 11 process
-Execution time of function sort is 1495.921000 ms.
+Execution time of function sort is 1059.754000 ms.
  
 Testing 112000000 data with 1 node and 12 process
-Execution time of function sort is 1233.410000 ms.
+Execution time of function sort is 834.492000 ms.
  
 Testing 112000000 data with 1 node and 13 process
-Execution time of function sort is 1549.824000 ms.
+Execution time of function sort is 1221.587000 ms.
  
 Testing 112000000 data with 1 node and 14 process
-Execution time of function sort is 1188.298000 ms.
+Execution time of function sort is 862.933000 ms.
  
 Testing 112000000 data with 1 node and 15 process
-Execution time of function sort is 1593.894000 ms.
+Execution time of function sort is 1067.505000 ms.
  
 Testing 112000000 data with 1 node and 16 process
-Execution time of function sort is 1071.437000 ms.
+Execution time of function sort is 783.656000 ms.
  
 Testing 112000000 data with 1 node and 17 process
-Execution time of function sort is 1209.970000 ms.
+Execution time of function sort is 871.970000 ms.
  
 Testing 112000000 data with 1 node and 18 process
-Execution time of function sort is 1424.463000 ms.
+Execution time of function sort is 1235.419000 ms.
  
 Testing 112000000 data with 1 node and 19 process
-Execution time of function sort is 1528.948000 ms.
+Execution time of function sort is 1245.112000 ms.
  
 Testing 112000000 data with 1 node and 20 process
-Execution time of function sort is 1260.091000 ms.
+Execution time of function sort is 924.775000 ms.
  
 Testing 112000000 data with 1 node and 21 process
-Execution time of function sort is 1127.731000 ms.
+Execution time of function sort is 984.583000 ms.
  
 Testing 112000000 data with 1 node and 22 process
-Execution time of function sort is 1214.141000 ms.
+Execution time of function sort is 967.996000 ms.
  
 Testing 112000000 data with 1 node and 23 process
-Execution time of function sort is 1197.852000 ms.
+Execution time of function sort is 1023.331000 ms.
  
 Testing 112000000 data with 1 node and 24 process
-Execution time of function sort is 1675.977000 ms.
+Execution time of function sort is 1497.138000 ms.
  
 Testing 112000000 data with 1 node and 25 process
-Execution time of function sort is 1398.733000 ms.
+Execution time of function sort is 1166.531000 ms.
  
 Testing 112000000 data with 1 node and 26 process
-Execution time of function sort is 1862.827000 ms.
+Execution time of function sort is 1618.602000 ms.
  
 Testing 112000000 data with 1 node and 27 process
-Execution time of function sort is 1972.047000 ms.
+Execution time of function sort is 2009.723000 ms.
  
 Testing 112000000 data with 1 node and 28 process
-Execution time of function sort is 1503.291000 ms.
+Execution time of function sort is 1328.597000 ms.
  
 Testing 112000000 data with 2 node and 29 process
-Execution time of function sort is 1865.862000 ms.
+Execution time of function sort is 1825.594000 ms.
  
 Testing 112000000 data with 2 node and 30 process
-Execution time of function sort is 1251.617000 ms.
+Execution time of function sort is 1247.427000 ms.
  
 Testing 112000000 data with 2 node and 31 process
-Execution time of function sort is 1252.355000 ms.
+Execution time of function sort is 1279.740000 ms.
  
 Testing 112000000 data with 2 node and 32 process
-Execution time of function sort is 1309.818000 ms.
+Execution time of function sort is 1285.891000 ms.
  
 Testing 112000000 data with 2 node and 33 process
-Execution time of function sort is 1236.836000 ms.
+Execution time of function sort is 1312.253000 ms.
  
 Testing 112000000 data with 2 node and 34 process
-Execution time of function sort is 1210.368000 ms.
+Execution time of function sort is 1240.812000 ms.
  
 Testing 112000000 data with 2 node and 35 process
-Execution time of function sort is 1258.370000 ms.
+Execution time of function sort is 1314.636000 ms.
  
 Testing 112000000 data with 2 node and 36 process
-Execution time of function sort is 1208.969000 ms.
+Execution time of function sort is 1289.689000 ms.
  
 Testing 112000000 data with 2 node and 37 process
-Execution time of function sort is 1241.234000 ms.
+Execution time of function sort is 1258.819000 ms.
  
 Testing 112000000 data with 2 node and 38 process
-Execution time of function sort is 1766.181000 ms.
+Execution time of function sort is 1782.511000 ms.
  
 Testing 112000000 data with 2 node and 39 process
-Execution time of function sort is 1747.237000 ms.
+Execution time of function sort is 1831.457000 ms.
  
 Testing 112000000 data with 2 node and 40 process
-Execution time of function sort is 1185.807000 ms.
+Execution time of function sort is 1178.086000 ms.
  
 Testing 112000000 data with 2 node and 41 process
-Execution time of function sort is 1183.157000 ms.
+Execution time of function sort is 1221.278000 ms.
  
 Testing 112000000 data with 2 node and 42 process
-Execution time of function sort is 1792.392000 ms.
+Execution time of function sort is 1931.156000 ms.
  
 Testing 112000000 data with 2 node and 43 process
-Execution time of function sort is 1216.281000 ms.
+Execution time of function sort is 1216.624000 ms.
  
 Testing 112000000 data with 2 node and 44 process
-Execution time of function sort is 1849.176000 ms.
+Execution time of function sort is 1722.645000 ms.
  
 Testing 112000000 data with 2 node and 45 process
-Execution time of function sort is 1701.456000 ms.
+Execution time of function sort is 1953.613000 ms.
  
 Testing 112000000 data with 2 node and 46 process
-Execution time of function sort is 1797.911000 ms.
+Execution time of function sort is 1856.377000 ms.
  
 Testing 112000000 data with 2 node and 47 process
-Execution time of function sort is 1741.640000 ms.
+Execution time of function sort is 1725.348000 ms.
  
 Testing 112000000 data with 2 node and 48 process
-Execution time of function sort is 1180.462000 ms.
+Execution time of function sort is 1285.421000 ms.
  
 Testing 112000000 data with 2 node and 49 process
-Execution time of function sort is 1762.783000 ms.
+Execution time of function sort is 1878.595000 ms.
  
 Testing 112000000 data with 2 node and 50 process
-Execution time of function sort is 1170.564000 ms.
+Execution time of function sort is 1212.305000 ms.
  
 Testing 112000000 data with 2 node and 51 process
-Execution time of function sort is 1807.396000 ms.
+Execution time of function sort is 1769.986000 ms.
  
 Testing 112000000 data with 2 node and 52 process
-Execution time of function sort is 1787.356000 ms.
+Execution time of function sort is 1712.581000 ms.
  
 Testing 112000000 data with 2 node and 53 process
-Execution time of function sort is 1238.445000 ms.
+Execution time of function sort is 1223.682000 ms.
  
 Testing 112000000 data with 2 node and 54 process
-Execution time of function sort is 1753.435000 ms.
+Execution time of function sort is 1815.425000 ms.
  
 Testing 112000000 data with 2 node and 55 process
-Execution time of function sort is 1224.383000 ms.
+Execution time of function sort is 1292.246000 ms.
  
 Testing 112000000 data with 2 node and 56 process
-Execution time of function sort is 1268.447000 ms.
+Execution time of function sort is 1275.619000 ms.
  
