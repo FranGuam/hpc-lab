@@ -77,7 +77,7 @@ void radix_sort(float* data, int n) {
   delete[] temp;
 }
 
-int merge(float* first1, float* last1, float* first2, float* last2, float* result) {
+int merge_count(float* first1, float* last1, float* first2, float* last2, float* result) {
   int count = 0;
   while (true) {
     if (first1 == last1) {
@@ -96,6 +96,14 @@ int merge(float* first1, float* last1, float* first2, float* last2, float* resul
     }
   }
   return count;
+}
+
+void merge(float* first1, float* last1, float* first2, float* last2, float* result) {
+  while (true) {
+    if (first1 == last1) return memcpy(result, first2, sizeof(float) * (last2 - first2));
+    if (first2==last2) return memcpy(result, first1, sizeof(float) * (last1 - first1));
+    *result++ = (*first2 < *first1) ? *first2++ : *first1++;
+  }
 }
 
 void Worker::sort() {
@@ -133,10 +141,10 @@ void Worker::sort() {
     if (rank) {
       MPI_Recv(recv_buf, second_half, MPI_FLOAT, rank - 1, rank - 1, MPI_COMM_WORLD, nullptr);
 #ifndef NDEBUG
-      int count = merge(recv_buf, recv_buf + second_half, data, data + first_half, send_buf);
+      int count = merge_count(recv_buf, recv_buf + second_half, data, data + first_half, send_buf);
       std::cout << "Iter: " << i << ", Rank: " << rank << ", Count: " << count << std::endl;
 #else
-      std::merge(recv_buf, recv_buf + second_half, data, data + first_half, send_buf);
+      merge(recv_buf, recv_buf + second_half, data, data + first_half, send_buf);
 #endif
       if (!last_rank) MPI_Wait(&request, nullptr);
       MPI_Isend(send_buf, second_half, MPI_FLOAT, rank - 1, rank, MPI_COMM_WORLD, &request);
@@ -148,7 +156,7 @@ void Worker::sort() {
     } else {
       memcpy(recv_buf, data + first_half, sizeof(float) * (block_len - first_half));
     }
-    std::merge(send_buf + second_half, send_buf + second_half + first_half, recv_buf, recv_buf + block_len - first_half, data);
+    merge(send_buf + second_half, send_buf + second_half + first_half, recv_buf, recv_buf + block_len - first_half, data);
 #ifndef NDEBUG
     if (block_size < 10) {
       std::cout << "Iter: " << i << ", Rank: " << rank << ", Merge Done:";
