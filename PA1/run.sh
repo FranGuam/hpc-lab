@@ -1,11 +1,6 @@
 #!/bin/bash
 
 # run on 1 machine * 28 process, feel free to change it!
-if [ $# -ne 3 ]; then
-    echo "Usage: ./run.sh <executable> <data_size> <data_file>"
-    exit 1
-fi
-
 executable=$1
 data_size=$2
 data_file=$3
@@ -59,4 +54,4 @@ if [ $process -gt 28 ]; then
 fi
 
 echo "Running $data_size data with $process process"
-srun -N $node -n $process --cpu-bind=cores $executable $data_size $data_file
+srun -N $node -n $process --cpu-bind=cores $*
