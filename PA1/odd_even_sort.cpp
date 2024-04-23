@@ -116,7 +116,11 @@ void Worker::sort() {
   /** Your code ... */
   // you can use variables in class Worker: n, nprocs, rank, block_len, data
   if (out_of_range) return;
-  radix_sort(data, block_len);
+  if (block_len < 80) {
+    std::sort(data, data + block_len);
+  } else {
+    radix_sort(data, block_len);
+  }
   if (nprocs == 1) return;
 
   float* data_pointer = nullptr;
