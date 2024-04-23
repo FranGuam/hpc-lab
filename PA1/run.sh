@@ -50,7 +50,7 @@ else
         done
     fi
     if [ $process -eq 6 ]; then
-        process=28
+        process=56
     fi
 fi
 node=1
