@@ -1,0 +1,17 @@
+srun -N 1 --gres=gpu:1 ./benchmark 100
+Time: 0.274523 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+Time: 15.435715 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 2500
+Time: 377.848763 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+Time: 2987.083891 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 7500
+Time: 10051.674201 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+Time: 22837.635265 ms
