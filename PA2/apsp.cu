@@ -13,15 +13,14 @@ __global__ void stage1(int n, int p, int *graph) {
     extern __shared__ int shared[];
     auto i = p * blockDim.y + threadIdx.y;
     auto j = p * blockDim.x + threadIdx.x;
-    if (i < n && j < n) {
-        shared(threadIdx.y, threadIdx.x) = graph(i, j);
-        # pragma unroll 32
-        for (int k = 0; k < min(blockDim.x, n - p * blockDim.x); k++) {
-            __syncthreads();
-            shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared(threadIdx.y, k) + shared(k, threadIdx.x));
-        }
-        graph(i, j) = shared(threadIdx.y, threadIdx.x);
+    if (i < n && j < n) shared(threadIdx.y, threadIdx.x) = graph(i, j);
+    else shared(threadIdx.y, threadIdx.x) = DATA_RANGE;
+    # pragma unroll 32
+    for (int k = 0; k < min(blockDim.x, n - p * blockDim.x); k++) {
+        __syncthreads();
+        shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared(threadIdx.y, k) + shared(k, threadIdx.x));
     }
+    if (i < n && j < n) graph(i, j) = shared(threadIdx.y, threadIdx.x);
 }
 
 __global__ void stage2(int n, int p, int *graph) {
@@ -31,17 +30,16 @@ __global__ void stage2(int n, int p, int *graph) {
     auto ii = p * blockDim.y + threadIdx.y;
     auto jj = p * blockDim.x + threadIdx.x;
     auto blockSize = blockDim.x * blockDim.y;
+    if (i < n && j < n) shared(threadIdx.y, threadIdx.x) = graph(i, j);
+    else shared(threadIdx.y, threadIdx.x) = DATA_RANGE;
     if (ii < n && jj < n) shared_offset(threadIdx.y, threadIdx.x, blockSize) = graph(ii, jj);
     else shared_offset(threadIdx.y, threadIdx.x, blockSize) = DATA_RANGE;
-    if (i < n && j < n) {
-        shared(threadIdx.y, threadIdx.x) = graph(i, j);
-        # pragma unroll 32
-        for (int k = 0; k < min(blockDim.x, n - p * blockDim.x); k++) {
-            __syncthreads();
-            shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared_offset(threadIdx.y, k, (blockIdx.y ? blockSize : 0)) + shared_offset(k, threadIdx.x, (blockIdx.y ? 0 : blockSize)));
-        }
-        graph(i, j) = shared(threadIdx.y, threadIdx.x);
+    # pragma unroll 32
+    for (int k = 0; k < blockDim.x; k++) {
+        __syncthreads();
+        shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared_offset(threadIdx.y, k, (blockIdx.y ? blockSize : 0)) + shared_offset(k, threadIdx.x, (blockIdx.y ? 0 : blockSize)));
     }
+    if (i < n && j < n) graph(i, j) = shared(threadIdx.y, threadIdx.x);
 }
 
 __global__ void stage3(int n, int p, int *graph) {
@@ -51,19 +49,18 @@ __global__ void stage3(int n, int p, int *graph) {
     auto ii = p * blockDim.y + threadIdx.y;
     auto jj = p * blockDim.x + threadIdx.x;
     auto blockSize = blockDim.x * blockDim.y;
+    if (i < n && j < n) shared(threadIdx.y, threadIdx.x) = graph(i, j);
+    else shared(threadIdx.y, threadIdx.x) = DATA_RANGE;
     if (i < n && jj < n) shared_offset(threadIdx.y, threadIdx.x, blockSize) = graph(i, jj);
     else shared_offset(threadIdx.y, threadIdx.x, blockSize) = DATA_RANGE;
     if (ii < n && j < n) shared_offset(threadIdx.y, threadIdx.x, blockSize * 2) = graph(ii, j);
     else shared_offset(threadIdx.y, threadIdx.x, blockSize * 2) = DATA_RANGE;
-    if (i < n && j < n) {
-        shared(threadIdx.y, threadIdx.x) = graph(i, j);
-        # pragma unroll 32
-        for (int k = 0; k < min(blockDim.x, n - p * blockDim.x); k++) {
-            __syncthreads();
-            shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared_offset(threadIdx.y, k, blockSize) + shared_offset(k, threadIdx.x, blockSize * 2));
-        }
-        graph(i, j) = shared(threadIdx.y, threadIdx.x);
+    # pragma unroll 32
+    for (int k = 0; k < blockDim.x; k++) {
+        __syncthreads();
+        shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared_offset(threadIdx.y, k, blockSize) + shared_offset(k, threadIdx.x, blockSize * 2));
     }
+    if (i < n && j < n) graph(i, j) = shared(threadIdx.y, threadIdx.x);
 }
 
 }
