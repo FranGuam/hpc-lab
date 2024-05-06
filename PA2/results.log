@@ -55,3 +55,63 @@ Time: 1528.729603 ms
 
 srun -N 1 --gres=gpu:1 ./benchmark 10000
 Time: 3606.880943 ms
+
+// No sync at stage 3
+
+srun -N 1 --gres=gpu:1 ./benchmark 100
+Time: 0.111749 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+Time: 3.197776 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 2500
+Time: 36.036043 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+Time: 241.380140 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 7500
+Time: 800.905326 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+Time: 1883.782554 ms
+
+// No sync at stage 2
+
+srun -N 1 --gres=gpu:1 ./benchmark 100
+Time: 0.093594 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+Time: 2.941648 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 2500
+Time: 33.701591 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+Time: 238.342359 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 7500
+Time: 794.087688 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+Time: 1871.806711 ms
+
+// No sync at stage 1
+
+srun -N 1 --gres=gpu:1 ./benchmark 100
+Time: 0.073830 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+Time: 2.722720 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 2500
+Time: 31.103638 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+Time: 237.876972 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 7500
+Time: 792.951495 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+Time: 1870.387725 ms
