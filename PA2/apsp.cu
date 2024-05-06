@@ -2,6 +2,7 @@
 
 // Brute Force APSP Implementation:
 
+#include "cuda_utils.h"
 #include "apsp.h"
 
 namespace {
