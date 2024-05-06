@@ -16,9 +16,9 @@ __global__ void stage1(int n, int p, int *graph) {
     auto j = p * blockDim.x + threadIdx.x;
     if (i < n && j < n) shared(threadIdx.y, threadIdx.x) = graph(i, j);
     else shared(threadIdx.y, threadIdx.x) = DATA_RANGE;
+    __syncthreads();
     # pragma unroll 32
     for (int k = 0; k < BLOCK_SIZE; k++) {
-        __syncthreads();
         shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared(threadIdx.y, k) + shared(k, threadIdx.x));
     }
     if (i < n && j < n) graph(i, j) = shared(threadIdx.y, threadIdx.x);
