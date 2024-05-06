@@ -14,7 +14,7 @@ __global__ void stage1(int n, int p, int *graph) {
     if (in_range) {
         shared[index(threadIdx.y, threadIdx.x, blockDim.x)] = graph[index(i, j, n)];
         # pragma unroll 32
-        for (int k = 0; k < blockDim.x; k++) {
+        for (int k = 0; k < min(blockDim.x, n - p * blockDim.x); k++) {
             __syncthreads();
             shared[index(threadIdx.y, threadIdx.x, blockDim.x)] = min(shared[index(threadIdx.y, threadIdx.x, blockDim.x)], shared[index(threadIdx.y, k, blockDim.x)] + shared[index(k, threadIdx.x, blockDim.x)]);
         }
