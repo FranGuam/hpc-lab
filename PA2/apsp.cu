@@ -5,6 +5,7 @@
 namespace {
 
 #define DATA_RANGE 100000
+#define graph(i, j) graph[(i) * n + (j)]
 #define index(i, j, n) ((i) * (n) + (j))
 
 __global__ void stage1(int n, int p, int *graph) {
@@ -13,13 +14,13 @@ __global__ void stage1(int n, int p, int *graph) {
     auto j = p * blockDim.x + threadIdx.x;
     bool in_range = i < n && j < n;
     if (in_range) {
-        shared[index(threadIdx.y, threadIdx.x, blockDim.x)] = graph[index(i, j, n)];
+        shared[index(threadIdx.y, threadIdx.x, blockDim.x)] = graph(i, j);
         # pragma unroll 32
         for (int k = 0; k < min(blockDim.x, n - p * blockDim.x); k++) {
             __syncthreads();
             shared[index(threadIdx.y, threadIdx.x, blockDim.x)] = min(shared[index(threadIdx.y, threadIdx.x, blockDim.x)], shared[index(threadIdx.y, k, blockDim.x)] + shared[index(k, threadIdx.x, blockDim.x)]);
         }
-        graph[index(i, j, n)] = shared[index(threadIdx.y, threadIdx.x, blockDim.x)];
+        graph(i, j) = shared[index(threadIdx.y, threadIdx.x, blockDim.x)];
     }
 }
 
@@ -34,13 +35,13 @@ __global__ void stage2(int n, int p, int *graph) {
     else shared[blockSize + index(threadIdx.y, threadIdx.x, blockDim.x)] = DATA_RANGE;
     bool in_range = i < n && j < n;
     if (in_range) {
-        shared[index(threadIdx.y, threadIdx.x, blockDim.x)] = graph[index(i, j, n)];
+        shared[index(threadIdx.y, threadIdx.x, blockDim.x)] = graph(i, j);
         # pragma unroll 32
         for (int k = 0; k < min(blockDim.x, n - p * blockDim.x); k++) {
             __syncthreads();
             shared[index(threadIdx.y, threadIdx.x, blockDim.x)] = min(shared[index(threadIdx.y, threadIdx.x, blockDim.x)], shared[(blockIdx.y ? blockSize : 0) + index(threadIdx.y, k, blockDim.x)] + shared[(blockIdx.y ? 0 : blockSize) + index(k, threadIdx.x, blockDim.x)]);
         }
-        graph[index(i, j, n)] = shared[index(threadIdx.y, threadIdx.x, blockDim.x)];
+        graph(i, j) = shared[index(threadIdx.y, threadIdx.x, blockDim.x)];
     }
 }
 
@@ -57,13 +58,13 @@ __global__ void stage3(int n, int p, int *graph) {
     else shared[2 * blockSize + index(threadIdx.y, threadIdx.x, blockDim.x)] = DATA_RANGE;
     bool in_range = i < n && j < n;
     if (in_range) {
-        shared[index(threadIdx.y, threadIdx.x, blockDim.x)] = graph[index(i, j, n)];
+        shared[index(threadIdx.y, threadIdx.x, blockDim.x)] = graph(i, j);
         # pragma unroll 32
         for (int k = 0; k < min(blockDim.x, n - p * blockDim.x); k++) {
             __syncthreads();
             shared[index(threadIdx.y, threadIdx.x, blockDim.x)] = min(shared[index(threadIdx.y, threadIdx.x, blockDim.x)], shared[blockSize + index(threadIdx.y, k, blockDim.x)] + shared[2 * blockSize + index(k, threadIdx.x, blockDim.x)]);
         }
-        graph[index(i, j, n)] = shared[index(threadIdx.y, threadIdx.x, blockDim.x)];
+        graph(i, j) = shared[index(threadIdx.y, threadIdx.x, blockDim.x)];
     }
 }
 
