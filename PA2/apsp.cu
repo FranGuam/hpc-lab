@@ -25,16 +25,16 @@ __global__ void stage1(int n, int p, int *graph) {
 
 __global__ void stage2(int n, int p, int *graph) {
     extern __shared__ int shared[];
+    auto ii = p * blockDim.y + threadIdx.y;
+    auto jj = p * blockDim.x + threadIdx.x;
+    auto blockSize = blockDim.x * blockDim.y;
+    if (ii < n && jj < n) shared[blockSize + index(threadIdx.y, threadIdx.x, blockDim.x)] = graph[index(ii, jj, n)];
+    else shared[blockSize + index(threadIdx.y, threadIdx.x, blockDim.x)] = DATA_RANGE;
     auto i = (blockIdx.y ? p : (blockIdx.x < p ? blockIdx.x : blockIdx.x + 1)) * blockDim.y + threadIdx.y;
     auto j = (blockIdx.y ? (blockIdx.x < p ? blockIdx.x : blockIdx.x + 1) : p) * blockDim.x + threadIdx.x;
     bool in_range = i < n && j < n;
     if (in_range) {
         shared[index(threadIdx.y, threadIdx.x, blockDim.x)] = graph[index(i, j, n)];
-        auto ii = p * blockDim.y + threadIdx.y;
-        auto jj = p * blockDim.x + threadIdx.x;
-        auto blockSize = blockDim.x * blockDim.y;
-        if (ii < n && jj < n) shared[blockSize + index(threadIdx.y, threadIdx.x, blockDim.x)] = graph[index(ii, jj, n)];
-        else shared[blockSize + index(threadIdx.y, threadIdx.x, blockDim.x)] = DATA_RANGE;
         # pragma unroll 32
         for (int k = 0; k < min(blockDim.x, n - p * blockDim.x); k++) {
             __syncthreads();
@@ -46,16 +46,18 @@ __global__ void stage2(int n, int p, int *graph) {
 
 __global__ void stage3(int n, int p, int *graph) {
     extern __shared__ int shared[];
+    auto ii = p * blockDim.y + threadIdx.y;
+    auto jj = p * blockDim.x + threadIdx.x;
+    auto blockSize = blockDim.x * blockDim.y;
+    if (i < n && jj < n) shared[blockSize + index(threadIdx.y, threadIdx.x, blockDim.x)] = graph[index(i, jj, n)];
+    else shared[blockSize + index(threadIdx.y, threadIdx.x, blockDim.x)] = DATA_RANGE;
+    if (ii < n && j < n) shared[2 * blockSize + index(threadIdx.y, threadIdx.x, blockDim.x)] = graph[index(ii, j, n)];
+    else shared[2 * blockSize + index(threadIdx.y, threadIdx.x, blockDim.x)] = DATA_RANGE;
     auto i = (blockIdx.y < p ? blockIdx.y : blockIdx.y + 1) * blockDim.y + threadIdx.y;
     auto j = (blockIdx.x < p ? blockIdx.x : blockIdx.x + 1) * blockDim.x + threadIdx.x;
     bool in_range = i < n && j < n;
     if (in_range) {
         shared[index(threadIdx.y, threadIdx.x, blockDim.x)] = graph[index(i, j, n)];
-        auto ii = p * blockDim.y + threadIdx.y;
-        auto jj = p * blockDim.x + threadIdx.x;
-        auto blockSize = blockDim.x * blockDim.y;
-        if (jj < n) shared[blockSize + index(threadIdx.y, threadIdx.x, blockDim.x)] = graph[index(i, jj, n)];
-        if (ii < n) shared[2 * blockSize + index(threadIdx.y, threadIdx.x, blockDim.x)] = graph[index(ii, j, n)];
         # pragma unroll 32
         for (int k = 0; k < min(blockDim.x, n - p * blockDim.x); k++) {
             __syncthreads();
