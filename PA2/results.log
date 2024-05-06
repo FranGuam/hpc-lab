@@ -15,3 +15,23 @@ Time: 10051.674201 ms
 
 srun -N 1 --gres=gpu:1 ./benchmark 10000
 Time: 22837.635265 ms
+
+// Initial Implementation
+
+srun -N 1 --gres=gpu:1 ./benchmark 100
+Time: 0.103474 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+Time: 4.564546 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 2500
+Time: 64.727090 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+Time: 468.741194 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 7500
+Time: 1571.626846 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+Time: 3712.620091 ms
