@@ -1,6 +1,7 @@
 // PLEASE MODIFY THIS FILE TO IMPLEMENT YOUR SOLUTION
 
 #include "apsp.h"
+#include "cuda_utils.h"
 
 namespace {
 
