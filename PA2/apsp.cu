@@ -60,7 +60,7 @@ __global__ void stage3(int n, int p, int *graph) {
         # pragma unroll 32
         for (int k = 0; k < min(blockDim.x, n - p * blockDim.x); k++) {
             __syncthreads();
-            shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared(threadIdx.y, k, blockSize) + shared(k, threadIdx.x, blockSize * 2));
+            shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared_offset(threadIdx.y, k, blockSize) + shared_offset(k, threadIdx.x, blockSize * 2));
         }
         graph(i, j) = shared(threadIdx.y, threadIdx.x);
     }
