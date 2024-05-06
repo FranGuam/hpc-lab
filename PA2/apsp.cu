@@ -73,9 +73,9 @@ void apsp(int n, /* device */ int *graph) {
     const dim3 thr(b, b);
     const dim3 blk(m, m);
     for (int p = 0; p < m; p++) {
-        stage1<<<1, thr, b * b * sizeof(int)>>>(n, p, graph);
-        stage2<<<dim3(m - 1, 2), thr, 2 * b * b * sizeof(int)>>>(n, p, graph);
-        stage3<<<dim3(m - 1, m - 1), thr, 3 * b * b * sizeof(int)>>>(n, p, graph);
+        CHK_CUDA_ERR(stage1<<<1, thr, b * b * sizeof(int)>>>(n, p, graph));
+        CHK_CUDA_ERR(stage2<<<dim3(m - 1, 2), thr, 2 * b * b * sizeof(int)>>>(n, p, graph));
+        CHK_CUDA_ERR(stage3<<<dim3(m - 1, m - 1), thr, 3 * b * b * sizeof(int)>>>(n, p, graph));
     }
 }
 
