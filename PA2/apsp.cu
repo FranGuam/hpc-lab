@@ -4,6 +4,7 @@
 
 namespace {
 
+#define DATA_RANGE 100000
 #define index(i, j, n) ((i) * (n) + (j))
 
 __global__ void stage1(int n, int p, int *graph) {
@@ -33,6 +34,7 @@ __global__ void stage2(int n, int p, int *graph) {
         auto jj = p * blockDim.x + threadIdx.x;
         auto blockSize = blockDim.x * blockDim.y;
         if (ii < n && jj < n) shared[blockSize + index(threadIdx.y, threadIdx.x, blockDim.x)] = graph[index(ii, jj, n)];
+        else shared[blockSize + index(threadIdx.y, threadIdx.x, blockDim.x)] = DATA_RANGE;
         # pragma unroll 32
         for (int k = 0; k < min(blockDim.x, n - p * blockDim.x); k++) {
             __syncthreads();
