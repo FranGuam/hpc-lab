@@ -1,9 +1,6 @@
 // PLEASE MODIFY THIS FILE TO IMPLEMENT YOUR SOLUTION
 
-#include <cstdio>
-
 #include "apsp.h"
-#include "cuda_utils.h"
 
 namespace {
 
@@ -75,11 +72,8 @@ void apsp(int n, /* device */ int *graph) {
     const dim3 blk(m, m);
     for (int p = 0; p < m; p++) {
         stage1<<<1, thr, b * b * sizeof(int)>>>(n, p, graph);
-        CHK_CUDA_ERR(cudaDeviceSynchronize());
         stage2<<<dim3(m - 1, 2), thr, 2 * b * b * sizeof(int)>>>(n, p, graph);
-        CHK_CUDA_ERR(cudaDeviceSynchronize());
         stage3<<<dim3(m - 1, m - 1), thr, 3 * b * b * sizeof(int)>>>(n, p, graph);
-        CHK_CUDA_ERR(cudaDeviceSynchronize());
     }
 }
 
