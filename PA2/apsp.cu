@@ -4,6 +4,7 @@
 
 namespace {
 
+#define BLOCK_SIZE 32
 #define DATA_RANGE 100000
 #define graph(i, j) graph[(i) * n + (j)]
 #define shared(i, j) shared[(i) * blockDim.x + (j)]
@@ -35,7 +36,7 @@ __global__ void stage2(int n, int p, int *graph) {
     if (ii < n && jj < n) shared_offset(threadIdx.y, threadIdx.x, blockSize) = graph(ii, jj);
     else shared_offset(threadIdx.y, threadIdx.x, blockSize) = DATA_RANGE;
     # pragma unroll 32
-    for (int k = 0; k < blockDim.x; k++) {
+    for (int k = 0; k < BLOCK_SIZE; k++) {
         __syncthreads();
         shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared_offset(threadIdx.y, k, (blockIdx.y ? blockSize : 0)) + shared_offset(k, threadIdx.x, (blockIdx.y ? 0 : blockSize)));
     }
@@ -56,7 +57,7 @@ __global__ void stage3(int n, int p, int *graph) {
     if (ii < n && j < n) shared_offset(threadIdx.y, threadIdx.x, blockSize * 2) = graph(ii, j);
     else shared_offset(threadIdx.y, threadIdx.x, blockSize * 2) = DATA_RANGE;
     # pragma unroll 32
-    for (int k = 0; k < blockDim.x; k++) {
+    for (int k = 0; k < BLOCK_SIZE; k++) {
         __syncthreads();
         shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared_offset(threadIdx.y, k, blockSize) + shared_offset(k, threadIdx.x, blockSize * 2));
     }
