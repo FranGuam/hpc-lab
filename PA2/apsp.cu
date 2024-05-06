@@ -1,5 +1,7 @@
 // PLEASE MODIFY THIS FILE TO IMPLEMENT YOUR SOLUTION
 
+#include <cstdio>
+
 #include "apsp.h"
 #include "cuda_utils.h"
 
