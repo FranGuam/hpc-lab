@@ -38,9 +38,16 @@ __global__ void stage2(int n, int p, int *graph) {
     else shared_offset(threadIdx.y, threadIdx.x, blockSize) = DATA_RANGE;
     __syncthreads();
     int tmp = shared(threadIdx.y, threadIdx.x);
-    # pragma unroll 32
-    for (int k = 0; k < BLOCK_SIZE; k++) {
-        tmp = min(tmp, shared_offset(threadIdx.y, k, (blockIdx.y ? blockSize : 0)) + shared_offset(k, threadIdx.x, (blockIdx.y ? 0 : blockSize)));
+    if (blockIdx.y) {
+        # pragma unroll 32
+        for (int k = 0; k < BLOCK_SIZE; k++) {
+            tmp = min(tmp, shared_offset(threadIdx.y, k, blockSize) + shared(k, threadIdx.x));
+        }
+    } else {
+        # pragma unroll 32
+        for (int k = 0; k < BLOCK_SIZE; k++) {
+            tmp = min(tmp, shared(threadIdx.y, k) + shared_offset(k, threadIdx.x, blockSize));
+        }
     }
     if (i < n && j < n) graph(i, j) = tmp;
 }
