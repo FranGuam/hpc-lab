@@ -8,6 +8,7 @@ namespace APSP {
 #define DATA_RANGE 100000
 #define graph(i, j) graph[(i) * n + (j)]
 #define shared(i, j) shared[(i) * blockDim.x + (j)]
+#define shared0(i, j) shared0[(i) * blockDim.x + (j)]
 #define shared1(i, j) shared1[(i) * blockDim.x + (j)]
 
 __global__ void stage1(int n, int p, int *graph) {
@@ -58,8 +59,9 @@ __global__ void stage3(int n, int p, int *graph) {
     auto j = (blockIdx.x < p ? blockIdx.x : blockIdx.x + 1) * blockDim.x + threadIdx.x;
     auto ii = p * blockDim.y + threadIdx.y;
     auto jj = p * blockDim.x + threadIdx.x;
-    if (i < n && jj < n) shared(threadIdx.y, threadIdx.x) = graph(i, jj);
-    else shared(threadIdx.y, threadIdx.x) = DATA_RANGE;
+    int* shared0 = shared;
+    if (i < n && jj < n) shared0(threadIdx.y, threadIdx.x) = graph(i, jj);
+    else shared0(threadIdx.y, threadIdx.x) = DATA_RANGE;
     int* shared1 = shared + blockDim.x * blockDim.y;
     if (ii < n && j < n) shared1(threadIdx.y, threadIdx.x) = graph(ii, j);
     else shared1(threadIdx.y, threadIdx.x) = DATA_RANGE;
@@ -67,14 +69,14 @@ __global__ void stage3(int n, int p, int *graph) {
     int tmp, sum;
     if (i < n && j < n) tmp = graph(i, j);
     else tmp = DATA_RANGE;
-    shared += threadIdx.y * blockDim.x;
+    shared0 += threadIdx.y * blockDim.x;
     shared1 += threadIdx.x;
     # pragma unroll 32
     for (int k = 0; k < BLOCK_SIZE; k++) {
         // tmp = min(tmp, shared(threadIdx.y, k) + shared1(k, threadIdx.x));
-        sum = *shared + *shared1;
+        sum = *shared0 + *shared1;
         if (tmp > sum) tmp = sum;
-        shared++;
+        shared0++;
         shared1 += BLOCK_SIZE;
     }
     if (i < n && j < n) graph(i, j) = tmp;
