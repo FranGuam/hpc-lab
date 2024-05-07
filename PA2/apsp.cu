@@ -4,7 +4,7 @@
 
 namespace APSP {
 
-#define BLOCK_SIZE 32
+#define BLOCK_SIZE 16
 #define DATA_RANGE 100000
 #define graph(i, j) graph[(i) * n + (j)]
 #define shared(i, j) shared[(i) * blockDim.x + (j)]
@@ -17,7 +17,7 @@ __global__ void stage1(int n, int p, int *graph) {
     if (i < n && j < n) shared(threadIdx.y, threadIdx.x) = graph(i, j);
     else shared(threadIdx.y, threadIdx.x) = DATA_RANGE;
     __syncthreads();
-    # pragma unroll 32
+    # pragma unroll 16
     for (int k = 0; k < BLOCK_SIZE; k++) {
         shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared(threadIdx.y, k) + shared(k, threadIdx.x));
     }
@@ -36,7 +36,7 @@ __global__ void stage2(int n, int p, int *graph) {
     if (ii < n && jj < n) shared_offset(threadIdx.y, threadIdx.x, blockSize) = graph(ii, jj);
     else shared_offset(threadIdx.y, threadIdx.x, blockSize) = DATA_RANGE;
     __syncthreads();
-    # pragma unroll 32
+    # pragma unroll 16
     for (int k = 0; k < BLOCK_SIZE; k++) {
         shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared_offset(threadIdx.y, k, (blockIdx.y ? blockSize : 0)) + shared_offset(k, threadIdx.x, (blockIdx.y ? 0 : blockSize)));
     }
@@ -57,7 +57,7 @@ __global__ void stage3(int n, int p, int *graph) {
     if (ii < n && j < n) shared_offset(threadIdx.y, threadIdx.x, blockSize * 2) = graph(ii, j);
     else shared_offset(threadIdx.y, threadIdx.x, blockSize * 2) = DATA_RANGE;
     __syncthreads();
-    # pragma unroll 32
+    # pragma unroll 16
     for (int k = 0; k < BLOCK_SIZE; k++) {
         shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared_offset(threadIdx.y, k, blockSize) + shared_offset(k, threadIdx.x, blockSize * 2));
     }
@@ -67,7 +67,7 @@ __global__ void stage3(int n, int p, int *graph) {
 }
 
 void apsp(int n, /* device */ int *graph) {
-    const int b = 32;
+    const int b = APSP::BLOCK_SIZE;
     const int m = (n - 1) / b + 1;
     const dim3 thr(b, b);
     const dim3 blk(m, m);
