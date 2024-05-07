@@ -2,7 +2,7 @@
 
 #include "apsp.h"
 
-namespace {
+namespace APSP {
 
 #define BLOCK_SIZE 32
 #define DATA_RANGE 100000
@@ -72,9 +72,9 @@ void apsp(int n, /* device */ int *graph) {
     const dim3 thr(b, b);
     const dim3 blk(m, m);
     for (int p = 0; p < m; p++) {
-        stage1<<<1, thr, b * b * sizeof(int)>>>(n, p, graph);
-        stage2<<<dim3(m - 1, 2), thr, 2 * b * b * sizeof(int)>>>(n, p, graph);
-        stage3<<<dim3(m - 1, m - 1), thr, 3 * b * b * sizeof(int)>>>(n, p, graph);
+        APSP::stage1<<<1, thr, b * b * sizeof(int)>>>(n, p, graph);
+        APSP::stage2<<<dim3(m - 1, 2), thr, 2 * b * b * sizeof(int)>>>(n, p, graph);
+        APSP::stage3<<<dim3(m - 1, m - 1), thr, 3 * b * b * sizeof(int)>>>(n, p, graph);
     }
 }
 
