@@ -155,3 +155,23 @@ Time: 685.005835 ms
 
 srun -N 1 --gres=gpu:1 ./benchmark 10000
 Time: 1615.768110 ms
+
+// Reduce shared memory usage
+
+srun -N 1 --gres=gpu:1 ./benchmark 100
+Time: 0.063991 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+Time: 2.225953 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 2500
+Time: 27.292980 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+Time: 189.095267 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 7500
+Time: 629.174452 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+Time: 1483.424780 ms
