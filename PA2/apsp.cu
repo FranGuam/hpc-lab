@@ -11,7 +11,7 @@ namespace APSP {
 #define shared_offset(i, j, offset) shared[(i) * blockDim.x + (j) + offset]
 
 __global__ void stage1(int n, int p, int *graph) {
-    extern __shared__ int shared[];
+    extern __shared__ int shared[BLOCK_SIZE * BLOCK_SIZE];
     auto i = p * blockDim.y + threadIdx.y;
     auto j = p * blockDim.x + threadIdx.x;
     if (i < n && j < n) shared(threadIdx.y, threadIdx.x) = graph(i, j);
@@ -25,7 +25,7 @@ __global__ void stage1(int n, int p, int *graph) {
 }
 
 __global__ void stage2(int n, int p, int *graph) {
-    extern __shared__ int shared[];
+    extern __shared__ int shared[2 * BLOCK_SIZE * BLOCK_SIZE];
     auto i = (blockIdx.y ? p : (blockIdx.x < p ? blockIdx.x : blockIdx.x + 1)) * blockDim.y + threadIdx.y;
     auto j = (blockIdx.y ? (blockIdx.x < p ? blockIdx.x : blockIdx.x + 1) : p) * blockDim.x + threadIdx.x;
     auto ii = p * blockDim.y + threadIdx.y;
@@ -44,7 +44,7 @@ __global__ void stage2(int n, int p, int *graph) {
 }
 
 __global__ void stage3(int n, int p, int *graph) {
-    extern __shared__ int shared[];
+    extern __shared__ int shared[3 * BLOCK_SIZE * BLOCK_SIZE];
     auto i = (blockIdx.y < p ? blockIdx.y : blockIdx.y + 1) * blockDim.y + threadIdx.y;
     auto j = (blockIdx.x < p ? blockIdx.x : blockIdx.x + 1) * blockDim.x + threadIdx.x;
     auto ii = p * blockDim.y + threadIdx.y;
@@ -72,9 +72,9 @@ void apsp(int n, /* device */ int *graph) {
     const dim3 thr(b, b);
     const dim3 blk(m, m);
     for (int p = 0; p < m; p++) {
-        APSP::stage1<<<1, thr, b * b * sizeof(int)>>>(n, p, graph);
-        APSP::stage2<<<dim3(m - 1, 2), thr, 2 * b * b * sizeof(int)>>>(n, p, graph);
-        APSP::stage3<<<dim3(m - 1, m - 1), thr, 3 * b * b * sizeof(int)>>>(n, p, graph);
+        APSP::stage1<<<1, thr>>>(n, p, graph);
+        APSP::stage2<<<dim3(m - 1, 2), thr>>>(n, p, graph);
+        APSP::stage3<<<dim3(m - 1, m - 1), thr>>>(n, p, graph);
     }
 }
 
