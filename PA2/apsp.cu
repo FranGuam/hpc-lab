@@ -64,12 +64,18 @@ __global__ void stage3(int n, int p, int *graph) {
     if (ii < n && j < n) shared1(threadIdx.y, threadIdx.x) = graph(ii, j);
     else shared1(threadIdx.y, threadIdx.x) = DATA_RANGE;
     __syncthreads();
-    int tmp;
+    int tmp, sum;
     if (i < n && j < n) tmp = graph(i, j);
     else tmp = DATA_RANGE;
+    shared += threadIdx.y * blockDim.x;
+    shared1 += threadIdx.x;
     # pragma unroll 32
     for (int k = 0; k < BLOCK_SIZE; k++) {
-        tmp = min(tmp, shared(threadIdx.y, k) + shared1(k, threadIdx.x));
+        // tmp = min(tmp, shared(threadIdx.y, k) + shared1(k, threadIdx.x));
+        sum = *shared + *shared1;
+        if (tmp > sum) tmp = sum;
+        shared++;
+        shared1 += BLOCK_SIZE;
     }
     if (i < n && j < n) graph(i, j) = tmp;
 }
