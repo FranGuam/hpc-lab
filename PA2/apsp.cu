@@ -17,11 +17,12 @@ __global__ void stage1(int n, int p, int *graph) {
     if (i < n && j < n) shared(threadIdx.y, threadIdx.x) = graph(i, j);
     else shared(threadIdx.y, threadIdx.x) = DATA_RANGE;
     __syncthreads();
+    int tmp = shared(threadIdx.y, threadIdx.x);
     # pragma unroll 32
     for (int k = 0; k < BLOCK_SIZE; k++) {
-        shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared(threadIdx.y, k) + shared(k, threadIdx.x));
+        tmp = min(tmp, shared(threadIdx.y, k) + shared(k, threadIdx.x));
     }
-    if (i < n && j < n) graph(i, j) = shared(threadIdx.y, threadIdx.x);
+    if (i < n && j < n) graph(i, j) = tmp;
 }
 
 __global__ void stage2(int n, int p, int *graph) {
@@ -36,11 +37,12 @@ __global__ void stage2(int n, int p, int *graph) {
     if (ii < n && jj < n) shared_offset(threadIdx.y, threadIdx.x, blockSize) = graph(ii, jj);
     else shared_offset(threadIdx.y, threadIdx.x, blockSize) = DATA_RANGE;
     __syncthreads();
+    int tmp = shared(threadIdx.y, threadIdx.x);
     # pragma unroll 32
     for (int k = 0; k < BLOCK_SIZE; k++) {
-        shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared_offset(threadIdx.y, k, (blockIdx.y ? blockSize : 0)) + shared_offset(k, threadIdx.x, (blockIdx.y ? 0 : blockSize)));
+        tmp = min(tmp, shared_offset(threadIdx.y, k, (blockIdx.y ? blockSize : 0)) + shared_offset(k, threadIdx.x, (blockIdx.y ? 0 : blockSize)));
     }
-    if (i < n && j < n) graph(i, j) = shared(threadIdx.y, threadIdx.x);
+    if (i < n && j < n) graph(i, j) = tmp;
 }
 
 __global__ void stage3(int n, int p, int *graph) {
@@ -57,11 +59,12 @@ __global__ void stage3(int n, int p, int *graph) {
     if (ii < n && j < n) shared_offset(threadIdx.y, threadIdx.x, blockSize * 2) = graph(ii, j);
     else shared_offset(threadIdx.y, threadIdx.x, blockSize * 2) = DATA_RANGE;
     __syncthreads();
+    int tmp = shared(threadIdx.y, threadIdx.x);
     # pragma unroll 32
     for (int k = 0; k < BLOCK_SIZE; k++) {
-        shared(threadIdx.y, threadIdx.x) = min(shared(threadIdx.y, threadIdx.x), shared_offset(threadIdx.y, k, blockSize) + shared_offset(k, threadIdx.x, blockSize * 2));
+        tmp = min(tmp, shared_offset(threadIdx.y, k, blockSize) + shared_offset(k, threadIdx.x, blockSize * 2));
     }
-    if (i < n && j < n) graph(i, j) = shared(threadIdx.y, threadIdx.x);
+    if (i < n && j < n) graph(i, j) = tmp;
 }
 
 }
