@@ -1,11 +1,12 @@
 #!/bin/bash
-set -x
 
 source /home/spack/spack/share/spack/setup-env.sh
 
 spack load cuda && spack load gcc@10.2.0
 
 make
+
+set -x
 
 srun -N 1 --gres=gpu:1 ./benchmark 100
 srun -N 1 --gres=gpu:1 ./benchmark 1000
