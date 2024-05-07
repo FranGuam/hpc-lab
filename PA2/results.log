@@ -215,3 +215,23 @@ Time: 490.784953 ms
 
 srun -N 1 --gres=gpu:1 ./benchmark 10000
 Time: 1155.117260 ms
+
+// Move if in stage 2 outside
+
+srun -N 1 --gres=gpu:1 ./benchmark 100
+Time: 0.056458 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+Time: 1.582459 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 2500
+Time: 21.280381 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+Time: 149.748861 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 7500
+Time: 490.719905 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+Time: 1154.779458 ms
