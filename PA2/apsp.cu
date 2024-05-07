@@ -56,6 +56,7 @@ __global__ void stage2(int n, int p, int *graph) {
             shared0 += BLOCK_SIZE;
             shared1++;
         }
+        if (i < n && j < n) graph(i, j) = tmp;
     } else {
         auto i = (blockIdx.x < p ? blockIdx.x : blockIdx.x + 1) * BLOCK_SIZE + threadIdx.y;
         auto j = p * BLOCK_SIZE + threadIdx.x;
@@ -78,8 +79,8 @@ __global__ void stage2(int n, int p, int *graph) {
             shared0++;
             shared1 += BLOCK_SIZE;
         }
+        if (i < n && j < n) graph(i, j) = tmp;
     }
-    if (i < n && j < n) graph(i, j) = tmp;
 }
 
 __global__ void stage3(int n, int p, int *graph) {
