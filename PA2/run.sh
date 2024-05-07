@@ -22,12 +22,12 @@ srun -N 1 --gres=gpu:1 nvprof --profile-from-start off --print-dependency-analys
 srun -N 1 --gres=gpu:1 nvprof --profile-from-start off --events shared_ld_bank_conflict,shared_st_bank_conflict ./benchmark 100
 srun -N 1 --gres=gpu:1 nvprof --profile-from-start off --metrics achieved_occupancy,gld_throughput,gld_efficiency,ipc ./benchmark 100
 
-srun -N 1 --gres=gpu:1 nvprof --profile-from-start off --print-gpu-summary --print-gpu-trace ./benchmark 1000
+srun -N 1 --gres=gpu:1 nvprof --profile-from-start off --print-gpu-summary ./benchmark 1000
 srun -N 1 --gres=gpu:1 nvprof --profile-from-start off --print-dependency-analysis-trace ./benchmark 1000
 srun -N 1 --gres=gpu:1 nvprof --profile-from-start off --events shared_ld_bank_conflict,shared_st_bank_conflict ./benchmark 1000
 srun -N 1 --gres=gpu:1 nvprof --profile-from-start off --metrics achieved_occupancy,gld_throughput,gld_efficiency,ipc ./benchmark 1000
 
-srun -N 1 --gres=gpu:1 nvprof --profile-from-start off --print-gpu-summary --print-gpu-trace ./benchmark 10000
+srun -N 1 --gres=gpu:1 nvprof --profile-from-start off --print-gpu-summary ./benchmark 10000
 srun -N 1 --gres=gpu:1 nvprof --profile-from-start off --print-dependency-analysis-trace ./benchmark 10000
 srun -N 1 --gres=gpu:1 nvprof --profile-from-start off --events shared_ld_bank_conflict,shared_st_bank_conflict ./benchmark 10000
 srun -N 1 --gres=gpu:1 nvprof --profile-from-start off --metrics achieved_occupancy,gld_throughput,gld_efficiency,ipc ./benchmark 10000
