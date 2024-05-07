@@ -34,19 +34,18 @@ __global__ void stage1(int n, int p, int *graph) {
 
 __global__ void stage2(int n, int p, int *graph) {
     __shared__ int shared[2 * BLOCK_SIZE * BLOCK_SIZE];
-    auto i = (blockIdx.y ? p : (blockIdx.x < p ? blockIdx.x : blockIdx.x + 1)) * BLOCK_SIZE + threadIdx.y;
-    auto j = (blockIdx.y ? (blockIdx.x < p ? blockIdx.x : blockIdx.x + 1) : p) * BLOCK_SIZE + threadIdx.x;
-    auto ii = p * BLOCK_SIZE + threadIdx.y;
-    auto jj = p * BLOCK_SIZE + threadIdx.x;
-    int* shared0 = shared;
-    if (i < n && j < n) shared0(threadIdx.y, threadIdx.x) = graph(i, j);
-    else shared0(threadIdx.y, threadIdx.x) = DATA_RANGE;
-    int* shared1 = shared + BLOCK_SIZE * BLOCK_SIZE;
-    if (ii < n && jj < n) shared1(threadIdx.y, threadIdx.x) = graph(ii, jj);
-    else shared1(threadIdx.y, threadIdx.x) = DATA_RANGE;
-    __syncthreads();
-    int sum, tmp = shared0(threadIdx.y, threadIdx.x);
     if (blockIdx.y) {
+        auto i = p * BLOCK_SIZE + threadIdx.y;
+        auto j = (blockIdx.x < p ? blockIdx.x : blockIdx.x + 1) * BLOCK_SIZE + threadIdx.x;
+        auto jj = p * BLOCK_SIZE + threadIdx.x;
+        int* shared0 = shared;
+        if (i < n && j < n) shared0(threadIdx.y, threadIdx.x) = graph(i, j);
+        else shared0(threadIdx.y, threadIdx.x) = DATA_RANGE;
+        int* shared1 = shared + BLOCK_SIZE * BLOCK_SIZE;
+        if (i < n && jj < n) shared1(threadIdx.y, threadIdx.x) = graph(i, jj);
+        else shared1(threadIdx.y, threadIdx.x) = DATA_RANGE;
+        __syncthreads();
+        int sum, tmp = shared0(threadIdx.y, threadIdx.x);
         shared0 += threadIdx.x;
         shared1 += threadIdx.y * BLOCK_SIZE;
         # pragma unroll 32
@@ -58,6 +57,17 @@ __global__ void stage2(int n, int p, int *graph) {
             shared1++;
         }
     } else {
+        auto i = (blockIdx.x < p ? blockIdx.x : blockIdx.x + 1) * BLOCK_SIZE + threadIdx.y;
+        auto j = p * BLOCK_SIZE + threadIdx.x;
+        auto ii = p * BLOCK_SIZE + threadIdx.y;
+        int* shared0 = shared;
+        if (i < n && j < n) shared0(threadIdx.y, threadIdx.x) = graph(i, j);
+        else shared0(threadIdx.y, threadIdx.x) = DATA_RANGE;
+        int* shared1 = shared + BLOCK_SIZE * BLOCK_SIZE;
+        if (ii < n && j < n) shared1(threadIdx.y, threadIdx.x) = graph(ii, j);
+        else shared1(threadIdx.y, threadIdx.x) = DATA_RANGE;
+        __syncthreads();
+        int sum, tmp = shared0(threadIdx.y, threadIdx.x);
         shared0 += threadIdx.y * BLOCK_SIZE;
         shared1 += threadIdx.x;
         # pragma unroll 32
