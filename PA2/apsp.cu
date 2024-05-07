@@ -67,7 +67,7 @@ __global__ void stage3(int n, int p, int *graph) {
 }
 
 void apsp(int n, /* device */ int *graph) {
-    const int b = APSP::BLOCK_SIZE;
+    const int b = 16;
     const int m = (n - 1) / b + 1;
     const dim3 thr(b, b);
     const dim3 blk(m, m);
