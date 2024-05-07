@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <chrono>
 
+#include "cuda_profiler_api.h"
 #include "cuda_utils.h"
 #include "apsp.h"
 
@@ -76,6 +77,7 @@ int main(int argc, char **argv) {
     for (int i = 0; i < TIMER_ROUNDS; i++) {
         namespace ch = std::chrono;
         copyGraph(n, result, data);
+        CHK_CUDA_ERR(cudaProfilerStart());
         auto beg = ch::high_resolution_clock::now();
         apsp(n, result);
         auto err = cudaDeviceSynchronize();
@@ -84,6 +86,7 @@ int main(int argc, char **argv) {
             fprintf(stderr, "CUDA Error\n");
             exit(-1);
         }
+        CHK_CUDA_ERR(cudaProfilerStop());
         t += ch::duration_cast<ch::duration<double>>(end - beg).count() * 1000; // ms
     }
     t /= TIMER_ROUNDS;
