@@ -135,3 +135,23 @@ Time: 685.204825 ms
 
 srun -N 1 --gres=gpu:1 ./benchmark 10000
 Time: 1615.857813 ms
+
+// If out of the loop
+
+srun -N 1 --gres=gpu:1 ./benchmark 100
+Time: 0.064541 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+Time: 2.380874 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 2500
+Time: 29.607309 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+Time: 205.759017 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 7500
+Time: 685.005835 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+Time: 1615.768110 ms
