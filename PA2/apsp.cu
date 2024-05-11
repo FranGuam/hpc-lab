@@ -35,14 +35,14 @@ __global__ void stage1(int n, int p, int *graph) {
 
 __global__ void stage2(int n, int p, int *graph) {
     __shared__ int shared[2 * OFFSET];
-    int* shared0 = shared;
-    int* shared1 = shared + OFFSET;
     if (blockIdx.y) {
         auto i = p * BLOCK_SIZE + threadIdx.y;
         auto j = (blockIdx.x < p ? blockIdx.x : blockIdx.x + 1) * BLOCK_SIZE + threadIdx.x;
         auto jj = p * BLOCK_SIZE + threadIdx.x;
+        int* shared0 = shared;
         if (i < n && j < n) shared0(threadIdx.y, threadIdx.x) = graph(i, j);
         else shared0(threadIdx.y, threadIdx.x) = DATA_RANGE;
+        int* shared1 = shared + OFFSET;
         if (i < n && jj < n) shared1(threadIdx.y, threadIdx.x) = graph(i, jj);
         else shared1(threadIdx.y, threadIdx.x) = DATA_RANGE;
         __syncthreads();
@@ -62,8 +62,10 @@ __global__ void stage2(int n, int p, int *graph) {
         auto i = (blockIdx.x < p ? blockIdx.x : blockIdx.x + 1) * BLOCK_SIZE + threadIdx.y;
         auto j = p * BLOCK_SIZE + threadIdx.x;
         auto ii = p * BLOCK_SIZE + threadIdx.y;
+        int* shared0 = shared;
         if (i < n && j < n) shared0(threadIdx.y, threadIdx.x) = graph(i, j);
         else shared0(threadIdx.y, threadIdx.x) = DATA_RANGE;
+        int* shared1 = shared + OFFSET;
         if (ii < n && j < n) shared1(threadIdx.y, threadIdx.x) = graph(ii, j);
         else shared1(threadIdx.y, threadIdx.x) = DATA_RANGE;
         __syncthreads();
@@ -86,35 +88,34 @@ __global__ void stage3(int n, int p, int *graph) {
     __shared__ int shared[8 * OFFSET];
     int* shared0 = shared;
     int* shared1 = shared + 4 * OFFSET;
-    int i, j;
+    auto ii = p * BLOCK_SIZE + threadIdx.y;
+    auto jj = p * BLOCK_SIZE + threadIdx.x;
     for (int m = 0; m < 4; m++) {
-        i = 4 * blockIdx.y + m;
+        auto i = 4 * blockIdx.y + m;
         if (i >= p) i++;
         i = i * BLOCK_SIZE + threadIdx.y;
-        j = p * BLOCK_SIZE + threadIdx.x;
-        if (i < n && j < n) shared0(threadIdx.y, threadIdx.x) = graph(i, j);
+        if (i < n && jj < n) shared0(threadIdx.y, threadIdx.x) = graph(i, jj);
         else shared0(threadIdx.y, threadIdx.x) = DATA_RANGE;
         shared0 += OFFSET;
     }
     for (int m = 0; m < 4; m++) {
-        j = 4 * blockIdx.x + m;
+        auto j = 4 * blockIdx.x + m;
         if (j >= p) j++;
         j = j * BLOCK_SIZE + threadIdx.x;
-        i = p * BLOCK_SIZE + threadIdx.y;
-        if (i < n && j < n) shared1(threadIdx.y, threadIdx.x) = graph(i, j);
+        if (ii < n && j < n) shared1(threadIdx.y, threadIdx.x) = graph(ii, j);
         else shared1(threadIdx.y, threadIdx.x) = DATA_RANGE;
         shared1 += OFFSET;
     }
     __syncthreads();
-    int tmp, sum;
     for (int m = 0; m < 4; m++) {
-        i = 4 * blockIdx.y + m;
+        auto i = 4 * blockIdx.y + m;
         if (i >= p) i++;
         i = i * BLOCK_SIZE + threadIdx.y;
         for (int l = 0; l < 4; l++) {
-            j = 4 * blockIdx.x + l;
+            auto j = 4 * blockIdx.x + l;
             if (j >= p) j++;
             j = j * BLOCK_SIZE + threadIdx.x;
+            int tmp, sum;
             if (i < n && j < n) tmp = graph(i, j);
             else tmp = DATA_RANGE;
             shared0 = shared + m * OFFSET + threadIdx.y * BLOCK_SIZE;
@@ -142,7 +143,7 @@ void apsp(int n, /* device */ int *graph) {
     for (int p = 0; p < m; p++) {
         APSP::stage1<<<1, thr>>>(n, p, graph);
         APSP::stage2<<<dim3(m - 1, 2), thr>>>(n, p, graph);
-        APSP::stage3<<<dim3((m + 2) / 2, (m + 2) / 2), thr>>>(n, p, graph);
+        APSP::stage3<<<dim3((m + 2) / 4, (m + 2) / 4), thr>>>(n, p, graph);
     }
 }
 
