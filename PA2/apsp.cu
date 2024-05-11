@@ -89,7 +89,6 @@ __global__ void stage3(int n, int p, int *graph) {
     int* shared1 = shared + 4 * BLOCK_SIZE * BLOCK_SIZE;
     auto ii = p * BLOCK_SIZE + threadIdx.y;
     auto jj = p * BLOCK_SIZE + threadIdx.x;
-    # pragma unroll 4
     for (int m = 1; m < 5; m++) {
         auto i = (m * blockIdx.y < p ? m * blockIdx.y : m * blockIdx.y + 1) * BLOCK_SIZE + threadIdx.y;
         auto j = (m * blockIdx.x < p ? m * blockIdx.x : m * blockIdx.x + 1) * BLOCK_SIZE + threadIdx.x;
@@ -102,11 +101,9 @@ __global__ void stage3(int n, int p, int *graph) {
     }
     __syncthreads();
     int tmp, sum;
-    # pragma unroll 4
     for (int m = 1; m < 5; m++) {
-        # pragma unroll 4
+        auto i = (m * blockIdx.y < p ? m * blockIdx.y : m * blockIdx.y + 1) * BLOCK_SIZE + threadIdx.y;
         for (int l = 1; l < 5; l++) {
-            auto i = (m * blockIdx.y < p ? m * blockIdx.y : m * blockIdx.y + 1) * BLOCK_SIZE + threadIdx.y;
             auto j = (l * blockIdx.x < p ? l * blockIdx.x : l * blockIdx.x + 1) * BLOCK_SIZE + threadIdx.x;
             if (i < n && j < n) tmp = graph(i, j);
             else tmp = DATA_RANGE;
@@ -135,7 +132,7 @@ void apsp(int n, /* device */ int *graph) {
     for (int p = 0; p < m; p++) {
         APSP::stage1<<<1, thr>>>(n, p, graph);
         APSP::stage2<<<dim3(m - 1, 2), thr>>>(n, p, graph);
-        APSP::stage3<<<dim3(m / 2, m / 2), thr>>>(n, p, graph);
+        APSP::stage3<<<dim3((m + 2) / 2, (m + 2) / 2), thr>>>(n, p, graph);
     }
 }
 
