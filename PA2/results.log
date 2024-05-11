@@ -236,6 +236,46 @@ Time: 490.719905 ms
 srun -N 1 --gres=gpu:1 ./benchmark 10000
 Time: 1154.779458 ms
 
+// 1 * 1 Batch
+
+srun -N 1 --gres=gpu:1 ./benchmark 100
+Time: 0.051026 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+Time: 1.581217 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 2500
+Time: 19.307184 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+Time: 146.864276 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 7500
+Time: 1154.174578 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+Time: 1180.886921 ms
+
+// 2 * 2 Batch
+
+srun -N 1 --gres=gpu:1 ./benchmark 100
+Time: 0.071251 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+Time: 1.566494 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 2500
+Time: 22.354504 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+Time: 161.878541 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 7500
+Time: 542.113646 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+Time: 1180.886921 ms
+
 // 4 * 4 Batch
 
 srun -N 1 --gres=gpu:1 ./benchmark 100
@@ -254,4 +294,24 @@ srun -N 1 --gres=gpu:1 ./benchmark 7500
 Time: 373.727811 ms
 
 srun -N 1 --gres=gpu:1 ./benchmark 10000
-Time: 880.676808 ms
+Time: 873.888316 ms
+
+// 6 * 6 Batch
+
+srun -N 1 --gres=gpu:1 ./benchmark 100
+Time: 0.123338 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 1000
+Time: 2.013014 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 2500
+Time: 17.853758 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 5000
+Time: 108.956864 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 7500
+Time: 348.857678 ms
+
+srun -N 1 --gres=gpu:1 ./benchmark 10000
+Time: 816.500413 ms
