@@ -6,7 +6,7 @@ namespace APSP {
 
 #define BLOCK_DIM 32
 #define OFFSET 1024
-#define BATCH_DIM 2
+#define BATCH_DIM 4
 #define DATA_RANGE 100000
 #define graph(i, j) graph[(i) * n + (j)]
 #define shared(i, j) shared[(i) * BLOCK_DIM + (j)]
@@ -91,6 +91,7 @@ __global__ void stage3(int n, int p, int *graph) {
     int* shared1 = shared + BATCH_DIM * OFFSET;
     auto ii = p * BLOCK_DIM + threadIdx.y;
     auto jj = p * BLOCK_DIM + threadIdx.x;
+    # pragma unroll
     for (int m = 0; m < BATCH_DIM; m++) {
         auto i = BATCH_DIM * blockIdx.y + m;
         if (i >= p) i++;
@@ -99,6 +100,7 @@ __global__ void stage3(int n, int p, int *graph) {
         else shared0(threadIdx.y, threadIdx.x) = DATA_RANGE;
         shared0 += OFFSET;
     }
+    # pragma unroll
     for (int m = 0; m < BATCH_DIM; m++) {
         auto j = BATCH_DIM * blockIdx.x + m;
         if (j >= p) j++;
@@ -108,10 +110,12 @@ __global__ void stage3(int n, int p, int *graph) {
         shared1 += OFFSET;
     }
     __syncthreads();
+    # pragma unroll
     for (int m = 0; m < BATCH_DIM; m++) {
         auto i = BATCH_DIM * blockIdx.y + m;
         if (i >= p) i++;
         i = i * BLOCK_DIM + threadIdx.y;
+        # pragma unroll
         for (int l = 0; l < BATCH_DIM; l++) {
             auto j = BATCH_DIM * blockIdx.x + l;
             if (j >= p) j++;
@@ -121,7 +125,7 @@ __global__ void stage3(int n, int p, int *graph) {
             else tmp = DATA_RANGE;
             shared0 = shared + m * OFFSET + threadIdx.y * BLOCK_DIM;
             shared1 = shared + (l + BATCH_DIM) * OFFSET + threadIdx.x;
-            # pragma unroll 32
+            # pragma unroll
             for (int k = 0; k < BLOCK_DIM; k++) {
                 // tmp = min(tmp, shared(threadIdx.y, k) + shared1(k, threadIdx.x));
                 sum = *shared0 + *shared1;
