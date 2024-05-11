@@ -90,6 +90,7 @@ __global__ void stage3(int n, int p, int *graph) {
     int* shared1 = shared + 4 * OFFSET;
     auto ii = p * BLOCK_SIZE + threadIdx.y;
     auto jj = p * BLOCK_SIZE + threadIdx.x;
+    # pragma unroll 4
     for (int m = 0; m < 4; m++) {
         auto i = 4 * blockIdx.y + m;
         if (i >= p) i++;
@@ -98,6 +99,7 @@ __global__ void stage3(int n, int p, int *graph) {
         else shared0(threadIdx.y, threadIdx.x) = DATA_RANGE;
         shared0 += OFFSET;
     }
+    # pragma unroll 4
     for (int m = 0; m < 4; m++) {
         auto j = 4 * blockIdx.x + m;
         if (j >= p) j++;
@@ -107,10 +109,12 @@ __global__ void stage3(int n, int p, int *graph) {
         shared1 += OFFSET;
     }
     __syncthreads();
+    # pragma unroll 4
     for (int m = 0; m < 4; m++) {
         auto i = 4 * blockIdx.y + m;
         if (i >= p) i++;
         i = i * BLOCK_SIZE + threadIdx.y;
+        # pragma unroll 4
         for (int l = 0; l < 4; l++) {
             auto j = 4 * blockIdx.x + l;
             if (j >= p) j++;
