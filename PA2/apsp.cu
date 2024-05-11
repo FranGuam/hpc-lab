@@ -147,7 +147,7 @@ void apsp(int n, /* device */ int *graph) {
     for (int p = 0; p < m; p++) {
         APSP::stage1<<<1, thr>>>(n, p, graph);
         APSP::stage2<<<dim3(m - 1, 2), thr>>>(n, p, graph);
-        APSP::stage3<<<dim3(m / 2, m / 2), thr>>>(n, p, graph);
+        APSP::stage3<<<dim3((m + 3) / 4, (m + 3) / 4), thr>>>(n, p, graph);
     }
 }
 
