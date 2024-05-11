@@ -91,31 +91,28 @@ __global__ void stage3(int n, int p, int *graph) {
     int* shared1 = shared + BATCH_DIM * OFFSET;
     auto ii = p * BLOCK_DIM + threadIdx.y;
     auto jj = p * BLOCK_DIM + threadIdx.x;
-    # pragma unroll
+    # pragma unroll 4
     for (int m = 0; m < BATCH_DIM; m++) {
         auto i = BATCH_DIM * blockIdx.y + m;
         if (i >= p) i++;
         i = i * BLOCK_DIM + threadIdx.y;
-        if (i < n && jj < n) shared0(threadIdx.y, threadIdx.x) = graph(i, jj);
-        else shared0(threadIdx.y, threadIdx.x) = DATA_RANGE;
-        shared0 += OFFSET;
-    }
-    # pragma unroll
-    for (int m = 0; m < BATCH_DIM; m++) {
         auto j = BATCH_DIM * blockIdx.x + m;
         if (j >= p) j++;
         j = j * BLOCK_DIM + threadIdx.x;
+        if (i < n && jj < n) shared0(threadIdx.y, threadIdx.x) = graph(i, jj);
+        else shared0(threadIdx.y, threadIdx.x) = DATA_RANGE;
         if (ii < n && j < n) shared1(threadIdx.y, threadIdx.x) = graph(ii, j);
         else shared1(threadIdx.y, threadIdx.x) = DATA_RANGE;
+        shared0 += OFFSET;
         shared1 += OFFSET;
     }
     __syncthreads();
-    # pragma unroll
+    shared0 = shared;
+    shared1 = shared + BATCH_DIM * OFFSET;
     for (int m = 0; m < BATCH_DIM; m++) {
         auto i = BATCH_DIM * blockIdx.y + m;
         if (i >= p) i++;
         i = i * BLOCK_DIM + threadIdx.y;
-        # pragma unroll
         for (int l = 0; l < BATCH_DIM; l++) {
             auto j = BATCH_DIM * blockIdx.x + l;
             if (j >= p) j++;
@@ -123,18 +120,21 @@ __global__ void stage3(int n, int p, int *graph) {
             int tmp, sum;
             if (i < n && j < n) tmp = graph(i, j);
             else tmp = DATA_RANGE;
-            shared0 = shared + m * OFFSET + threadIdx.y * BLOCK_DIM;
-            shared1 = shared + (l + BATCH_DIM) * OFFSET + threadIdx.x;
-            # pragma unroll
+            int* shared00 = shared0 + threadIdx.y * BLOCK_DIM;
+            int* shared11 = shared1 + threadIdx.x;
+            # pragma unroll 32
             for (int k = 0; k < BLOCK_DIM; k++) {
                 // tmp = min(tmp, shared(threadIdx.y, k) + shared1(k, threadIdx.x));
+                // sum = shared00(0, k) + shared1(k, 0);
                 sum = *shared0 + *shared1;
                 if (tmp > sum) tmp = sum;
-                shared0++;
-                shared1 += BLOCK_DIM;
+                shared00++;
+                shared11 += BLOCK_DIM;
             }
             if (i < n && j < n) graph(i, j) = tmp;
+            shared1 += OFFSET;
         }
+        shared0 += OFFSET;
     }
 }
 
