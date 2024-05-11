@@ -141,12 +141,12 @@ __global__ void stage3(int n, int p, int *graph) {
 
 void apsp(int n, /* device */ int *graph) {
     constexpr int b = 32;
-    constexpr int m = (n - 1) / b + 1;
     constexpr dim3 thr(b, b);
-    constexpr dim3 blk2(m - 1, 2);
-    constexpr int batch = 4;
-    constexpr int dim = (m + batch - 1) / batch;
-    constexpr dim3 blk3(dim, dim);
+    const int m = (n - 1) / b + 1;
+    const dim3 blk2(m - 1, 2);
+    const int batch = 4;
+    const int dim = (m + batch - 1) / batch;
+    const dim3 blk3(dim, dim);
     for (int p = 0; p < m; p++) {
         APSP::stage1<<<1, thr>>>(n, p, graph);
         APSP::stage2<<<blk2, thr>>>(n, p, graph);
