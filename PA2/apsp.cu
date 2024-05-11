@@ -108,11 +108,11 @@ __global__ void stage3(int n, int p, int *graph) {
     }
     __syncthreads();
     shared0 = shared;
-    shared1 = shared + BATCH_DIM * OFFSET;
     for (int m = 0; m < BATCH_DIM; m++) {
         auto i = BATCH_DIM * blockIdx.y + m;
         if (i >= p) i++;
         i = i * BLOCK_DIM + threadIdx.y;
+        shared1 = shared + BATCH_DIM * OFFSET;
         for (int l = 0; l < BATCH_DIM; l++) {
             auto j = BATCH_DIM * blockIdx.x + l;
             if (j >= p) j++;
@@ -124,9 +124,8 @@ __global__ void stage3(int n, int p, int *graph) {
             int* shared11 = shared1 + threadIdx.x;
             # pragma unroll 32
             for (int k = 0; k < BLOCK_DIM; k++) {
-                // tmp = min(tmp, shared(threadIdx.y, k) + shared1(k, threadIdx.x));
-                // sum = shared00(0, k) + shared1(k, 0);
-                sum = *shared0 + *shared1;
+                // tmp = min(tmp, shared0(threadIdx.y, k) + shared1(k, threadIdx.x));
+                sum = *shared00 + *shared11;
                 if (tmp > sum) tmp = sum;
                 shared00++;
                 shared11 += BLOCK_DIM;
