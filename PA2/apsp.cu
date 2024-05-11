@@ -145,7 +145,7 @@ void apsp(int n, /* device */ int *graph) {
     const int m = (n - 1) / b + 1;
     const dim3 blk2(m - 1, 2);
     const int batch = 4;
-    const int dim = (m + batch - 1) / batch;
+    const int dim = (m - 2) / batch + 1;
     const dim3 blk3(dim, dim);
     for (int p = 0; p < m; p++) {
         APSP::stage1<<<1, thr>>>(n, p, graph);
