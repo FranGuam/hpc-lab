@@ -6,7 +6,6 @@ namespace APSP {
 
 #define BLOCK_DIM 32
 #define OFFSET 1024
-#define batch 4
 #define DATA_RANGE 100000
 #define graph(i, j) graph[(i) * n + (j)]
 #define shared(i, j) shared[(i) * BLOCK_DIM + (j)]
@@ -154,7 +153,7 @@ void apsp(int n, /* device */ int *graph) {
     for (int p = 0; p < m; p++) {
         APSP::stage1<<<1, thr>>>(n, p, graph);
         APSP::stage2<<<blk2, thr>>>(n, p, graph);
-        APSP::stage3<<<blk3, thr>>>(n, p, graph, );
+        APSP::stage3<<<blk3, thr>>>(n, p, graph, batch);
     }
 }
 
