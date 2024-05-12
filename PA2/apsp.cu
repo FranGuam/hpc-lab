@@ -12,7 +12,7 @@ namespace APSP {
 #define shared0(i, j) shared0[(i) * BLOCK_DIM + (j)]
 #define shared1(i, j) shared1[(i) * BLOCK_DIM + (j)]
 
-__global__ void stage1(int n, int p, int *graph) {
+__global__ void stage1(const int n, const int p, const int *graph) {
     __shared__ int shared[OFFSET];
     auto i = p * BLOCK_DIM + threadIdx.y;
     auto j = p * BLOCK_DIM + threadIdx.x;
@@ -33,7 +33,7 @@ __global__ void stage1(int n, int p, int *graph) {
     if (i < n && j < n) graph(i, j) = tmp;
 }
 
-__global__ void stage2(int n, int p, int *graph) {
+__global__ void stage2(const int n, const int p, const int *graph) {
     __shared__ int shared[2 * OFFSET];
     if (blockIdx.y) {
         auto i = p * BLOCK_DIM + threadIdx.y;
@@ -84,13 +84,13 @@ __global__ void stage2(int n, int p, int *graph) {
     }
 }
 
-__global__ void stage3(int n, int p, int *graph, int batch) {
-    __shared__ int shared[8 * OFFSET];
+__global__ void stage3(const int n, const int p, const int *graph, const int batch) {
+    __shared__ int shared[2 * batch * OFFSET];
     int* shared0 = shared;
     int* shared1 = shared + batch * OFFSET;
     auto ii = p * BLOCK_DIM + threadIdx.y;
     auto jj = p * BLOCK_DIM + threadIdx.x;
-    # pragma unroll 4
+    # pragma unroll
     for (int m = 0; m < batch; m++) {
         auto i = batch * blockIdx.y + m;
         if (i >= p) i++;
@@ -138,7 +138,7 @@ __global__ void stage3(int n, int p, int *graph, int batch) {
 
 }
 
-void apsp(int n, /* device */ int *graph) {
+void apsp(const int n, /* device */ const int *graph) {
     constexpr int b = 32;
     constexpr dim3 thr(b, b);
     const int m = (n - 1) / b + 1;
