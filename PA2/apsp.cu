@@ -240,7 +240,7 @@ __global__ void stage3_4(const int n, const int p, int *graph) {
     }
 }
 
-__global__ void stage3(const int n, const int p, int *graph) {
+__global__ void stage3_6(const int n, const int p, int *graph) {
     __shared__ int shared[12 * OFFSET];
     int* shared0 = shared;
     int* shared1 = shared + 6 * OFFSET;
@@ -299,7 +299,7 @@ void apsp(const int n, /* device */ int *graph) {
     constexpr dim3 thr(b, b);
     const int m = (n - 1) / b + 1;
     const dim3 blk2(m - 1, 2);
-    if (n < 800) {
+    if (n < 700) {
         const int batch = 1;
         const int dim = (m - 2) / batch + 1;
         const dim3 blk3(dim, dim);
@@ -308,7 +308,7 @@ void apsp(const int n, /* device */ int *graph) {
             APSP::stage2<<<blk2, thr>>>(n, p, graph);
             APSP::stage3_1<<<blk3, thr>>>(n, p, graph);
         }
-    } else if (n < 1200) {
+    } else if (n < 1000) {
         const int batch = 2;
         const int dim = (m - 2) / batch + 1;
         const dim3 blk3(dim, dim);
@@ -317,7 +317,7 @@ void apsp(const int n, /* device */ int *graph) {
             APSP::stage2<<<blk2, thr>>>(n, p, graph);
             APSP::stage3_2<<<blk3, thr>>>(n, p, graph);
         }
-    } else if (n < 4000) {
+    } else if (n < 3500) {
         const int batch = 4;
         const int dim = (m - 2) / batch + 1;
         const dim3 blk3(dim, dim);
@@ -333,7 +333,7 @@ void apsp(const int n, /* device */ int *graph) {
         for (int p = 0; p < m; p++) {
             APSP::stage1<<<1, thr>>>(n, p, graph);
             APSP::stage2<<<blk2, thr>>>(n, p, graph);
-            APSP::stage3<<<blk3, thr>>>(n, p, graph);
+            APSP::stage3_6<<<blk3, thr>>>(n, p, graph);
         }
     }
 }
