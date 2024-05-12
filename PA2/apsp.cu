@@ -12,7 +12,7 @@ namespace APSP {
 #define shared0(i, j) shared0[(i) * BLOCK_DIM + (j)]
 #define shared1(i, j) shared1[(i) * BLOCK_DIM + (j)]
 
-__global__ void stage1(const int n, const int p, const int *graph) {
+__global__ void stage1(const int n, const int p, int *graph) {
     __shared__ int shared[OFFSET];
     auto i = p * BLOCK_DIM + threadIdx.y;
     auto j = p * BLOCK_DIM + threadIdx.x;
@@ -33,7 +33,7 @@ __global__ void stage1(const int n, const int p, const int *graph) {
     if (i < n && j < n) graph(i, j) = tmp;
 }
 
-__global__ void stage2(const int n, const int p, const int *graph) {
+__global__ void stage2(const int n, const int p, int *graph) {
     __shared__ int shared[2 * OFFSET];
     if (blockIdx.y) {
         auto i = p * BLOCK_DIM + threadIdx.y;
@@ -84,8 +84,8 @@ __global__ void stage2(const int n, const int p, const int *graph) {
     }
 }
 
-__global__ void stage3(const int n, const int p, const int *graph, const int batch) {
-    __shared__ int shared[2 * batch * OFFSET];
+__global__ void stage3(const int n, const int p, int *graph, const int batch) {
+    __shared__ int shared[12 * OFFSET];
     int* shared0 = shared;
     int* shared1 = shared + batch * OFFSET;
     auto ii = p * BLOCK_DIM + threadIdx.y;
@@ -138,12 +138,12 @@ __global__ void stage3(const int n, const int p, const int *graph, const int bat
 
 }
 
-void apsp(const int n, /* device */ const int *graph) {
+void apsp(const int n, /* device */ int *graph) {
     constexpr int b = 32;
     constexpr dim3 thr(b, b);
     const int m = (n - 1) / b + 1;
     const dim3 blk2(m - 1, 2);
-    int batch;
+    const int batch;
     if (n < 800) batch = 1;
     else if (n < 1200) batch = 2;
     else if (n < 4000) batch = 4;
