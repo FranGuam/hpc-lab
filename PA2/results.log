@@ -285,7 +285,7 @@ srun -N 1 --gres=gpu:1 ./benchmark 1000
 Time: 1.603058 ms
 
 srun -N 1 --gres=gpu:1 ./benchmark 2500
-Time: 15.983790 ms
+Time: 14.833889 ms
 
 srun -N 1 --gres=gpu:1 ./benchmark 5000
 Time: 112.775904 ms

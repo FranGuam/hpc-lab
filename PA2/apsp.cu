@@ -6,7 +6,7 @@ namespace APSP {
 
 #define BLOCK_DIM 32
 #define OFFSET 1024
-#define BATCH_DIM 4
+#define batch 4
 #define DATA_RANGE 100000
 #define graph(i, j) graph[(i) * n + (j)]
 #define shared(i, j) shared[(i) * BLOCK_DIM + (j)]
@@ -85,18 +85,18 @@ __global__ void stage2(int n, int p, int *graph) {
     }
 }
 
-__global__ void stage3(int n, int p, int *graph) {
+__global__ void stage3(int n, int p, int *graph, int batch) {
     __shared__ int shared[8 * OFFSET];
     int* shared0 = shared;
-    int* shared1 = shared + BATCH_DIM * OFFSET;
+    int* shared1 = shared + batch * OFFSET;
     auto ii = p * BLOCK_DIM + threadIdx.y;
     auto jj = p * BLOCK_DIM + threadIdx.x;
     # pragma unroll 4
-    for (int m = 0; m < BATCH_DIM; m++) {
-        auto i = BATCH_DIM * blockIdx.y + m;
+    for (int m = 0; m < batch; m++) {
+        auto i = batch * blockIdx.y + m;
         if (i >= p) i++;
         i = i * BLOCK_DIM + threadIdx.y;
-        auto j = BATCH_DIM * blockIdx.x + m;
+        auto j = batch * blockIdx.x + m;
         if (j >= p) j++;
         j = j * BLOCK_DIM + threadIdx.x;
         if (i < n && jj < n) shared0(threadIdx.y, threadIdx.x) = graph(i, jj);
@@ -108,13 +108,13 @@ __global__ void stage3(int n, int p, int *graph) {
     }
     __syncthreads();
     shared0 = shared;
-    for (int m = 0; m < BATCH_DIM; m++) {
-        auto i = BATCH_DIM * blockIdx.y + m;
+    for (int m = 0; m < batch; m++) {
+        auto i = batch * blockIdx.y + m;
         if (i >= p) i++;
         i = i * BLOCK_DIM + threadIdx.y;
-        shared1 = shared + BATCH_DIM * OFFSET;
-        for (int l = 0; l < BATCH_DIM; l++) {
-            auto j = BATCH_DIM * blockIdx.x + l;
+        shared1 = shared + batch * OFFSET;
+        for (int l = 0; l < batch; l++) {
+            auto j = batch * blockIdx.x + l;
             if (j >= p) j++;
             j = j * BLOCK_DIM + threadIdx.x;
             int tmp, sum;
@@ -144,13 +144,17 @@ void apsp(int n, /* device */ int *graph) {
     constexpr dim3 thr(b, b);
     const int m = (n - 1) / b + 1;
     const dim3 blk2(m - 1, 2);
-    const int batch = 4;
+    int batch;
+    if (n < 800) batch = 1;
+    else if (n < 1200) batch = 2;
+    else if (n < 4000) batch = 4;
+    else batch = 6;
     const int dim = (m - 2) / batch + 1;
     const dim3 blk3(dim, dim);
     for (int p = 0; p < m; p++) {
         APSP::stage1<<<1, thr>>>(n, p, graph);
         APSP::stage2<<<blk2, thr>>>(n, p, graph);
-        APSP::stage3<<<blk3, thr>>>(n, p, graph);
+        APSP::stage3<<<blk3, thr>>>(n, p, graph, );
     }
 }
 
