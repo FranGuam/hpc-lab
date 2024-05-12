@@ -317,7 +317,7 @@ void apsp(const int n, /* device */ int *graph) {
             APSP::stage2<<<blk2, thr>>>(n, p, graph);
             APSP::stage3_2<<<blk3, thr>>>(n, p, graph);
         }
-    } else if (n < 3100) {
+    } else if (n < 3050) {
         const int batch = 4;
         const int dim = (m - 2) / batch + 1;
         const dim3 blk3(dim, dim);
