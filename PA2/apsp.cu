@@ -22,7 +22,6 @@ __global__ void stage1(const int n, const int p, int *graph) {
     int sum, tmp = shared(threadIdx.y, threadIdx.x);
     int* shared0 = shared + threadIdx.y * BLOCK_DIM;
     int* shared1 = shared + threadIdx.x;
-    # pragma unroll 32
     for (int k = 0; k < BLOCK_DIM; k++) {
         // tmp = min(tmp, shared(threadIdx.y, k) + shared(k, threadIdx.x));
         sum = *shared0 + *shared1;
@@ -49,7 +48,6 @@ __global__ void stage2(const int n, const int p, int *graph) {
         int sum, tmp = shared0(threadIdx.y, threadIdx.x);
         shared0 += threadIdx.x;
         shared1 += threadIdx.y * BLOCK_DIM;
-        # pragma unroll 32
         for (int k = 0; k < BLOCK_DIM; k++) {
             // tmp = min(tmp, shared1(threadIdx.y, k) + shared(k, threadIdx.x));
             sum = *shared1 + *shared0;
@@ -72,7 +70,6 @@ __global__ void stage2(const int n, const int p, int *graph) {
         int sum, tmp = shared0(threadIdx.y, threadIdx.x);
         shared0 += threadIdx.y * BLOCK_DIM;
         shared1 += threadIdx.x;
-        # pragma unroll 32
         for (int k = 0; k < BLOCK_DIM; k++) {
             // tmp = min(tmp, shared(threadIdx.y, k) + shared1(k, threadIdx.x));
             sum = *shared0 + *shared1;
@@ -90,7 +87,6 @@ __global__ void stage3_1(const int n, const int p, int *graph) {
     int* shared1 = shared + OFFSET;
     auto ii = p * BLOCK_DIM + threadIdx.y;
     auto jj = p * BLOCK_DIM + threadIdx.x;
-    # pragma unroll
     for (int m = 0; m < 1; m++) {
         auto i = blockIdx.y + m;
         if (i >= p) i++;
@@ -121,7 +117,6 @@ __global__ void stage3_1(const int n, const int p, int *graph) {
             else tmp = DATA_RANGE;
             int* shared00 = shared0 + threadIdx.y * BLOCK_DIM;
             int* shared11 = shared1 + threadIdx.x;
-            # pragma unroll 32
             for (int k = 0; k < BLOCK_DIM; k++) {
                 // tmp = min(tmp, shared0(threadIdx.y, k) + shared1(k, threadIdx.x));
                 sum = *shared00 + *shared11;
@@ -142,7 +137,6 @@ __global__ void stage3_2(const int n, const int p, int *graph) {
     int* shared1 = shared + 2 * OFFSET;
     auto ii = p * BLOCK_DIM + threadIdx.y;
     auto jj = p * BLOCK_DIM + threadIdx.x;
-    # pragma unroll
     for (int m = 0; m < 2; m++) {
         auto i = 2 * blockIdx.y + m;
         if (i >= p) i++;
@@ -173,7 +167,6 @@ __global__ void stage3_2(const int n, const int p, int *graph) {
             else tmp = DATA_RANGE;
             int* shared00 = shared0 + threadIdx.y * BLOCK_DIM;
             int* shared11 = shared1 + threadIdx.x;
-            # pragma unroll 32
             for (int k = 0; k < BLOCK_DIM; k++) {
                 // tmp = min(tmp, shared0(threadIdx.y, k) + shared1(k, threadIdx.x));
                 sum = *shared00 + *shared11;
@@ -194,7 +187,6 @@ __global__ void stage3_4(const int n, const int p, int *graph) {
     int* shared1 = shared + 4 * OFFSET;
     auto ii = p * BLOCK_DIM + threadIdx.y;
     auto jj = p * BLOCK_DIM + threadIdx.x;
-    # pragma unroll
     for (int m = 0; m < 4; m++) {
         auto i = 4 * blockIdx.y + m;
         if (i >= p) i++;
@@ -225,7 +217,6 @@ __global__ void stage3_4(const int n, const int p, int *graph) {
             else tmp = DATA_RANGE;
             int* shared00 = shared0 + threadIdx.y * BLOCK_DIM;
             int* shared11 = shared1 + threadIdx.x;
-            # pragma unroll 32
             for (int k = 0; k < BLOCK_DIM; k++) {
                 // tmp = min(tmp, shared0(threadIdx.y, k) + shared1(k, threadIdx.x));
                 sum = *shared00 + *shared11;
@@ -246,7 +237,6 @@ __global__ void stage3_6(const int n, const int p, int *graph) {
     int* shared1 = shared + 6 * OFFSET;
     auto ii = p * BLOCK_DIM + threadIdx.y;
     auto jj = p * BLOCK_DIM + threadIdx.x;
-    # pragma unroll
     for (int m = 0; m < 6; m++) {
         auto i = 6 * blockIdx.y + m;
         if (i >= p) i++;
@@ -277,7 +267,6 @@ __global__ void stage3_6(const int n, const int p, int *graph) {
             else tmp = DATA_RANGE;
             int* shared00 = shared0 + threadIdx.y * BLOCK_DIM;
             int* shared11 = shared1 + threadIdx.x;
-            # pragma unroll 32
             for (int k = 0; k < BLOCK_DIM; k++) {
                 // tmp = min(tmp, shared0(threadIdx.y, k) + shared1(k, threadIdx.x));
                 sum = *shared00 + *shared11;
