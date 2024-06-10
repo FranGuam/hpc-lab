@@ -53,7 +53,7 @@ void SpMMOpt::preprocess(float *vin, float *vout)
 
     // Convert Row-major to Column-major
     block_size = 128;
-    num_blocks = (num_v + block_size - 1) / block_size;
+    num_blocks = (num_e + block_size - 1) / block_size;
     checkCudaErrors(cudaMalloc2((void**)&d_col_idx, num_e * sizeof(int)));
     checkCudaErrors(cudaMalloc2((void**)&d_row_idx, num_e * sizeof(int)));
     checkCudaErrors(cudaMalloc2((void**)&d_value, num_e * sizeof(float)));
