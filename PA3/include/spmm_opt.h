@@ -1,6 +1,7 @@
 #ifndef SpMM_OPT_H
 #define SpMM_OPT_H
 #include "spmm_base.h"
+#include <cusparse.h>
 
 class SpMMOpt : public SpMM
 {
