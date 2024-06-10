@@ -1,10 +1,10 @@
 #include "spmm_opt.h"
 #include "util.h"
 
-__global__ void csr2coo_kernel(int *ptr, int *coo)
+__global__ void csr2coo_kernel(int *ptr, int *coo, int num_v)
 {
     int tid = blockIdx.x * blockDim.x + threadIdx.x;
-    if (tid >= num_e) return;
+    if (tid >= num_v) return;
     int begin = ptr[tid], end = ptr[tid + 1];
     for (int i = begin; i < end; ++i)
     {
@@ -29,7 +29,7 @@ void SpMMOpt::preprocess(float *vin, float *vout)
 {
     // Convert CSR to COO
     checkCudaErrors(cudaMalloc2((void**)&d_coo, num_e * sizeof(int)));
-    csr2coo_kernel<<<(num_e + 127) / 128, 128>>>(d_ptr, d_coo);
+    csr2coo_kernel<<<(num_e + 127) / 128, 128>>>(d_ptr, d_coo, num_v);
 
     int BLOCK_SIZE = 128;
     grid.x = (num_v + BLOCK_SIZE - 1) / BLOCK_SIZE;
