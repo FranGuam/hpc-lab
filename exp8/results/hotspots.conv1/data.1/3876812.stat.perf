@@ -1,0 +1,53 @@
+# AMPLXE_PERF_STAT
+# hostname : conv1
+# os release : 6.1.0-18-amd64
+# arch : x86_64
+# cpuid : GenuineIntel,6,79,1
+# cpudesc : Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz
+# total memory : 264021388 kB
+# nrcpus online : 28
+# nrcpus avail : 28
+# sibling cores : 0,2,4,6,8,10,12,14,16,18,20,22,24,26
+# sibling cores : 1,3,5,7,9,11,13,15,17,19,21,23,25,27
+# sibling threads : 0
+# sibling threads : 1
+# sibling threads : 2
+# sibling threads : 3
+# sibling threads : 4
+# sibling threads : 5
+# sibling threads : 6
+# sibling threads : 7
+# sibling threads : 8
+# sibling threads : 9
+# sibling threads : 10
+# sibling threads : 11
+# sibling threads : 12
+# sibling threads : 13
+# sibling threads : 14
+# sibling threads : 15
+# sibling threads : 16
+# sibling threads : 17
+# sibling threads : 18
+# sibling threads : 19
+# sibling threads : 20
+# sibling threads : 21
+# sibling threads : 22
+# sibling threads : 23
+# sibling threads : 24
+# sibling threads : 25
+# sibling threads : 26
+# sibling threads : 27
+# process id : 3876812
+;;22812681051;0
+;;23127102408;1
+;;16855196215;2
+;;964139490;3
+;;963582806;4
+;;0;5
+;;0;6
+;;0;7
+;;1570643024;8
+;;7;9
+;;0;10
+;;444001;11
+;;22511276766;12

@@ -1,0 +1,208 @@
+Using CPUID GenuineIntel-6-4F-1
+DEBUGINFOD_URLS=
+Compression enabled, disabling build id collection at the end of the session.
+nr_cblocks: 0
+affinity: SYS
+mmap flush: 1
+comp level: 1
+mmap size 528384B
+Control descriptor is not initialized
+couldn't open /proc/1/task/1/maps
+couldn't open /proc/606/task/606/maps
+couldn't open /proc/648/task/648/maps
+couldn't open /proc/761/task/761/maps
+couldn't open /proc/763/task/763/maps
+couldn't open /proc/946/task/946/maps
+couldn't open /proc/960/task/960/maps
+couldn't open /proc/963/task/963/maps
+couldn't open /proc/976/task/976/maps
+couldn't open /proc/985/task/985/maps
+couldn't open /proc/999/task/999/maps
+couldn't open /proc/1125/task/1125/maps
+couldn't open /proc/1135/task/1135/maps
+couldn't open /proc/1136/task/1136/maps
+couldn't open /proc/1137/task/1137/maps
+couldn't open /proc/1138/task/1138/maps
+couldn't open /proc/1143/task/1143/maps
+couldn't open /proc/1153/task/1153/maps
+couldn't open /proc/1159/task/1159/maps
+couldn't open /proc/1177/task/1177/maps
+couldn't open /proc/3876365/task/3876365/maps
+couldn't open /proc/3876369/task/3876369/maps
+couldn't open /proc/3876372/task/3876372/maps
+couldn't open /proc/3876383/task/3876383/maps
+couldn't open /proc/3877287/task/3877287/maps
+couldn't open /proc/3877291/task/3877291/maps
+couldn't open /proc/3877294/task/3877294/maps
+couldn't open /proc/3877303/task/3877303/maps
+couldn't open /proc/3877304/task/3877304/maps
+couldn't open /proc/3877305/task/3877305/maps
+couldn't open /proc/3877306/task/3877306/maps
+couldn't open /proc/3877308/task/3877308/maps
+couldn't open /proc/3877309/task/3877309/maps
+couldn't open /proc/3877310/task/3877310/maps
+couldn't open /proc/3877544/task/3877544/maps
+couldn't open /proc/3877548/task/3877548/maps
+couldn't open /proc/3877551/task/3877551/maps
+couldn't open /proc/3877553/task/3877553/maps
+couldn't open /proc/3877558/task/3877558/maps
+couldn't open /proc/3877560/task/3877560/maps
+couldn't open /proc/3877562/task/3877562/maps
+couldn't open /proc/3877635/task/3877635/maps
+couldn't open /proc/3877644/task/3877644/maps
+couldn't open /proc/3877645/task/3877645/maps
+couldn't open /proc/3877674/task/3877674/maps
+couldn't open /proc/3877677/task/3877677/maps
+couldn't open /proc/3877678/task/3877678/maps
+couldn't open /proc/3877681/task/3877681/maps
+couldn't open /proc/3877682/task/3877682/maps
+couldn't open /proc/3877685/task/3877685/maps
+couldn't open /proc/3877686/task/3877686/maps
+couldn't open /proc/3877689/task/3877689/maps
+couldn't open /proc/3877690/task/3877690/maps
+couldn't open /proc/3877693/task/3877693/maps
+couldn't open /proc/3877694/task/3877694/maps
+couldn't open /proc/3877697/task/3877697/maps
+couldn't open /proc/3877698/task/3877698/maps
+couldn't open /proc/3877699/task/3877699/maps
+couldn't open /proc/3877700/task/3877700/maps
+couldn't open /proc/3877701/task/3877701/maps
+couldn't open /proc/3877704/task/3877704/maps
+couldn't open /proc/3877714/task/3877714/maps
+couldn't open /proc/3877876/task/3877876/maps
+couldn't open /proc/3877877/task/3877877/maps
+couldn't open /proc/3878158/task/3878158/maps
+couldn't open /proc/3878162/task/3878162/maps
+couldn't open /proc/3878165/task/3878165/maps
+couldn't open /proc/3878174/task/3878174/maps
+couldn't open /proc/3878175/task/3878175/maps
+couldn't open /proc/3878176/task/3878176/maps
+couldn't open /proc/3878177/task/3878177/maps
+couldn't open /proc/3878178/task/3878178/maps
+couldn't open /proc/3878179/task/3878179/maps
+couldn't open /proc/3878180/task/3878180/maps
+couldn't open /proc/3878181/task/3878181/maps
+couldn't open /proc/3878425/task/3878425/maps
+couldn't open /proc/3878430/task/3878430/maps
+couldn't open /proc/3878432/task/3878432/maps
+couldn't open /proc/3878434/task/3878434/maps
+couldn't open /proc/3878441/task/3878441/maps
+couldn't open /proc/3878445/task/3878445/maps
+couldn't open /proc/3878448/task/3878448/maps
+couldn't open /proc/3878451/task/3878451/maps
+couldn't open /proc/3878521/task/3878521/maps
+couldn't open /proc/3878531/task/3878531/maps
+couldn't open /proc/3878536/task/3878536/maps
+couldn't open /proc/3878565/task/3878565/maps
+couldn't open /proc/3878568/task/3878568/maps
+couldn't open /proc/3878569/task/3878569/maps
+couldn't open /proc/3878570/task/3878570/maps
+couldn't open /proc/3878573/task/3878573/maps
+couldn't open /proc/3878576/task/3878576/maps
+couldn't open /proc/3878577/task/3878577/maps
+couldn't open /proc/3878580/task/3878580/maps
+couldn't open /proc/3878581/task/3878581/maps
+couldn't open /proc/3878584/task/3878584/maps
+couldn't open /proc/3878585/task/3878585/maps
+couldn't open /proc/3878588/task/3878588/maps
+couldn't open /proc/3878589/task/3878589/maps
+couldn't open /proc/3878592/task/3878592/maps
+couldn't open /proc/3878593/task/3878593/maps
+couldn't open /proc/3878594/task/3878594/maps
+couldn't open /proc/3878595/task/3878595/maps
+couldn't open /proc/3878596/task/3878596/maps
+couldn't open /proc/3878610/task/3878610/maps
+couldn't open /proc/3878615/task/3878615/maps
+couldn't open /proc/3878620/task/3878620/maps
+couldn't open /proc/3878819/task/3878819/maps
+couldn't open /proc/3878824/task/3878824/maps
+couldn't open /proc/3878827/task/3878827/maps
+
+3879145:perf-sync:ready:SYS=3640137820048801
+[ perf record: Woken up 1 times to write data ]
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+read LOST count failed
+failed to write feature HYBRID_TOPOLOGY
+[ perf record: Captured and wrote 0.388 MB /home/course/hpc/users/2021012702/hpc-lab/exp8/results/uarch-exploration.conv1/data.4/temp.dryrun.perf, compressed (original 0.017 MB, ratio is 4.662) ]
