@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dsets=(arxiv collab citation ddi protein ppa reddit.dgl products youtube amazon_cogdl yelp wikikg2 am)
-filename=output_$(date +"%H_%M_%S_%m_%d").log
+filename=output_$(date +"%m-%d_%H-%M-%S").log
 
 echo Log saved to $filename
 
