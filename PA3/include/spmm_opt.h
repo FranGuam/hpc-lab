@@ -9,6 +9,9 @@ public:
     SpMMOpt(CSR *g, int out_feat_in) : SpMM(g, out_feat_in) {}
     ~SpMMOpt() {
         if (d_coo) checkCudaErrors(cudaFree(d_coo));
+        if (d_col_idx) checkCudaErrors(cudaFree(d_col_idx));
+        if (d_row_idx) checkCudaErrors(cudaFree(d_row_idx));
+        if (d_value) checkCudaErrors(cudaFree(d_value));
     }
      
     virtual void preprocess(float *vin, float *vout);
@@ -17,5 +20,8 @@ public:
 
 private:
     int *d_coo;
+    int *d_col_idx;
+    int *d_row_idx;
+    float *d_value;
 };
 #endif
