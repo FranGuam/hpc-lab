@@ -16,13 +16,11 @@ __global__ void csr2coo_kernel(int *ptr, int *coo, int num_v)
     }
 }
 
-__global__ void column_major_kernel(int *coo, int *idx, float *val, int *col_idx, int *row_idx, float *value, int num_e)
+__global__ void transform_values_kernel(int *perm, float *val, float *new_val, int num_e)
 {
     int tid = blockIdx.x * blockDim.x + threadIdx.x;
     if (tid >= num_e) return;
-    col_idx[tid] = idx[tid];
-    row_idx[tid] = coo[tid];
-    value[tid] = val[tid];
+    new_val[tid] = val[perm[tid]];
 }
 
 __global__ void spmm_kernel_opt(int *col_idx, int *row_idx, float *value, float *vin, float *vout, int num_v, int num_e, int feat_in)
@@ -56,13 +54,28 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     checkCudaErrors(cudaMalloc2((void**)&d_coo, num_e * sizeof(int)));
     csr2coo_kernel<<<num_blocks, block_size>>>(d_ptr, d_coo, num_v);
 
-    // Convert Row-major to Column-major
-    block_size = 128;
-    num_blocks = (num_e + block_size - 1) / block_size;
+    // Copy Data for transformation
     checkCudaErrors(cudaMalloc2((void**)&d_col_idx, num_e * sizeof(int)));
     checkCudaErrors(cudaMalloc2((void**)&d_row_idx, num_e * sizeof(int)));
     checkCudaErrors(cudaMalloc2((void**)&d_value, num_e * sizeof(float)));
-    column_major_kernel<<<num_blocks, block_size>>>(d_coo, d_idx, d_val, d_col_idx, d_row_idx, d_value, num_e);
+    checkCudaErrors(cudaMemcpy(d_row_idx, d_coo, num_e * sizeof(int), cudaMemcpyDeviceToDevice));
+    checkCudaErrors(cudaMemcpy(d_col_idx, d_idx, num_e * sizeof(int), cudaMemcpyDeviceToDevice));
+    checkCudaErrors(cudaMemcpy(d_value, d_val, num_e * sizeof(float), cudaMemcpyDeviceToDevice));
+
+    // Convert Row-major to Column-major
+    void *d_buffer;
+    size_t buffer_size;
+    int *d_perm;
+    checkCudaErrors(cusparseXcoosort_bufferSizeExt(handle, num_v, num_v, num_e, d_row_idx, d_col_idx, &buffer_size));
+    checkCudaErrors(cudaMalloc2(&d_buffer, buffer_size));
+    checkCudaErrors(cudaMalloc2((void**)&d_perm, num_e * sizeof(int)));
+    checkCudaErrors(cusparseCreateIdentityPermutation(handle, num_e, d_perm));
+    checkCudaErrors(cusparseXcoosortByColumn(handle, num_v, num_v, num_e, d_row_idx, d_col_idx, d_perm, d_buffer));
+    block_size = 128;
+    num_blocks = (num_e + block_size - 1) / block_size;
+    transform_values_kernel<<<num_blocks, block_size>>>(d_perm, d_val, d_value, num_e);
+    checkCudaErrors(cudaFree(d_buffer));
+    checkCudaErrors(cudaFree(d_perm));
 
     // Decide grid and block size for spmm_kernel_opt
     block_size = 32;

@@ -19,6 +19,7 @@ public:
     virtual void run(float *vin, float *vout);
 
 private:
+    cusparseHandle_t handle = 0;
     int *d_coo;
     int *d_col_idx;
     int *d_row_idx;
