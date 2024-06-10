@@ -10,6 +10,7 @@ public:
     ~SpMMOpt() {
         if (target) checkCudaErrors(cudaFree(target));
         if (ptr_scheduled) checkCudaErrors(cudaFree(ptr_scheduled));
+        if (d_coo) checkCudaErrors(cudaFree(d_coo));
     }
      
     virtual void preprocess(float *vin, float *vout);
@@ -23,5 +24,7 @@ public:
 private:
     int num_target;
     int *target, *ptr_scheduled;
+
+    int *d_coo;
 };
 #endif
