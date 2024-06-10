@@ -21,23 +21,23 @@ __global__ void column_major_kernel(int *coo, int *idx, float *val, int *col_idx
     value[tid] = val[tid];
 }
 
-__global__ void spmm_kernel_opt(int *ptr, int *idx, float *val, float *vin, float *vout, int num_v, int INFEATURE, int *coo, int num_e)
+__global__ void spmm_kernel_opt(int *col_idx, int *row_idx, float *value, float *vin, float *vout, int num_v, int num_e, int INFEATURE)
 {
     int tid = blockIdx.x * blockDim.x + threadIdx.y;
     if (tid >= num_e) return;
-    int row = coo[tid];
-    int col = idx[tid];
-    float value = val[tid];
+    int row = row_idx[tid];
+    int col = col_idx[tid];
+    float val = value[tid];
     int src_idx = col * INFEATURE + threadIdx.x;
     int dst_idx = row * INFEATURE + threadIdx.x;
     if (INFEATURE == 32) {
-        atomicAdd(&vout[dst_idx], vin[src_idx] * value);
+        atomicAdd(&vout[dst_idx], vin[src_idx] * val);
     }
     else 
     {
         for (int j = 0; j < 256; j += 32)
         {
-            atomicAdd(&vout[dst_idx + j], vin[src_idx + j] * value);
+            atomicAdd(&vout[dst_idx + j], vin[src_idx + j] * val);
         }
     }
 }
@@ -69,5 +69,5 @@ void SpMMOpt::preprocess(float *vin, float *vout)
 void SpMMOpt::run(float *vin, float *vout)
 {
     // TODO: your code
-    spmm_kernel_opt<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, num_v, feat_in, d_coo, num_e);
+    spmm_kernel_opt<<<grid, block>>>(d_col_idx, d_row_idx, d_value, vin, vout, num_v, num_e, INFEATURE);
 }
