@@ -19,13 +19,16 @@ __global__ void spmm_kernel_opt(int *ptr, int *idx, float *val, float *vin, floa
     int row = coo[tid];
     int col = idx[tid];
     float value = val[tid];
+    int src_idx = col * INFEATURE + threadIdx.x;
+    int dst_idx = row * INFEATURE + threadIdx.x;
     if (INFEATURE == 32) {
-        atomicAdd(&vout[row * INFEATURE + threadIdx.x], vin[col * INFEATURE + threadIdx.x] * value);
+        atomicAdd(&vout[dst_idx], vin[src_idx] * value);
     }
-    else {
-        for (int j = 0; j < 8; ++j)
+    else 
+    {
+        for (int j = 0; j < 256; j += 32)
         {
-            atomicAdd(&vout[row * INFEATURE + j * 32 + threadIdx.x], vin[col * INFEATURE + j * 32 + threadIdx.x] * value);
+            atomicAdd(&vout[dst_idx + j], vin[src_idx + j] * value);
         }
     }
 }
