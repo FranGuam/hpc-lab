@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
 <bag xmlns:unsignedLong="http://www.w3.org/2001/XMLSchema#unsignedLong">
- <entry path="end_tsc" unsignedLong:size="18446744073709551615">
+ <entry path="end_tsc" unsignedLong:size="37023">
   <indexFields>
    <field path="dd_sample"/>
    <field path="attr.callsite"/>
