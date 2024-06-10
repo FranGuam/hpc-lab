@@ -69,5 +69,5 @@ void SpMMOpt::preprocess(float *vin, float *vout)
 void SpMMOpt::run(float *vin, float *vout)
 {
     // TODO: your code
-    spmm_kernel_opt<<<grid, block>>>(d_col_idx, d_row_idx, d_value, vin, vout, num_v, num_e, INFEATURE);
+    spmm_kernel_opt<<<grid, block>>>(d_col_idx, d_row_idx, d_value, vin, vout, num_v, num_e, feat_in);
 }
