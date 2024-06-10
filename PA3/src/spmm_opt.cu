@@ -66,6 +66,7 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     void *d_buffer;
     size_t buffer_size;
     int *d_perm;
+    checkCudaErrors(cusparseCreate(&handle));
     checkCudaErrors(cusparseXcoosort_bufferSizeExt(handle, num_v, num_v, num_e, d_row_idx, d_col_idx, &buffer_size));
     checkCudaErrors(cudaMalloc2(&d_buffer, buffer_size));
     checkCudaErrors(cudaMalloc2((void**)&d_perm, num_e * sizeof(int)));
