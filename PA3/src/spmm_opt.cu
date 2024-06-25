@@ -74,7 +74,7 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     // Decide grid and block size for spmm_kernel_opt
 
     if (num_e / num_v > 100) {
-        block.y = 1024;
+        block.y = 128;
         grid.x = (num_e + block.y - 1) / block.y;
         block.x = 1;
     } else {
