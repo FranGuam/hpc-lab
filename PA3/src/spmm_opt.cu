@@ -32,7 +32,7 @@ __global__ void spmm_kernel_opt(int *col_idx, int *row_idx, float *value, float 
     float val = value[tid];
     int src_idx = col * feat_in + threadIdx.x;
     int dst_idx = row * feat_in + threadIdx.x;
-    for (int j = 0; j < feat_in; j += blockDim.y)
+    for (int j = 0; j < feat_in; j += blockDim.x)
     {
         atomicAdd(&vout[dst_idx + j], vin[src_idx + j] * val);
     }
@@ -74,13 +74,13 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     // Decide grid and block size for spmm_kernel_opt
 
     if (num_e / num_v > 100) {
-        block.x = 1024;
-        grid.x = (num_e + block.x - 1) / block.x;
-        block.y = 1;
+        block.y = 1024;
+        grid.x = (num_e + block.y - 1) / block.y;
+        block.x = 1;
     } else {
-        block.x = 32;
-        grid.x = (num_e + block.x - 1) / block.x;
         block.y = 32;
+        grid.x = (num_e + block.y - 1) / block.y;
+        block.x = 32;
     }
 }
 
