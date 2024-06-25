@@ -25,7 +25,7 @@ __global__ void transform_values_kernel(int *perm, float *val, float *new_val, i
 
 __global__ void spmm_kernel_opt(int *col_idx, int *row_idx, float *value, float *vin, float *vout, int num_v, int num_e, int feat_in)
 {
-    int tid = blockIdx.x * blockDim.x + threadIdx.y;
+    int tid = blockIdx.x * blockDim.y + threadIdx.y;
     if (tid >= num_e) return;
     int row = row_idx[tid];
     int col = col_idx[tid];
