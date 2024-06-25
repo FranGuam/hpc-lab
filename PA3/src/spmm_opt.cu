@@ -32,16 +32,9 @@ __global__ void spmm_kernel_opt(int *col_idx, int *row_idx, float *value, float 
     float val = value[tid];
     int src_idx = col * feat_in + threadIdx.x;
     int dst_idx = row * feat_in + threadIdx.x;
-    if (feat_in == SMALL_WIDTH) {
-        atomicAdd(&vout[dst_idx], vin[src_idx] * val);
-    }
-    else 
+    for (int j = 0; j < feat_in; j += blockDim.y)
     {
-        #pragma unroll 8
-        for (int j = 0; j < LARGE_WIDTH; j += BLOCK_LEN)
-        {
-            atomicAdd(&vout[dst_idx + j], vin[src_idx + j] * val);
-        }
+        atomicAdd(&vout[dst_idx + j], vin[src_idx + j] * val);
     }
 }
 
@@ -79,10 +72,16 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     checkCudaErrors(cudaFree(d_perm));
 
     // Decide grid and block size for spmm_kernel_opt
-    block_size = 32;
-    grid.x = (num_e + block_size - 1) / block_size;
-    block.y = block_size;
-    block.x = BLOCK_LEN;
+
+    if (num_e / num_v > 100) {
+        block.x = 1024;
+        grid.x = (num_e + block.x - 1) / block.x;
+        block.y = 1;
+    } else {
+        block.x = 32;
+        grid.x = (num_e + block.x - 1) / block.x;
+        block.y = 32;
+    }
 }
 
 void SpMMOpt::run(float *vin, float *vout)
