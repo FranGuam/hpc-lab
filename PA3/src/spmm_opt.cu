@@ -2,8 +2,8 @@
 
 __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, float *vout, int num_v)
 {
-    __shared__ int s_idx[32];
-    __shared__ float s_val[32];
+    __shared__ int s_idx[32 * 32];
+    __shared__ float s_val[32 * 32];
     int tid = blockIdx.x * blockDim.y + threadIdx.y;
     if (tid >= num_v) return;
     int begin = ptr[tid], end = ptr[tid + 1];
@@ -12,10 +12,11 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
     {
         // Load data into shared memory
         int ii = i + threadIdx.x;
+        int offset = threadIdx.y * 32 + threadIdx.x;
         if (ii < end)
         {
-            s_idx[threadIdx.x] = idx[ii];
-            s_val[threadIdx.x] = val[ii];
+            s_idx[offset] = idx[ii];
+            s_val[offset] = val[ii];
         }
         __syncwarp();
 
@@ -24,7 +25,7 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
         {
             tmp += vin[s_idx[j] * 32 + threadIdx.x] * s_val[j];
         }
-        __syncwrap();
+        __syncwarp();
     }
     vout[tid * 32 + threadIdx.x] = tmp;
 }
@@ -47,7 +48,7 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
 
 void SpMMRef::preprocess(float *vin, float *vout)
 {
-
+    return;
 }
 
 void SpMMRef::run(float *vin, float *vout)
