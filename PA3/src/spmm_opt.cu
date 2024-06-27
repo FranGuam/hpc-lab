@@ -88,7 +88,7 @@ void SpMMOpt::preprocess(float *vin, float *vout)
 
 void SpMMOpt::run(float *vin, float *vout)
 {
-    CHK_CUDA_ERR(cudaProfilerStart());
+    checkCudaErrors(cudaProfilerStart());
     if (feat_in == 32)
     {
         spmm_kernel_opt32<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, num_v);
@@ -97,5 +97,5 @@ void SpMMOpt::run(float *vin, float *vout)
     {
         spmm_kernel_opt256<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, num_v);
     }
-    CHK_CUDA_ERR(cudaProfilerStop());
+    checkCudaErrors(cudaProfilerStop());
 }
