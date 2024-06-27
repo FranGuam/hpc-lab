@@ -4,8 +4,8 @@
 
 __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, float *vout, int num_v)
 {
-    __shared__ int s_idx[1 * 32];
-    __shared__ float s_val[1 * 32];
+    __shared__ int s_idx[2 * 32];
+    __shared__ float s_val[2 * 32];
     int offset = threadIdx.y << 5; // threadIdx.y * 32
     int *s_idx_base = s_idx + offset;
     float *s_val_base = s_val + offset;
@@ -74,7 +74,7 @@ void SpMMOpt::preprocess(float *vin, float *vout)
 {
     if (feat_in == 32)
     {
-        block.y = 1;
+        block.y = 2;
         grid.x = (num_v + block.y - 1) / block.y;
         block.x = 32;
     }
