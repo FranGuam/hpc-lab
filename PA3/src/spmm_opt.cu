@@ -4,31 +4,33 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
 {
     __shared__ int s_idx[32 * 32];
     __shared__ float s_val[32 * 32];
+    int offset = threadIdx.y << 5; // threadIdx.y * 32
+    int *s_idx_base = s_idx + offset;
+    float *s_val_base = s_val + offset;
     int tid = blockIdx.x * blockDim.y + threadIdx.y;
     if (tid >= num_v) return;
     int begin = ptr[tid], end = ptr[tid + 1];
-    int tmp = 0;
+    float tmp = 0;
     for (int i = begin; i < end; i += 32)
     {
         // Load data into shared memory
         int ii = i + threadIdx.x;
-        int offset = threadIdx.y * 32 + threadIdx.x;
         if (ii < end)
         {
-            s_idx[offset] = idx[ii];
-            s_val[offset] = val[ii];
+            s_idx_base[threadIdx.x] = idx[ii];
+            s_val_base[threadIdx.x] = val[ii];
         }
         __syncwarp();
 
         // Compute
-        int max = threadIdx.y * 32 + min(32, end - i);
-        for (int j = threadIdx.y * 32; j < max; ++j)
+        int max = offset + min(32, end - i);
+        for (int j = offset; j < max; ++j)
         {
-            tmp += vin[s_idx[j] * 32 + threadIdx.x] * s_val[j];
+            tmp += vin[s_idx[j] << 5 + threadIdx.x] * s_val[j];
         }
         __syncwarp();
     }
-    vout[tid * 32 + threadIdx.x] = tmp;
+    vout[tid << 5 + threadIdx.x] = tmp;
 }
 
 __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, float *vout, int num_v)
