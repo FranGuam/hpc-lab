@@ -1,4 +1,6 @@
 #include "spmm_opt.h"
+#include "util.h"
+#include "cuda_profiler_api.h"
 
 __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, float *vout, int num_v)
 {
@@ -86,6 +88,7 @@ void SpMMOpt::preprocess(float *vin, float *vout)
 
 void SpMMOpt::run(float *vin, float *vout)
 {
+    CHK_CUDA_ERR(cudaProfilerStart());
     if (feat_in == 32)
     {
         spmm_kernel_opt32<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, num_v);
@@ -94,4 +97,5 @@ void SpMMOpt::run(float *vin, float *vout)
     {
         spmm_kernel_opt256<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, num_v);
     }
+    CHK_CUDA_ERR(cudaProfilerStop());
 }
