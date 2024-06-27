@@ -21,7 +21,8 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
         __syncwarp();
 
         // Compute
-        for (int j = 0; j < min(32, end - i); ++j)
+        int max = threadIdx.y * 32 + min(32, end - i);
+        for (int j = threadIdx.y * 32; j < max; ++j)
         {
             tmp += vin[s_idx[j] * 32 + threadIdx.x] * s_val[j];
         }
