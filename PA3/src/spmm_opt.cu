@@ -46,7 +46,7 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
     }
 }
 
-void SpMMRef::preprocess(float *vin, float *vout)
+void SpMMOpt::preprocess(float *vin, float *vout)
 {
     if (feat_in == 32)
     {
@@ -62,7 +62,7 @@ void SpMMRef::preprocess(float *vin, float *vout)
     }
 }
 
-void SpMMRef::run(float *vin, float *vout)
+void SpMMOpt::run(float *vin, float *vout)
 {
     if (feat_in == 32)
     {
