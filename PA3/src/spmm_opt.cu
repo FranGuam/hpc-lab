@@ -4,8 +4,8 @@
 
 __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, float *vout, int num_v)
 {
-    __shared__ int s_idx[2 * 32];
-    __shared__ float s_val[2 * 32];
+    __shared__ int s_idx[1 * 64];
+    __shared__ float s_val[1 * 64];
     int offset = threadIdx.y << 5; // threadIdx.y * 32
     int *s_idx_base = s_idx + offset;
     float *s_val_base = s_val + offset;
@@ -13,7 +13,7 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
     if (tid >= num_v) return;
     int begin = ptr[tid], end = ptr[tid + 1];
     float tmp = 0;
-    for (int i = begin; i < end; i += 32)
+    for (int i = begin; i < end; i += 64)
     {
         // Load data into shared memory
         int ii = i + threadIdx.x;
@@ -22,10 +22,15 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
             s_idx_base[threadIdx.x] = idx[ii];
             s_val_base[threadIdx.x] = val[ii];
         }
+        if (ii + 32 < end)
+        {
+            s_idx_base[threadIdx.x + 32] = idx[ii + 32];
+            s_val_base[threadIdx.x + 32] = val[ii + 32];
+        }
         __syncwarp();
 
         // Compute
-        int max = min(32, end - i);
+        int max = min(64, end - i);
         for (int j = 0; j < max; ++j)
         {
             tmp += vin[(s_idx_base[j] << 5) + threadIdx.x] * s_val_base[j];
@@ -74,7 +79,7 @@ void SpMMOpt::preprocess(float *vin, float *vout)
 {
     if (feat_in == 32)
     {
-        block.y = 2;
+        block.y = 1;
         grid.x = (num_v + block.y - 1) / block.y;
         block.x = 32;
     }
