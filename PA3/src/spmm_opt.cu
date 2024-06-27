@@ -35,18 +35,37 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
 
 __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, float *vout, int num_v)
 {
-    int tid = blockIdx.x * blockDim.x + threadIdx.x;
+    __shared__ int s_idx[8 * 256];
+    __shared__ float s_val[8 * 256];
+    int offset = threadIdx.y << 8; // threadIdx.y * 256
+    int *s_idx_base = s_idx + offset;
+    float *s_val_base = s_val + offset;
+    int tid = blockIdx.x * blockDim.y + threadIdx.y;
     if (tid >= num_v) return;
     int begin = ptr[tid], end = ptr[tid + 1];
-    for (int j = 0; j < 256; ++j)
+    float tmp1 = 0, tmp2 = 0;
+    for (int i = begin; i < end; i += 128)
     {
-        float result = 0.0f;
-        for (int i = begin; i < end; ++i)
+        // Load data into shared memory
+        int ii = i + threadIdx.x;
+        if (ii < end)
         {
-            result += vin[idx[i] * 256 + j] * val[i];
+            s_idx_base[threadIdx.x] = idx[ii];
+            s_val_base[threadIdx.x] = val[ii];
         }
-        vout[tid * 256 + j] = result;
+        __syncthreads();
+
+        // Compute
+        int max = min(128, end - i);
+        for (int j = 0; j < max; ++j)
+        {
+            tmp1 += vin[(s_idx_base[j] << 8) + threadIdx.x] * s_val_base[j];
+            tmp2 += vin[(s_idx_base[j] << 8) + threadIdx.x + 128] * s_val_base[j];
+        }
+        __syncthreads();
     }
+    vout[(tid << 8) + threadIdx.x] = tmp1;
+    vout[(tid << 8) + threadIdx.x + 128] = tmp2;
 }
 
 void SpMMOpt::preprocess(float *vin, float *vout)
