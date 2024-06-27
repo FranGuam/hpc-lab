@@ -1,5 +1,6 @@
 #include "spmm_opt.h"
 #include "util.h"
+#include "metis.h"
 
 #define SMALL_WIDTH 32
 #define LARGE_WIDTH 256
