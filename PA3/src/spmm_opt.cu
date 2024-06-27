@@ -23,14 +23,14 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
         __syncwarp();
 
         // Compute
-        int max = offset + min(32, end - i);
-        for (int j = offset; j < max; ++j)
+        int max = min(32, end - i);
+        for (int j = 0; j < max; ++j)
         {
-            tmp += vin[s_idx[j] << 5 + threadIdx.x] * s_val[j];
+            tmp += vin[(s_idx_base[j] << 5) + threadIdx.x] * s_val_base[j];
         }
         __syncwarp();
     }
-    vout[tid << 5 + threadIdx.x] = tmp;
+    vout[(tid << 5) + threadIdx.x] = tmp;
 }
 
 __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, float *vout, int num_v)
