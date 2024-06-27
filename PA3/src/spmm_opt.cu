@@ -48,23 +48,28 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
 
 void SpMMRef::preprocess(float *vin, float *vout)
 {
-    return;
-}
-
-void SpMMRef::run(float *vin, float *vout)
-{
     if (feat_in == 32)
     {
         block.y = 32;
         grid.x = (num_v + block.y - 1) / block.y;
         block.x = 32;
-        spmm_kernel_opt32<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, num_v);
     }
     else
     {
         block.y = 8;
         grid.x = (num_v + block.y - 1) / block.y;
         block.x = 128;
+    }
+}
+
+void SpMMRef::run(float *vin, float *vout)
+{
+    if (feat_in == 32)
+    {
+        spmm_kernel_opt32<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, num_v);
+    }
+    else
+    {
         spmm_kernel_opt256<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, num_v);
     }
 }
