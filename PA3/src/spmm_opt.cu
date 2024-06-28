@@ -17,7 +17,7 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
     // if (tid >= num_v) return;
     int begin = ptr[blockIdx.x];
     int len = ptr[blockIdx.x + 1] - begin;
-    int offset = len - threadIdx.x;
+    int bound = len - threadIdx.x;
     // int offset = threadIdx.y * ROW_ELEM_32;
     // int *s_idx_base = s_idx + offset;
     // float *s_val_base = s_val + offset;
@@ -31,13 +31,13 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
     for (int i = 0; i < len; i += ROW_ELEM_32)
     {
         // Load data into shared memory
-        if (i < offset)
+        if (i < bound)
         {
             *s_idx_base = idx_base[i];
             *s_val_base = val_base[i];
         }
         int ii = i + ROW_THREAD_32;
-        if (ii < offset)
+        if (ii < bound)
         {
             s_idx_base[ROW_THREAD_32] = idx_base[ii];
             s_val_base[ROW_THREAD_32] = val_base[ii];
@@ -63,7 +63,9 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
     // int tid = blockIdx.x * blockDim.y + threadIdx.y;
     // if (tid >= num_v) return;
     // int begin = ptr[tid], end = ptr[tid + 1];
-    int begin = ptr[blockIdx.x], end = ptr[blockIdx.x + 1];
+    int begin = ptr[blockIdx.x];
+    int len = ptr[blockIdx.x + 1] - begin;
+    int bound = len - threadIdx.x;
     // int offset = threadIdx.y * ROW_ELEM_256;
     // int *s_idx_base = s_idx + offset;
     // float *s_val_base = s_val + offset;
@@ -71,21 +73,22 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
     float *s_val_base = s_val + threadIdx.x;
     float *vin_base1 = vin + threadIdx.x;
     float *vin_base2 = vin + threadIdx.x + ROW_THREAD_256;
+    int *idx_base = idx + begin + threadIdx.x;
+    float *val_base = val + begin + threadIdx.x;
 
     float tmp1 = 0, tmp2 = 0;
-    for (int i = begin; i < end; i += ROW_ELEM_256)
+    for (int i = 0; i < len; i += ROW_ELEM_256)
     {
         // Load data into shared memory
-        int ii = i + threadIdx.x;
-        if (ii < end)
+        if (i < bound)
         {
-            *s_idx_base = idx[ii];
-            *s_val_base = val[ii];
+            *s_idx_base = idx_base[i];
+            *s_val_base = val_base[i];
         }
         __syncthreads();
 
         // Compute
-        int max = min(ROW_ELEM_256, end - i);
+        int max = min(ROW_ELEM_256, len - i);
         for (int j = 0; j < max; ++j)
         {
             int tmp_idx = s_idx[j] << 8;
