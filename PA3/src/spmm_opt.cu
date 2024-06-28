@@ -53,7 +53,8 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
         }
         __syncwarp();
     }
-    vout[(tid << 5) + threadIdx.x] = tmp;
+    // vout[(tid << 5) + threadIdx.x] = tmp;
+    vout[(blockIdx.x << 5) + threadIdx.x] = tmp;
 }
 
 __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, float *vout)
@@ -95,8 +96,10 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
         }
         __syncthreads();
     }
-    vout[(tid << 8) + threadIdx.x] = tmp1;
-    vout[(tid << 8) + threadIdx.x + ROW_THREAD_256] = tmp2;
+    // vout[(tid << 8) + threadIdx.x] = tmp1;
+    // vout[(tid << 8) + threadIdx.x + ROW_THREAD_256] = tmp2;
+    vout[(blockIdx.x << 8) + threadIdx.x] = tmp1;
+    vout[(blockIdx.x << 8) + threadIdx.x + ROW_THREAD_256] = tmp2;
 }
 
 void SpMMOpt::preprocess(float *vin, float *vout)
