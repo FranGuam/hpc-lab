@@ -14,7 +14,7 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
     __shared__ int s_idx[ROW_NUM_32 * ROW_ELEM_32];
     __shared__ float s_val[ROW_NUM_32 * ROW_ELEM_32];
     int tid = blockIdx.x * blockDim.y + threadIdx.y;
-    if (tid >= num_v) return;
+    // if (tid >= num_v) return;
     int begin = ptr[tid];
     int len = ptr[tid + 1] - begin;
     // int offset = threadIdx.y * ROW_ELEM_32;
@@ -27,16 +27,16 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
     float *val_base = val + begin + threadIdx.x;
 
     float tmp = 0;
-    for (int i = 0; i < len; i += ROW_ELEM_32)
+    for (int i = len; i > 0; i -= ROW_ELEM_32)
     {
         // Load data into shared memory
-        if (i + threadIdx.x < len)
+        if (i > threadIdx.x)
         {
             *s_idx_base = *idx_base;
             *s_val_base = *val_base;
             idx_base += WARP_SIZE;
             val_base += WARP_SIZE;
-            if (i + threadIdx.x + WARP_SIZE < len)
+            if (i > threadIdx.x + WARP_SIZE)
             {
                 s_idx_base[WARP_SIZE] = *idx_base;
                 s_val_base[WARP_SIZE] = *val_base;
@@ -47,7 +47,7 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
         __syncwarp();
 
         // Compute
-        int max = min(ROW_ELEM_32, len - i);
+        int max = min(ROW_ELEM_32, i);
         for (int j = 0; j < max; ++j)
         {
             tmp += vin_base[(s_idx[j] << 5)] * s_val[j];
@@ -88,9 +88,10 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
         int max = min(ROW_ELEM_256, end - i);
         for (int j = 0; j < max; ++j)
         {
-            int tmp = s_idx[j] << 8;
-            tmp1 += vin_base1[tmp] * s_val[j];
-            tmp2 += vin_base2[tmp] * s_val[j];
+            int tmp_idx = s_idx[j] << 8;
+            float tmp_val = s_val[j];
+            tmp1 += vin_base1[tmp_idx] * tmp_val;
+            tmp2 += vin_base2[tmp_idx] * tmp_val;
         }
         __syncthreads();
     }
