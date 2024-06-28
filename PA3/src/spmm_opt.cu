@@ -47,7 +47,8 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
         __syncwarp();
 
         // Compute
-        for (int j = 0; j < ROW_ELEM_32 && j < i; j++)
+        int max = min(ROW_ELEM_32, i);
+        for (int j = 0; j < max; j++)
         {
             tmp += vin_base[(s_idx[j] << 5)] * s_val[j];
         }
