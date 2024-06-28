@@ -59,10 +59,10 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
 
 __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, float *vout, int num_v)
 {
-    __shared__ int s_idx[ROW_NUM_256 * ROW_ELEM_256 * CF_256];
-    __shared__ float s_val[ROW_NUM_256 * ROW_ELEM_256 * CF_256];
+    __shared__ int s_idx[ROW_NUM_256 * ROW_ELEM_256];
+    __shared__ float s_val[ROW_NUM_256 * ROW_ELEM_256];
     int tid = blockIdx.x * blockDim.y + threadIdx.y;
-    if (tid >= num_v) return;
+    // if (tid >= num_v) return;
     int begin = ptr[tid], end = ptr[tid + 1];
     // int offset = threadIdx.y * ROW_ELEM_256;
     // int *s_idx_base = s_idx + offset;
@@ -88,8 +88,9 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
         int max = min(ROW_ELEM_256, end - i);
         for (int j = 0; j < max; ++j)
         {
-            tmp1 += vin_base1[(s_idx_base[j] << 8)] * s_val[j];
-            tmp2 += vin_base2[(s_idx_base[j] << 8)] * s_val[j];
+            int tmp = s_idx[j] << 8;
+            tmp1 += vin_base1[tmp] * s_val[j];
+            tmp2 += vin_base2[tmp] * s_val[j];
         }
         __syncthreads();
     }
