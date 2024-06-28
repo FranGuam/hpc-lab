@@ -72,7 +72,7 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
     int *s_idx_base = s_idx + threadIdx.x;
     float *s_val_base = s_val + threadIdx.x;
     float *vin_base1 = vin + threadIdx.x;
-    float *vin_base2 = vin + threadIdx.x + ROW_THREAD_256;
+    float *vin_base2 = vin_base1 + ROW_THREAD_256;
     int *idx_base = idx + threadIdx.x;
     float *val_base = val + threadIdx.x;
 
@@ -100,8 +100,9 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
     }
     // vout[(tid << 8) + threadIdx.x] = tmp1;
     // vout[(tid << 8) + threadIdx.x + ROW_THREAD_256] = tmp2;
-    vout[(blockIdx.x << 8) + threadIdx.x] = tmp1;
-    vout[(blockIdx.x << 8) + threadIdx.x + ROW_THREAD_256] = tmp2;
+    vout += (blockIdx.x << 8) + threadIdx.x;
+    *vout = tmp1;
+    vout[ROW_THREAD_256] = tmp2;
 }
 
 void SpMMOpt::preprocess(float *vin, float *vout)
