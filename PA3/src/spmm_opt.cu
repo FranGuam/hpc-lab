@@ -1,6 +1,4 @@
 #include "spmm_opt.h"
-#include "util.h"
-#include "cuda_profiler_api.h"
 
 #define ROW_NUM_32 1
 #define ROW_THREAD_32 32
@@ -125,7 +123,6 @@ void SpMMOpt::preprocess(float *vin, float *vout)
 
 void SpMMOpt::run(float *vin, float *vout)
 {
-    checkCudaErrors(cudaProfilerStart());
     if (feat_in == 32)
     {
         spmm_kernel_opt32<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout);
@@ -134,5 +131,4 @@ void SpMMOpt::run(float *vin, float *vout)
     {
         spmm_kernel_opt256<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout);
     }
-    checkCudaErrors(cudaProfilerStop());
 }
