@@ -36,13 +36,13 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
             *s_val_base = *val_base;
             idx_base += ROW_THREAD_32;
             val_base += ROW_THREAD_32;
-            if (i > threadIdx.x + ROW_THREAD_32)
-            {
-                s_idx_base[ROW_THREAD_32] = *idx_base;
-                s_val_base[ROW_THREAD_32] = *val_base;
-                idx_base += ROW_THREAD_32;
-                val_base += ROW_THREAD_32;
-            }
+        }
+        if (i > threadIdx.x + ROW_THREAD_32)
+        {
+            s_idx_base[ROW_THREAD_32] = *idx_base;
+            s_val_base[ROW_THREAD_32] = *val_base;
+            idx_base += ROW_THREAD_32;
+            val_base += ROW_THREAD_32;
         }
         __syncwarp();
 
