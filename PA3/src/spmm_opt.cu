@@ -73,8 +73,8 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
     float *s_val_base = s_val + threadIdx.x;
     float *vin_base1 = vin + threadIdx.x;
     float *vin_base2 = vin + threadIdx.x + ROW_THREAD_256;
-    int *idx_base = idx + begin + threadIdx.x;
-    float *val_base = val + begin + threadIdx.x;
+    idx += begin + threadIdx.x;
+    val += begin + threadIdx.x;
 
     float tmp1 = 0, tmp2 = 0;
     for (int i = 0; i < len; i += ROW_ELEM_256)
@@ -82,8 +82,8 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
         // Load data into shared memory
         if (i < bound)
         {
-            *s_idx_base = idx_base[i];
-            *s_val_base = val_base[i];
+            *s_idx_base = idx[i];
+            *s_val_base = val[i];
         }
         __syncthreads();
 
