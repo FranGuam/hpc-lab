@@ -200,11 +200,11 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     // Set grid and block size
     if (feat_in == 32)
     {
-        if (num_v == 169343) use_perm = false;
-        if (num_v == 132534) use_perm = false;
-        if (num_v == 1138499) use_perm = false;
-        if (num_v == 2500604) use_perm = false;
-        if (num_v == 881680) use_perm = false;
+        // if (num_v == 169343) use_perm = false;
+        // if (num_v == 132534) use_perm = false;
+        // if (num_v == 1138499) use_perm = false;
+        // if (num_v == 2500604) use_perm = false;
+        // if (num_v == 881680) use_perm = false;
         block.y = ROW_NUM_32;
         // grid.x = (num_v + block.y - 1) / block.y;
         grid.x = use_perm ? (num_v - zero_rows) : num_v;
@@ -212,9 +212,9 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     }
     else
     {
-        if (num_v == 132534) use_perm = false;
-        if (num_v == 2500604) use_perm = false;
-        if (num_v == 881680) use_perm = false;
+        // if (num_v == 132534) use_perm = false;
+        // if (num_v == 2500604) use_perm = false;
+        // if (num_v == 881680) use_perm = false;
         block.y = ROW_NUM_256;
         // grid.x = (num_v + block.y - 1) / block.y;
         grid.x = use_perm ? (num_v - zero_rows) : num_v;
