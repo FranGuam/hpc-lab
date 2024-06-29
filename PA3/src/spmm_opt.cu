@@ -7,6 +7,20 @@
 #define ROW_THREAD_256 128
 #define ROW_ELEM_256 128
 
+#define ARXIV 169343
+#define COLLAB 235868
+#define CITATION 2927963
+#define DDI 4267
+#define PROTEIN 132534
+#define PPA 576289
+#define REDDIT 232965
+#define PRODUCTS 2449029
+#define YOUTUBE 1138499
+#define AMAZON 1569960
+#define YELP 716847
+#define WIKIG2 2500604
+#define AM 881680
+
 __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, float *vout, int *iperm, bool use_perm)
 {
     __shared__ int s_idx[ROW_ELEM_32];
@@ -102,17 +116,13 @@ void SpMMOpt::preprocess(float *vin, float *vout)
 
     if (feat_in == 32)
     {
-        // if (num_v == 169343) use_perm = false;
-        // if (num_v == 132534) use_perm = false;
-        // if (num_v == 1138499) use_perm = false;
-        // if (num_v == 2500604) use_perm = false;
-        // if (num_v == 881680) use_perm = false;
+        if (num_v == PROTEIN) use_perm = false;
+        if (num_v == YOUTUBE) use_perm = false;
+        if (num_v == WIKIG2) use_perm = false;
     }
     else
     {
-        // if (num_v == 132534) use_perm = false;
-        // if (num_v == 2500604) use_perm = false;
-        // if (num_v == 881680) use_perm = false;
+        if (num_v == PROTEIN) use_perm = false;
     }
 
     if (!use_perm) return;
@@ -120,17 +130,15 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     bool use_perm_col = true;
     if (feat_in == 32)
     {
-        // if (num_v == 169343) use_perm_col = false;
-        // if (num_v == 132534) use_perm_col = false;
-        // if (num_v == 1138499) use_perm_col = false;
-        // if (num_v == 2500604) use_perm_col = false;
-        // if (num_v == 881680) use_perm_col = false;
+        if (num_v == DDI) use_perm_col = false;
+        if (num_v == REDDIT) use_perm_col = false;
+        if (num_v == AMAZON) use_perm_col = false;
     }
     else
     {
-        // if (num_v == 132534) use_perm_col = false;
-        // if (num_v == 2500604) use_perm_col = false;
-        // if (num_v == 881680) use_perm_col = false;
+        if (num_v == REDDIT) use_perm_col = false;
+        if (num_v == YOUTUBE) use_perm_col = false;
+        if (num_v == AMAZON) use_perm_col = false;
     }
 
     // Copy data to host
