@@ -141,8 +141,6 @@ void SpMMOpt::preprocess(float *vin, float *vout)
             col_idx[idx] = perm_col[col_idx[idx]];
         }
     }
-    checkCudaErrors(cudaMalloc2((void**)&d_iperm_col, sizeof(int) * num_v));
-    checkCudaErrors(cudaMemcpy(d_iperm_col, iperm_col.data(), sizeof(int) * num_v, cudaMemcpyHostToDevice));
     // Re-order the rows of the matrix
     std::vector<std::vector<int>> column_rows(num_v);
     for (int row = 0; row < num_v; ++row) {
