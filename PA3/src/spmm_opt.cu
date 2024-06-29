@@ -191,9 +191,9 @@ void SpMMOpt::preprocess(float *vin, float *vout)
         }
     }
     // Recover column permutation
-    for (int row = 0; row < num_v; ++row) {
-        for (int idx = row_ptr[row]; idx < row_ptr[row + 1]; ++idx) {
-            col_idx[idx] = iperm_col[col_idx[idx]];
+    for (int new_row = 0; new_row < num_v; ++new_row) {
+        for (int new_idx = new_row_ptr[new_row]; new_idx < new_row_ptr[new_row + 1]; ++new_idx) {
+            new_col_idx[new_idx] = iperm_col[new_col_idx[new_idx]];
         }
     }
     // Set grid and block size
