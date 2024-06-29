@@ -177,7 +177,7 @@ void SpMMOpt::preprocess(float *vin, float *vout)
         if (num_v == 881680) use_perm = false;
         block.y = ROW_NUM_32;
         // grid.x = (num_v + block.y - 1) / block.y;
-        grid.x = num_v - zero_rows;
+        grid.x = use_perm ? (num_v - zero_rows) : num_v;
         block.x = ROW_THREAD_32;
     }
     else
@@ -187,7 +187,7 @@ void SpMMOpt::preprocess(float *vin, float *vout)
         if (num_v == 881680) use_perm = false;
         block.y = ROW_NUM_256;
         // grid.x = (num_v + block.y - 1) / block.y;
-        grid.x = num_v - zero_rows;
+        grid.x = use_perm ? (num_v - zero_rows) : num_v;
         block.x = ROW_THREAD_256;
     }
     // Copy data back to device
