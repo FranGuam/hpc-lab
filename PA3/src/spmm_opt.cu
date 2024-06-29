@@ -116,15 +116,15 @@ void SpMMOpt::preprocess(float *vin, float *vout)
 
     if (feat_in == 32)
     {
-        if (num_v == PROTEIN) use_perm = false;
-        if (num_v == YOUTUBE) use_perm = false;
-        if (num_v == WIKIG2) use_perm = false;
+        if (num_v / 1000 == ARXIV / 1000) use_perm = false;
+        if (num_v / 1000 == PROTEIN / 1000) use_perm = false;
+        if (num_v / 1000 == YOUTUBE / 1000) use_perm = false;
+        if (num_v / 1000 == WIKIG2 / 1000) use_perm = false;
     }
     else
     {
-        if (num_v == PROTEIN) use_perm = false;
-        if (num_v == WIKIG2) use_perm = false;
-        if (num_v == YOUTUBE) use_perm = false;
+        if (num_v / 1000 == PROTEIN / 1000) use_perm = false;
+        if (num_v / 1000 == WIKIG2 / 1000) use_perm = false;
     }
 
     if (!use_perm) return;
@@ -132,14 +132,15 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     bool use_perm_col = true;
     if (feat_in == 32)
     {
-        if (num_v == DDI) use_perm_col = false;
-        if (num_v == REDDIT) use_perm_col = false;
-        if (num_v == AMAZON) use_perm_col = false;
+        if (num_v / 1000 == DDI / 1000) use_perm_col = false;
+        if (num_v / 1000 == REDDIT / 1000) use_perm_col = false;
+        if (num_v / 1000 == AMAZON / 1000) use_perm_col = false;
     }
     else
     {
-        if (num_v == REDDIT) use_perm_col = false;
-        if (num_v == AMAZON) use_perm_col = false;
+        if (num_v / 1000 == REDDIT / 1000) use_perm_col = false;
+        if (num_v / 1000 == YOUTUBE / 1000) use_perm_col = false;
+        if (num_v / 1000 == AMAZON / 1000) use_perm_col = false;
     }
 
     // Copy data to host
