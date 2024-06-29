@@ -9,7 +9,7 @@
 #define ROW_THREAD_256 128
 #define ROW_ELEM_256 128
 
-__global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, float *vout, int *iperm, bool use_perm, int *iperm_col)
+__global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, float *vout, int *iperm, bool use_perm)
 {
     __shared__ int s_idx[ROW_NUM_32 * ROW_ELEM_32];
     __shared__ float s_val[ROW_NUM_32 * ROW_ELEM_32];
@@ -49,7 +49,7 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
         int max = min(ROW_ELEM_32, end - i);
         for (int j = 0; j < max; ++j)
         {
-            tmp += vin_base[(iperm_col[s_idx[j]] << 5)] * s_val[j];
+            tmp += vin_base[(s_idx[j] << 5)] * s_val[j];
         }
         __syncwarp();
     }
@@ -57,7 +57,7 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
     vout[(dest << 5) + threadIdx.x] = tmp;
 }
 
-__global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, float *vout, int *iperm, bool use_perm, int *iperm_col)
+__global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, float *vout, int *iperm, bool use_perm)
 {
     __shared__ int s_idx[ROW_NUM_256 * ROW_ELEM_256];
     __shared__ float s_val[ROW_NUM_256 * ROW_ELEM_256];
@@ -93,7 +93,7 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
         int max = min(ROW_ELEM_256, end - i);
         for (int j = 0; j < max; ++j)
         {
-            int tmp_idx = iperm_col[s_idx[j]] << 8;
+            int tmp_idx = s_idx[j] << 8;
             float tmp_val = s_val[j];
             tmp1 += vin_base1[tmp_idx] * tmp_val;
             tmp2 += vin_base2[tmp_idx] * tmp_val;
@@ -192,6 +192,12 @@ void SpMMOpt::preprocess(float *vin, float *vout)
             new_val[new_idx] = val[idx];
         }
     }
+    // Recover column permutation
+    for (int row = 0; row < num_v; ++row) {
+        for (int idx = row_ptr[row]; idx < row_ptr[row + 1]; ++idx) {
+            col_idx[idx] = iperm_col[col_idx[idx]];
+        }
+    }
     // Set grid and block size
     if (feat_in == 32)
     {
@@ -229,10 +235,10 @@ void SpMMOpt::run(float *vin, float *vout)
 {
     if (feat_in == 32)
     {
-        spmm_kernel_opt32<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, d_iperm, use_perm, d_iperm_col);
+        spmm_kernel_opt32<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, d_iperm, use_perm);
     }
     else
     {
-        spmm_kernel_opt256<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, d_iperm, use_perm, d_iperm_col);
+        spmm_kernel_opt256<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, d_iperm, use_perm);
     }
 }
