@@ -118,22 +118,52 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     checkCudaErrors(cudaMemcpy(row_ptr.data(), d_ptr, sizeof(int) * (num_v + 1), cudaMemcpyDeviceToHost));
     checkCudaErrors(cudaMemcpy(col_idx.data(), d_idx, sizeof(int) * num_e, cudaMemcpyDeviceToHost));
     checkCudaErrors(cudaMemcpy(val.data(), d_val, sizeof(float) * num_e, cudaMemcpyDeviceToHost));
+    // Re-order the columns of the matrix
+    std::vector<std::vector<int>> row_columns(num_v);
+    for (int row = 0; row < num_v; ++row) {
+        if (row_ptr[row] == row_ptr[row + 1]) {
+            continue;
+        }
+        for (int idx = row_ptr[row]; idx < row_ptr[row + 1]; ++idx) {
+            row_columns[row].push_back(col_idx[idx]);
+        }
+    }
+    std::vector<int> perm_col(num_v, -1);
+    int new_col = 0;
+    for (int row = 0; row < num_v; ++row) {
+        for (int col : row_columns[row]) {
+            if (perm_col[col] == -1) {
+                perm_col[col] = new_col++;
+            }
+        }
+    }
+    for (int row = 0; row < num_v; ++row) {
+        for (int idx = row_ptr[row]; idx < row_ptr[row + 1]; ++idx) {
+            col_idx[idx] = perm_col[col_idx[idx]];
+        }
+    }
+    float *vin_copy = new float[num_v * feat_in];
+    checkCudaErrors(cudaMemcpy(vin_copy, vin, sizeof(float) * num_v * feat_in, cudaMemcpyDeviceToHost));
+    for (int row = 0; row < num_v; ++row) {
+        checkCudaErrors(cudaMemcpy(vin + perm_col[row] * feat_in, vin_copy + row * feat_in, sizeof(float) * feat_in, cudaMemcpyHostToDevice));
+    }
+    delete[] vin_copy;
     // Re-order the rows of the matrix
-    std::vector<std::vector<int>> columns(num_v);
+    std::vector<std::vector<int>> column_rows(num_v);
     for (int row = 0; row < num_v; ++row) {
         if (row_ptr[row] == row_ptr[row + 1]) {
             zero_rows++;
             continue;
         }
         for (int idx = row_ptr[row]; idx < row_ptr[row + 1]; ++idx) {
-            columns[col_idx[idx]].push_back(row);
+            column_rows[col_idx[idx]].push_back(row);
         }
     }
     std::vector<int> perm(num_v, -1);
     std::vector<int> iperm(num_v, -1);
     int new_row = 0;
     for (int col = 0; col < num_v; ++col) {
-        for (int row : columns[col]) {
+        for (int row : column_rows[col]) {
             if (perm[row] == -1) {
                 perm[row] = new_row++;
                 iperm[perm[row]] = row;
