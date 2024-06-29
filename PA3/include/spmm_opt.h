@@ -18,5 +18,6 @@ public:
 private:
 
     int *d_iperm;
+    bool use_perm = true;
 };
 #endif

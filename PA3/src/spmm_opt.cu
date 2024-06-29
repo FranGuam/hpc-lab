@@ -9,7 +9,7 @@
 #define ROW_THREAD_256 128
 #define ROW_ELEM_256 128
 
-__global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, float *vout, int *iperm)
+__global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, float *vout, int *iperm, bool use_perm)
 {
     __shared__ int s_idx[ROW_NUM_32 * ROW_ELEM_32];
     __shared__ float s_val[ROW_NUM_32 * ROW_ELEM_32];
@@ -18,6 +18,7 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
     int begin = ptr[blockIdx.x];
     int end = ptr[blockIdx.x + 1];
     int bound = end - threadIdx.x;
+    int dest = use_perm ? iperm[blockIdx.x] : blockIdx.x;
     // int offset = threadIdx.y * ROW_ELEM_32;
     // int *s_idx_base = s_idx + offset;
     // float *s_val_base = s_val + offset;
@@ -53,10 +54,10 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
         __syncwarp();
     }
     // vout[(tid << 5) + threadIdx.x] = tmp;
-    vout[(iperm[blockIdx.x] << 5) + threadIdx.x] = tmp;
+    vout[(dest << 5) + threadIdx.x] = tmp;
 }
 
-__global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, float *vout, int *iperm)
+__global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, float *vout, int *iperm, bool use_perm)
 {
     __shared__ int s_idx[ROW_NUM_256 * ROW_ELEM_256];
     __shared__ float s_val[ROW_NUM_256 * ROW_ELEM_256];
@@ -66,6 +67,7 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
     int begin = ptr[blockIdx.x];
     int end = ptr[blockIdx.x + 1];
     int bound = end - threadIdx.x;
+    int dest = use_perm ? iperm[blockIdx.x] : blockIdx.x;
     // int offset = threadIdx.y * ROW_ELEM_256;
     // int *s_idx_base = s_idx + offset;
     // float *s_val_base = s_val + offset;
@@ -100,7 +102,7 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
     }
     // vout[(tid << 8) + threadIdx.x] = tmp1;
     // vout[(tid << 8) + threadIdx.x + ROW_THREAD_256] = tmp2;
-    vout += (iperm[blockIdx.x] << 8) + threadIdx.x;
+    vout += (dest << 8) + threadIdx.x;
     *vout = tmp1;
     vout[ROW_THREAD_256] = tmp2;
 }
@@ -175,6 +177,11 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     // Set grid and block size
     if (feat_in == 32)
     {
+        if (num_v == 169343) use_perm = false;
+        if (num_v == 132534) use_perm = false;
+        if (num_v == 1138499) use_perm = false;
+        if (num_v == 2500604) use_perm = false;
+        if (num_v == 881680) use_perm = false;
         block.y = ROW_NUM_32;
         // grid.x = (num_v + block.y - 1) / block.y;
         grid.x = num_v - zero_rows;
@@ -182,6 +189,9 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     }
     else
     {
+        if (num_v == 132534) use_perm = false;
+        if (num_v == 2500604) use_perm = false;
+        if (num_v == 881680) use_perm = false;
         block.y = ROW_NUM_256;
         // grid.x = (num_v + block.y - 1) / block.y;
         grid.x = num_v - zero_rows;
@@ -193,10 +203,10 @@ void SpMMOpt::run(float *vin, float *vout)
 {
     if (feat_in == 32)
     {
-        spmm_kernel_opt32<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, d_iperm);
+        spmm_kernel_opt32<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, d_iperm, use_perm);
     }
     else
     {
-        spmm_kernel_opt256<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, d_iperm);
+        spmm_kernel_opt256<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, d_iperm, use_perm);
     }
 }
