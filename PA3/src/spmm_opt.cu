@@ -9,7 +9,7 @@
 #define ROW_THREAD_256 128
 #define ROW_ELEM_256 128
 
-__global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, float *vout, int *iperm, bool use_perm)
+__global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, float *vout, int *iperm, bool use_perm, int *iperm_col)
 {
     __shared__ int s_idx[ROW_NUM_32 * ROW_ELEM_32];
     __shared__ float s_val[ROW_NUM_32 * ROW_ELEM_32];
@@ -49,7 +49,7 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
         int max = min(ROW_ELEM_32, end - i);
         for (int j = 0; j < max; ++j)
         {
-            tmp += vin_base[(s_idx[j] << 5)] * s_val[j];
+            tmp += vin_base[(iperm_col[s_idx[j]] << 5)] * s_val[j];
         }
         __syncwarp();
     }
@@ -57,7 +57,7 @@ __global__ void spmm_kernel_opt32(int *ptr, int *idx, float *val, float *vin, fl
     vout[(dest << 5) + threadIdx.x] = tmp;
 }
 
-__global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, float *vout, int *iperm, bool use_perm)
+__global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, float *vout, int *iperm, bool use_perm, int *iperm_col)
 {
     __shared__ int s_idx[ROW_NUM_256 * ROW_ELEM_256];
     __shared__ float s_val[ROW_NUM_256 * ROW_ELEM_256];
@@ -93,7 +93,7 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
         int max = min(ROW_ELEM_256, end - i);
         for (int j = 0; j < max; ++j)
         {
-            int tmp_idx = s_idx[j] << 8;
+            int tmp_idx = iperm_col[s_idx[j]] << 8;
             float tmp_val = s_val[j];
             tmp1 += vin_base1[tmp_idx] * tmp_val;
             tmp2 += vin_base2[tmp_idx] * tmp_val;
@@ -121,19 +121,18 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     // Re-order the columns of the matrix
     std::vector<std::vector<int>> row_columns(num_v);
     for (int row = 0; row < num_v; ++row) {
-        if (row_ptr[row] == row_ptr[row + 1]) {
-            continue;
-        }
         for (int idx = row_ptr[row]; idx < row_ptr[row + 1]; ++idx) {
             row_columns[row].push_back(col_idx[idx]);
         }
     }
     std::vector<int> perm_col(num_v, -1);
+    std::vector<int> iperm_col(num_v, -1);
     int new_col = 0;
     for (int row = 0; row < num_v; ++row) {
         for (int col : row_columns[row]) {
             if (perm_col[col] == -1) {
                 perm_col[col] = new_col++;
+                iperm_col[perm_col[col]] = col;
             }
         }
     }
@@ -142,14 +141,8 @@ void SpMMOpt::preprocess(float *vin, float *vout)
             col_idx[idx] = perm_col[col_idx[idx]];
         }
     }
-    float *vin_copy = new float[num_v * feat_in];
-    checkCudaErrors(cudaMemcpy(vin_copy, vin, sizeof(float) * num_v * feat_in, cudaMemcpyDeviceToHost));
-    for (int row = 0; row < num_v; ++row) {
-        if (perm_col[row] != -1) {
-            checkCudaErrors(cudaMemcpy(vin + perm_col[row] * feat_in, vin_copy + row * feat_in, sizeof(float) * feat_in, cudaMemcpyHostToDevice));
-        }
-    }
-    delete[] vin_copy;
+    checkCudaErrors(cudaMalloc2((void**)&d_iperm_col, sizeof(int) * num_v));
+    checkCudaErrors(cudaMemcpy(d_iperm_col, iperm_col.data(), sizeof(int) * num_v, cudaMemcpyHostToDevice));
     // Re-order the rows of the matrix
     std::vector<std::vector<int>> column_rows(num_v);
     for (int row = 0; row < num_v; ++row) {
@@ -236,10 +229,10 @@ void SpMMOpt::run(float *vin, float *vout)
 {
     if (feat_in == 32)
     {
-        spmm_kernel_opt32<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, d_iperm, use_perm);
+        spmm_kernel_opt32<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, d_iperm, use_perm, d_iperm_col);
     }
     else
     {
-        spmm_kernel_opt256<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, d_iperm, use_perm);
+        spmm_kernel_opt256<<<grid, block>>>(d_ptr, d_idx, d_val, vin, vout, d_iperm, use_perm, d_iperm_col);
     }
 }
