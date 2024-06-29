@@ -124,7 +124,7 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     {
         if (num_v == PROTEIN) use_perm = false;
         if (num_v == WIKIG2) use_perm = false;
-        if (num_v == YOUTUBE) use_perm_col = false;
+        if (num_v == YOUTUBE) use_perm = false;
     }
 
     if (!use_perm) return;
