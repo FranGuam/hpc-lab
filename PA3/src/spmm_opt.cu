@@ -160,7 +160,7 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     for (int new_row = 0; new_row < num_v; ++new_row) {
         new_row_ptr[new_row + 1] = new_row_ptr[new_row] + new_row_len[new_row];
     }
-    for (int row = 0; row < matrix.num_rows; ++row) {
+    for (int row = 0; row < num_v; ++row) {
         int new_row = perm[row];
         int new_idx = new_row_ptr[new_row];
         for (int idx = row_ptr[row]; idx < row_ptr[row + 1]; ++idx, ++new_idx) {
@@ -172,7 +172,7 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     checkCudaErrors(cudaMemcpy(d_ptr, new_row_ptr.data(), sizeof(int) * (num_v + 1), cudaMemcpyHostToDevice));
     checkCudaErrors(cudaMemcpy(d_idx, new_col_idx.data(), sizeof(int) * num_e, cudaMemcpyHostToDevice));
     checkCudaErrors(cudaMemcpy(d_val, new_val.data(), sizeof(float) * num_e, cudaMemcpyHostToDevice));
-    checkCudaErrors(cudaMalloc2(&d_iperm, sizeof(int) * num_v));
+    checkCudaErrors(cudaMalloc2((void**)&d_iperm, sizeof(int) * num_v));
     checkCudaErrors(cudaMemcpy(d_iperm, iperm.data(), sizeof(int) * num_v, cudaMemcpyHostToDevice));
 }
 
