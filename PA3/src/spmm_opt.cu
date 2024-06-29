@@ -145,7 +145,9 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     float *vin_copy = new float[num_v * feat_in];
     checkCudaErrors(cudaMemcpy(vin_copy, vin, sizeof(float) * num_v * feat_in, cudaMemcpyDeviceToHost));
     for (int row = 0; row < num_v; ++row) {
-        checkCudaErrors(cudaMemcpy(vin + perm_col[row] * feat_in, vin_copy + row * feat_in, sizeof(float) * feat_in, cudaMemcpyHostToDevice));
+        if (perm_col[row] != -1) {
+            checkCudaErrors(cudaMemcpy(vin + perm_col[row] * feat_in, vin_copy + row * feat_in, sizeof(float) * feat_in, cudaMemcpyHostToDevice));
+        }
     }
     delete[] vin_copy;
     // Re-order the rows of the matrix
