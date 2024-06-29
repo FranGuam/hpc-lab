@@ -1,0 +1,544 @@
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "arxiv" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 32 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (154 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.000769588 (double)
+[       OK ] SpMMTest.cusparse_performance (234 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.00123154 (double)
+[       OK ] SpMMTest.opt_performance (132 ms)
+[----------] 3 tests from SpMMTest (521 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (521 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760075 queued and waiting for resources
+srun: job 760075 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "arxiv" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 256 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (502 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.00299339 (double)
+[       OK ] SpMMTest.cusparse_performance (306 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.00357292 (double)
+[       OK ] SpMMTest.opt_performance (219 ms)
+[----------] 3 tests from SpMMTest (1028 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (1028 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760076 queued and waiting for resources
+srun: job 760076 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "collab" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 32 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (203 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.00127031 (double)
+[       OK ] SpMMTest.cusparse_performance (235 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.000601871 (double)
+[       OK ] SpMMTest.opt_performance (194 ms)
+[----------] 3 tests from SpMMTest (633 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (633 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760077 queued and waiting for resources
+srun: job 760077 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "collab" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 256 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (395 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.00520364 (double)
+[       OK ] SpMMTest.cusparse_performance (380 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.00342697 (double)
+[       OK ] SpMMTest.opt_performance (299 ms)
+[----------] 3 tests from SpMMTest (1075 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (1075 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760078 queued and waiting for resources
+srun: job 760078 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "citation" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 32 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (4691 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.0164488 (double)
+[       OK ] SpMMTest.cusparse_performance (689 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.00858485 (double)
+[       OK ] SpMMTest.opt_performance (4552 ms)
+[----------] 3 tests from SpMMTest (9933 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (9933 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760079 queued and waiting for resources
+srun: job 760079 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "citation" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 256 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (7136 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.0790545 (double)
+[       OK ] SpMMTest.cusparse_performance (2830 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.0565791 (double)
+[       OK ] SpMMTest.opt_performance (6142 ms)
+[----------] 3 tests from SpMMTest (16109 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (16109 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760080 queued and waiting for resources
+srun: job 760080 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "ddi" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 32 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (87 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.000640971 (double)
+[       OK ] SpMMTest.cusparse_performance (223 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.000248537 (double)
+[       OK ] SpMMTest.opt_performance (75 ms)
+[----------] 3 tests from SpMMTest (386 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (386 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760081 queued and waiting for resources
+srun: job 760081 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "ddi" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 256 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (175 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.00155406 (double)
+[       OK ] SpMMTest.cusparse_performance (243 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.00149552 (double)
+[       OK ] SpMMTest.opt_performance (113 ms)
+[----------] 3 tests from SpMMTest (532 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (532 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760082 queued and waiting for resources
+srun: job 760082 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "protein" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 32 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (4472 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.0246527 (double)
+[       OK ] SpMMTest.cusparse_performance (949 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.00955012 (double)
+[       OK ] SpMMTest.opt_performance (3860 ms)
+[----------] 3 tests from SpMMTest (9283 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (9283 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760083 queued and waiting for resources
+srun: job 760083 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "protein" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 256 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (10852 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.0808501 (double)
+[       OK ] SpMMTest.cusparse_performance (2652 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.101239 (double)
+[       OK ] SpMMTest.opt_performance (6563 ms)
+[----------] 3 tests from SpMMTest (20069 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (20069 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760084 queued and waiting for resources
+srun: job 760084 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "ppa" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 32 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (3919 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.0183852 (double)
+[       OK ] SpMMTest.cusparse_performance (733 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.00699787 (double)
+[       OK ] SpMMTest.opt_performance (4660 ms)
+[----------] 3 tests from SpMMTest (9312 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (9312 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760085 queued and waiting for resources
+srun: job 760085 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "ppa" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 256 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (7471 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.0848832 (double)
+[       OK ] SpMMTest.cusparse_performance (2795 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.0611483 (double)
+[       OK ] SpMMTest.opt_performance (6389 ms)
+[----------] 3 tests from SpMMTest (16656 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (16656 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760086 queued and waiting for resources
+srun: job 760086 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "reddit.dgl" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 32 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (8065 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.0485424 (double)
+[       OK ] SpMMTest.cusparse_performance (1697 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.0141194 (double)
+[       OK ] SpMMTest.opt_performance (7022 ms)
+[----------] 3 tests from SpMMTest (16786 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (16786 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760087 queued and waiting for resources
+srun: job 760087 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "reddit.dgl" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 256 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (17118 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.202338 (double)
+[       OK ] SpMMTest.cusparse_performance (6321 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.151676 (double)
+[       OK ] SpMMTest.opt_performance (11132 ms)
+[----------] 3 tests from SpMMTest (34572 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (34572 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760088 queued and waiting for resources
+srun: job 760088 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "products" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 32 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (16220 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.0558143 (double)
+[       OK ] SpMMTest.cusparse_performance (1931 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.0209782 (double)
+[       OK ] SpMMTest.opt_performance (20232 ms)
+[----------] 3 tests from SpMMTest (38384 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (38384 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760089 queued and waiting for resources
+srun: job 760089 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "products" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 256 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (25945 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.258428 (double)
+[       OK ] SpMMTest.cusparse_performance (8172 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.172501 (double)
+[       OK ] SpMMTest.opt_performance (24667 ms)
+[----------] 3 tests from SpMMTest (58785 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (58785 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760090 queued and waiting for resources
+srun: job 760090 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "youtube" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 32 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (699 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.00364418 (double)
+[       OK ] SpMMTest.cusparse_performance (328 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.00318043 (double)
+[       OK ] SpMMTest.opt_performance (665 ms)
+[----------] 3 tests from SpMMTest (1694 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (1694 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760091 queued and waiting for resources
+srun: job 760091 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "youtube" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 256 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (1771 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.0144418 (double)
+[       OK ] SpMMTest.cusparse_performance (718 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.0127792 (double)
+[       OK ] SpMMTest.opt_performance (994 ms)
+[----------] 3 tests from SpMMTest (3484 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (3484 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760092 queued and waiting for resources
+srun: job 760092 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "amazon_cogdl" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 32 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (20438 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.125309 (double)
+[       OK ] SpMMTest.cusparse_performance (4022 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.0391553 (double)
+[       OK ] SpMMTest.opt_performance (27214 ms)
+[----------] 3 tests from SpMMTest (51675 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (51675 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760093 queued and waiting for resources
+srun: job 760093 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "amazon_cogdl" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 256 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (39980 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.517918 (double)
+[       OK ] SpMMTest.cusparse_performance (15904 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.411528 (double)
+[       OK ] SpMMTest.opt_performance (38077 ms)
+[----------] 3 tests from SpMMTest (93962 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (93963 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760094 queued and waiting for resources
+srun: job 760094 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "yelp" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 32 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (1342 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.00657854 (double)
+[       OK ] SpMMTest.cusparse_performance (399 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.0032443 (double)
+[       OK ] SpMMTest.opt_performance (1285 ms)
+[----------] 3 tests from SpMMTest (3027 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (3027 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760095 queued and waiting for resources
+srun: job 760095 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "yelp" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 256 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (2475 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.0300065 (double)
+[       OK ] SpMMTest.cusparse_performance (1150 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.0267754 (double)
+[       OK ] SpMMTest.opt_performance (2059 ms)
+[----------] 3 tests from SpMMTest (5684 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (5684 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760096 queued and waiting for resources
+srun: job 760096 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "wikikg2" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 32 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (452 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.00713971 (double)
+[       OK ] SpMMTest.cusparse_performance (434 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.0047308 (double)
+[       OK ] SpMMTest.opt_performance (568 ms)
+[----------] 3 tests from SpMMTest (1456 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (1456 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760097 queued and waiting for resources
+srun: job 760097 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "wikikg2" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 256 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (926 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.0167498 (double)
+[       OK ] SpMMTest.cusparse_performance (852 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.014505 (double)
+[       OK ] SpMMTest.opt_performance (1051 ms)
+[----------] 3 tests from SpMMTest (2830 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (2830 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760098 queued and waiting for resources
+srun: job 760098 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "am" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 32 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (1130 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.00374203 (double)
+[       OK ] SpMMTest.cusparse_performance (310 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.0140712 (double)
+[       OK ] SpMMTest.opt_performance (924 ms)
+[----------] 3 tests from SpMMTest (2365 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (2365 ms total)
+[  PASSED  ] 3 tests.
+srun: job 760099 queued and waiting for resources
+srun: job 760099 has been allocated resources
+[..-lab/PA3/src/util.cu:74 (argParse)] dset = "am" (std::string)
+[..-lab/PA3/src/data.cu:5 (load_graph)] loading
+[..ab/PA3/test/main.cpp:17 (main)] kLen = 256 (int)
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from SpMMTest
+[ RUN      ] SpMMTest.validation
+[       OK ] SpMMTest.validation (5437 ms)
+[ RUN      ] SpMMTest.cusparse_performance
+[..A3/test/test_spmm.cu:62 (TestBody)] time = 0.013395 (double)
+[       OK ] SpMMTest.cusparse_performance (665 ms)
+[ RUN      ] SpMMTest.opt_performance
+[..A3/test/test_spmm.cu:71 (TestBody)] time = 0.0277851 (double)
+[       OK ] SpMMTest.opt_performance (1371 ms)
+[----------] 3 tests from SpMMTest (7475 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (7475 ms total)
+[  PASSED  ] 3 tests.
