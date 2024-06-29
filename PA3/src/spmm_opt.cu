@@ -116,7 +116,6 @@ void SpMMOpt::preprocess(float *vin, float *vout)
 
     if (feat_in == 32)
     {
-        if (num_v == ARXIV) use_perm = false;
         if (num_v == PROTEIN) use_perm = false;
         if (num_v == YOUTUBE) use_perm = false;
         if (num_v == WIKIG2) use_perm = false;
@@ -125,6 +124,7 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     {
         if (num_v == PROTEIN) use_perm = false;
         if (num_v == WIKIG2) use_perm = false;
+        if (num_v == YOUTUBE) use_perm_col = false;
     }
 
     if (!use_perm) return;
@@ -139,7 +139,6 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     else
     {
         if (num_v == REDDIT) use_perm_col = false;
-        if (num_v == YOUTUBE) use_perm_col = false;
         if (num_v == AMAZON) use_perm_col = false;
     }
 
