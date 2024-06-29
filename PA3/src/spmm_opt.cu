@@ -107,20 +107,7 @@ __global__ void spmm_kernel_opt256(int *ptr, int *idx, float *val, float *vin, f
 
 void SpMMOpt::preprocess(float *vin, float *vout)
 {
-    if (feat_in == 32)
-    {
-        block.y = ROW_NUM_32;
-        // grid.x = (num_v + block.y - 1) / block.y;
-        grid.x = num_v;
-        block.x = ROW_THREAD_32;
-    }
-    else
-    {
-        block.y = ROW_NUM_256;
-        // grid.x = (num_v + block.y - 1) / block.y;
-        grid.x = num_v;
-        block.x = ROW_THREAD_256;
-    }
+    int zero_rows = 0;
 
     // Copy data to host
     std::vector<int> row_ptr(num_v + 1);
@@ -132,6 +119,10 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     // Re-order the rows of the matrix
     std::vector<std::vector<int>> columns(num_v);
     for (int row = 0; row < num_v; ++row) {
+        if (row_ptr[row] == row_ptr[row + 1]) {
+            zero_rows++;
+            continue;
+        }
         for (int idx = row_ptr[row]; idx < row_ptr[row + 1]; ++idx) {
             columns[col_idx[idx]].push_back(row);
         }
@@ -150,10 +141,13 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     // Create a new matrix
     std::vector<int> new_row_ptr(num_v + 1);
     std::vector<int> new_col_idx(num_e);
-    std::vector<float> new_val(num_e);
-    std::vector<int> new_row_len(num_v);
+    std::vector<float> new_val(num_e, 0);
+    std::vector<int> new_row_len(num_v, 0);
     for (int row = 0; row < num_v; ++row) {
         int new_row = perm[row];
+        if (new_row == -1) {
+            continue;
+        }
         new_row_len[new_row] = row_ptr[row + 1] - row_ptr[row];
     }
     new_row_ptr[0] = 0;
@@ -162,6 +156,9 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     }
     for (int row = 0; row < num_v; ++row) {
         int new_row = perm[row];
+        if (new_row == -1) {
+            continue;
+        }
         int new_idx = new_row_ptr[new_row];
         for (int idx = row_ptr[row]; idx < row_ptr[row + 1]; ++idx, ++new_idx) {
             new_col_idx[new_idx] = col_idx[idx];
@@ -174,6 +171,22 @@ void SpMMOpt::preprocess(float *vin, float *vout)
     checkCudaErrors(cudaMemcpy(d_val, new_val.data(), sizeof(float) * num_e, cudaMemcpyHostToDevice));
     checkCudaErrors(cudaMalloc2((void**)&d_iperm, sizeof(int) * num_v));
     checkCudaErrors(cudaMemcpy(d_iperm, iperm.data(), sizeof(int) * num_v, cudaMemcpyHostToDevice));
+
+    // Set grid and block size
+    if (feat_in == 32)
+    {
+        block.y = ROW_NUM_32;
+        // grid.x = (num_v + block.y - 1) / block.y;
+        grid.x = num_v - zero_rows;
+        block.x = ROW_THREAD_32;
+    }
+    else
+    {
+        block.y = ROW_NUM_256;
+        // grid.x = (num_v + block.y - 1) / block.y;
+        grid.x = num_v - zero_rows;
+        block.x = ROW_THREAD_256;
+    }
 }
 
 void SpMMOpt::run(float *vin, float *vout)
