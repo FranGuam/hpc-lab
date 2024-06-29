@@ -167,13 +167,6 @@ void SpMMOpt::preprocess(float *vin, float *vout)
             new_val[new_idx] = val[idx];
         }
     }
-    // Copy data back to device
-    checkCudaErrors(cudaMemcpy(d_ptr, new_row_ptr.data(), sizeof(int) * (num_v + 1), cudaMemcpyHostToDevice));
-    checkCudaErrors(cudaMemcpy(d_idx, new_col_idx.data(), sizeof(int) * num_e, cudaMemcpyHostToDevice));
-    checkCudaErrors(cudaMemcpy(d_val, new_val.data(), sizeof(float) * num_e, cudaMemcpyHostToDevice));
-    checkCudaErrors(cudaMalloc2((void**)&d_iperm, sizeof(int) * num_v));
-    checkCudaErrors(cudaMemcpy(d_iperm, iperm.data(), sizeof(int) * num_v, cudaMemcpyHostToDevice));
-
     // Set grid and block size
     if (feat_in == 32)
     {
@@ -196,6 +189,14 @@ void SpMMOpt::preprocess(float *vin, float *vout)
         // grid.x = (num_v + block.y - 1) / block.y;
         grid.x = num_v - zero_rows;
         block.x = ROW_THREAD_256;
+    }
+    // Copy data back to device
+    if (use_perm) {
+        checkCudaErrors(cudaMemcpy(d_ptr, new_row_ptr.data(), sizeof(int) * (num_v + 1), cudaMemcpyHostToDevice));
+        checkCudaErrors(cudaMemcpy(d_idx, new_col_idx.data(), sizeof(int) * num_e, cudaMemcpyHostToDevice));
+        checkCudaErrors(cudaMemcpy(d_val, new_val.data(), sizeof(float) * num_e, cudaMemcpyHostToDevice));
+        checkCudaErrors(cudaMalloc2((void**)&d_iperm, sizeof(int) * num_v));
+        checkCudaErrors(cudaMemcpy(d_iperm, iperm.data(), sizeof(int) * num_v, cudaMemcpyHostToDevice));
     }
 }
 
